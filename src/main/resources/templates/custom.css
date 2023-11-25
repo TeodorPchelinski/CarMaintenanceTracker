@@ -1,0 +1,173 @@
+body {
+    background-image: url('/static/images/Car1.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    font-family: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 18px;
+    display: flex;
+    align-items: inherit;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* CSS */
+.button {
+    background-color: #FFFFFF;
+    border: 1px solid rgb(209, 213, 219);
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #111827;
+    font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    padding: .75rem 1rem;
+    text-align: center;
+    text-decoration: none #D1D5DB solid;
+    text-decoration-thickness: auto;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button:hover {
+    background-color: rgb(249, 250, 251);
+}
+
+.button:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.button:focus-visible {
+    box-shadow: none;
+}
+
+.logo-container {
+    padding-left: 25px;
+
+}
+
+.logo {
+    max-width: 50px;
+    border-radius: 4px;
+}
+
+.login-container {
+    padding-left: 1600px;
+}
+
+.login {
+
+}
+
+.login-link {
+}
+
+
+#myChart {
+    width: 100%;
+    position: center;
+
+}
+
+
+#upper-part {
+    padding-top: 45px;
+    padding-left: 660px;
+    max-width: 600px;
+    width: 100%;
+    position: center;
+
+
+}
+
+.label {
+    padding-top: 100px;
+    padding-bottom: 20px;
+    position: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cards-labels-container {
+    padding-left: 75px;
+}
+
+
+table {
+    background: #ffffff;
+    border: 1px solid #ecebeb;
+    padding: 1%;
+    margin: 0 auto;
+    width: 70%;
+    border-radius: 4px;
+}
+
+.table-head {
+
+}
+
+.table-row {
+    /*background-color: #234465;*/
+}
+
+.car-table {
+
+
+}
+
+#chart-container {
+    background-color: #ffffff;
+}
+
+.card-container {
+    padding-top: 5px;
+    padding-left: 350px;
+    padding-right: 150px;
+    display: block;
+}
+
+.card {
+    width: 91%;
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border-shadow: 0 1px 3px 0 rgba(0, 0, 0, .11);
+}
+
+.card-img-container {
+    color: #f1f1f1;
+    padding-top: 6px;
+    padding-left: 5px;
+    padding-bottom: 3px;
+
+}
+
+.car-image {
+    position: center;
+    max-width: 150px;
+    max-height: 120px;
+    border-radius: 4px;
+}
+
+.car-stats {
+    padding-left: 80px;
+}
+
+.car-stats span {
+    padding-right: 30px;
+}

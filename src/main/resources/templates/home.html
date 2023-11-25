@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="custom.css">
+
+</head>
+
+<body>
+
+<div>
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="home.html"> <img class="logo" src="/static/images/logo.png"  alt="Logo"> </a>
+        </div>
+        <div>
+            <a href="home.html"> <button class="button">All Cars</button></a>
+        </div>
+        <div class="login-container">
+            <a class="login-link" href="home.html"> <button class="button">Login</button></a>
+        </div>
+        <div class="register-container">
+            <a class="register-link" href="home.html"> <button class="button" >Register</button></a>
+        </div>
+    </header>
+</div>
+
+<div id="upper-part" >
+    <div id="chart-container">
+    <canvas id="myChart" ></canvas>
+    </div>
+</div>
+<script>
+    const xValues = ['January','February', 'March', 'April', "May", "June", "July", "August", "September", "October", "November", "December"];
+    const yValues = [2.65,2.62,2.59,2.56,2.57,2.55,2.56,2.66,2.79,2.87, 2.81 ,2.75];
+
+    new Chart("myChart", {
+        type: "line",
+        data: {
+            labels: xValues,
+            datasets: [{
+                fill: false,
+                // lineTension: 0.3,
+                backgroundColor: "rgba(0,0,255,1.0)",
+                borderColor: "rgba(0,0,255,0.1)",
+                data: yValues
+            }]
+        },
+        options: {
+            legend: {display: false},
+            scales: {
+                yAxes: [{ticks: {min: 2.40, max:3.00}}],
+            }
+        }
+    });
+</script>
+
+<div id="label-table" class="label">My Vehicles</div>
+<div class="cards-labels-container">
+    <table class="car-table">
+        <thead class="table-head">
+        <tr class="table-row">
+            <th>Photo</th>
+            <th>Model</th>
+            <th></th>
+            <th>Year</th>
+            <th>Fuel</th>
+            <th>Economy</th>
+        </tr>
+        </thead>
+
+
+    </table>
+</div>
+
+<div class="cards-section">
+    <div class="card-container">
+        <div class="card">
+            <div>
+                <div class="card-img-container">
+                <img class="car-image" src="/static/images/opel-zafira.jpg" alt="Car photo">
+                </div>
+            </div>
+
+            <p class="car-stats">
+                <span>Opel</span>
+                <span>Zafira</span>
+                <span>2008</span>
+                <span>Metan</span>
+                <span>1.6L</span>
+            </p>
+
+        </div>
+
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div>
+                <div class="card-img-container">
+                    <img class="car-image" src="/static/images/audi-a6.jpg" alt="Car photo">
+                </div>
+            </div>
+
+            <p class="car-stats">
+                <span>Audi</span>
+                <span>A6</span>
+                <span>2015</span>
+                <span>Petrol</span>
+                <span>2.0L</span>
+            </p>
+
+        </div>
+
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div>
+                <div class="card-img-container">
+                    <img class="car-image" src="/static/images/skoda-octavia.jpg" alt="Car photo">
+                </div>
+            </div>
+
+            <p class="car-stats">
+                <span>Skoda</span>
+                <span>Octavia</span>
+                <span>2019</span>
+                <span>Petrol</span>
+                <span>2.0L</span>
+            </p>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
