@@ -18,10 +18,12 @@ body {
 .navbar {
     display: flex;
     flex-direction: row;
+    background-color: #111827;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
-/* CSS */
 .button {
     background-color: #FFFFFF;
     border: 1px solid rgb(209, 213, 219);
@@ -57,7 +59,7 @@ body {
 }
 
 .logo-container {
-    padding-left: 25px;
+    /*padding-left: 25px;*/
 
 }
 
@@ -81,18 +83,21 @@ body {
 #myChart {
     width: 100%;
     position: center;
-
+    margin: 0 auto;
+    background-color: #ecebeb;
 }
 
 
 #upper-part {
+    flex-direction: row;
     padding-top: 45px;
-    padding-left: 660px;
     max-width: 600px;
     width: 100%;
     position: center;
-
-
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .label {
@@ -131,7 +136,7 @@ table {
 }
 
 #chart-container {
-    background-color: #ffffff;
+    background-color: #111827;
 }
 
 .card-container {
