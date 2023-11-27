@@ -29,29 +29,53 @@
 
 <div id="upper-part" >
     <div id="chart-container">
-    <canvas id="myChart" ></canvas>
+    <canvas id="my-chart" ></canvas>
     </div>
 </div>
 <script>
     const xValues = ['January','February', 'March', 'April', "May", "June", "July", "August", "September", "October", "November", "December"];
-    const yValues = [2.65,2.62,2.59,2.56,2.57,2.55,2.56,2.66,2.79,2.87, 2.81 ,2.75];
 
-    new Chart("myChart", {
+    const yPetrol = [2.65,2.62,2.59,2.56,2.57,2.55,2.56,2.66,2.79,2.87, 2.81 ,2.75];
+
+    const yGas = [1.18,1.18,1.21,1.19,1.09,0.96,0.87,0.89,1.16,1.20, 1.21 ,1.23];
+
+    const yCNG = [3.38,3.73,3.17,2.72,2.55,2.22,1.98,2.00,2.01,2.04, 2.05 ,2.31];
+
+    new Chart("my-chart", {
         type: "line",
         data: {
             labels: xValues,
             datasets: [{
+                label: 'A95',
                 fill: false,
                 // lineTension: 0.3,
-                backgroundColor: "rgba(0,0,255,1.0)",
-                borderColor: "rgba(0,0,255,0.1)",
-                data: yValues
-            }]
+                backgroundColor: "rgb(255,89,0)",
+                borderColor: "rgba(255,0,21,0.65)",
+                data: yPetrol
+            },
+                {
+                    label: 'Autogas(LPG)',
+                    fill: false,
+                    // lineTension: 0.3,
+                    backgroundColor: "rgb(123,255,0)",
+                    borderColor: "rgba(162,255,0,0.65)",
+                    data: yGas
+                },
+                {
+                    label: 'Natural gas(CNG)',
+                    fill: false,
+                    // lineTension: 0.3,
+                    backgroundColor: "rgb(91,238,187)",
+                    borderColor: "rgb(10,255,219)",
+                    data: yCNG
+                }
+
+                ]
         },
         options: {
-            legend: {display: false},
+            legend: {display: true},
             scales: {
-                yAxes: [{ticks: {min: 2.40, max:3.00}}],
+                yAxes: [{ticks: {min: 0.50, max:4.00}}],
             }
         }
     });
