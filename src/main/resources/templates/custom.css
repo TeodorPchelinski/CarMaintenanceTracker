@@ -18,9 +18,11 @@ body {
 .navbar {
     display: flex;
     flex-direction: row;
-    background-color: #111827;
-    margin-left: auto;
-    margin-right: auto;
+    /*background-color: #111827;*/
+    margin-left: 100px;
+    margin-right: 100px;
+    justify-content: inherit;
+    text-align: center;
 }
 
 
@@ -59,17 +61,25 @@ body {
 }
 
 .logo-container {
-    /*padding-left: 25px;*/
 
 }
 
 .logo {
-    max-width: 50px;
+    margin-top: 3px;
+    max-width: 47px;
     border-radius: 4px;
 }
 
-.login-container {
-    padding-left: 1600px;
+.all-cars-button ,.login-button, .register-button {
+        margin-left: 5px;
+        margin-top: 3px;
+}
+
+.login-button {
+    margin-left: auto;
+}
+.register-button {
+    /*Only add if navbar is correct length*/
 }
 
 .login {
@@ -84,7 +94,11 @@ body {
     width: 100%;
     position: center;
     margin: 0 auto;
-    background-color: #ecebeb;
+    background-color: #ffffff;
+}
+
+#chart-container {
+    background-color: #ffffff;
 }
 
 
@@ -100,12 +114,18 @@ body {
     margin-right: auto;
 }
 
-.label {
-    padding-top: 100px;
+.space-between {
+    padding-top: 160px;
     padding-bottom: 20px;
     position: center;
     text-align: center;
-    font-weight: bold;
+}
+
+.table-label {
+    position: center;
+    padding-right: 75px;
+    font-size: 21px;
+    font-weight: normal;
 }
 
 .cards-labels-container {
@@ -113,45 +133,44 @@ body {
 }
 
 
-table {
+.car-table { /* plane*/
     background: #ffffff;
     border: 1px solid #ecebeb;
     padding: 1%;
-    margin: 0 auto;
     width: 70%;
+    margin: 20px auto;
     border-radius: 4px;
 }
 
 .table-head {
-
+    background-color: orangered;
+    /*width: 300px;*/
 }
 
 .table-row {
-    /*background-color: #234465;*/
+    background-color: #ffffff;
 }
 
-.car-table {
-
-
-}
-
-#chart-container {
-    background-color: #111827;
+.photo-label {
+    margin: auto;
+    width: 200px;
 }
 
 .card-container {
-    padding-top: 5px;
-    padding-left: 350px;
-    padding-right: 150px;
+    padding-left: 75px;
+    padding-top: 5px; /* space between car cards */
     display: block;
 }
 
 .card {
-    width: 91%;
-    display: flex;
     background-color: #ffffff;
+    width: 70%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 4px;
     border-shadow: 0 1px 3px 0 rgba(0, 0, 0, .11);
+    margin-bottom: 3px;
 }
 
 .card-img-container {
@@ -159,20 +178,80 @@ table {
     padding-top: 6px;
     padding-left: 5px;
     padding-bottom: 3px;
+    width: 20%;
+    margin-right: auto;
 
 }
 
 .car-image {
     position: center;
-    max-width: 150px;
-    max-height: 120px;
+    max-width: 200px;
+    max-height: 150px;
     border-radius: 4px;
 }
 
 .car-stats {
-    padding-left: 80px;
+    background-color: #ffffff;
+    padding-left: 50px;
+    padding-right: 75px;
+    padding-top: 10px;
+    /*margin-left: 30px; !* car stats box *!*/
+    /*margin-right: 5px;*/
+    /*width: 600px;*/
+    margin: 7px 10px 10px 20px;
+    width: 70%;
 }
 
 .car-stats span {
-    padding-right: 30px;
+    /*padding-right: 10px;*/
+    background-color: #ffffff;
+}
+
+.brand-stat {
+    max-width: 150px;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    background-color: #ffffff;
+
+}
+
+/*.model-stat {*/
+/*    max-width: 100px;*/
+/*    display: inline-block;*/
+/*    text-align: left;*/
+/*    width: 100%;*/
+/*    background-color: #234465;*/
+/*}*/
+
+.year-stat {
+    max-width: 100px;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.fuel-stat {
+    max-width: 100px;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.engine-stat{
+    max-width: 100px;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+
+.small-button {
+    max-width: 25px;
+    max-height: 25px;
+    margin-top: 10px;
+    margin-right: 7px;
 }
