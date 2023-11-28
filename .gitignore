@@ -31,4 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
-/src/main/resources/static/cssGetExamples/
+/src/main/resources/nonAdded/cssGetExamples/
+/src/main/resources/nonAdded/
+src/main/resources/nonAdded/app.js
