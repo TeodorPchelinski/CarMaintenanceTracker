@@ -60,7 +60,7 @@
                 data: yPetrol
             },
                 {
-                    label: 'Autogas(LPG)',
+                    label: 'Autogas (LPG)',
                     fill: false,
                     // lineTension: 0.3,
                     backgroundColor: "rgb(123,255,0)",
@@ -68,7 +68,7 @@
                     data: yGas
                 },
                 {
-                    label: 'Natural gas(CNG)',
+                    label: 'Natural gas (CNG)',
                     fill: false,
                     // lineTension: 0.3,
                     backgroundColor: "rgb(91,238,187)",
@@ -87,17 +87,23 @@
                 ]
         },
         options: {
-            legend: {display: true},
+            legend: {display: false},
             scales: {
-                x: {
-                    gridLines: { display: false }
-                },
-                y: {
-                    gridLines: { display: false }
-                },
-                yAxes: [{ticks: {min: 0.50, max:4.00}}],
+                xAxes: [{
+                    gridLines: {
+                        color: "rgba(0, 0, 0,0)"
+                    }
+
+                }],
+                yAxes: [{
+                    gridLines: {
+                        color: "rgba(0, 0, 0,0)"
+                        }
+                    }]
+                }
+
             }
-        }
+
     });
 </script>
 

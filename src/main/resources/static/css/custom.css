@@ -127,7 +127,9 @@ body {
     left: 0;
     right: 0;
     top: 50%;
-
+}
+#my-chart .grid-line {
+    display: none;
 }
 
 #chart-container {
