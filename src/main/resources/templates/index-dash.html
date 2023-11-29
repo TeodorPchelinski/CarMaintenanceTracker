@@ -81,7 +81,7 @@
                 datasets: [{
                     label: 'A95',
                     fill: false,
-                    // lineTension: 0.3,
+                    lineTension: 0.1,
                     backgroundColor: "rgb(255,89,0)",
                     borderColor: "rgba(255,0,21,0.65)",
                     data: yPetrol
@@ -89,15 +89,15 @@
                     {
                         label: 'Autogas (LPG)',
                         fill: false,
-                        // lineTension: 0.3,
-                        backgroundColor: "rgb(123,255,0)",
+                        lineTension: 0.1,
+                        // backgroundColor: "rgb(123,255,0)",
                         borderColor: "rgba(162,255,0,0.65)",
                         data: yGas
                     },
                     {
                         label: 'Natural gas (CNG)',
                         fill: false,
-                        // lineTension: 0.3,
+                        lineTension: 0.3,
                         backgroundColor: "rgb(91,238,187)",
                         borderColor: "rgb(10,255,219)",
                         data: yCNG
@@ -105,7 +105,7 @@
                     {
                         label: 'Diesel',
                         fill: false,
-                        // lineTension: 0.3,
+                        lineTension: 0.3,
                         backgroundColor: "rgb(3,0,0)",
                         borderColor: "rgb(13,33,114)",
                         data: yDiesel
@@ -117,12 +117,14 @@
                 legend: {display: false},
                 scales: {
                     xAxes: [{
+                        display: false,
                         gridLines: {
                             color: "rgba(0, 0, 0,0)"
                         }
 
                     }],
                     yAxes: [{
+                        display: false,
                         gridLines: {
                             color: "rgba(0, 0, 0,0)"
                         }

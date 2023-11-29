@@ -102,11 +102,10 @@ li a:hover {
 
 
 #my-chart {
-    max-width: 320px;
-    max-height: 200px;
+    max-width: 300px;
+    max-height: 150px;
     position: center;
     background-color: #ffffff;
-    border-radius: 14px;
 }
 
 #my-chart .canvas {
