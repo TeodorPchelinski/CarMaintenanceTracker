@@ -34,3 +34,4 @@ build/
 /src/main/resources/nonAdded/cssGetExamples/
 /src/main/resources/nonAdded/
 src/main/resources/nonAdded/app.js
+src/main/resources/static/css/button.css
