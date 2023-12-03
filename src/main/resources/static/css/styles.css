@@ -1,5 +1,6 @@
 body {
     background-color: #00AEFF;
+    /*background-color: #ecebeb;*/
     margin: 0;
     padding: 0;
 
@@ -31,20 +32,23 @@ ul, body {
 .current-page {
     margin-top: 10px;
     /*margin-left: 10px;*/
-    background-color: #ecebeb;
+    /*background-color: #dda0f1;*/
+    color: #f1f9ff;
     display: inherit;
     align-items: normal;
     flex-direction: row;
     border-radius: 19px;
-    width: 179vh;
+    width: 84vw;
+    height: 106vh;
 }
 
 .site-name {
     color: #FFFFFF;
-    margin-left: 16px;
+    padding-top: 1rem;
+    padding-left: 1.5rem;
+    /*margin-left: 16px;*/
     margin-right: 0;
     margin-top: 0;
-    padding: 0;
     height: 5vh;
     position: center;
 }
@@ -67,12 +71,21 @@ li a:hover {
     color: #FFFFFF;
 }
 
+.current {
+    border-radius: 8px;
+    background-color: #555;
+    color: #FFFFFF;
+
+}
 
 
 .section1 {
-    margin-top: 12px;
-    margin-right: 20px;
-    margin-left: 20px;
+    padding-top: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    /*margin-top: 12px;*/
+    /*margin-right: 20px;*/
+    /*margin-left: 20px;*/
 }
 
 .section2, .section3, .section4, .section5{
@@ -106,8 +119,9 @@ li a:hover {
 }
 
 .window-label {
-    font-size: 15px;
-    margin: 6px;
+    color: #333333;
+    font-size: 20px;
+    padding: 10px;
 }
 
 #window-small {
@@ -121,7 +135,8 @@ li a:hover {
 }
 
 .field-label {
-    font-weight: lighter;
+    color: #333333;
+    font-weight: bold;
     font-size: 14px;
     display: block;
     margin-top: 10px;
@@ -182,6 +197,7 @@ li a:hover {
 }
 
 #km-traveled {
+    color: #333333;
     display: block;
     font-size: 28px;
     margin-top: 80px;
@@ -262,7 +278,7 @@ li a:hover {
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
     box-sizing: border-box;
-    color: rgba(245, 245, 245, 0.76);
+    color: rgba(255, 255, 255, 0.78);
     cursor: pointer;
     display: inline-flex;
     font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -285,9 +301,9 @@ li a:hover {
 
 .button:hover,
 .button:focus {
-    border-color: rgba(0, 0, 0, 0.12);
-    box-shadow: rgba(0, 0, 0, 0.45) 0 4px 12px;
-    color: rgba(255, 255, 255, 0.5);
+    border-color: rgb(94, 0, 255);
+    box-shadow: rgba(47, 0, 255, 0.13) 0 4px 12px;
+    color: rgb(255, 255, 255);
 }
 .button:hover {
     transform: translateY(-1px);
