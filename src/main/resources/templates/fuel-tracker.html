@@ -51,7 +51,7 @@
 
         <div class="profile-small">
             <img class="profile-img-small" src="/static/images/profile.png">
-            <a class="profile-name" href="index-dash.html">Teodor Pchelinski</a>
+            <a class="profile-name" href="profile.html">Teodor Pchelinski</a>
         </div>
 
 
@@ -63,8 +63,8 @@
 </div>
 <div class="current-page">
     <div class="row1">
-
     </div>
+
 
 
     <div class="section2">
@@ -81,7 +81,6 @@
         </div>
         <div class="window" id="window-small">
         </div>
-
     </div>
 
     <div class="section3">
@@ -175,23 +174,33 @@
         </div>
 
         <div class="window" id="refuel-window">
-            <label class="window-label">Refuel</label>
-            <label  class="field-label">kilometers</label>
-            <input type=number class="field">
-            <label class="field-label">liters</label>
-            <input type=number class="field">
-            <label  class="field-label">price</label>
-            <input type=number class="field">
-            <label class="field-label">fuel type</label>
-            <input class="field">
+            <label class="window-label">Charging</label>
+
+            <div class="field">
+                <input type="number" id="kilometers" placeholder="">
+                <label for="kilometers" class="field-label">Kilometers</label>
+            </div>
+
+            <div class="field">
+                <input type=number id="liters" placeholder="">
+                <label for="liters" class="field-label">Liters</label>
+            </div>
+
+            <div class="field">
+                <input type=number id="price" placeholder="">
+                <label for="price" class="field-label">Price</label>
+            </div>
+
+            <div class="field">
+                <input type=text id="fuel" placeholder="">
+                <label for="fuel" class="field-label">Fuel Type</label>
+            </div>
+
             <button class="button" id="refuel-button">Submit</button>
         </div>
 
-
         <div class="window">
         </div>
-
-
     </div>
 
     <div class="section4">
@@ -284,11 +293,19 @@
             </script>
         </div>
         <div class="window">
-            <label class="window-label">Add Trip name (Optional)</label>
-            <label  class="field-label">Name</label>
-            <input  class="field">
-            <label  class="field-label">Description</label>
-            <textarea class="field" id="large-text"></textarea>
+            <label class="window-label">Save as trip (Optional)</label>
+            <div class="field">
+                <input  type=text id="trip-name" placeholder="">
+                <label  for="trip-name" class="field-label">Trip Name</label>
+            </div>
+
+            <div class="field">
+                <textarea type=text id="large-text" placeholder=""></textarea>
+                <label  for="large-text" class="field-label">Description</label>
+            </div>
+
+
+
         </div>
         <div class="window" id="window-small">
         </div>
