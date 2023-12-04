@@ -24,16 +24,16 @@
 
         </div>
         <li>
-            <a href="index-dash.html">Home</a>
+            <a class="current" href="index-dash.html">Home</a>
         </li>
         <li>
-            <a href="index-dash.html">My Garage</a>
+            <a href="my-garage.html">My Garage</a>
         </li>
         <li>
             <a href="community.html">Community</a>
         </li>
         <li>
-            <a href="index-dash.html">Maintenance</a>
+            <a href="maintenance.html">Maintenance</a>
         </li>
         <li>
             <a href="fuel-tracker.html">Fuel Tracker</a>
@@ -53,7 +53,7 @@
 
         <div class="profile-small">
             <img class="profile-img-small" src="/static/images/profile.png">
-            <a class="profile-name" href="index-dash.html">Teodor Pchelinski</a>
+            <a class="profile-name" href="profile.html">Teodor Pchelinski</a>
         </div>
 
 
@@ -66,95 +66,16 @@
 <div class="current-page">
 
 <div class="section2">
-    <h1>Home</h1>
+    <div class="label-container">
+        <h2>Track Your Car's <br> Maintenance Easily.</h2>
+    </div>
     <div class="window">
         <div>
 <!--            <label class="window-label">Fuel prices</label>-->
-            <canvas id="my-chart" ></canvas>
+
         </div>
-
-<!--        <script>-->
-<!--            const xValues = ['Jan','Feb', 'Mar', 'Apr', "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];-->
-
-<!--            const yPetrol = [2.65,2.62,2.59,2.56,2.57,2.55,2.56,2.66,2.79,2.87, 2.81 ,2.75];-->
-
-<!--            const yGas = [1.18,1.18,1.21,1.19,1.09,0.96,0.87,0.89,1.16,1.20, 1.21 ,1.23];-->
-
-<!--            const yCNG = [3.38,3.73,3.17,2.72,2.55,2.22,1.98,2.00,2.01,2.04, 2.05 ,2.31];-->
-
-<!--            const yDiesel = [3.03,2.96,2.87,2.75,2.61,2.47,2.45,2.58,2.79,2.89, 2.88 ,2.80];-->
-
-<!--            new Chart("my-chart", {-->
-<!--                type: "line",-->
-<!--                data: {-->
-<!--                    labels: xValues,-->
-<!--                    datasets: [{-->
-<!--                        label: 'A95',-->
-<!--                        fill: false,-->
-<!--                        lineTension: 1,-->
-<!--                        backgroundColor: "rgb(255,89,0)",-->
-<!--                        borderColor: "rgba(255,0,21,0.65)",-->
-<!--                        data: yPetrol-->
-<!--                    },-->
-<!--                        {-->
-<!--                            label: 'Autogas (LPG)',-->
-<!--                            fill: false,-->
-<!--                            lineTension: 0.1,-->
-<!--                            // backgroundColor: "rgb(123,255,0)",-->
-<!--                            borderColor: "rgba(162,255,0,0.65)",-->
-<!--                            data: yGas-->
-<!--                        },-->
-<!--                        {-->
-<!--                            label: 'Natural gas (CNG)',-->
-<!--                            fill: false,-->
-<!--                            lineTension: 0.3,-->
-<!--                            backgroundColor: "rgb(91,238,187)",-->
-<!--                            borderColor: "rgb(10,255,219)",-->
-<!--                            data: yCNG-->
-<!--                        },-->
-<!--                        {-->
-<!--                            label: 'Diesel',-->
-<!--                            fill: false,-->
-<!--                            lineTension: 0.3,-->
-<!--                            backgroundColor: "rgb(3,0,0)",-->
-<!--                            borderColor: "rgb(13,33,114)",-->
-<!--                            data: yDiesel-->
-<!--                        }-->
-<!--                    ]-->
-<!--                },-->
-<!--                options: {-->
-<!--                    legend: {display: false},-->
-<!--                    scales: {-->
-<!--                        xAxes: [{-->
-<!--                            display: false,-->
-<!--                            gridLines: {-->
-<!--                                color: "rgba(0, 0, 0,0)"-->
-<!--                            }-->
-<!--                        }],-->
-<!--                        yAxes: [{-->
-<!--                            display: false,-->
-<!--                            gridLines: {-->
-<!--                                color: "rgba(0, 0, 0,0)"-->
-<!--                            }-->
-<!--                        }]-->
-<!--                    }-->
-
-<!--                }-->
-
-<!--            });-->
-<!--        </script>-->
     </div>
-    <div class="window" id="refuel-window">
-        <label class="window-label">Refuel</label>
-        <label class="field-label">kilometers</label>
-        <input class="field">
-        <label class="field-label">liters</label>
-        <input class="field">
-        <label class="field-label">price</label>
-        <input class="field">
-        <label class="field-label">fuel</label>
-        <input class="field">
-        <button class="button" id="refuel-button">Submit</button>
+    <div class="window">
     </div>
 
     <div class="window">

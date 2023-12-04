@@ -9,7 +9,7 @@
   <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
   <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
   <link rel="stylesheet" href="../static/css/styles.css">
-  <title>Community</title>
+  <title>Maintenance</title>
 </head>
 <body>
 
@@ -27,13 +27,13 @@
       <a href="index-dash.html">Home</a>
     </li>
     <li>
-      <a href="my-garage.html">My Garage</a>
+      <a href="index-dash.html">My Garage</a>
     </li>
     <li>
-      <a class="current" href="community.html">Community</a>
+      <a href="community.html">Community</a>
     </li>
     <li>
-      <a href="maintenance.html">Maintenance</a>
+      <a class="current" href="maintenance.html">Maintenance</a>
     </li>
     <li>
       <a href="fuel-tracker.html">Fuel Tracker</a>
@@ -68,18 +68,29 @@
 
   <div class="section2">
     <div class="label-container">
-      <h1 class="label">Share and Compare</h1>
+      <h2 class="label">Maintenance <br> and Repairs</h2>
     </div>
     <div class="window">
       <div>
-        <!--            <label class="window-label">Fuel prices</label>-->
-        <canvas id="my-chart" ></canvas>
+        <label class="window-label">Current Car</label>
+        <img class="current-fuel-car" src="/static/images/Audi-A3.jpg">
       </div>
     </div>
-    <div class="window" >
+    <div class="window">
+      <label class="window-label">Repairs</label>
+
+      <div>
+        <h5>// Show repairs with map location</h5>
+      </div>
+
+      <div>
+        <h4>Add new Repair + Button</h4>
+      </div>
+
+
     </div>
 
-    <div class="window">
+    <div class="window" id="window-small">
     </div>
 
   </div>
@@ -104,12 +115,12 @@
         var chart = anychart.line();
 
         // adding dollar symbols to yAxis labels
-        chart.yAxis().labels().format('${%Value}');
+        chart.yAxis().labels().format('{%Value}лв');
 
         // turn on chart animation
         chart.animation(true);
         chart.xAxis(true);
-        chart.yAxis(false);
+        chart.yAxis(true);
 
         // turn on the crosshair
         // chart
@@ -184,8 +195,8 @@
   <div class="section4">
     <div class="window">
       <div>
-        <label class="window-label">Kilometers traveled</label>
-        <label id="km-traveled">14025</label>
+        <label class="window-label">Since Last Repair</label>
+        <label id="km-traveled">4025km</label>
       </div>
     </div>
     <div class="window" id="window-small">
@@ -197,12 +208,26 @@
 
   <div class="section5">
     <div class="window" id="window-small">
+      <label class="window-label">Snow tires change date, Summer tires change date</label>
     </div>
 
     <div class="window">
+      <label class="window-label">Oil change <br> oil type <br> oil photo <br></label>
+      <label class="window-label"><br> Motor belt, <br> Piston belt<br></label>
+      <label class="window-label"><br>Tomorrow will be 0°C <br> Change the windshield water</label>
     </div>
 
     <div class="window" id="window-small">
+      <label class="window-label">Warnings:</label>
+      <div class="warning-notification">
+        <h5>No vignette added</h5>
+      </div>
+      <div class="warning-notification">
+        <h5>Annual technical inspection expires in 3 days</h5>
+      </div>
+      <div class="warning-notification">
+        <h5>Tires need a change (by DOT or by season)</h5>
+      </div>
     </div>
     <div class="window" id="window-small">
     </div>

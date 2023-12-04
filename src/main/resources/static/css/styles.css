@@ -17,16 +17,16 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 25vh;
-    height: 97.5vh;
-    background-color: #00AEFF;
+    width: 15rem;
+    /*height: 15rem;*/
+    /*background-color: #282828;*/
     /*background-color: #00AEFF;*/
 }
 
 ul, body {
     /*      #80D7FF   accent color*/
     /* Dashboard and frame color */
-    background-color: #282828;
+    /*background-color: #282828;*/
 }
 
 .current-page {
@@ -34,12 +34,12 @@ ul, body {
     /*margin-left: 10px;*/
     /*background-color: #dda0f1;*/
     color: #f1f9ff;
-    display: inherit;
+    display: contents;
     align-items: normal;
     flex-direction: row;
     border-radius: 19px;
-    width: 84vw;
-    height: 106vh;
+    width: 50rem;
+    height: 40rem;
 }
 
 .site-name {
@@ -49,19 +49,20 @@ ul, body {
     /*margin-left: 16px;*/
     margin-right: 0;
     margin-top: 0;
-    height: 5vh;
+    height: 3.125rem;
     position: center;
 }
 
 li a {
     display: block;
     color: #f1f9ff;
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
+    margin-top: 0.2rem;
     text-decoration: none;
 }
 
 li a:hover {
-    border-radius: 8px;
+    border-radius: 0.5rem;
     background-color: #555;
     color: #FFFFFF;
 }
@@ -72,7 +73,7 @@ li a:hover {
 }
 
 .current {
-    border-radius: 8px;
+    border-radius: 0.5rem;
     background-color: #555;
     color: #FFFFFF;
 
@@ -80,38 +81,51 @@ li a:hover {
 
 
 .section1 {
-    padding-top: 12px;
-    padding-left: 20px;
-    padding-right: 20px;
-    /*margin-top: 12px;*/
-    /*margin-right: 20px;*/
-    /*margin-left: 20px;*/
+    /*padding-top: 12px;*/
+    /*padding-left: 20px;*/
+    /*padding-right: 20px;*/
+    /*width: 25vh;*/
+    padding-top: 0.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    margin-right: 1.25rem;
+    width: 14rem;
+    background-color: #282828;
+    /*height: 56.175rem;*/
+
+
 }
 
 .section2, .section3, .section4, .section5{
     /*here changed*/
     display: block;
     margin-top: 5px;
-    padding: 0;
+    /*padding: 0.625rem;*/
     /*background-color: #80D7FF;*/
     /*width: 45vh;*/
-    width: 300px;
-    max-width: 45vh;
+    /*width: 300px;*/
+    /*max-width: 29.375rem;*/
+    width: 25.3rem;
     align-items: inherit;
 
 }
 
 .section2 {
     /*background-color: #6dbbe1;*/
-    margin-left: 5px;
+}
+
+.label-container {
+    max-width: 40rem;
 }
 
 .window {
     display: block;
-    margin: 10px;
-    padding: 1px;
-    width: 285px;
-    height: 250px;
+    /*margin-top: 20px;*/
+    margin-top: 1rem;
+    padding: 0.625rem;
+    /*width: 285px;*/
+    width: 22.8rem;
+    height: 15.8rem;
     border: 1px solid #ecebeb;
     border-radius: 14px;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
@@ -120,18 +134,31 @@ li a:hover {
 
 .window-label {
     color: #333333;
-    font-size: 20px;
+    font-size: 1.25rem;
     padding: 10px;
 }
 
 #window-small {
-    background-color: #ffffff;
-    height: 150px;
-    width: 285px;
+    background-color: #FFFFFF;
+    /*height: 150px;*/
+    height: 10rem;
+    /*width: 285px;*/
+    /*width: 40vh;*/
+    width: 22.8rem;
+}
+
+#window-smaller {
+    background-color: #FFFFFF;
+    height: 6.7rem;
+    width: 22.8rem;
+}
+
+#big-window {
+    height: 22.8rem;
 }
 
 #refuel-window {
-    height: 400px;
+    height: 28.1rem;
 }
 
 .field-label {
@@ -140,17 +167,23 @@ li a:hover {
     font-size: 14px;
     display: block;
     margin-top: 10px;
-    margin-left: 40px;
+    margin-left: 6.5rem;
 }
 
 .field {
     margin-top: 2px;
-    margin-left: 40px;
+    margin-left: 6.5rem;
     border: 1px solid #c7c7c7;
     box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     border-radius: 3px;
-    height: 25px;
-    width: 200px;
+    height: 1.5625rem;
+    width: 9.375rem;
+}
+.field:focus-within {
+    border: 1px solid #00AEFF;
+}
+.field:focus {
+    border: 1px solid #00AEFF;
 }
 
 .button {
@@ -159,16 +192,33 @@ li a:hover {
 
 #refuel-button {
     margin-top: 24px;
-    margin-left: 70px;
+    margin-left: 7rem;
     display: block;
-    width: 140px;
-    height: 30px;
+    width: 8.75rem;
+    height: 1.875rem;
+}
+
+h4 {
+    color: #282828;
+}
+
+h5 {
+    color: #282828;
+}
+
+.current-fuel-car {
+    width: 21rem;
+    /*max-width: 37vh;*/
+    max-width: 50rem;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 14px;
 }
 
 #my-chart {
     margin-top: 15px;
-    margin-left: 5px;
-    margin-right: 5px;
+    /*margin-left: 5px;*/
+    /*margin-right: 5px;*/
     max-width: 270px;
     max-height: 150px;
     position: center;
@@ -186,10 +236,28 @@ li a:hover {
 }
 
 #container {
-    width: 270px;
-    height: 115px;
-    margin: 6px;
+    /*width: 270px;*/
+    width: 22.8rem;
+    height: 8.4375rem;
     padding: 0;
+}
+
+#container-fuel2 {
+    /*width: 270px;*/
+    width: 22.8rem;
+    height: 8.4375rem;
+    padding: 0;
+}
+
+#container-fuel3 {
+    /*width: 270px;*/
+    width: 22.8rem;
+    height: 135px;
+    padding: 0;
+}
+
+#window-small-fuel2 {
+
 }
 
 .section4 {
@@ -200,8 +268,16 @@ li a:hover {
     color: #333333;
     display: block;
     font-size: 28px;
-    margin-top: 80px;
-    margin-left: 100px;
+    margin-top: 25px;
+    margin-left: 120px;
+}
+
+#large-text {
+    margin-left: 20px;
+    margin-right: 40px;
+    width: 20rem;
+    height: 5rem;
+    resize: none;
 }
 
 .section5 {
@@ -210,14 +286,15 @@ li a:hover {
 
 .dashboard-line1{
     border-color: #f1f9ff;
+    margin-right: 1rem;
 }
 
 .space-dashboard {
-    height: 10vh;
+    height: 6.25rem;
 }
 
 .space-dashboard {
-    height: 55vh;
+    height: 26rem;
 }
 
 .profile-small {
@@ -228,7 +305,7 @@ li a:hover {
 .profile-img-small {
     margin-right: 3px;
     margin-left: 14px;
-    width: 30px;
+    width: 2rem;
     position: center;
 }
 

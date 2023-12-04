@@ -1,291 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-  <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
-  <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
-  <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
-  <link rel="stylesheet" href="../static/css/styles.css">
-  <title>Fuel Tracker</title>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+    <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+    <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <title>Fuel Tracker</title>
 </head>
 <body>
 
 
-
 <div class="section1">
 
-  <ul>
-    <h3 class="site-name">Car Maintenance</h3>
+    <ul>
+        <h3 class="site-name">Car Maintenance</h3>
 
-    <div class="small-space-dashboard">
+        <div class="small-space-dashboard">
 
-    </div>
-    <li>
-      <a href="index-dash.html">Home</a>
-    </li>
-    <li>
-      <a href="index-dash.html">My Garage</a>
-    </li>
-    <li>
-      <a href="community.html">Community</a>
-    </li>
-    <li>
-      <a href="index-dash.html">Maintenance</a>
-    </li>
-    <li>
-      <a class="current" href="fuel-tracker.html">Fuel Tracker</a>
-    </li>
+        </div>
+        <li>
+            <a href="index-dash.html">Home</a>
+        </li>
+        <li>
+            <a href="my-garage.html">My Garage</a>
+        </li>
+        <li>
+            <a href="community.html">Community</a>
+        </li>
+        <li>
+            <a href="maintenance.html">Maintenance</a>
+        </li>
+        <li>
+            <a class="current" href="fuel-tracker.html">Fuel Tracker</a>
+        </li>
 
-    <div class="space-dashboard">
+        <div class="space-dashboard">
 
-    </div>
+        </div>
 
-    <div>
-      <!--            to do-->
-    </div>
+        <div>
+            <!--            to do-->
+        </div>
 
-    <hr class="dashboard-line1">
-
-
-
-    <div class="profile-small">
-      <img class="profile-img-small" src="/static/images/profile.png">
-      <a class="profile-name" href="index-dash.html">Teodor Pchelinski</a>
-    </div>
+        <hr class="dashboard-line1">
 
 
-    <li>
-      <a class="logout-dash" href="index-dash.html">Logout</a>
-    </li>
+        <div class="profile-small">
+            <img class="profile-img-small" src="/static/images/profile.png">
+            <a class="profile-name" href="index-dash.html">Teodor Pchelinski</a>
+        </div>
 
-  </ul>
+
+        <li>
+            <a class="logout-dash" href="index-dash.html">Logout</a>
+        </li>
+
+    </ul>
 </div>
 <div class="current-page">
+    <div class="row1">
 
-
-  <div class="section2">
-    <h1 class="label">Track Your Economy</h1>
-    <div class="window">
-      <div>
-        <!--            <label class="window-label">Fuel prices</label>-->
-        <canvas id="my-chart" ></canvas>
-      </div>
-
-      <!--        <script>-->
-      <!--            const xValues = ['Jan','Feb', 'Mar', 'Apr', "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];-->
-
-      <!--            const yPetrol = [2.65,2.62,2.59,2.56,2.57,2.55,2.56,2.66,2.79,2.87, 2.81 ,2.75];-->
-
-      <!--            const yGas = [1.18,1.18,1.21,1.19,1.09,0.96,0.87,0.89,1.16,1.20, 1.21 ,1.23];-->
-
-      <!--            const yCNG = [3.38,3.73,3.17,2.72,2.55,2.22,1.98,2.00,2.01,2.04, 2.05 ,2.31];-->
-
-      <!--            const yDiesel = [3.03,2.96,2.87,2.75,2.61,2.47,2.45,2.58,2.79,2.89, 2.88 ,2.80];-->
-
-      <!--            new Chart("my-chart", {-->
-      <!--                type: "line",-->
-      <!--                data: {-->
-      <!--                    labels: xValues,-->
-      <!--                    datasets: [{-->
-      <!--                        label: 'A95',-->
-      <!--                        fill: false,-->
-      <!--                        lineTension: 1,-->
-      <!--                        backgroundColor: "rgb(255,89,0)",-->
-      <!--                        borderColor: "rgba(255,0,21,0.65)",-->
-      <!--                        data: yPetrol-->
-      <!--                    },-->
-      <!--                        {-->
-      <!--                            label: 'Autogas (LPG)',-->
-      <!--                            fill: false,-->
-      <!--                            lineTension: 0.1,-->
-      <!--                            // backgroundColor: "rgb(123,255,0)",-->
-      <!--                            borderColor: "rgba(162,255,0,0.65)",-->
-      <!--                            data: yGas-->
-      <!--                        },-->
-      <!--                        {-->
-      <!--                            label: 'Natural gas (CNG)',-->
-      <!--                            fill: false,-->
-      <!--                            lineTension: 0.3,-->
-      <!--                            backgroundColor: "rgb(91,238,187)",-->
-      <!--                            borderColor: "rgb(10,255,219)",-->
-      <!--                            data: yCNG-->
-      <!--                        },-->
-      <!--                        {-->
-      <!--                            label: 'Diesel',-->
-      <!--                            fill: false,-->
-      <!--                            lineTension: 0.3,-->
-      <!--                            backgroundColor: "rgb(3,0,0)",-->
-      <!--                            borderColor: "rgb(13,33,114)",-->
-      <!--                            data: yDiesel-->
-      <!--                        }-->
-      <!--                    ]-->
-      <!--                },-->
-      <!--                options: {-->
-      <!--                    legend: {display: false},-->
-      <!--                    scales: {-->
-      <!--                        xAxes: [{-->
-      <!--                            display: false,-->
-      <!--                            gridLines: {-->
-      <!--                                color: "rgba(0, 0, 0,0)"-->
-      <!--                            }-->
-      <!--                        }],-->
-      <!--                        yAxes: [{-->
-      <!--                            display: false,-->
-      <!--                            gridLines: {-->
-      <!--                                color: "rgba(0, 0, 0,0)"-->
-      <!--                            }-->
-      <!--                        }]-->
-      <!--                    }-->
-
-      <!--                }-->
-
-      <!--            });-->
-      <!--        </script>-->
-    </div>
-    <div class="window" id="refuel-window">
-      <label class="window-label">Refuel Column</label>
-      <label class="field-label">kilometers</label>
-      <input class="field">
-      <label class="field-label">liters</label>
-      <input class="field">
-      <label class="field-label">price</label>
-      <input class="field">
-      <label class="field-label">fuel</label>
-      <input class="field">
-      <button class="button" id="refuel-button">Submit</button>
     </div>
 
-    <div class="window">
+
+    <div class="section2">
+        <h1 class="label">Track Your Economy</h1>
+        <div class="window">
+            <div>
+                <label class="window-label">Current Car</label>
+                <img class="current-fuel-car" src="/static/images/Audi-A3.jpg">
+            </div>
+        </div>
+
+        <div class="window" id="big-window">
+
+        </div>
+        <div class="window" id="window-small">
+        </div>
+
     </div>
 
-  </div>
+    <div class="section3">
+        <div class="window" id="window-small">
+            <label class="window-label">Petrol Prices</label>
+            <div id="container"></div>
+            <script>
 
-  <div class="section3">
-    <div class="window" id="window-small">
-      <label class="window-label">Fuel Price</label>
-      <div id="container"></div>
-      <script>
+                // anychart.onDocumentReady(function () {
+                // create data set on our data
+                var dataSet = anychart.data.set(getData());
 
-        // anychart.onDocumentReady(function () {
-        // create data set on our data
-        var dataSet = anychart.data.set(getData());
+                // map data for the first series, take x from the zero column and value from the first column of data set
+                var firstSeriesData = dataSet.mapAs({x: 0, value: 1});
 
-        // map data for the first series, take x from the zero column and value from the first column of data set
-        var firstSeriesData = dataSet.mapAs({ x: 0, value: 1 });
+                // map data for the second series, take x from the zero column and value from the second column of data set
+                var secondSeriesData = dataSet.mapAs({x: 0, value: 2});
 
-        // map data for the second series, take x from the zero column and value from the second column of data set
-        var secondSeriesData = dataSet.mapAs({ x: 0, value: 2 });
+                // create line chart
+                var chart = anychart.line();
 
-        // create line chart
-        var chart = anychart.line();
+                // adding dollar symbols to yAxis labels
+                chart.yAxis().labels().format('{%Value}лв');
 
-        // adding dollar symbols to yAxis labels
-        chart.yAxis().labels().format('${%Value}');
+                // turn on chart animation
+                chart.animation(true);
+                chart.xAxis(true);
+                chart.yAxis(true);
 
-        // turn on chart animation
-        chart.animation(true);
-        chart.xAxis(true);
-        chart.yAxis(false);
+                // turn on the crosshair
+                // chart
+                //     .crosshair()
+                //     .enabled(true)
+                //     .yLabel({ enabled: false })
+                //     .yStroke(null)
+                //     .xStroke('#cecece')
+                //     .zIndex(99);
 
-        // turn on the crosshair
-        // chart
-        //     .crosshair()
-        //     .enabled(true)
-        //     .yLabel({ enabled: false })
-        //     .yStroke(null)
-        //     .xStroke('#cecece')
-        //     .zIndex(99);
+                // chart
+                //     .yAxis()
+                //     .title('The Share Price')
+                //     .labels({ padding: [5, 5, 0, 5] });
 
-        // chart
-        //     .yAxis()
-        //     .title('The Share Price')
-        //     .labels({ padding: [5, 5, 0, 5] });
+                // chart.xAxis().title('Month/Day');
 
-        // chart.xAxis().title('Month/Day');
+                // set chart title text settings
 
-        // set chart title text settings
-
-        // create first series with mapped data
-        var firstSeries = chart.spline(firstSeriesData);
-        // firstSeries.name('ACME Share Price');
-        firstSeries.markers().zIndex(100);
-        firstSeries.hovered().markers().enabled(true).type('circle').size(4);
+                // create first series with mapped data
+                var firstSeries = chart.spline(firstSeriesData);
+                // firstSeries.name('ACME Share Price');
+                firstSeries.markers().zIndex(100);
+                firstSeries.hovered().markers().enabled(true).type('circle').size(4);
 
 
-        // create second series with mapped data
-        var secondSeries = chart.spline(secondSeriesData);
-        // secondSeries.name('The Competitor\'s Share Price');
-        secondSeries.markers().zIndex(100);
-        secondSeries.color('#3c1b85')
-        secondSeries.hovered().markers().enabled(true).type('circle').size(4);
+                // create second series with mapped data
+                var secondSeries = chart.spline(secondSeriesData);
+                // secondSeries.name('The Competitor\'s Share Price');
+                secondSeries.markers().zIndex(100);
+                secondSeries.color('#2E60FF')
+                secondSeries.hovered().markers().enabled(true).type('circle').size(4);
 
-        // turn the legend on
-        // chart.legend().enabled(true).fontSize(13).padding([0, 0, 20, 0]);
+                // turn the legend on
+                // chart.legend().enabled(true).fontSize(13).padding([0, 0, 20, 0]);
 
-        // set container id for the chart
-        chart.container('container');
+                // set container id for the chart
+                chart.container('container');
 
-        // initiate chart drawing
-        chart.draw();
-        // });
+                // initiate chart drawing
+                chart.draw();
 
-        function getData() {
-          return [
-            ['Jan', , 2.65],
-            ['Feb', , 2.62],
-            ['Mar', , 2.59],
-            ['Apr', , 2.56],
-            ['May', , 2.57],
-            ['Jun', , 2.55],
-            ['Jul', , 2.56],
-            ['Aug', , 2.66],
-            ['Sep', , 2.79],
-            ['Oct', , 2.87],
-            ['Nov', , 2.81],
-            ['Dec', , 2.75]
-          ];
-        }
+                // });
 
-      </script>
+                function getData() {
+                    return [
+                        ['Jan 2023', , 2.65],
+                        ['Feb 2023', , 2.62],
+                        ['Mar 2023', , 2.59],
+                        ['Apr 2023', , 2.56],
+                        ['May 2023', , 2.57],
+                        ['Jun 2023', , 2.55],
+                        ['Jul 2023', , 2.56],
+                        ['Aug 2023', , 2.66],
+                        ['Sep 2023', , 2.79],
+                        ['Oct 2023', , 2.87],
+                        ['Nov 2023', , 2.81],
+                        ['Dec 2023', , 2.75]
+                    ];
+                }
+
+            </script>
+        </div>
+
+        <div class="window" id="refuel-window">
+            <label class="window-label">Refuel</label>
+            <label  class="field-label">kilometers</label>
+            <input type=number class="field">
+            <label class="field-label">liters</label>
+            <input type=number class="field">
+            <label  class="field-label">price</label>
+            <input type=number class="field">
+            <label class="field-label">fuel type</label>
+            <input class="field">
+            <button class="button" id="refuel-button">Submit</button>
+        </div>
+
+
+        <div class="window">
+        </div>
+
+
     </div>
 
-    <div class="window">
-    </div>
-    <div class="window" id="window-small">
-    </div>
-    <div class="window" id="window-small">
-    </div>
-  </div>
+    <div class="section4">
+        <div class="window" id="window-small">
+            <label class="window-label">Gas Prices</label>
+            <div id="container-fuel2"></div>
+            <script>
 
-  <div class="section4">
-    <div class="window">
-      <div>
-        <label class="window-label">Kilometers traveled</label>
-        <label id="km-traveled">14025</label>
-      </div>
-    </div>
-    <div class="window" id="window-small">
+                // anychart.onDocumentReady(function () {
+                // create data set on our data
+                var dataSet = anychart.data.set(getData());
+
+                // map data for the first series, take x from the zero column and value from the first column of data set
+                var firstSeriesData = dataSet.mapAs({x: 0, value: 1});
+
+                // map data for the second series, take x from the zero column and value from the second column of data set
+                var secondSeriesData = dataSet.mapAs({x: 0, value: 2});
+
+                // create line chart
+                var chart = anychart.line();
+
+                // adding dollar symbols to yAxis labels
+                chart.yAxis().labels().format('{%Value}лв');
+
+                // turn on chart animation
+                chart.animation(true);
+                chart.xAxis(true);
+                chart.yAxis(true);
+
+                // turn on the crosshair
+                // chart
+                //     .crosshair()
+                //     .enabled(true)
+                //     .yLabel({ enabled: false })
+                //     .yStroke(null)
+                //     .xStroke('#cecece')
+                //     .zIndex(99);
+
+                // chart
+                //     .yAxis()
+                //     .title('The Share Price')
+                //     .labels({ padding: [5, 5, 0, 5] });
+
+                // chart.xAxis().title('Month/Day');
+
+                // set chart title text settings
+
+                // create first series with mapped data
+                var firstSeries = chart.spline(firstSeriesData);
+                // firstSeries.name('ACME Share Price');
+                firstSeries.markers().zIndex(100);
+                firstSeries.hovered().markers().enabled(true).type('circle').size(4);
+
+
+                // create second series with mapped data
+                var secondSeries = chart.spline(secondSeriesData);
+                // secondSeries.name('The Competitor\'s Share Price');
+                secondSeries.markers().zIndex(100);
+                secondSeries.color('#00AEFF')
+                secondSeries.hovered().markers().enabled(true).type('circle').size(4);
+
+                // turn the legend on
+                // chart.legend().enabled(true).fontSize(13).padding([0, 0, 20, 0]);
+
+                // set container id for the chart
+                chart.container('container-fuel2');
+
+                // initiate chart drawing
+                chart.draw();
+
+                // });
+
+                function getData() {
+                    return [
+                        ['Jan 2023', , 1.18],
+                        ['Feb 2023', , 1.18],
+                        ['Mar 2023', , 1.21],
+                        ['Apr 2023', , 1.19],
+                        ['May 2023', , 1.09],
+                        ['Jun 2023', , 0.96],
+                        ['Jul 2023', , 0.87],
+                        ['Aug 2023', , 0.89],
+                        ['Sep 2023', , 1.16],
+                        ['Oct 2023', , 1.20],
+                        ['Nov 2023', , 1.21],
+                        ['Dec 2023', , 1.23]
+                    ];
+                }
+
+            </script>
+        </div>
+        <div class="window">
+            <label class="window-label">Add Trip name (Optional)</label>
+            <label  class="field-label">Name</label>
+            <input  class="field">
+            <label  class="field-label">Description</label>
+            <textarea class="field" id="large-text"></textarea>
+        </div>
+        <div class="window" id="window-small">
+        </div>
+
+        <div class="window">
+        </div>
     </div>
 
-    <div class="window">
-    </div>
-  </div>
+<!--    RIGHTEST SECTION-->
+    <div class="section5">
+        <div class="window" id="window-small">
+            <label class="window-label">Diesel Prices</label>
+            <div id="container-fuel3"></div>
+            <script>
 
-  <div class="section5">
-    <div class="window" id="window-small">
-    </div>
+                // anychart.onDocumentReady(function () {
+                // create data set on our data
+                var dataSet = anychart.data.set(getData());
 
-    <div class="window">
-    </div>
+                // map data for the first series, take x from the zero column and value from the first column of data set
+                var firstSeriesData = dataSet.mapAs({x: 0, value: 1});
 
-    <div class="window" id="window-small">
+                // map data for the second series, take x from the zero column and value from the second column of data set
+                var secondSeriesData = dataSet.mapAs({x: 0, value: 2});
+
+                // create line chart
+                var chart = anychart.line();
+
+                // adding dollar symbols to yAxis labels
+                chart.yAxis().labels().format('{%Value}лв');
+
+                // turn on chart animation
+                chart.animation(true);
+                chart.xAxis(true);
+                chart.yAxis(true);
+
+                // turn on the crosshair
+                // chart
+                //     .crosshair()
+                //     .enabled(true)
+                //     .yLabel({ enabled: false })
+                //     .yStroke(null)
+                //     .xStroke('#cecece')
+                //     .zIndex(99);
+
+                // chart
+                //     .yAxis()
+                //     .title('The Share Price')
+                //     .labels({ padding: [5, 5, 0, 5] });
+
+                // chart.xAxis().title('Month/Day');
+
+                // set chart title text settings
+
+                // create first series with mapped data
+                var firstSeries = chart.spline(firstSeriesData);
+                // firstSeries.name('ACME Share Price');
+                firstSeries.markers().zIndex(100);
+                firstSeries.hovered().markers().enabled(true).type('circle').size(4);
+
+
+                // create second series with mapped data
+                var secondSeries = chart.spline(secondSeriesData);
+                // secondSeries.name('The Competitor\'s Share Price');
+                secondSeries.markers().zIndex(100);
+                secondSeries.color('#5E00FF')
+                secondSeries.hovered().markers().enabled(true).type('circle').size(4);
+
+                // turn the legend on
+                // chart.legend().enabled(true).fontSize(13).padding([0, 0, 20, 0]);
+
+                // set container id for the chart
+                chart.container('container-fuel3');
+
+                // initiate chart drawing
+                chart.draw();
+
+                // });
+
+                function getData() {
+                    return [
+                        ['Jan 2023', , 3.03],
+                        ['Feb 2023', , 2.96],
+                        ['Mar 2023', , 2.87],
+                        ['Apr 2023', , 2.75],
+                        ['May 2023', , 2.61],
+                        ['Jun 2023', , 2.47],
+                        ['Jul 2023', , 2.45],
+                        ['Aug 2023', , 2.58],
+                        ['Sep 2023', , 2.79],
+                        ['Oct 2023', , 2.89],
+                        ['Nov 2023', , 2.88],
+                        ['Dec 2023', , 2.80]
+                    ];
+                }
+
+            </script>
+        </div>
+
+        <div class="window" id="window-smaller">
+            <div>
+                <label class="window-label">Kilometers traveled</label>
+                <label id="km-traveled">14025 km</label>
+            </div>
+        </div>
+        <div class="window" id="window-smaller">
+            <label class="window-label">Kilometers travelled this month</label>
+            <label id="km-traveled">560 km</label>
+        </div>
+        <div class="window">
+
+        </div>
+        <div class="window" id="window-small">
+        </div>
+
+
+
+
     </div>
-    <div class="window" id="window-small">
-    </div>
-  </div>
 </div>
 
 
