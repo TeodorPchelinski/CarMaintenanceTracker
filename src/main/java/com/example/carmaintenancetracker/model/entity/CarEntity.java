@@ -20,7 +20,10 @@ public class CarEntity extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private FuelEnum fuelType;
 
-    private String engine;
+    // todo: number -> 800, 1000, 2200, 4500 cubic cm -> Shown as cubic / 1000 = 2.2L in liters
+    private String engineDisplacement;
+
+    private String transmission;
 
     // todo: Vignette Entity ->  start date, expire date, period( week, month, year), [can be added 2 country vignette active at the same time]
     private String vignette;
