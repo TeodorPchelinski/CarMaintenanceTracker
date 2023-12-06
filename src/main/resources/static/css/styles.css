@@ -189,11 +189,23 @@ li a:hover {
     border: 2px solid #ecebeb;
 }
 
+
+
+#large-text {
+    width: 11.7rem;
+    height: 2rem;
+    resize: none;
+    color: #030104;
+    border: 2px solid #ecebeb;
+}
+
+/* Transition and label place */
 .field-label {
     position: absolute;
     top:0;
     left: 0;
     translate: 0.625rem 0.625rem;
+    /* FuelType */
     color: #030104;
     background-color: #ffffff;
     padding-inline: 0.25rem;
@@ -219,7 +231,7 @@ label {
     border-radius: 2px;
     /*background-color: #234465;*/
     /*color: #282828;*/
-    color: #5E00FF;
+    color: #030104;
 }
 
 .field input:focus,
@@ -228,7 +240,7 @@ label {
     border-radius: 2px;
     /*background-color: #234465;*/
     /*color: #282828;*/
-    border: 2px solid #5E00FF;
+    border: #5E00FF;
 }
 
 .field::placeholder {
@@ -316,6 +328,14 @@ h5 {
 
 }
 
+#two-sectors {
+    width: 48rem;
+    height: 28.175rem;
+}
+
+#after-skipped-window {
+    margin-top: 31.6rem;
+}
 .section4 {
     /*background-color: #3b4350;*/
 }
@@ -328,11 +348,7 @@ h5 {
     margin-left: 120px;
 }
 
-#large-text {
-    width: 11.7rem;
-    height: 5rem;
-    resize: none;
-}
+
 
 .section5 {
     /*background-color: #111827;*/
@@ -427,7 +443,7 @@ h5 {
 .button:active {
     background-color: rgb(161, 72, 234);
     border-color: rgba(255, 255, 255, 0.34);
-    box-shadow: rgba(255, 255, 255, 0.84) 0 2px 4px;
+    box-shadow: rgb(255, 255, 255) 0 0 2px 4px inset;
     color: rgba(0, 0, 0, 0.62);
     transform: translateY(0);
 }
@@ -435,17 +451,18 @@ h5 {
 .button-second {
     appearance: button;
     backface-visibility: hidden;
-    background-color: #405cf5;
+    /*background-color: #405cf5;*/
+    background-color: #1d2033;
     border-radius: 6px;
     border-width: 0;
-    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-shadow: #405cf5 0 0 0 3px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
     box-sizing: border-box;
-    color: #fff;
+    color: #ffffff;
     cursor: pointer;
     font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
     font-size: 12px;
-    height: 2rem;
-    line-height: 1.15;
+    height: 1.7rem;
+    line-height: 1;
     margin: 12px 0 0;
     float: right;
     outline: none;
@@ -467,6 +484,7 @@ h5 {
 }
 
 .button-second:active {
-    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+    background-color: #1d2033;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 1px 1px 0, rgba(0, 0, 0, .1) 0 1px 1px 0, rgba(64, 92, 245, 0.64) 0 0 0 3px;
 }
 

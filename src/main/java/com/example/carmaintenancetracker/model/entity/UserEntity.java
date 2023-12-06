@@ -20,7 +20,7 @@ public class UserEntity extends BaseEntity {
     @NotBlank
     private String email;
 
-    @NotNull
+    @NotBlank
     private String password;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "owner")
