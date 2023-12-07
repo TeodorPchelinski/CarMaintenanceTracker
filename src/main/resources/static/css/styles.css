@@ -273,22 +273,68 @@ input::-webkit-inner-spin-button {
 .stats-repairs-container {
     display: flex;
     background-color: #ecebeb;
+    margin-top: 4px;
     padding: 2px;
     border-radius: 4px;
 }
 
 .repairs-card {
-    display: flex;
+    display: table-column;
     height: 4.5rem;
     background-color: rgba(70, 70, 70, 0.11);
+    /*background-color: #5E00FF;*/
     border-radius: 2px;
 
 }
 
 .parts-repairs {
+    font-size: 12px;
     height: 1rem;
-    width: 3rem;
+    width: 16.8rem;
+    border-radius: 3px;
     background-color: #234465;
+}
+
+.repair-cost-small {
+    float: right;
+}
+
+.car-img-and-parts-container {
+    display: flex;
+    /*background-color: rgba(27, 215, 150, 0.85);*/
+    width: 16.8rem;
+    height: 3.5rem;
+}
+
+.part-img-small-container {
+    width: 4.5rem;
+    height: 3.5rem;
+    /*background-color: #5E00FF;*/
+}
+
+.part-image-small {
+    width: 4.3rem;
+    height: 3.3rem;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.parts-list-container {
+    /*background-color: #10e8ad;*/
+    width: 12.2rem;
+    height: 3.3rem;
+    padding: 2px;
+}
+
+
+.stat-small {
+
+    font-size: 12px;
+    background-color: #d97f3b;
+    border-radius: 8px;
+    border: 2px solid #d97f3b;
+    padding-left: 1px ;
+    padding-right: 1px;
 }
 
 .location-image-container {
@@ -299,8 +345,9 @@ input::-webkit-inner-spin-button {
 
 .location-image {
     border-radius: 2px;
-    height: 4.5rem;
-    width: 5.6rem;
+    height: 4.375rem;
+    width: 5.475rem;
+    margin: 1px 2px 2px 2px;
 }
 
 

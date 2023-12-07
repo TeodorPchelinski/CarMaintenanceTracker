@@ -88,18 +88,75 @@
         <div class="stats-repairs-container">
           <div class="repairs-card">
             <div class="parts-repairs">
-
+                <text>12.2.2023</text>
+                <text class="repair-cost-small">300лв</text>
             </div>
-            <h5>// Show repairs with map location</h5>
+
+            <div class="car-img-and-parts-container">
+              <div class="part-img-small-container">
+                <img class="part-image-small" src="/static/images/fuel-pump.jpg" >
+              </div>
+              <div class="parts-list-container">
+                  <span class="stat-small">fuel pump</span>
+                  <span class="stat-small">fuel filter</span>
+                  <span class="stat-small">fuel hoses</span>
+              </div>
+            </div>
+            </div>
+
+          <div class="location-image-container">
+            <img class="location-image" src="/static/images/Location.png">
+          </div>
+        </div>
+
+        <div class="stats-repairs-container">
+          <div class="repairs-card">
+            <div class="parts-repairs">
+              <text>24.6.2022</text>
+              <text class="repair-cost-small">180лв</text>
+            </div>
+
+            <div class="car-img-and-parts-container">
+              <div class="part-img-small-container">
+                <img class="part-image-small" src="/static/images/oil-filter.jpg" >
+              </div>
+              <div class="parts-list-container">
+                <span class="stat-small">oil filter</span>
+                <span class="stat-small">oil</span>
+                <span class="stat-small">air filter</span>
+              </div>
+            </div>
           </div>
 
           <div class="location-image-container">
             <img class="location-image" src="/static/images/Location.png">
           </div>
         </div>
-        <div>
-          <h4>Add new Repair + Button</h4>
+
+        <div class="stats-repairs-container">
+          <div class="repairs-card">
+            <div class="parts-repairs">
+              <text>18.4.2022</text>
+              <text class="repair-cost-small">150лв</text>
+            </div>
+
+            <div class="car-img-and-parts-container">
+              <div class="part-img-small-container">
+                <img class="part-image-small" src="/static/images/brakes.jpg" >
+              </div>
+              <div class="parts-list-container">
+                <span class="stat-small">front discs</span>
+                <span class="stat-small">front disc pads</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="location-image-container">
+            <img class="location-image" src="/static/images/Location.png">
+          </div>
         </div>
+
+
       </div>
 
     </div>
@@ -111,7 +168,7 @@
 <!--  Second Column-->
   <div class="section3">
     <div class="window" id="window-small">
-      <label class="window-label">Fuel Price</label>
+      <label class="window-label">Maintenance costs</label>
       <div id="container"></div>
       <script>
 
@@ -243,7 +300,7 @@
 <!--  Third Column-->
   <div class="section4">
     <div class="window" id="window-small">
-        <label class="window-label">Since Last Repair</label>
+        <label class="window-label">Mileage Since Last Repair</label>
         <label id="km-traveled">4025km</label>
     </div>
 
@@ -273,9 +330,11 @@
     <div class="window" id="window-small">
       <label class="window-label">Warnings:</label>
 
+
+<!--      Icons for warning urgency and colors like red, orange, yellow, blue-->
       <div class="warning-container">
         <div class="warning-notification">
-          <h5 class="warning-text">No vignette added</h5>
+          <h5 class="warning-text">No vignette</h5>
         </div>
 
         <div class="warning-notification">

@@ -240,7 +240,7 @@ body {
     width: 70%;
 }
 
-.car-stats span {
+.car-stats {
     /*padding-right: 10px;*/
     background-color: #ffffff;
 }
