@@ -266,12 +266,67 @@ input::-webkit-inner-spin-button {
     height: 1.875rem;
 }
 
+.label-and-button-container {
+
+}
+
+.stats-repairs-container {
+    display: flex;
+    background-color: #ecebeb;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.repairs-card {
+    display: flex;
+    height: 4.5rem;
+    background-color: rgba(70, 70, 70, 0.11);
+    border-radius: 2px;
+
+}
+
+.parts-repairs {
+    height: 1rem;
+    width: 3rem;
+    background-color: #234465;
+}
+
+.location-image-container {
+    padding-left: 2px;
+    height: 4.5rem;
+    width: 5.6rem;
+}
+
+.location-image {
+    border-radius: 2px;
+    height: 4.5rem;
+    width: 5.6rem;
+}
+
+
 h4 {
     color: #282828;
 }
 
 h5 {
     color: #282828;
+}
+.warning-container {
+    padding-top: 0.3rem;
+}
+
+.warning-notification {
+    height: 1.5rem;
+    margin-bottom: 0.3rem;
+    padding-left: 10px;
+    border: 2px solid #ecebeb;
+    border-radius: 12px;
+    background-color: rgba(70, 70, 70, 0.11);
+
+}
+
+.warning-text {
+    display: contents;
 }
 
 .current-fuel-car {
@@ -484,6 +539,46 @@ h5 {
 }
 
 .button-second:active {
+    background-color: #1d2033;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 1px 1px 0, rgba(0, 0, 0, .1) 0 1px 1px 0, rgba(64, 92, 245, 0.64) 0 0 0 3px;
+}
+
+.button-third {
+    appearance: button;
+    backface-visibility: hidden;
+    /*background-color: #405cf5;*/
+    background-color: #1d2033;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: #405cf5 0 0 0 3px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+    font-size: 12px;
+    height: 1.4rem;
+    line-height: 1;
+    margin: 1px 0 0;
+    float: right;
+    outline: none;
+    overflow: hidden;
+    padding: 0 10px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s, box-shadow .08s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 5.5rem;
+}
+
+.button-third:disabled {
+    cursor: default;
+}
+
+.button-third:active {
     background-color: #1d2033;
     box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 1px 1px 0, rgba(0, 0, 0, .1) 0 1px 1px 0, rgba(64, 92, 245, 0.64) 0 0 0 3px;
 }

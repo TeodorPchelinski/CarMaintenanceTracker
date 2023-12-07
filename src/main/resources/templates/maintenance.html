@@ -53,7 +53,7 @@
 
     <div class="profile-small">
       <img class="profile-img-small" src="/static/images/profile.png">
-      <a class="profile-name" href="index-dash.html">Teodor Pchelinski</a>
+      <a class="profile-name" href="profile.html">Teodor Pchelinski</a>
     </div>
 
 
@@ -77,14 +77,31 @@
         <img class="current-fuel-car" src="/static/images/Audi-A3.jpg">
       </div>
     </div>
+
     <div class="window" id="window-mid">
-      <label class="window-label">Repairs</label>
-      <div>
-        <h5>// Show repairs with map location</h5>
+      <div class="label-and-button-container">
+        <label class="window-label">Recent Repairs</label>
+        <button class="button-third">See all</button>
       </div>
-      <div>
-        <h4>Add new Repair + Button</h4>
+
+      <div class="repairs-container">
+        <div class="stats-repairs-container">
+          <div class="repairs-card">
+            <div class="parts-repairs">
+
+            </div>
+            <h5>// Show repairs with map location</h5>
+          </div>
+
+          <div class="location-image-container">
+            <img class="location-image" src="/static/images/Location.png">
+          </div>
+        </div>
+        <div>
+          <h4>Add new Repair + Button</h4>
+        </div>
       </div>
+
     </div>
     <div class="window" id="window-small">
     </div>
@@ -183,7 +200,39 @@
 
     <div class="window" id="two-sectors">
       <label class="window-label">Add Repair or Change</label>
+      <div class="field">
+        <input type=text id="part-name" placeholder="">
+        <label for="part-name" class="field-label">Select part</label>
+      </div>
+      <button class="button-second" id="add-trip-name">Add another part</button>
+      <div class="field">
+        <label for="part-name" class="field-label">Select part</label>
+        <input type=text id="part-name" list="parts" placeholder=""/>
+        <datalist id="parts">
+          <option>Brakes</option>
+          <option>Wipers</option>
+        </datalist>
+      </div>
+      <div class="field">
+        <input type=text id="part-name" placeholder="">
+        <label for="part-name" class="field-label">Select part</label>
+      </div>
+      <div class="field">
+        <input type=date id="part-name" placeholder="">
+        <label for="part-name" class="field-label">Date</label>
+      </div>
+      <div class="field">
+        <input type=text id="part-name" placeholder="">
+        <label for="part-name" class="field-label">Car Service</label>
+      </div>
+      <div class="field">
+        <input type=text id="part-name" placeholder="">
+        <label for="part-name" class="field-label">Location (map)</label>
+      </div>
+      <button class="button" id="refuel-button">Submit</button>
     </div>
+
+
     <div class="window" id="window-small">
     </div>
     <div class="window" id="window-small">
@@ -223,15 +272,21 @@
 
     <div class="window" id="window-small">
       <label class="window-label">Warnings:</label>
-      <div class="warning-notification">
-        <h5>No vignette added</h5>
+
+      <div class="warning-container">
+        <div class="warning-notification">
+          <h5 class="warning-text">No vignette added</h5>
+        </div>
+
+        <div class="warning-notification">
+          <h5 class="warning-text">Annual technical inspection expires in 3 days</h5>
+        </div>
+
+        <div class="warning-notification">
+          <h5 class="warning-text">Tires need a change (by DOT or by season)</h5>
+        </div>
       </div>
-      <div class="warning-notification">
-        <h5>Annual technical inspection expires in 3 days</h5>
-      </div>
-      <div class="warning-notification">
-        <h5>Tires need a change (by DOT or by season)</h5>
-      </div>
+
     </div>
 
     <div class="window" id="window-small">
