@@ -80,7 +80,7 @@
 
     <div class="window" id="window-mid">
       <div class="label-and-button-container">
-        <label class="window-label">Recent Repairs</label>
+        <label class="window-label">Recent Expenses</label>
         <button class="button-third">See all</button>
       </div>
 
@@ -229,7 +229,7 @@
         // chart.legend().enabled(true).fontSize(13).padding([0, 0, 20, 0]);
 
         // set container id for the chart
-        chart.container('container');
+        chart.container('container2');
 
         // initiate chart drawing
         chart.draw();
@@ -286,7 +286,7 @@
         <input type=text id="part-name" placeholder="">
         <label for="part-name" class="field-label">Location (map)</label>
       </div>
-      <button class="button" id="refuel-button">Submit</button>
+      <button class="button" id="refuel-button">Add</button>
     </div>
 
 
@@ -305,7 +305,39 @@
     </div>
 
     <div class="window" id="after-skipped-window">
+      <div id="container2"></div>
+      <script>
+        // create data
+        var data = [
+          ["Jan", 200],
+          ["Feb", 300],
+          ["Mar", 130],
+          ["Apr", 100],
+          ["May", 170],
+          ["Jun", 90],
+          ["Jul", 190],
+          ["Aug", 190],
+          ["Sep", 190],
+          ["Oct", 190],
+          ["Nov", 190],
+          ["Dec", 190]
+        ];
 
+        // create a chart
+        chart = anychart.column();
+        chart.yAxis().labels().format('{%Value}лв');
+
+        // create a column series and set the data
+        var series = chart.column(data);
+
+        chart.animation(true);
+
+        // set the container id
+        chart.container("container");
+
+        // initiate drawing the chart
+        chart.draw();
+      </script>
     </div>
 
     <div class="window">
@@ -322,6 +354,7 @@
     </div>
 
     <div class="window">
+      <label class="window-label">Notifications:</label>
       <h5>Oil change <br> oil type <br> oil photo <br><br></h5>
       <h5>Motor belt, <br> Piston belt<br><br></h5>
       <h5>Tomorrow will be 0°C <br> Change the windshield water</h5>
