@@ -3,7 +3,8 @@ package com.example.carmaintenancetracker.model.entity;
 import com.example.carmaintenancetracker.model.enums.FuelEnum;
 import com.example.carmaintenancetracker.model.enums.TransmissionEnum;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Size;
+
+import java.util.List;
 
 @Entity
 @Table(name = "car")
@@ -33,14 +34,13 @@ public class CarEntity extends BaseEntity {
     // todo: Vignette Entity ->  start date, expire date, period( week, month, year), [can be added 2 country vignette active at the same time]
     private String vignette;
 
-    // todo: Tires Entity -> DOT, count, dimensions, winter, summer and all seasons, brand, name(model), image, winter and summer change dates,
+    // todo: Tires Entity -> image, @ManyToOne or @OneToMany FIX
+
     @ManyToOne
+    @JoinColumn(name = "tires_id")
     private TireEntity tires;
 
     // todo: Annual technical inspection Entity -> expire date
     private String ГТП;
 
-
-    public CarEntity() {
-    }
 }

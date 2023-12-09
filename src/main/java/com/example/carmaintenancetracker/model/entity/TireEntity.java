@@ -1,12 +1,10 @@
 package com.example.carmaintenancetracker.model.entity;
 
 
+import com.example.carmaintenancetracker.model.enums.TireBrandEnum;
 import com.example.carmaintenancetracker.model.enums.TirePositionEnum;
 import com.example.carmaintenancetracker.model.enums.TireTypeEnum;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
@@ -29,17 +27,17 @@ public class TireEntity extends BaseEntity{
     //R 15
     private int size;
 
-    //todo: DEBICA, PIRELLI, GOODYEAR, MICHELIN
-    private String brand;
+    //DEBICA, PIRELLI, GOODYEAR, MICHELIN
+    private TireBrandEnum brand;
 
     //todo: PASSIO2, FRIGO
     private String model;
 
-    //todo: Winter, Summer, AllSeason, Mud, Off-road
+    //Winter, Summer, AllSeason, Mud, Off-road
     @Enumerated(EnumType.STRING)
     private TireTypeEnum season;
 
-    //todo: 1 Front-Left, 2 Front-Right, 3 Back-Left, 4 Back-Right, 5 Spare, 6 Storage
+    // 1 Front-Left, 2 Front-Right, 3 Back-Left, 4 Back-Right, 5 Spare, 6 Storage
     @Enumerated(EnumType.STRING)
     private TirePositionEnum position;
 
