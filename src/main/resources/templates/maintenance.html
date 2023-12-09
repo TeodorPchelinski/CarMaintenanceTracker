@@ -292,8 +292,7 @@
 
     <div class="window" id="window-small">
     </div>
-    <div class="window" id="window-small">
-    </div>
+
   </div>
 
 
@@ -304,7 +303,7 @@
         <label id="km-traveled">4025km</label>
     </div>
 
-    <div class="window" id="after-skipped-window">
+    <div class="window" id="after-skipped-window-small">
       <div id="container2"></div>
       <script>
         // create data
@@ -331,6 +330,7 @@
         var series = chart.column(data);
 
         chart.animation(true);
+        series.color('#00AEFF');
 
         // set the container id
         chart.container("container");
@@ -338,9 +338,6 @@
         // initiate drawing the chart
         chart.draw();
       </script>
-    </div>
-
-    <div class="window">
     </div>
   </div>
 

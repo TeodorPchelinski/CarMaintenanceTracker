@@ -1,8 +1,11 @@
 body {
     background-color: #00AEFF;
     /*background-color: #ecebeb;*/
-    margin: 0;
     padding: 0;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+
 
     font-family: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
     font-size: 18px;
@@ -424,6 +427,16 @@ h5 {
     width: 22.8rem;
     height: 8.4375rem;
     padding: 0;
+}
+
+#window-long-car-card {
+    height: 12.9rem;
+    width: 48rem;
+}
+
+#after-skipped-window-small {
+    margin-top: 31.6rem;
+    height: 10rem;
 }
 
 #window-small-fuel2 {
