@@ -41,5 +41,8 @@ public class TireEntity extends BaseEntity{
     @Enumerated(EnumType.STRING)
     private TirePositionEnum position;
 
+    @ManyToOne
+    private CarEntity carOn;
+
 
 }
