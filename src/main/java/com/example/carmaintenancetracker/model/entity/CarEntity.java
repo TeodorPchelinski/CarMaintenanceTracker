@@ -4,6 +4,7 @@ import com.example.carmaintenancetracker.model.enums.FuelEnum;
 import com.example.carmaintenancetracker.model.enums.TransmissionEnum;
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -15,9 +16,9 @@ public class CarEntity extends BaseEntity {
 
     private String brand;
 
-    private int manufactureYear;
+    private LocalDate manufactureYear;
 
-    private int boughtYear;
+    private LocalDate bought;
 
     @ManyToOne
     private UserEntity owner;
