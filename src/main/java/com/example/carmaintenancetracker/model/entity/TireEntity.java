@@ -14,7 +14,7 @@ public class TireEntity extends BaseEntity{
     // todo: Tires Entity -> DOT, dimensions, winter, summer and all seasons, brand, name(model), image, winter and summer change dates,
 
     //todo: 23RXZ or 2019 or both
-    private String DOT;
+    private LocalDate DOT;
 
     private LocalDate expireYear;
 
@@ -42,7 +42,7 @@ public class TireEntity extends BaseEntity{
     private TirePositionEnum position;
 
     @ManyToOne
-    private CarEntity carOn;
+    private CarEntity car;
 
 
 }

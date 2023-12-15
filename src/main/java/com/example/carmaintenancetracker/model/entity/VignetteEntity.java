@@ -21,6 +21,6 @@ public class VignetteEntity extends BaseEntity{
     private VignettePeriodEnum period;
 
     @ManyToOne
-    private CarEntity carOn;
+    private CarEntity car;
 
 }

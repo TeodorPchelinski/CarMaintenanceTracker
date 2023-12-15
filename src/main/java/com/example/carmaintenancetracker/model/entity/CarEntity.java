@@ -33,15 +33,18 @@ public class CarEntity extends BaseEntity {
     private TransmissionEnum transmission;
 
     // Vignette Entity ->  start date, expire date, period( week, month, year), [can be added 2 country vignette active at the same time]
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "carOn")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "car")
     private List<VignetteEntity> vignette;
 
     // todo: Tires Entity -> image
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "carOn")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "car")
     private List<TireEntity> tire;
 
     // todo: Annual technical inspection Entity -> start date, expire date
     @OneToOne
     private InspectionEntity technicalInspection;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "car")
+    private List<RefuelEntity> charges;
 
 }

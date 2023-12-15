@@ -17,5 +17,5 @@ public class InspectionEntity extends BaseEntity {
     private String location;
 
     @OneToOne
-    private CarEntity carOn;
+    private CarEntity car;
 }
