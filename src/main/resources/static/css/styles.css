@@ -305,7 +305,7 @@ input::-webkit-inner-spin-button {
 .car-img-and-parts-container {
     display: flex;
     /*background-color: rgba(27, 215, 150, 0.85);*/
-    width: 16.8rem;
+    width: 22.5rem;
     height: 3.5rem;
 }
 
@@ -317,7 +317,7 @@ input::-webkit-inner-spin-button {
 
 .part-image-small {
     width: 4.3rem;
-    height: 3.3rem;
+    height: 4.3rem;
     border-radius: 4px;
     padding: 2px;
 }
@@ -367,6 +367,23 @@ h5 {
 
 .warning-notification {
     height: 1.5rem;
+    margin-bottom: 0.3rem;
+    padding-left: 10px;
+    border: 2px solid #ecebeb;
+    border-radius: 12px;
+    background-color: rgba(70, 70, 70, 0.11);
+
+}
+
+.notifications-container {
+    height: 14.3rem;
+    overflow-y: scroll;
+    scrollbar-gutter: both-edges;
+    border-radius: 12px;
+}
+
+.warning-notification1 {
+    height: 2.5rem;
     margin-bottom: 0.3rem;
     padding-left: 10px;
     border: 2px solid #ecebeb;
