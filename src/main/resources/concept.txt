@@ -1,2 +1,4 @@
 red circle on profile picture for warning
 
+Image saving in database and local storage
+

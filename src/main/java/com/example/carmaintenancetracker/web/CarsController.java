@@ -2,6 +2,7 @@ package com.example.carmaintenancetracker.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -16,6 +17,14 @@ public class CarsController {
     @GetMapping("/all")
     public String allCars() {
         return "all-cars";
+    }
+
+    @PostMapping("/owned")
+    public String addCar() {
+
+
+
+        return "my-garage";
     }
 
 }

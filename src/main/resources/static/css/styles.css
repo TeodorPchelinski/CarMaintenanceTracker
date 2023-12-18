@@ -192,6 +192,18 @@ li a:hover {
     border: 2px solid #ecebeb;
 }
 
+.field select {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #424242;
+    background: none;
+    padding: 0.625rem;
+    border: 2px solid #ecebeb;
+    width: 12.1rem;
+}
+
+.field option {
+}
 
 
 #large-text {
