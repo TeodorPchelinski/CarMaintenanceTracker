@@ -1,66 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-  <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
-  <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
-  <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
-  <link rel="stylesheet" href="../static/css/styles.css">
+<head th:replace="~{fragments/head}">
   <title>My Garage</title>
 </head>
 <body>
 
-
-
-<div class="section1">
-
-  <ul>
-    <h3 class="site-name">Car Maintenance</h3>
-
-    <div class="small-space-dashboard">
-
-    </div>
-    <li>
-      <a href="index.html">Home</a>
-    </li>
-    <li>
-      <a class="current" href="my-garage.html">My Garage</a>
-    </li>
-    <li>
-      <a href="community.html">Community</a>
-    </li>
-    <li>
-      <a href="maintenance.html">Maintenance</a>
-    </li>
-    <li>
-      <a href="fuel-tracker.html">Fuel Tracker</a>
-    </li>
-
-    <div class="space-dashboard">
-
-    </div>
-
-    <div>
-    </div>
-
-    <hr class="dashboard-line1">
-
-
-
-    <div class="profile-small">
-      <img class="profile-img-small" src="/static/images/profile.png">
-      <a class="profile-name" href="profile.html">Teodor Pchelinski</a>
-    </div>
-
-
-    <li>
-      <a class="logout-dash" href="index.html">Logout</a>
-    </li>
-
-  </ul>
+<div>
+  <div th:replace="~{fragments/navbar}"></div>
 </div>
 <div class="current-page">
 

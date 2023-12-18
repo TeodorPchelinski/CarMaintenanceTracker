@@ -4,57 +4,10 @@
     <title>Home</title>
 </head>
 <body>
-
-
-
-<div class="section1">
-
-    <ul>
-        <a class="profile-name" href="index.html"><h3 class="site-name">Car Maintenance</h3></a>
-
-        <div class="small-space-dashboard">
-
-        </div>
-        <li>
-            <a class="current" href="index.html">Home</a>
-        </li>
-        <li>
-            <a href="my-garage.html">My Garage</a>
-        </li>
-        <li>
-            <a href="community.html">Community</a>
-        </li>
-        <li>
-            <a href="maintenance.html">Maintenance</a>
-        </li>
-        <li>
-            <a th:href="fuel-tracker">Fuel Tracker</a>
-        </li>
-
-        <div class="space-dashboard">
-
-        </div>
-
-        <div>
-<!--            to do-->
-        </div>
-
-        <hr class="dashboard-line1">
-
-
-
-        <div class="profile-small">
-            <img class="profile-img-small" src="/static/images/profile.png">
-            <a class="profile-name" href="profile.html">Teodor Pchelinski</a>
-        </div>
-
-
-        <li>
-            <a class="logout-dash" href="index.html">Logout</a>
-        </li>
-
-    </ul>
+<div>
+    <div th:replace="~{fragments/navbar}"></div>
 </div>
+
 <div class="current-page">
 
 <div class="section2">

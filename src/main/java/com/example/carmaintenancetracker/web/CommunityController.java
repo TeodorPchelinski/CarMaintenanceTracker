@@ -6,11 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/")
-public class HomeController {
+public class CommunityController {
 
-    @GetMapping("/index")
-    public String home() {
-        return "index";
+    @GetMapping("/community")
+    public String community() {
+        return "community";
     }
-
 }
