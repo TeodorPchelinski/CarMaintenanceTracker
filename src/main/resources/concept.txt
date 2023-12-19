@@ -8,3 +8,7 @@ For visualizing data use your own perception of how you see and imagine it
     Kilometers travelled as a line -> length is the kilometers and the color is economy of fuel
 
 
+ 19.12.2023
+// Last Workshop -> how to add maps to app
+// Spring Essentials + Spring Security
+
