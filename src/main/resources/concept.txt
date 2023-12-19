@@ -1,4 +1,10 @@
 red circle on profile picture for warning
 
 Image saving in database and local storage
+Make data being saved on local machine and cloud
+    when there isn't internet to have a backup local storage
+Google maps for -> refuel location and repair or change locations
+For visualizing data use your own perception of how you see and imagine it
+    Kilometers travelled as a line -> length is the kilometers and the color is economy of fuel
+
 
