@@ -5,9 +5,9 @@
 </head>
 <body>
 
-<div>
+
   <div th:replace="~{fragments/navbar}"></div>
-</div>
+
 
 <div class="current-page">
 
@@ -20,7 +20,7 @@
     <div class="window">
       <div>
         <label class="window-label">Current Car</label>
-        <img class="current-fuel-car" src="/static/images/Audi-A3.jpg">
+        <img class="current-fuel-car" th:src="@{/images/Audi-A3.jpg}">
       </div>
     </div>
 
@@ -36,7 +36,7 @@
 
             <div class="car-img-and-parts-container">
               <div class="part-img-small-container">
-                <img class="part-image-small" src="/static/images/fuel-pump.jpg" >
+                <img class="part-image-small" th:src="@{/images/fuel-pump.jpg}" >
               </div>
               <div class="parts-list-container">
                   <span class="stat-small">fuel pump</span>
@@ -52,7 +52,7 @@
 
             <div class="car-img-and-parts-container">
               <div class="part-img-small-container">
-                <img class="part-image-small" src="/static/images/oil-filter.jpg" >
+                <img class="part-image-small" th:src="@{/images/oil-filter.jpg}" >
               </div>
               <div class="parts-list-container">
                 <span class="stat-small">oil filter</span>
@@ -68,7 +68,7 @@
 
             <div class="car-img-and-parts-container">
               <div class="part-img-small-container">
-                <img class="part-image-small" src="/static/images/brakes.jpg" >
+                <img class="part-image-small" th:src="@{/images/brakes.jpg}" >
               </div>
               <div class="parts-list-container">
                 <span class="stat-small">front discs</span>

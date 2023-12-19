@@ -5,9 +5,9 @@
 </head>
 <body>
 
-<div>
-    <div th:replace="~{fragments/navbar}"></div>
-</div>
+<div th:replace="~{fragments/navbar}"></div>
+<!--    <div th:replace="navbar :: navbar(activePage='fuel-tracker')"></div>-->
+
 
 <div class="current-page">
     <div class="row1">
@@ -20,7 +20,7 @@
         <div class="window">
             <div>
                 <label class="window-label">Current Car</label>
-                <img class="current-fuel-car" src="/static/images/Audi-A3.jpg">
+                <img class="current-fuel-car" th:src="@{/images/Audi-A3.jpg}" alt="car_image">
             </div>
         </div>
 

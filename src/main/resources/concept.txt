@@ -7,6 +7,8 @@ Google maps for -> refuel location and repair or change locations
 For visualizing data use your own perception of how you see and imagine it
     Kilometers travelled as a line -> length is the kilometers and the color is economy of fuel
 
+Shared cars -> One user can give another, his own car: It is displayed in My Garage Page As Shared Cars for the foreign user
+    Can random user make refuel
 
  19.12.2023
 // Last Workshop -> how to add maps to app

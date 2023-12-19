@@ -44,5 +44,93 @@ public class TireEntity extends BaseEntity{
     @ManyToOne
     private CarEntity car;
 
+    public LocalDate getDOT() {
+        return DOT;
+    }
 
+    public TireEntity setDOT(LocalDate DOT) {
+        this.DOT = DOT;
+        return this;
+    }
+
+    public LocalDate getExpireYear() {
+        return expireYear;
+    }
+
+    public TireEntity setExpireYear(LocalDate expireYear) {
+        this.expireYear = expireYear;
+        return this;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public TireEntity setWidth(int width) {
+        this.width = width;
+        return this;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public TireEntity setHeight(int height) {
+        this.height = height;
+        return this;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public TireEntity setSize(int size) {
+        this.size = size;
+        return this;
+    }
+
+    public TireBrandEnum getBrand() {
+        return brand;
+    }
+
+    public TireEntity setBrand(TireBrandEnum brand) {
+        this.brand = brand;
+        return this;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public TireEntity setModel(String model) {
+        this.model = model;
+        return this;
+    }
+
+    public TireTypeEnum getSeason() {
+        return season;
+    }
+
+    public TireEntity setSeason(TireTypeEnum season) {
+        this.season = season;
+        return this;
+    }
+
+    public TirePositionEnum getPosition() {
+        return position;
+    }
+
+    public TireEntity setPosition(TirePositionEnum position) {
+        this.position = position;
+        return this;
+    }
+
+    public CarEntity getCar() {
+        return car;
+    }
+
+    public TireEntity setCar(CarEntity car) {
+        this.car = car;
+        return this;
+    }
 }

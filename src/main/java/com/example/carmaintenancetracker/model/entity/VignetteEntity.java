@@ -23,4 +23,39 @@ public class VignetteEntity extends BaseEntity{
     @ManyToOne
     private CarEntity car;
 
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public VignetteEntity setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+        return this;
+    }
+
+    public LocalDate getExpireDate() {
+        return expireDate;
+    }
+
+    public VignetteEntity setExpireDate(LocalDate expireDate) {
+        this.expireDate = expireDate;
+        return this;
+    }
+
+    public VignettePeriodEnum getPeriod() {
+        return period;
+    }
+
+    public VignetteEntity setPeriod(VignettePeriodEnum period) {
+        this.period = period;
+        return this;
+    }
+
+    public CarEntity getCar() {
+        return car;
+    }
+
+    public VignetteEntity setCar(CarEntity car) {
+        this.car = car;
+        return this;
+    }
 }

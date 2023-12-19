@@ -5,9 +5,8 @@
 </head>
 <body>
 
-<div>
-  <div th:replace="~{fragments/navbar}"></div>
-</div>
+<div th:replace="~{fragments/navbar}"></div>
+
 <div class="current-page">
 
 
@@ -120,12 +119,12 @@
 
     <div class="window" id="window-long-car-card">
       <div class="car-img-big">
-        <img src="/static/images/audi-a6.jpg">
+        <img th:src="@{/images/audi-a6.jpg}">
       </div>
     </div>
     <div class="window" id="window-long-car-card">
       <div class="car-img-big">
-        <img src="/static/images/audi-a6.jpg">
+        <img th:src="@{/images/audi-a6.jpg}">
       </div>
     </div>
     <div class="window" id="window-small">

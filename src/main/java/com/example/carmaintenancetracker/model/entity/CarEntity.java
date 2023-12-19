@@ -47,4 +47,111 @@ public class CarEntity extends BaseEntity {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "car")
     private List<RefuelEntity> charges;
 
+    public String getModel() {
+        return model;
+    }
+
+    public CarEntity setModel(String model) {
+        this.model = model;
+        return this;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public CarEntity setBrand(String brand) {
+        this.brand = brand;
+        return this;
+    }
+
+    public LocalDate getManufactureYear() {
+        return manufactureYear;
+    }
+
+    public CarEntity setManufactureYear(LocalDate manufactureYear) {
+        this.manufactureYear = manufactureYear;
+        return this;
+    }
+
+    public LocalDate getBought() {
+        return bought;
+    }
+
+    public CarEntity setBought(LocalDate bought) {
+        this.bought = bought;
+        return this;
+    }
+
+    public UserEntity getOwner() {
+        return owner;
+    }
+
+    public CarEntity setOwner(UserEntity owner) {
+        this.owner = owner;
+        return this;
+    }
+
+    public FuelEnum getFuelType() {
+        return fuelType;
+    }
+
+    public CarEntity setFuelType(FuelEnum fuelType) {
+        this.fuelType = fuelType;
+        return this;
+    }
+
+    public int getEngineDisplacement() {
+        return engineDisplacement;
+    }
+
+    public CarEntity setEngineDisplacement(int engineDisplacement) {
+        this.engineDisplacement = engineDisplacement;
+        return this;
+    }
+
+    public TransmissionEnum getTransmission() {
+        return transmission;
+    }
+
+    public CarEntity setTransmission(TransmissionEnum transmission) {
+        this.transmission = transmission;
+        return this;
+    }
+
+    public List<VignetteEntity> getVignette() {
+        return vignette;
+    }
+
+    public CarEntity setVignette(List<VignetteEntity> vignette) {
+        this.vignette = vignette;
+        return this;
+    }
+
+    public List<TireEntity> getTire() {
+        return tire;
+    }
+
+    public CarEntity setTire(List<TireEntity> tire) {
+        this.tire = tire;
+        return this;
+    }
+
+    public InspectionEntity getTechnicalInspection() {
+        return technicalInspection;
+    }
+
+    public CarEntity setTechnicalInspection(InspectionEntity technicalInspection) {
+        this.technicalInspection = technicalInspection;
+        return this;
+    }
+
+    public List<RefuelEntity> getCharges() {
+        return charges;
+    }
+
+    public CarEntity setCharges(List<RefuelEntity> charges) {
+        this.charges = charges;
+        return this;
+    }
 }
