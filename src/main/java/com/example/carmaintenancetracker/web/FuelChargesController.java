@@ -1,6 +1,8 @@
 package com.example.carmaintenancetracker.web;
 
+import com.example.carmaintenancetracker.model.dto.CreateRefuelDTO;
 import com.example.carmaintenancetracker.model.enums.FuelTypeEnum;
+import com.example.carmaintenancetracker.service.RefuelService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class FuelChargesController {
 
+    public FuelChargesController(RefuelService refuelService) {
+        this.refuelService = refuelService;
+    }
+
+    private final RefuelService refuelService;
     @GetMapping("/fuel-tracker")
     public String fuelTracker() {
         return "fuel-tracker";
@@ -26,13 +33,15 @@ public class FuelChargesController {
     public String addFuel(Model model) {
 
 
+
         return "fuel-tracker";
     }
 
 //    @PostMapping("/fuel-tracker")
 //    public String addFuel(CreateRefuelDTO createRefuelDTO) {
-//
-//
+//        //todo: add user
+//        refuelService.createRefuel(createRefuelDTO);
+//        return "redirect:/";
 //
 //    }
 

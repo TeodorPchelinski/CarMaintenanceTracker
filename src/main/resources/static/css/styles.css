@@ -188,16 +188,20 @@ li a:hover {
 }
 
 #register-image-container {
-    display: block;
     margin-top: 10rem;
     height: 29.5rem;
     width: 29.5rem;
+    display: inline-block;
+    line-height: 29.5rem;
 }
 
 .register-image {
     border-radius: 0 14px 14px 0;
-    height: 29.5rem;
-    width: 29.5rem;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    margin: 0 auto;
+    vertical-align: middle;
 }
 
 

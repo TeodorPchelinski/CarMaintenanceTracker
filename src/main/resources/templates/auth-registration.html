@@ -9,21 +9,25 @@
 
   <div class="container" id="register-container">
     <div class="window" id="register-window">
+      <form th:action="@{/users/register}"
+            th:method="post">
       <label class="window-label">Registration</label>
     <div class="field">
-      <input  type=text id="firstName" placeholder="">
+      <input  type=text
+              id="firstName"
+              name="firstName" placeholder="">
       <label  for="firstName" class="field-label">First Name</label>
     </div>
     <div class="field">
-      <input  type=text id="lastName" placeholder="">
+      <input  type=text id="lastName" name="lastName" placeholder="">
       <label  for="lastName" class="field-label">Last Name</label>
     </div>
     <div class="field">
-      <input  type=text id="email" placeholder="">
+      <input  type=text id="email" name="email" placeholder="">
       <label  for="email" class="field-label">Email</label>
     </div>
     <div class="field">
-      <input  type=text id="password" placeholder="">
+      <input  type=text id="password" name="password" placeholder="">
       <label  for="password" class="field-label">Password</label>
     </div>
     <div class="field">
@@ -33,6 +37,7 @@
     <button class="button" id="refuel-button">Done</button>
     </div>
   </div>
+  </form>
   <div class="container" id="register-image-container">
     <img class="register-image" th:src="@{/images/login-register-image.jpg}" alt="car_image">
   </div>

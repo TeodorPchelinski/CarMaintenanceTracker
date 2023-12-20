@@ -24,9 +24,18 @@ public class UserServiceImpl implements UserService {
     }
 
     private UserEntity map(UserRegistrationDTO userRegistrationDTO) {
-        return new UserEntity().setFirstName(userRegistrationDTO.firstName())
-                        .setLastName(userRegistrationDTO.lastName())
-                        .setEmail(userRegistrationDTO.email())
-                        .setPassword(passwordEncoder.encode(userRegistrationDTO.password()));
+
+        if (userRegistrationDTO.getPassword() == null){
+            System.out.println(userRegistrationDTO.getPassword());
+        }else {
+
+            return new UserEntity()
+                    .setFirstName(userRegistrationDTO.getFirstName())
+                    .setLastName(userRegistrationDTO.getLastName())
+                    .setEmail(userRegistrationDTO.getEmail())
+                    .setPassword(passwordEncoder.encode(userRegistrationDTO.getPassword()));
+        }
+
+        return null;
     }
 }

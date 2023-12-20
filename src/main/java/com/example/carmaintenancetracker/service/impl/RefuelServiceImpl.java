@@ -10,15 +10,16 @@ public class RefuelServiceImpl implements RefuelService {
 
 
     @Override
-    public Long createRefuel(CreateRefuelDTO createRefuelDTO) {
-
+    public void createRefuel(CreateRefuelDTO createRefuelDTO) {
         RefuelEntity newRefuel = map(createRefuelDTO);
-
-
-        return null;
     }
 
     private RefuelEntity map(CreateRefuelDTO createRefuelDTO) {
-        return null;
+        return new RefuelEntity().setTripName(createRefuelDTO.getTripName())
+                .setKilometers(createRefuelDTO.getKilometers())
+                .setLitres(createRefuelDTO.getLitres())
+                .setPrice(createRefuelDTO.getPrice())
+                .setFuel(createRefuelDTO.getFuel())
+                .setDescription(createRefuelDTO.getDescription());
     }
 }

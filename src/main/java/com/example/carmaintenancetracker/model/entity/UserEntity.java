@@ -15,6 +15,22 @@ public class UserEntity extends BaseEntity {
     @NotBlank
     private String firstName;
 
+    @Column(nullable = false)
+    @NotBlank
+    private String lastName;
+
+    @Column(unique = true, nullable = false)
+    @Email
+    @NotBlank
+    private String email;
+
+    @NotBlank
+    private String password;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "owner")
+    @Column
+    private List<CarEntity> cars;
+
     public String getFirstName() {
         return firstName;
     }
@@ -32,21 +48,6 @@ public class UserEntity extends BaseEntity {
         this.lastName = lastName;
         return this;
     }
-
-    @Column(nullable = false)
-    @NotBlank
-    private String lastName;
-
-    @Column(unique = true, nullable = false)
-    @Email
-    @NotBlank
-    private String email;
-
-    @NotBlank
-    private String password;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "owner")
-    private List<CarEntity> cars;
 
     public String getEmail() {
         return email;
