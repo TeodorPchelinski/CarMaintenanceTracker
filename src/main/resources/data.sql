@@ -8,6 +8,4 @@ INSERT INTO models (`id`, `category`, `name`, `brand_id`) VALUES (1,'CAR','A3',1
 
 INSERT INTO offers (`id`, `description`, `engine`, `image_url`, `mileage`, `price`, `transmission`, `year`, `model_id`, `uuid`) VALUES (1,'Everything changed','PETROL','https://www.skmobil.com/_products_imgs_skmobil/217/superzoom/217__dsc0511-5b3d3f3d93f05.jpg',170000,12000.00,'MANUAL',2015,4,'b2d14eb6-9ee4-47bc-a113-e5a06dbb04b3'),(2,'Only for serious clients please','PETROL','https://www.motortrend.com/uploads/2022/08/2022-Bugatti-Chiron-Super-Sport-2-1.jpg',23232323,230000.00,'MANUAL',2014,5,'baf47ea6-949c-442b-94f9-a527f0ec2ae8'),(3,'dsadasdasfasdf','DIESEL','https://www.motortrend.com/uploads/2022/08/2022-Bugatti-Chiron-Super-Sport-2-1.jpg',23232323,3123.00,'MANUAL',2016,7,'6d856888-fba7-4831-8741-9d988fb5734d');
 
-INSERT INTO vignettes (`id`, `start_date`, `expire_date`, `period`, `car_id`)
-
-2024-04-24	2023-12-14	1	1	THREE_MONTHS
+INSERT INTO vignettes (`id`, `start_date`, `expire_date`, `period`, `car_id`) VALUES (1,2023-12-14,2024-04-24, THREE_MONTHS, 1)

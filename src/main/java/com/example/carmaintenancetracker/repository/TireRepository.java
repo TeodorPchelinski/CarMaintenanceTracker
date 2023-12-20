@@ -1,4 +1,4 @@
-package com.example.carmaintenancetracker.repositories;
+package com.example.carmaintenancetracker.repository;
 
 import com.example.carmaintenancetracker.model.entity.TireEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

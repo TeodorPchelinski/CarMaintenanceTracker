@@ -1,13 +1,10 @@
-package com.example.carmaintenancetracker.model.entity;
+package com.example.carmaintenancetracker.model.dto;
 
 import com.example.carmaintenancetracker.model.enums.FuelTypeEnum;
-import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "refuelings")
-public class RefuelEntity extends BaseEntity{
+public class CreateRefuelDTO {
 
     private String tripName;
 
@@ -17,23 +14,15 @@ public class RefuelEntity extends BaseEntity{
 
     private BigDecimal price;
 
-    @Enumerated(EnumType.STRING)
     private FuelTypeEnum fuel;
 
     private String description;
-
-    @ManyToOne
-    private CarEntity car;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private UserEntity user;
 
     public String getTripName() {
         return tripName;
     }
 
-    public RefuelEntity setTripName(String tripName) {
+    public CreateRefuelDTO setTripName(String tripName) {
         this.tripName = tripName;
         return this;
     }
@@ -42,7 +31,7 @@ public class RefuelEntity extends BaseEntity{
         return kilometers;
     }
 
-    public RefuelEntity setKilometers(int kilometers) {
+    public CreateRefuelDTO setKilometers(int kilometers) {
         this.kilometers = kilometers;
         return this;
     }
@@ -51,7 +40,7 @@ public class RefuelEntity extends BaseEntity{
         return litres;
     }
 
-    public RefuelEntity setLitres(double litres) {
+    public CreateRefuelDTO setLitres(double litres) {
         this.litres = litres;
         return this;
     }
@@ -60,7 +49,7 @@ public class RefuelEntity extends BaseEntity{
         return price;
     }
 
-    public RefuelEntity setPrice(BigDecimal price) {
+    public CreateRefuelDTO setPrice(BigDecimal price) {
         this.price = price;
         return this;
     }
@@ -69,7 +58,7 @@ public class RefuelEntity extends BaseEntity{
         return fuel;
     }
 
-    public RefuelEntity setFuel(FuelTypeEnum fuel) {
+    public CreateRefuelDTO setFuel(FuelTypeEnum fuel) {
         this.fuel = fuel;
         return this;
     }
@@ -78,26 +67,8 @@ public class RefuelEntity extends BaseEntity{
         return description;
     }
 
-    public RefuelEntity setDescription(String description) {
+    public CreateRefuelDTO setDescription(String description) {
         this.description = description;
-        return this;
-    }
-
-    public CarEntity getCar() {
-        return car;
-    }
-
-    public RefuelEntity setCar(CarEntity car) {
-        this.car = car;
-        return this;
-    }
-
-    public UserEntity getUser() {
-        return user;
-    }
-
-    public RefuelEntity setUser(UserEntity user) {
-        this.user = user;
         return this;
     }
 }

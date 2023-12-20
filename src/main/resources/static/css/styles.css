@@ -533,6 +533,11 @@ h5 {
     margin-left: 94px;
 }
 
+.top-space {
+    height: 198px;
+    width: 100%;
+}
+
 .button {
     align-items: center;
     /*background-color: #3c1b86;*/

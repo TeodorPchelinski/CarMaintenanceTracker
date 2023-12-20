@@ -11,9 +11,31 @@ import java.util.List;
 @Table(name = "users")
 public class UserEntity extends BaseEntity {
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     @NotBlank
-    private String name;
+    private String firstName;
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public UserEntity setFirstName(String firstName) {
+        this.firstName = firstName;
+        return this;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public UserEntity setLastName(String lastName) {
+        this.lastName = lastName;
+        return this;
+    }
+
+    @Column(nullable = false)
+    @NotBlank
+    private String lastName;
 
     @Column(unique = true, nullable = false)
     @Email
@@ -25,15 +47,6 @@ public class UserEntity extends BaseEntity {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "owner")
     private List<CarEntity> cars;
-
-    public String getName() {
-        return name;
-    }
-
-    public UserEntity setName(String name) {
-        this.name = name;
-        return this;
-    }
 
     public String getEmail() {
         return email;
