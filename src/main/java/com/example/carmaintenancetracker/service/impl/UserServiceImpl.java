@@ -1,5 +1,6 @@
 package com.example.carmaintenancetracker.service.impl;
 
+import com.example.carmaintenancetracker.model.dto.UserLoginDTO;
 import com.example.carmaintenancetracker.model.dto.UserRegistrationDTO;
 import com.example.carmaintenancetracker.model.entity.UserEntity;
 import com.example.carmaintenancetracker.repository.UserRepository;
@@ -21,6 +22,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public void registerUser(UserRegistrationDTO userRegistrationDTO) {
         userRepository.save(map(userRegistrationDTO));
+    }
+
+    @Override
+    public void loginUser(UserLoginDTO userLoginDTO) {
+
     }
 
     private UserEntity map(UserRegistrationDTO userRegistrationDTO) {

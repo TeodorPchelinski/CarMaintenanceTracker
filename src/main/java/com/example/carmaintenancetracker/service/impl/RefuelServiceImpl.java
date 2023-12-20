@@ -15,6 +15,9 @@ public class RefuelServiceImpl implements RefuelService {
     }
 
     private RefuelEntity map(CreateRefuelDTO createRefuelDTO) {
+
+        //todo: Add car id
+
         return new RefuelEntity().setTripName(createRefuelDTO.getTripName())
                 .setKilometers(createRefuelDTO.getKilometers())
                 .setLitres(createRefuelDTO.getLitres())
