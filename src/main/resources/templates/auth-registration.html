@@ -6,25 +6,37 @@
     <title>Registration</title>
 </head>
 <body>
-<div class="top-space">
 
-</div>
-<div class="top-space">
-  <div class="window" id="refuel-window">
+  <div class="container" id="register-container">
+    <div class="window" id="register-window">
+      <label class="window-label">Registration</label>
     <div class="field">
-      <input  type=text id="first-name" placeholder="">
-      <label  for="first-name" class="field-label">First Name</label>
+      <input  type=text id="firstName" placeholder="">
+      <label  for="firstName" class="field-label">First Name</label>
     </div>
     <div class="field">
-      <input  type=text id="last-name" placeholder="">
-      <label  for="last-name" class="field-label">Last Name</label>
+      <input  type=text id="lastName" placeholder="">
+      <label  for="lastName" class="field-label">Last Name</label>
     </div>
     <div class="field">
       <input  type=text id="email" placeholder="">
       <label  for="email" class="field-label">Email</label>
     </div>
+    <div class="field">
+      <input  type=text id="password" placeholder="">
+      <label  for="password" class="field-label">Password</label>
+    </div>
+    <div class="field">
+      <input  type=text id="password" placeholder="">
+      <label  for="password" class="field-label">Confirm Password</label>
+    </div>
+    <button class="button" id="refuel-button">Done</button>
+    </div>
   </div>
-</div>
+  <div class="container" id="register-image-container">
+    <img class="register-image" th:src="@{/images/login-register-image.jpg}" alt="car_image">
+  </div>
+
 
 
 </body>
