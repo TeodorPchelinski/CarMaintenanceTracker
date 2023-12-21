@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import java.util.List;
 
-
+// Don't put @Service it is @Bean in Configuration
 public class CarMaintenanceUserDetailsService implements UserDetailsService {
 
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head th:include="~{fragments/head}">
-    <title>Home</title>
+    <title>Car Details</title>
 </head>
 <body>
 
@@ -9,31 +9,31 @@
 
 <div class="current-page">
 
-<div class="section1">
-    <div class="label-container">
-        <h2>Track Your Car's <br> Maintenance Easily.</h2>
-    </div>
-    <div class="window">
-        <div>
-<!--            <label class="window-label">Fuel prices</label>-->
 
+    <div class="section1">
+        <div class="label-container">
+            <h2 class="label">Creating a car</h2>
         </div>
+        <div class="window">
+            <div>
+                <!--            <label class="window-label">Fuel prices</label>-->
+            </div>
+        </div>
+        <div class="window">
+        </div>
+
+        <div class="window" id="window-small">
+        </div>
+
     </div>
-    <div class="window">
-    </div>
 
-    <div class="window">
-    </div>
+    <div class="section2">
+        <div class="window" id="window-small">
+            <label class="window-label">Fuel Price</label>
+            <div id="container"></div>
+            <script>
 
-</div>
-
-<div class="section2">
-    <div class="window" id="window-small">
-        <label class="window-label">Fuel Price</label>
-        <div id="container"></div>
-        <script>
-
-            // anychart.onDocumentReady(function () {
+                // anychart.onDocumentReady(function () {
                 // create data set on our data
                 var dataSet = anychart.data.set(getData());
 
@@ -94,62 +94,69 @@
 
                 // initiate chart drawing
                 chart.draw();
-            // });
+                // });
 
-            function getData() {
-                return [
-                    ['Jan',  2.65],
-                    ['Feb',  2.62],
-                    ['Mar',  2.59],
-                    ['Apr',  2.56],
-                    ['May',  2.57],
-                    ['Jun',  2.55],
-                    ['Jul',  2.56],
-                    ['Aug',  2.66],
-                    ['Sep',  2.79],
-                    ['Oct',  2.87],
-                    ['Nov',  2.81],
-                    ['Dec',  2.75]
-                ];
-            }
+                function getData() {
+                    return [
+                        ['Jan', , 2.65],
+                        ['Feb', , 2.62],
+                        ['Mar', , 2.59],
+                        ['Apr', , 2.56],
+                        ['May', , 2.57],
+                        ['Jun', , 2.55],
+                        ['Jul', , 2.56],
+                        ['Aug', , 2.66],
+                        ['Sep', , 2.79],
+                        ['Oct', , 2.87],
+                        ['Nov', , 2.81],
+                        ['Dec', , 2.75]
+                    ];
+                }
 
-        </script>
+            </script>
+        </div>
+
+
+        <div class="window" id="window-long-car-card">
+            <div class="car-img-big">
+                <img th:src="@{/images/audi-a6.jpg}">
+            </div>
+        </div>
+        <div class="window" id="window-long-car-card">
+            <div class="car-img-big">
+                <img th:src="@{/images/audi-a6.jpg}">
+            </div>
+        </div>
+        <div class="window" id="window-small">
+        </div>
+
     </div>
 
-    <div class="window">
-    </div>
-    <div class="window" id="window-small">
-    </div>
-    <div class="window" id="window-small">
-    </div>
-</div>
+    <div class="section3">
+        <div class="window" id="window-small">
+            <!--            <label class="window-label">Kilometers traveled</label>-->
+            <!--            <label id="km-traveled">14025</label>-->
+        </div>
 
-<div class="section3">
-    <div class="window">
-        <div>
-            <label class="window-label">Kilometers traveled</label>
-            <label id="km-traveled">14025</label>
+
+        <div class="window" id="after-skipped-window-small">
+            <div>
+            </div>
         </div>
     </div>
-    <div class="window" id="window-small">
-    </div>
 
-    <div class="window">
-    </div>
-</div>
+    <div class="section4">
+        <div class="window" id="window-small">
+        </div>
 
-<div class="section4">
-    <div class="window" id="window-small">
-    </div>
+        <div class="window">
+        </div>
 
-    <div class="window">
+        <div class="window" id="window-small">
+        </div>
+        <div class="window" id="window-small">
+        </div>
     </div>
-
-    <div class="window" id="window-small">
-    </div>
-    <div class="window" id="window-small">
-    </div>
-</div>
 </div>
 
 

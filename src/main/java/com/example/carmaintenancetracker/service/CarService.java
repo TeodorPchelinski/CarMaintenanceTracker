@@ -1,12 +1,9 @@
 package com.example.carmaintenancetracker.service;
 
-import com.example.carmaintenancetracker.model.entity.CarEntity;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import com.example.carmaintenancetracker.model.dto.CreateCarDTO;
 
-@Repository
-public interface CarService extends JpaRepository<CarEntity, Long> {
 
-//    void createCar();
+public interface CarService {
 
+    Long createCar(CreateCarDTO createCarDTO);
 }
