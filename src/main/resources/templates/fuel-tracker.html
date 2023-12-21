@@ -15,7 +15,7 @@
 
 
 
-    <div class="section2">
+    <div class="section1">
         <h1 class="label">Track Your Economy</h1>
         <div class="window">
             <div>
@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    <div class="section3">
+    <div class="section2">
         <div class="window" id="window-small">
             <label class="window-label">Petrol Prices</label>
             <div id="container"></div>
@@ -126,6 +126,9 @@
 
             <button class="button-second" id="add-trip-name">Add Trip Name</button>
 
+<!--            REFUEL Form-->
+<!--            <form id="refuel-form" th:action="@{/car/refuel}"-->
+<!--                  th:method="post">-->
             <div class="field">
                 <input  type=text id="trip-name" placeholder="">
                 <label  for="trip-name" class="field-label">Trip Name</label>
@@ -165,14 +168,16 @@
             </div>
 
             <button class="button" id="refuel-button">Submit</button>
+<!--            </form>-->
         </div>
+
 
         <div class="window">
             <button class="button-second" id="add-trip-name">Add</button>
         </div>
     </div>
 
-    <div class="section4">
+    <div class="section3">
         <div class="window" id="window-small">
             <label class="window-label">Gas Prices</label>
             <div id="container-fuel2"></div>
@@ -276,7 +281,8 @@
     </div>
 
 <!--    RIGHTEST SECTION-->
-    <div class="section5">
+    <div class="section4">
+
         <div class="window" id="window-small">
             <label class="window-label">Diesel Prices</label>
             <div id="container-fuel3"></div>
@@ -372,18 +378,17 @@
                 <label id="km-traveled">14025 km</label>
             </div>
         </div>
+
         <div class="window" id="window-smaller">
             <label class="window-label">Kilometers travelled this month</label>
             <label id="km-traveled">560 km</label>
         </div>
-        <div class="window">
 
+        <div class="window">
         </div>
+
         <div class="window" id="window-small">
         </div>
-
-
-
 
     </div>
 </div>
