@@ -12,10 +12,10 @@ public class CarsController {
         return "my-garage";
     }
 
-    @GetMapping("/all")
-    public String allCars() {
-        return "all-cars-old";
-    }
+//    @GetMapping("/all")
+//    public String allCars() {
+//        return "all-cars-old";
+//    }
 
     @PostMapping("/owned")
     public String addCar() {

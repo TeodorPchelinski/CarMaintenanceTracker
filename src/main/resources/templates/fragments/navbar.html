@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
+<!--    sec:authorize="isAuthenticated()"-->
 </head>
 <body >
 <div th:fragment="navbar" class="section1" >
@@ -38,18 +41,27 @@
 
         <div class="profile-small">
             <img class="profile-img-small" th:src="@{/images/profile.png}">
-            <a class="profile-name" th:href="account">Teodor Pchelinski</a>
+            <a class="profile-name"  th:href="account" >
+                <th:block sec:authorize="isAuthenticated()">
+                    Teodor
+                </th:block>
+
+                <th:block sec:authorize="!isAuthenticated()">
+                    Guest user
+                </th:block>
+
+                </a>
         </div>
 
 
-        <li>
-            <a class="logout-dash" th:href="index">Logout</a>
+        <li th:block sec:authorize="isAuthenticated()">
+            <a class="logout-dash"  th:href="index">Logout</a>
         </li>
-        <li>
-            <a class="logout-dash" th:href="@{/users/login}">Login</a>
+        <li th:block sec:authorize="!isAuthenticated()">
+            <a class="logout-dash"  th:href="@{/users/login}">Login</a>
         </li>
-        <li>
-            <a class="logout-dash" th:href="@{/users/register}">Register</a>
+        <li th:block sec:authorize="!isAuthenticated()">
+            <a class="logout-dash"  th:href="@{/users/register}">Register</a>
         </li>
 
     </ul>

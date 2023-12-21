@@ -6,5 +6,6 @@ public class CreateCarDTO {
 
     private String brand;
 
+    //todo: finishing CreateCarDTO
 
 }

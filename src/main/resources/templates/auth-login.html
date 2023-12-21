@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head th:replace="~{fragments/head}">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/styles.css">
     <title>Login</title>
 </head>
 <body>
-<div th:replace="~{fregments/navbar}"></div>
 
-<div class="field">
-    <input  type=text id="trip-name" placeholder="">
-    <label  for="trip-name" class="field-label">Trip Name</label>
+<div class="container" id="register-container">
+    <div class="window" id="register-window">
+
+            <label class="window-label">Login</label>
+
+            <form id="login-form" th:action="@{/users/login}"
+                      th:method="post">
+            <div class="field">
+                <input  type=email id="login-email" name="email" placeholder="">
+                <label  for="login-email" class="field-label">Email</label>
+            </div>
+            <div class="field">
+                <input  type=text id="login-password" name="password" placeholder="">
+                <label  for="login-password" class="field-label">Password</label>
+            </div>
+
+            <button class="button" name="login" id="login-button">Login</button>
+            </form>
+
+    </div>
 </div>
+
+<div class="container" id="register-image-container">
+    <img class="register-image" th:src="@{/images/login-register-image.jpg}" alt="car_image">
+</div>
+
+
+
 </body>
 </html>

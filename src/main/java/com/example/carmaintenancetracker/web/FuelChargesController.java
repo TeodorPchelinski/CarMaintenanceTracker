@@ -14,11 +14,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class FuelChargesController {
 
+    private final RefuelService refuelService;
+
     public FuelChargesController(RefuelService refuelService) {
         this.refuelService = refuelService;
     }
 
-    private final RefuelService refuelService;
     @GetMapping("/fuel-tracker")
     public String fuelTracker() {
         return "fuel-tracker";
@@ -31,8 +32,6 @@ public class FuelChargesController {
 
     @PostMapping("/fuel-tracker")
     public String addFuel(Model model) {
-
-
 
         return "fuel-tracker";
     }

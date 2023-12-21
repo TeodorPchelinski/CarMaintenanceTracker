@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/head}">
+    <meta charset="UTF-8">
+    <title>Expenses</title>
+</head>
+<body>
+
+<div th:replace="~{fragments/navbar}"></div>
+<div class="section2">
+    <div class="label-container">
+        <h2 class="label">Expenses</h2>
+    </div>
+    <div class="window">
+        <div>
+            <label class="window-label">Current Car</label>
+            <img class="current-fuel-car" th:src="@{/images/Audi-A3.jpg}">
+        </div>
+    </div>
+
+    <div class="window" id="window-mid">
+        <div class="label-and-button-container">
+            <label class="window-label">Loading...</label>
+        </div>
+    </div>
+    <div class="window" id="window-small">
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head th:replace="~{fragments/head}">
     <title>Index-D</title>
 </head>
@@ -11,10 +14,22 @@
 <div class="current-page">
 
     <div class="section2">
-        <h1>Hi, Teodor Pchelinski</h1>
+        <h1>Hi,
+            <th:block sec:authorize="isAuthenticated()">
+                Logged in user
+            </th:block>
+
+            <th:block sec:authorize="!isAuthenticated()">
+                Guest
+            </th:block>
+        </h1>
         <div class="window">
             <div>
-                <!--            <label class="window-label">Fuel prices</label>-->
+                <label class="window-label">Settings:</label>
+                <li>
+                    <a class="logout-dash" >Change username </a>
+                </li>
+                <h5>Change password</h5>
 
             </div>
         </div>
