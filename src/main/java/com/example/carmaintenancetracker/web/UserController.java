@@ -10,8 +10,4 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 public class UserController {
 
-
-
-
-
 }

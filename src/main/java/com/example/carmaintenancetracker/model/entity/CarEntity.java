@@ -20,6 +20,8 @@ public class CarEntity extends BaseEntity {
 
     private LocalDate bought;
 
+    private int mileage;
+
     @ManyToOne
     private UserEntity owner;
 
@@ -46,6 +48,8 @@ public class CarEntity extends BaseEntity {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "car")
     private List<RefuelEntity> charges;
+
+
 
     public String getModel() {
         return model;
@@ -80,6 +84,15 @@ public class CarEntity extends BaseEntity {
 
     public CarEntity setBought(LocalDate bought) {
         this.bought = bought;
+        return this;
+    }
+
+    public int getMileage() {
+        return mileage;
+    }
+
+    public CarEntity setMileage(int mileage) {
+        this.mileage = mileage;
         return this;
     }
 
