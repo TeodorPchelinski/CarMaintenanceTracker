@@ -55,13 +55,13 @@
 
 
         <li th:block sec:authorize="isAuthenticated()">
-            <a class="logout-dash"  th:href="index">Logout</a>
+            <a class="logout-dash" id="little-dashboard"  th:href="index">Logout</a>
         </li>
         <li th:block sec:authorize="!isAuthenticated()">
-            <a class="logout-dash"  th:href="@{/users/login}">Login</a>
+            <a class="logout-dash" id="little-dashboard" th:href="@{/users/login}">Login</a>
         </li>
         <li th:block sec:authorize="!isAuthenticated()">
-            <a class="logout-dash"  th:href="@{/users/register}">Register</a>
+            <a class="logout-dash" id="little-dashboard" th:href="@{/users/register}">Register</a>
         </li>
 
     </ul>

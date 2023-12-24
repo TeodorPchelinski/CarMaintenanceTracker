@@ -19,7 +19,7 @@ body {
 ul {
     display: block;
     list-style-type: none;
-    margin: 0;
+    margin: 0 0 0 1rem;
     padding: 0;
     width: 15rem;
     height: 100%;
@@ -71,6 +71,7 @@ li a {
     margin-top: 0.2rem;
     margin-right: 0.5rem;
     text-decoration: none;
+    width: 11rem;
 }
 
 li a:hover {
@@ -89,6 +90,16 @@ li a:hover {
     background-color: #555;
     color: #FFFFFF;
 
+}
+
+#little-dashboard{
+    display: block;
+    color: #f1f9ff;
+    padding: 0.5rem 1rem;
+    margin-top: 0.2rem;
+    margin-right: 0.5rem;
+    text-decoration: none;
+    width: 5rem;
 }
 
 

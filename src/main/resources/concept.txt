@@ -14,3 +14,7 @@ Shared cars -> One user can give another, his own car: It is displayed in My Gar
 // Last Workshop -> how to add maps to app
 // Spring Essentials + Spring Security
 
+
+Things that could be useful or can be added:
+    OpenStreetMap -> Google Maps alternative
+    TomTomAPIs    -> Google Maps + Fuel prices + more
