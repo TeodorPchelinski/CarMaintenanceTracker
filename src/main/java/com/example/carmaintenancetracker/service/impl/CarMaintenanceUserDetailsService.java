@@ -25,7 +25,6 @@ public class CarMaintenanceUserDetailsService implements UserDetailsService {
         return userRepository.findByEmail(email)
                 .map(this::map)
                 .orElseThrow(()-> new UsernameNotFoundException("User " + email + "not found!"));
-
     }
 
     private UserDetails map(UserEntity userEntity) {
@@ -34,7 +33,5 @@ public class CarMaintenanceUserDetailsService implements UserDetailsService {
                 .password(userEntity.getPassword())
                     .authorities(List.of())//todo: add Roles later
                 .build();
-
-
     }
 }

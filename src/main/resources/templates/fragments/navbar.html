@@ -42,14 +42,8 @@
         <div class="profile-small">
             <img class="profile-img-small" th:src="@{/images/profile.png}">
             <a class="profile-name"  th:href="account" >
-                <th:block sec:authorize="isAuthenticated()">
-                    Teodor
-                </th:block>
-
-                <th:block sec:authorize="!isAuthenticated()">
-                    Guest user
-                </th:block>
-
+<!--                    <span th:block sec:authentication="name" >Default</span>-->
+                    <span >Default</span>
                 </a>
         </div>
 

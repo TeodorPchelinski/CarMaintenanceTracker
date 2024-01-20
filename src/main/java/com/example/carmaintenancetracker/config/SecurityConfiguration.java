@@ -14,7 +14,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfiguration {
 
-        @Bean
+    @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeHttpRequests(
                 // Define which urls are visible by which users
@@ -22,7 +22,7 @@ public class SecurityConfiguration {
                         // All static resources which are situated in images, css are available for anyone
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                         //Allow anyone to see the home page, the registration page and login page
-                        .requestMatchers("/", "/users/login", "/users/register" ).permitAll()
+                        .requestMatchers("/", "/users/login", "/users/register").permitAll()
                         .anyRequest().authenticated()
         ).formLogin(
                 formLogin -> {
@@ -49,8 +49,8 @@ public class SecurityConfiguration {
 
     @Bean
     public UserDetailsService userDetailsService(UserRepository userRepository) {
-            // Service translate user and role to -> Spring representation
-            return new CarMaintenanceUserDetailsService(userRepository);
+        // Service translate user and role to -> Spring representation
+        return new CarMaintenanceUserDetailsService(userRepository);
     }
 
     @Bean
