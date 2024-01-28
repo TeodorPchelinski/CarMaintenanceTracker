@@ -1,9 +1,15 @@
 package com.example.carmaintenancetracker.service;
 
 import com.example.carmaintenancetracker.model.dto.CreateCarDTO;
+import com.example.carmaintenancetracker.model.entity.CarEntity;
+import com.example.carmaintenancetracker.model.entity.UserEntity;
+
+import java.util.List;
 
 
 public interface CarService {
 
-    Long createCar(CreateCarDTO createCarDTO);
+    CarEntity createCar(CreateCarDTO createCarDTO);
+
+    List<CarEntity> getCarsByOwner(UserEntity owner);
 }

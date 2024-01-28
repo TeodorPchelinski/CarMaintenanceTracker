@@ -20,10 +20,10 @@
 <!--            class="current"-->
         </li>
         <li>
-            <a th:href="@{owned-cars}">My Garage</a>
+            <a th:href="@{cars-owned}">My Garage</a>
         </li>
         <li>
-            <a th:href="community">Community</a>
+            <a th:href="@{community}">Community</a>
         </li>
         <li>
             <a th:href="maintenance">Maintenance</a>
@@ -41,15 +41,30 @@
 
         <div class="profile-small">
             <img class="profile-img-small" th:src="@{/images/profile.png}">
-            <a class="profile-name"  th:href="account" >
+
+            <div sec:authorize="!isAuthenticated()">
+                <a class="profile-name"  th:href="account" >
 <!--                    <span th:block sec:authentication="name" >Default</span>-->
-                    <span >Default</span>
+                    <span>Default user</span>
                 </a>
+            </div>
+
+            <div sec:authorize="isAuthenticated()">
+                <a class="profile-name"  th:href="account" >
+                <span><th:block sec:authentication="name"></th:block></span>
+                </a>
+            </div>
+
         </div>
 
 
         <li th:block sec:authorize="isAuthenticated()">
-            <a class="logout-dash" id="little-dashboard"  th:href="index">Logout</a>
+            <div>
+                <form th:method="post"
+                th:action="@{/users/logout}">
+                    <input type="submit" class="logout-dash" id="little-dashboard" value="Logout" />
+                </form>
+            </div>
         </li>
         <li th:block sec:authorize="!isAuthenticated()">
             <a class="logout-dash" id="little-dashboard" th:href="@{/users/login}">Login</a>

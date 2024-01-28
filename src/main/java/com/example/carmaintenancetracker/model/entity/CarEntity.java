@@ -28,8 +28,10 @@ public class CarEntity extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private FuelEnum fuelType;
 
-    // number -> 800, 1000, 2200, 4500 cubic cm -> Shown as cubic / 1000 = 2.2L in liters
+    // number -> 800, 1000, 2200, 4500 cubic cm -> Shown as cubic 2200 = 2.2L in liters
     private int engineDisplacement;
+
+    // todo: Maybe Adding fuel economy
 
     @Enumerated(EnumType.STRING)
     private TransmissionEnum transmission;

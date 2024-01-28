@@ -18,3 +18,7 @@ Shared cars -> One user can give another, his own car: It is displayed in My Gar
 Things that could be useful or can be added:
     OpenStreetMap -> Google Maps alternative
     TomTomAPIs    -> Google Maps + Fuel prices + more
+
+
+Option to change cars' fuelType -> in case the user add a new fuel to his car
+Option to change nearly everything as if the user set data wrong

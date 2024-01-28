@@ -27,8 +27,6 @@ public class CreateCarDTO {
 
     private int engineDisplacement;
 
-    private FuelTypeEnum fuels;
-
     private TransmissionEnum transmission;
 
     public String getModel() {
@@ -91,15 +89,6 @@ public class CreateCarDTO {
 
     public CreateCarDTO setEngineDisplacement(int engineDisplacement) {
         this.engineDisplacement = engineDisplacement;
-        return this;
-    }
-
-    public FuelTypeEnum getFuels() {
-        return fuels;
-    }
-
-    public CreateCarDTO setFuels(FuelTypeEnum fuels) {
-        this.fuels = fuels;
         return this;
     }
 

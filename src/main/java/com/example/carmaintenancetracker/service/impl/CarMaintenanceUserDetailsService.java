@@ -22,7 +22,7 @@ public class CarMaintenanceUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        return userRepository.findByEmail(email)
+        return userRepository.findUserEntityByEmail(email)
                 .map(this::map)
                 .orElseThrow(()-> new UsernameNotFoundException("User " + email + "not found!"));
     }
