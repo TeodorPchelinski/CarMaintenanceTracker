@@ -29,14 +29,15 @@ public class HomeController {
     @ModelAttribute
     public UserEntity name(Model model) {
 
-
-
+        //todo: logic behind getting the name of the user logged
 
         return new UserEntity().setFirstName("Hand Written Name");
     }
 
+    //todo: logout <input> design make it like the others <li>
+
     @GetMapping("/index")
-    public String home(@ModelAttribute UserEntity userEntity) {
+    public String home() {
         return "index";
     }
 

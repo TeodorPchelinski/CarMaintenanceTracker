@@ -80,6 +80,24 @@ li a:hover {
     color: #FFFFFF;
 }
 
+input {
+    display: block;
+    color: #f1f9ff;
+    background-color: #282828;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin-top: 0.2rem;
+    margin-right: 0.5rem;
+    text-decoration: none;
+    width: 11rem;
+}
+
+input:hover{
+    border-radius: 0.5rem;
+    background-color: #555;
+    color: #FFFFFF;
+}
+
 .active {
     background-color: #a0bad5;
     color: #FFFFFF;
@@ -111,7 +129,7 @@ li a:hover {
     position: fixed;
     z-index: 1;
     margin-right: 1.25rem;
-    padding: 0.75rem 1.25rem 1.25rem 0;
+    padding: 0.75rem 1.25rem 7rem 0;
     width: 14rem;
     /*margin-bottom: 50rem;*/
     background-color: #282828;
@@ -625,7 +643,7 @@ h5 {
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
     box-sizing: border-box;
-    color: rgba(255, 255, 255, 0.78);
+    color: rgb(255, 255, 255);
     cursor: pointer;
     display: inline-flex;
     font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
