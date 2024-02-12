@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/html">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head th:include="~{fragments/head}">
     <title>Home</title>
 </head>
@@ -13,13 +16,16 @@
 
 
     <div class="label-container">
-        <th:block sec:authorize="!isAuthenticated">
+        <div sec:authorize="!isAuthenticated()">
             <h2 >Track Your Car's <br> Maintenance Easily. </h2>
-        </th:block>
+        </div>
 
-        <th:block sec:authorize="isAuthenticated">
-            <h2 th:text="${userEntity.getFirstName()}">Track Your Car's  <br> Maintenance Easily. </h2>
-        </th:block>
+        <div  sec:authorize="isAuthenticated()">
+            <a class="profile-name" th:href="account">
+<!--                <h2 th:text="${user.name}"></h2>-->
+                <h2 >Track Your Car's <br> Maintenance Easily. (Logged) </h2>
+            </a>
+        </div>
     </div>
 
 

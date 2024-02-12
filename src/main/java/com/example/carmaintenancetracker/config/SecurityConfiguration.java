@@ -2,17 +2,33 @@ package com.example.carmaintenancetracker.config;
 
 import com.example.carmaintenancetracker.repository.UserRepository;
 import com.example.carmaintenancetracker.service.impl.CarMaintenanceUserDetailsService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
+@EnableWebSecurity
 public class SecurityConfiguration {
+
+    //todo: Add UserDetails @Bean -> can't start because of it
+
+    private final UserRepository userRepository;
+
+    public SecurityConfiguration(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
@@ -41,7 +57,12 @@ public class SecurityConfiguration {
                             .invalidateHttpSession(true);
                 }
         );
+
         //todo: Remember me tick button to be added
+            // Spring Security -> 3:04:26
+
+        //todo: Pages that should be visible even if not logged in
+            // Error Handling -> 2:46:19
 
         return httpSecurity.build();
 
@@ -49,9 +70,17 @@ public class SecurityConfiguration {
 
     @Bean
     public UserDetailsService userDetailsService(UserRepository userRepository) {
+
         // Service translate user and role to -> Spring representation
         return new CarMaintenanceUserDetailsService(userRepository);
     }
+
+    //todo: Find solving of UserDetails @Bean not found
+        // Spring Security -> 2:52:07
+        // Spring Security -> 3:04:10  Защо не слагаме @Service на CarMaintenanceUserDetailsService
+        // Containerization -> 2:38:05 Looks the same as here UserDetailsService @Bean
+
+
 
     @Bean
     public PasswordEncoder passwordEncoder() {

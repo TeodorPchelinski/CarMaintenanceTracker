@@ -418,7 +418,9 @@ input::-webkit-inner-spin-button {
 .part-image-small {
     width: 4.3rem;
     height: 4.3rem;
-    border-radius: 4px;
+    /*border-radius: 4px;*/
+    border-radius: 50%;
+    overflow: hidden;
     padding: 2px;
 }
 
@@ -468,6 +470,11 @@ h4 {
 h5 {
     color: #282828;
 }
+
+h6 {
+    color: #282828;
+}
+
 .warning-container {
     padding-top: 0.3rem;
 }
@@ -519,7 +526,7 @@ h5 {
     max-width: 270px;
     max-height: 150px;
     position: center;
-    background-color: #ffffff;
+    background-color: #ff0000;
 }
 
 #my-chart .canvas {
@@ -535,7 +542,13 @@ h5 {
 #container {
     /*width: 270px;*/
     width: 22.8rem;
-    height: auto;
+    height: 9rem;
+    padding: 0;
+}
+#container2 {
+    /*width: 270px;*/
+    width: 22.8rem;
+    height: 9rem;
     padding: 0;
 }
 
@@ -543,16 +556,32 @@ h5 {
     /*width: 270px;*/
     width: 22.8rem;
     /*height: 8.4375rem;*/
-    height: auto;
+    height: 9rem;
     padding: 0;
 }
 
 #container-fuel3 {
     /*width: 270px;*/
     width: 22.8rem;
-    height: auto;
+    height: 9rem;
     padding: 0;
 }
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-column {
+    flex: 1;
+}
+
+.form-column label,
+.form-column input {
+    display: block;
+    margin-bottom: 10px;
+}
+
 
 #window-long-car-card {
     height: 12.9rem;
@@ -562,6 +591,11 @@ h5 {
 #after-skipped-window-small {
     margin-top: 31.6rem;
     height: 10rem;
+}
+
+#window-wide {
+    height: 10rem;
+    width: 48rem;
 }
 
 #window-small-fuel2 {
@@ -624,6 +658,8 @@ h5 {
     text-decoration: none;
     position: center;
     margin-top: 4px;
+    margin-right: 4rem;
+    max-width: 20px;
 }
 
 .logout-dash {

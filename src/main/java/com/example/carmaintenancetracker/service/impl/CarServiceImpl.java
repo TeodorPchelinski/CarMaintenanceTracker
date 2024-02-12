@@ -7,8 +7,7 @@ import com.example.carmaintenancetracker.repository.CarRepository;
 import com.example.carmaintenancetracker.repository.UserRepository;
 import com.example.carmaintenancetracker.service.CarService;
 import com.example.carmaintenancetracker.service.UserService;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -28,12 +27,25 @@ public class CarServiceImpl implements CarService {
 
 
     @Override
-    public CarEntity createCar(CreateCarDTO createCarDTO) {
+    public Long createCar(CreateCarDTO createCarDTO, UserDetails creator) {
 
         // not logged user can't create car because he won't be allowed to be on Create Car page or My Garage page
+        //todo: loggedUser = email of the user -> we need user's first and last name
 
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        UserEntity loggedUser = (UserEntity) authentication.getPrincipal();
+
+        CarEntity newCar = map(createCarDTO);
+
+        UserEntity ownerEntity = userRepository.findByEmail(creator.getUsername())
+                .orElseThrow(() -> new IllegalArgumentException("User with email " + creator.getUsername() + "not found!"));
+
+        newCar.setOwner(ownerEntity);
+
+        newCar = carRepository.save(newCar);
+
+        return newCar.getId();
+    }
+
+    private CarEntity map(CreateCarDTO createCarDTO) {
 
         CarEntity newCar = new CarEntity()
                 .setModel(createCarDTO.getModel())
@@ -41,15 +53,13 @@ public class CarServiceImpl implements CarService {
                 .setManufactureYear(createCarDTO.getManufactureYear())
                 .setFuelType(createCarDTO.getFuelEngineType())
                 .setEngineDisplacement(createCarDTO.getEngineDisplacement())
-                .setTransmission( createCarDTO.getTransmission())
-                .setOwner(loggedUser);
+                .setTransmission( createCarDTO.getTransmission());
 
-
-        return carRepository.save(newCar);
+         return newCar;
     }
 
     @Override
     public List<CarEntity> getCarsByOwner(UserEntity owner) {
-        return carRepository.findCarEntitiesByOwner(owner);
+        return carRepository.findAllByOwner(owner);
     }
 }

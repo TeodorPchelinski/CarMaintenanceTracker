@@ -6,7 +6,11 @@ import com.example.carmaintenancetracker.service.UserService;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -22,15 +26,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserEntity getUserByEmail() {
+    public String getUserByEmail(UserDetails loggedUser) {
 
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        UserEntity loggedUser = (UserEntity) authentication.getPrincipal();
-
-        userRepository.findUserEntityByEmail(loggedUser.getEmail());
+        //todo: Watch the lecture -> Use ResponseEntity or other way to get the String in Controller
 
 
 
-        return null;
+            Optional<UserEntity> currentUser = userRepository.findByEmail(loggedUser.getUsername());
+
+        return currentUser.get().getFirstName();
     }
 }

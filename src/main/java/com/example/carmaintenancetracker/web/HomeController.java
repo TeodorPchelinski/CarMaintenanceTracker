@@ -3,9 +3,8 @@ package com.example.carmaintenancetracker.web;
 import com.example.carmaintenancetracker.model.entity.UserEntity;
 import com.example.carmaintenancetracker.service.CarService;
 import com.example.carmaintenancetracker.service.UserService;
-import com.example.carmaintenancetracker.service.impl.CarServiceImpl;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/")
 public class HomeController {
+
 
     private final UserService userService;
 
@@ -27,12 +27,12 @@ public class HomeController {
 
 
     @ModelAttribute
-    public UserEntity name(Model model) {
-
-        //todo: logic behind getting the name of the user logged
-
-        return new UserEntity().setFirstName("Hand Written Name");
+    public void name(Model model) {
+//        String username = userService.getUserByEmail();
+//        model.addAttribute("username", new UserEntity().setFirstName(username));
+//        System.out.println(username);
     }
+    //todo: logic behind getting the name of the user logged
 
     //todo: logout <input> design make it like the others <li>
 
