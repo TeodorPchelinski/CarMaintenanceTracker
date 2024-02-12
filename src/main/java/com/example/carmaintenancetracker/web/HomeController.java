@@ -3,6 +3,7 @@ package com.example.carmaintenancetracker.web;
 import com.example.carmaintenancetracker.model.entity.UserEntity;
 import com.example.carmaintenancetracker.service.CarService;
 import com.example.carmaintenancetracker.service.UserService;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -36,8 +37,20 @@ public class HomeController {
 
     //todo: logout <input> design make it like the others <li>
 
+
+
+    @ModelAttribute
+    public UserEntity addUser() {
+        return new UserEntity().setFirstName("Teodor1");
+    }
+
     @GetMapping("/index")
-    public String home() {
+    public String home(Model model,
+                       @AuthenticationPrincipal UserDetails username) {
+
+
+        model.addAttribute("username", userService.getUserByEmail(username));
+
         return "index";
     }
 

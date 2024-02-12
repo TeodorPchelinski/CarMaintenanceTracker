@@ -20,10 +20,6 @@ public class UserServiceImpl implements UserService {
         this.userRepository = userRepository;
     }
 
-    @Override
-    public User getUserByLogin(String login) {
-        return null;
-    }
 
     @Override
     public String getUserByEmail(UserDetails loggedUser) {
@@ -34,6 +30,6 @@ public class UserServiceImpl implements UserService {
 
             Optional<UserEntity> currentUser = userRepository.findByEmail(loggedUser.getUsername());
 
-        return currentUser.get().getFirstName();
+        return currentUser.get().getFirstName() + " " + currentUser.get().getLastName();
     }
 }

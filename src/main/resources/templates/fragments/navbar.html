@@ -50,10 +50,12 @@
             </div>
 
             <div sec:authorize="isAuthenticated()">
-                <a class="profile-name"  th:href="account" >
-                <span><th:block sec:authentication="name"></th:block></span>
+                <a id="usename" name="username" class="profile-name"  th:href="@{/account}" >
+                <span><th:block th:text="${username}" >User</th:block></span>
+<!--                <span><th:block th:text="${userEntity.getFirstName()}" ></th:block></span>-->
                 </a>
             </div>
+
 
         </div>
 
