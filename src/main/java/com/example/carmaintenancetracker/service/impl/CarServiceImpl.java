@@ -29,11 +29,11 @@ public class CarServiceImpl implements CarService {
     @Override
     public Long createCar(CreateCarDTO createCarDTO, UserDetails creator) {
 
-        // not logged user can't create car because he won't be allowed to be on Create Car page or My Garage page
-        //todo: loggedUser = email of the user -> we need user's first and last name
+        // unlogged user can't create car because he won't be allowed to be on Create Car page or My Garage page
 
 
         CarEntity newCar = map(createCarDTO);
+        // all inputs from the site as createCarDTO
 
         UserEntity ownerEntity = userRepository.findByEmail(creator.getUsername())
                 .orElseThrow(() -> new IllegalArgumentException("User with email " + creator.getUsername() + "not found!"));

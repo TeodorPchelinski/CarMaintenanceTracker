@@ -21,8 +21,6 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfiguration {
 
-    //todo: Add UserDetails @Bean -> can't start because of it
-
     private final UserRepository userRepository;
 
     public SecurityConfiguration(UserRepository userRepository) {
@@ -75,10 +73,7 @@ public class SecurityConfiguration {
         return new CarMaintenanceUserDetailsService(userRepository);
     }
 
-    //todo: Find solving of UserDetails @Bean not found
-        // Spring Security -> 2:52:07
-        // Spring Security -> 3:04:10  Защо не слагаме @Service на CarMaintenanceUserDetailsService
-        // Containerization -> 2:38:05 Looks the same as here UserDetailsService @Bean
+
 
 
 

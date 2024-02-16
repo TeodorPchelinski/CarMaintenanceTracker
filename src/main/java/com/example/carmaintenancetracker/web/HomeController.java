@@ -33,7 +33,6 @@ public class HomeController {
 //        model.addAttribute("username", new UserEntity().setFirstName(username));
 //        System.out.println(username);
     }
-    //todo: logic behind getting the name of the user logged
 
     //todo: logout <input> design make it like the others <li>
 

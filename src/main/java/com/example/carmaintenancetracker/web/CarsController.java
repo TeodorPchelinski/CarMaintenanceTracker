@@ -35,6 +35,11 @@ public class CarsController {
         return "my-garage";
     }
 
+    @GetMapping("/cars/add")
+    public String addCar(){
+        return "car-add";
+    }
+
 
     @PostMapping("/cars/add")
     public String add(@Valid CreateCarDTO createCarDTO,
@@ -57,7 +62,6 @@ public class CarsController {
 //        return "redirect:/car/";
         return "redirect:/car/" + newCarId;
 
-        //todo: Have a problem with UserDetails Right here above. Need fix before making functions
     }
 
 //    @PostMapping("/create")
@@ -75,5 +79,6 @@ public class CarsController {
     public String details(@PathVariable("id") Long id) {
         return "car-details";
     }
+    // 1:17:00 Spring Essentials
 
 }

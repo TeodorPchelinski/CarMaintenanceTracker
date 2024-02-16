@@ -1,5 +1,9 @@
 body {
-    background-color: #00AEFF;
+    /*Original color*/
+    /*background-color: #00AEFF;*/
+
+
+    background-color: #45beff;
     /*background-color: #ecebeb;*/
     padding: 0;
     margin-top: 0;
@@ -14,6 +18,11 @@ body {
     /*justify-content: space-evenly;*/
     flex-direction: row;
     height: 100%;
+}
+
+div {
+    /*resize: vertical;*/
+    /*overflow: auto;*/
 }
 
 ul {
@@ -253,13 +262,13 @@ input:hover{
 
 
 .field {
-    margin-top: 30px;
-    margin-left: 5rem;
+    margin-top: 15px;
+    margin-left: 1rem;
     /*border: 1px solid #c7c7c7;*/
     /*box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.3);*/
     /*border-radius: 3px;*/
-    height: 1.5625rem;
-    width: 15.375rem;
+    height: 2.375rem;
+    width: 13.5rem;
     position: relative;
 }
 
@@ -270,8 +279,64 @@ input:hover{
     border: 2px solid #ecebeb;
     width: 12rem;
 }
+#part-name {
+    font-size: 1rem;
+}
 
 .field select {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #424242;
+    background: none;
+    padding: 0.625rem;
+    border: 2px solid #ecebeb;
+    border-radius: 6px;
+    width: 13.5rem;
+    -webkit-appearance: none;
+}
+
+#quantity {
+    width: 2.5rem;
+}
+
+.field-small select {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #424242;
+    background: none;
+    padding: 0.625rem;
+    border: 2px solid #ecebeb;
+    width: 1.1rem;
+}
+
+.field option {
+}
+
+
+ /*Cost small input*/
+.field-small {
+    margin-top: 15px;
+    margin-left: 0;
+    /*border: 1px solid #c7c7c7;*/
+    /*box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.3);*/
+    /*border-radius: 3px;*/
+    height: 2.375rem;
+    /*be careful here*/
+    width: 6.5rem;
+    position: relative;
+}
+
+.field-small input {
+    color: #565656;
+    background: none;
+    padding: 0.625rem;
+    border: 2px solid #ecebeb;
+    width: 5rem;
+    margin-right: 0;
+}
+
+
+.field-small select {
     font-size: 1rem;
     font-weight: normal;
     color: #424242;
@@ -281,16 +346,80 @@ input:hover{
     width: 12.1rem;
 }
 
-.field option {
+.field-smallest {
+    width: 5rem;
+    margin-left: 0;
+    margin-right: 0;
 }
 
+.field-smallest select {
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #424242;
+    background: none;
+    padding: 0.625rem;
+    border: 2px solid #ecebeb;
+    /*border-radius: 3px;*/
+    height: 2.375rem;
+    width: 12rem;
+}
+
+.field-small-label {
+    position: absolute;
+    top:0;
+    left: 0;
+    translate: 0.625rem 0.625rem;
+    /* FuelType */
+    color: #252525;
+    background-color: #ffffff;
+    padding-inline: 0.25rem;
+    border: 2px solid transparent;
+    pointer-events: none;
+    transition: translate 250ms,
+    background-color 250ms,
+    border-bottom-color 250ms;
+    /*font-weight: bold;*/
+    /*font-size: 14px;*/
+    /*display: block;*/
+    /*margin-top: 10px;*/
+    /*margin-left: 6.5rem;*/
+}
+
+.field-small:focus-within label,
+.field-small:not(:has(:placeholder-shown))
+label {
+    translate: 0.625rem -1rem;
+    font-size: 16px;
+    font-weight: normal;
+    user-focus-pointer: true;
+    border-radius: 2px;
+    /*background-color: #234465;*/
+    /*color: #282828;*/
+    color: #030104;
+}
+
+.field-small input:focus,
+.field-small input:active {
+    user-focus-pointer: true;
+    border: 2px solid #3aa2b0;
+    /*border-radius: 2px;*/
+    /*background-color: #234465;*/
+    /*color: #282828;*/
+
+}
+
+.field-small::placeholder {
+    color: #FFFFFF;
+}
 
 #large-text {
-    width: 11.7rem;
+    width: 13rem;
     height: 2rem;
-    resize: none;
+    resize: vertical;
     color: #030104;
     border: 2px solid #ecebeb;
+    border-radius: 6px;
 }
 
 /* Transition and label place */
@@ -300,7 +429,7 @@ input:hover{
     left: 0;
     translate: 0.625rem 0.625rem;
     /* FuelType */
-    color: #030104;
+    color: #464646;
     background-color: #ffffff;
     padding-inline: 0.25rem;
     border: 2px solid transparent;
@@ -344,9 +473,13 @@ label {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
+    -moz-appearance: none;
     -webkit-appearance: none;
+    appearance: none;
     margin: 0;
 }
+
+
 
 
 .button {
@@ -368,6 +501,14 @@ input::-webkit-inner-spin-button {
     height: 1.875rem;
 }
 
+#add-car-button {
+    /*margin-top: 3rem;*/
+    /*margin-left: 7rem;*/
+
+    display: block;
+    width: 8.75rem;
+    height: 1.875rem;
+}
 
 .label-and-button-container {
 
@@ -574,6 +715,9 @@ h6 {
 
 .form-column {
     flex: 1;
+    padding-top: 15px;
+    padding-right: 0;
+    padding-left: 0;
 }
 
 .form-column label,
@@ -586,6 +730,15 @@ h6 {
 #window-long-car-card {
     height: 12.9rem;
     width: 48rem;
+    display: flex;
+}
+
+#window-long-car-add-card {
+    height: 12.9rem;
+    width: 48rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #after-skipped-window-small {
@@ -703,8 +856,9 @@ h6 {
 .button:hover,
 .button:focus {
     /*border-color: rgb(94, 0, 255);*/
-    border-color: #5E00FF;
-    box-shadow: rgba(47, 0, 255, 0.13) 0 4px 12px;
+    background-color: #8053ee;
+    border-color: #792eff;
+    box-shadow: rgba(107, 74, 255, 0.13) 0 4px 12px;
     color: rgb(255, 255, 255);
 }
 .button:hover {
@@ -722,9 +876,10 @@ h6 {
 }
 
 .button:active {
-    background-color: rgb(161, 72, 234);
+    /*background-color: rgb(161, 72, 234);*/
+    background-color: rgb(94, 0, 255);
     border-color: rgba(255, 255, 255, 0.34);
-    box-shadow: rgb(255, 255, 255) 0 0 2px 4px inset;
+    box-shadow: rgb(255, 255, 255) 0 0 2px 3px inset;
     color: rgba(0, 0, 0, 0.62);
     transform: translateY(0);
 }
@@ -809,3 +964,63 @@ h6 {
     box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 1px 1px 0, rgba(0, 0, 0, .1) 0 1px 1px 0, rgba(64, 92, 245, 0.64) 0 0 0 3px;
 }
 
+/*Making the real secondary button*/
+
+.button-secondary {
+    align-items: center;
+    /*background-color: #3c1b86;*/
+    background-color: rgba(94, 0, 255, 0);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgb(58, 58, 58);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+}
+
+.button-secondary:hover,
+.button-secondary:focus {
+    /*border-color: rgb(94, 0, 255);*/
+    border-color: #5E00FF;
+    box-shadow: rgba(47, 0, 255, 0.13) 0 4px 12px;
+    color: rgb(58, 58, 58);
+}
+.button-secondary:hover {
+    transform: translateY(-1px);
+}
+
+/*.button:hover {*/
+/*    background-color: rgb(249, 250, 251);*/
+/*    color: #111827;*/
+/*}*/
+
+
+.button-secondary:focus-visible {
+    box-shadow: none;
+}
+
+.button-secondary:active {
+    /*background-color: rgb(161, 72, 234);*/
+    background-color: rgba(94, 0, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.34);
+    box-shadow: rgb(255, 255, 255) 0 0 2px 3px inset;
+    color: rgba(0, 0, 0, 0.62);
+    transform: translateY(0);
+}

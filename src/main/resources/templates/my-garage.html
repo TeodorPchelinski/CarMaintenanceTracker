@@ -123,11 +123,26 @@
         <img th:src="@{/images/audi-a6.jpg}">
       </div>
     </div>
-    <div class="window" id="window-long-car-card">
-      <div class="car-img-big">
-        <img th:src="@{/images/audi-a6.jpg}">
-      </div>
+
+<!--          CAR CARD Simple only image-->
+<!--    <div class="window" id="window-long-car-card">-->
+<!--      <div class="car-img-big">-->
+<!--        <img th:src="@{/images/audi-a6.jpg}">-->
+<!--      </div>-->
+<!--    </div>-->
+
+
+    <div class="window" id="window-long-car-add-card">
+      <form th:action="@{/cars/add}" th:method="get">
+        <button type="submit" class="button-secondary" id="add-car-button">Add Car</button>
+      </form>
+<!--      Only shown when there is no cars in garage-->
+<!--      One time adding a car this container will vanish and a new small button will appear-->
+
     </div>
+
+
+
     <div class="window" id="window-small">
     </div>
 

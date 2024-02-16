@@ -22,3 +22,8 @@ Things that could be useful or can be added:
 
 Option to change cars' fuelType -> in case the user add a new fuel to his car
 Option to change nearly everything as if the user set data wrong
+
+UserDetails Bean problem for one day
+        // Spring Security -> 2:52:07
+        // Spring Security -> 3:04:10  Защо не слагаме @Service на CarMaintenanceUserDetailsService
+        // Containerization -> 2:38:05 Looks the same as here UserDetailsService @Bean
