@@ -741,6 +741,12 @@ h6 {
     align-items: center;
 }
 
+#window-full-height {
+    height: 100%;
+    width: 48rem;
+    display: flex;
+}
+
 #after-skipped-window-small {
     margin-top: 31.6rem;
     height: 10rem;
