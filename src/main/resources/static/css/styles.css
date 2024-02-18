@@ -744,7 +744,8 @@ h6 {
 #window-full-height {
     height: 100%;
     width: 48rem;
-    display: flex;
+    display: grid;
+
 }
 
 #after-skipped-window-small {
