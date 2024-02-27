@@ -36,7 +36,7 @@ public class SecurityConfiguration {
                         // All static resources which are situated in images, css are available for anyone
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                         //Allow anyone to see the home page, the registration page and login page
-                        .requestMatchers("/", "/users/login", "/users/register").permitAll()
+                        .requestMatchers("/", "/users/login", "/users/register", "/users/login-error").permitAll()
                         .anyRequest().authenticated()
         ).formLogin(
                 formLogin -> {

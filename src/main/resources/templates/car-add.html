@@ -17,43 +17,46 @@
 
     <div class="section2">
 
-
-
-
-
         <div class="window" id="window-full-height">
             <label class="window-label">Creating New Car</label>
+            <form th:action="@{/car/add}"
+            th:method="post">
+
+
             <div class="field">
                 <input id="file" type="file" >
             </div>
 
             <div class="field">
-                <input  type=text id="brand" placeholder="">
+                <input  type=text id="brand" name="brand" placeholder="">
                 <label  for="brand" class="field-label">Brand</label>
             </div>
 
             <div class="field">
-                <input  type=text id="model" placeholder="">
+                <input  type=text id="model" name="model" placeholder="">
                 <label  for="model" class="field-label">Model</label>
             </div>
 
             <div class="field">
                 <select id="year-manufactured" name="year-manufactured" placeholder="">
-                    <option value="">Year</option>
-                    <option value="">2027</option>
-                    <option value="">2026</option>
-                    <option value="">2025</option>
-                    <option value="">2024</option>
-                    <option value="">2023</option>
-                    <option value="">2022</option>
-                    <option value="">2021</option>
-                    <option value="">2020</option>
-                    <!--                    <option th:each="fuel : ${fuels}"-->
-<!--                            th:text="${fuel}"-->
-<!--                            th:value="${fuel}">-->
-<!--                    </option>-->
-
+                    <option value="" >-Year-</option>
                 </select>
+
+                <script>
+                    var currentYear = new Date().getFullYear();
+
+                    var select = document.getElementById("year-manufactured");
+
+                    for (var year = currentYear; year >= 1901; year--) {
+
+                        var option = document.createElement("option");
+
+                        option.value = year;
+                        option.text = year;
+
+                        select.appendChild(option);
+                    }
+                </script>
 
             </div>
 
@@ -65,11 +68,14 @@
 
 
             <div class="field">
-                <select id="fuel-type" name="fuel-type" placeholder="">
-                    <option value="">Transmission</option>
-                    <option value="">Manual</option>
-                    <option value="">Automatic</option>
-                    <option value="">Semi-automatic</option>
+                <select id="transmission" name="transmission" placeholder="">
+                    <option value="">-Transmission-</option>
+                    <option th:each="transmission : ${transmission}"
+                            th:text="${#strings.toLowerCase(transmission)}"
+                            th:value="${transmission}">
+
+                    </option>
+
 
                 </select>
 
@@ -81,79 +87,106 @@
             </div>
 
             <div class="field">
+                <select id="engineFuel" name="engineFuel" placeholder="">
+                    <option value="">-Fuel-</option>
+                    <option th:each="engineFuel : ${engineFuel}"
+                            th:text="${engineFuel}"
+                            th:value="${engineFuel}">
+                    </option>
+
+                </select>
+
+            </div>
+            <div class="field">
+                <button type="button" class="button-third" onclick="toggleContent()">Second Fuel</button>
+            </div>
+
+                <script>
+                    function toggleContent() {
+                        var content = document.getElementById("content");
+                        content.classList.toggle("show");
+                    }
+                </script>
+
+
+                <div id="content" class="content">
+
+            <div class="field">
                 <select id="fuel-type" name="fuel-type" placeholder="">
-                    <option value="">Fuel</option>
-                    <option value="">Petrol</option>
-                    <option value="">LPG</option>
-                    <option value="">CNG</option>
-                    <option value="">Diesel</option>
-                    <option value="">Electric</option>
-                    <option value="">Other</option>
+                    <option value="" selected disabled>-Additional fuel-</option>
+                    <option th:each="engineFuel : ${engineFuel}"
+                            th:text="${engineFuel}"
+                            th:value="${engineFuel}">
+                    </option>
 
                 </select>
 
             </div>
 
-            <div class="field">
-                <input type=radio id="radio-button" placeholder="">
-                <label for="displacement" class="field-label">Add fuel</label>
-            </div>
+                </div>
 
             <div class="field">
-                <select id="fuel-type" name="fuel-type" placeholder="">
-                    <option value="">Additional fuel</option>
-                    <option value="">Petrol</option>
-                    <option value="">LPG</option>
-                    <option value="">CNG</option>
-                    <option value="">Diesel</option>
-                    <option value="">Electric</option>
-                    <option value="">Other</option>
-
-                </select>
-
+                <button type="button" class="button-third" onclick="toggleContent2()">Inspection</button>
             </div>
 
-            <div class="field">
-                <input type=radio id="radio-button" placeholder="">
-                <label for="displacement" class="field-label">Add Technical inspection</label>
-            </div>
+                <script>
+                    function toggleContent2() {
+                        var content = document.getElementById("inspection-form");
+                        content.classList.toggle("show");
+                    }
+                </script>
 
-            <div class="field">
-                <input type=date id="inspection" placeholder="">
-                <label for="inspection" class="field-label">Technical inspection expire date</label>
-            </div>
-
-            <div class="field">
-                <input type=radio id="radio-button" placeholder="">
-                <label for="displacement" class="field-label">Add Vignette</label>
-            </div>
-
-            <div class="field">
-                <input type=date id="inspection" placeholder="">
-                <label for="inspection" class="field-label">Start Date</label>
-            </div>
-
-            <div class="field">
-                <input type=date id="inspection" placeholder="">
-                <label for="inspection" class="field-label">Expire Date Date</label>
-            </div>
-
-            <div class="field">
-                <select id="fuel-type" name="vignette-period" placeholder="">
-                    <option value="">Period</option>
-                    <option value="">Weekend</option>
-                    <option value="">Week</option>
-                    <option value="">Month</option>
-                    <option value="">Year</option>
-                    <option value="">One time</option>
-                    <option value="">Other</option>
-
-                </select>
-
-            </div>
+                <div id="inspection-form" class="content">
+                    <div class="field">
+                        <input type=date id="inspection" placeholder="">
+                        <label for="inspection" class="field-label">Expire date</label>
+                    </div>
+                </div>
 
 
 
+                <div class="field">
+                    <button type="button" class="button-third" onclick="toggleContent3()">Vignette</button>
+                </div>
+
+                <script>
+                    function toggleContent3() {
+                        var content = document.getElementById("vignette-form");
+                        content.classList.toggle("show");
+                    }
+                </script>
+
+                <div id="vignette-form" class="content">
+
+                    <div class="field">
+                        <input type=date id="inspection" placeholder="">
+                        <label for="inspection" class="field-label">Start Date</label>
+                    </div>
+
+                    <div class="field">
+                        <input type=date id="inspection" placeholder="">
+                        <label for="inspection" class="field-label">Expire Date Date</label>
+                    </div>
+
+                    <div class="field">
+                        <select id="vignettePeriod" name="vignettePeriod" placeholder="">
+                            <option value="">-Period-</option>
+                            <option th:each="vignettePeriod : ${vignettePeriod}"
+                                    th:text="${#strings.toLowerCase(vignettePeriod)}"
+                                    th:value="${vignettePeriod}">
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                </div>
+
+                <button type="submit" class="button" id="refuel-button">Create</button>
+
+            </form>
 
         </div>
 

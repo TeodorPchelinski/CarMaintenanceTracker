@@ -125,7 +125,16 @@
 
             <label class="window-label">Charging</label>
 
-            <button class="button-second" id="add-trip-name">Add Trip Name</button>
+            <button class="button-second" id="add-trip-name" onclick="toggleTripName()">Add Trip Name</button>
+
+            <script>
+                function toggleTripName() {
+                    const content = document.getElementById("trip-form");
+                    content.classList.toggle("show");
+                }
+            </script>
+
+            <div id="trip-form" class="content">
 
 <!--            REFUEL Form-->
 <!--            <form id="refuel-form" th:action="@{/car/refuel}"-->
@@ -133,6 +142,8 @@
             <div class="field">
                 <input  type=text id="trip-name" placeholder="">
                 <label  for="trip-name" class="field-label">Trip Name</label>
+            </div>
+
             </div>
 
             <div class="field">
@@ -167,7 +178,7 @@
                 <label  for="large-text" class="field-label">Description</label>
             </div>
 
-            <button class="button" id="refuel-button">Submit</button>
+            <button type="button" class="button" id="refuel-button">Submit</button>
 <!--            </form>-->
         </div>
 

@@ -4,7 +4,6 @@ body {
 
 
     background-color: #45beff;
-    /*background-color: #ecebeb;*/
     padding: 0;
     margin-top: 0;
     margin-left: 0;
@@ -44,6 +43,7 @@ ul, body {
     /*background-color: #282828;*/
 }
 
+
 .current-page {
     margin-top: 10px;
     padding-right: 80rem;
@@ -62,6 +62,7 @@ ul, body {
     /*height: 20rem;*/
 }
 
+
 .site-name {
     color: #FFFFFF;
     padding-top: 1rem;
@@ -73,6 +74,7 @@ ul, body {
     position: center;
 }
 
+
 li a {
     display: block;
     color: #f1f9ff;
@@ -83,11 +85,19 @@ li a {
     width: 11rem;
 }
 
+
 li a:hover {
     border-radius: 0.5rem;
     background-color: #555;
     color: #FFFFFF;
 }
+
+
+.ul li:active a{
+    color: #007bff; /* Change to your active color */
+    background-color: #234465;
+}
+
 
 input {
     display: block;
@@ -179,6 +189,7 @@ input:hover{
     margin-top: 1rem;
     margin-left: 1rem;
     padding: 0.625rem;
+    position: relative;
 
     /*width: 285px;*/
     width: 22.8rem;
@@ -1030,4 +1041,29 @@ h6 {
     box-shadow: rgb(255, 255, 255) 0 0 2px 3px inset;
     color: rgba(0, 0, 0, 0.62);
     transform: translateY(0);
+}
+
+/*TOGGLE BUTTON*/
+
+.toggle-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+/* Style for the content to be hidden/shown */
+.content {
+    display: none;
+}
+
+/* Style to show content when toggled */
+.content.show {
+    display: block;
 }

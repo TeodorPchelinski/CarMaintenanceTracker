@@ -35,7 +35,8 @@ public enum TireBrandEnum {
     PETRAS,
     LAUFENN,
     GITI,
-    DURATURN
+    DURATURN,
+    other
 
 
 }
