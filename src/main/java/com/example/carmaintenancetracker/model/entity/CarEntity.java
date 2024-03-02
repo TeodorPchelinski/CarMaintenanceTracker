@@ -11,6 +11,7 @@ import java.util.List;
 @Table(name = "cars")
 public class CarEntity extends BaseEntity {
 
+    //todo: adding image name as String referring for an image searched by name
 
     private String model;
 

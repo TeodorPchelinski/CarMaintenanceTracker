@@ -12,6 +12,10 @@ public class UserRegistrationController {
 
     @GetMapping("/users/register")
     public String register() {
+        //todo: UserDTO
+        //(Model model)
+        //UserDTO userDto = new UserDTO();
+        //model.addAttribute("user", userDto);
         return "auth-registration";
     }
 

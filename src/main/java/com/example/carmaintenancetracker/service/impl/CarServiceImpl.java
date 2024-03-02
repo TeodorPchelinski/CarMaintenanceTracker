@@ -9,6 +9,9 @@ import com.example.carmaintenancetracker.service.CarService;
 import com.example.carmaintenancetracker.service.UserService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.List;
 
 @Service
@@ -50,10 +53,13 @@ public class CarServiceImpl implements CarService {
         CarEntity newCar = new CarEntity()
                 .setModel(createCarDTO.getModel())
                 .setBrand(createCarDTO.getBrand())
-                .setManufactureYear(createCarDTO.getManufactureYear())
+                .setManufactureYear(
+                        LocalDate.of(createCarDTO.getManufactureYear(), Month.of(createCarDTO.getManufactureMonth()), 1))
                 .setFuelType(createCarDTO.getFuelEngineType())
                 .setEngineDisplacement(createCarDTO.getEngineDisplacement())
                 .setTransmission( createCarDTO.getTransmission());
+
+        //todo: LocalDate => Calendar.Month + Calendar.Year (two input fields)
 
          return newCar;
     }

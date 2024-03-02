@@ -19,8 +19,8 @@
 
         <div class="window" id="window-full-height">
             <label class="window-label">Creating New Car</label>
-            <form th:action="@{/car/add}"
-            th:method="post">
+            <form th:action="@{/cars/add}"
+                    th:method="post">
 
 
             <div class="field">
@@ -33,12 +33,30 @@
             </div>
 
             <div class="field">
-                <input  type=text id="model" name="model" placeholder="">
+                <input type=text id="model" name="model" placeholder="">
                 <label  for="model" class="field-label">Model</label>
             </div>
 
             <div class="field">
-                <select id="year-manufactured" name="year-manufactured" placeholder="">
+                <select id="month-manufactured" name="manufactureMonth" placeholder="">
+                    <option value="" >-Month-</option>
+                    <option value="1" >January</option>
+                    <option value="2" >February</option>
+                    <option value="3" >March</option>
+                    <option value="4" >April</option>
+                    <option value="5" >May</option>
+                    <option value="6" >June</option>
+                    <option value="7" >July</option>
+                    <option value="8" >August</option>
+                    <option value="9" >September</option>
+                    <option value="10" >October</option>
+                    <option value="11" >November</option>
+                    <option value="12" >December</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <select id="year-manufactured" name="manufactureYear" placeholder="">
                     <option value="" >-Year-</option>
                 </select>
 
@@ -62,8 +80,8 @@
 
 
             <div class="field">
-                <input type=number id="displacement" placeholder="">
-                <label for="displacement" class="field-label">Displacement (1.8L)</label>
+                <input type=number id="displacement" name="engineDisplacement" placeholder="">
+                <label for="displacement" class="field-label">Displacement 1000</label>
             </div>
 
 
@@ -82,12 +100,12 @@
             </div>
 
             <div class="field">
-                <input type=number id="mileage" placeholder="">
+                <input type=number id="mileage" name="mileage" placeholder="">
                 <label for="mileage" class="field-label">Mileage</label>
             </div>
 
             <div class="field">
-                <select id="engineFuel" name="engineFuel" placeholder="">
+                <select id="engineFuel" name="fuelEngineType" placeholder="">
                     <option value="">-Fuel-</option>
                     <option th:each="engineFuel : ${engineFuel}"
                             th:text="${engineFuel}"
@@ -112,7 +130,7 @@
                 <div id="content" class="content">
 
             <div class="field">
-                <select id="fuel-type" name="fuel-type" placeholder="">
+                <select id="fuel-type" name="fuelType" placeholder="">
                     <option value="" selected disabled>-Additional fuel-</option>
                     <option th:each="engineFuel : ${engineFuel}"
                             th:text="${engineFuel}"
@@ -125,23 +143,6 @@
 
                 </div>
 
-            <div class="field">
-                <button type="button" class="button-third" onclick="toggleContent2()">Inspection</button>
-            </div>
-
-                <script>
-                    function toggleContent2() {
-                        var content = document.getElementById("inspection-form");
-                        content.classList.toggle("show");
-                    }
-                </script>
-
-                <div id="inspection-form" class="content">
-                    <div class="field">
-                        <input type=date id="inspection" placeholder="">
-                        <label for="inspection" class="field-label">Expire date</label>
-                    </div>
-                </div>
 
 
 
@@ -159,12 +160,12 @@
                 <div id="vignette-form" class="content">
 
                     <div class="field">
-                        <input type=date id="inspection" placeholder="">
+                        <input type=date id="inspection" name="vignetteStartDate" placeholder="">
                         <label for="inspection" class="field-label">Start Date</label>
                     </div>
 
                     <div class="field">
-                        <input type=date id="inspection" placeholder="">
+                        <input type=date id="inspection" name="vignetteExpireDate" placeholder="">
                         <label for="inspection" class="field-label">Expire Date Date</label>
                     </div>
 

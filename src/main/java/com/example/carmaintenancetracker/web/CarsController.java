@@ -57,10 +57,9 @@ public class CarsController {
 
     @GetMapping("/cars/add")
     public String addCarForm(Model model){
-        model.addAttribute("createCarDTO", new CreateCarDTO());
+//        model.addAttribute("createCarDTO", new CreateCarDTO());
         return "car-add";
     }
-
 
     @PostMapping("/cars/add")
     public String add(@Valid @ModelAttribute("createCarDTO") CreateCarDTO createCarDTO,
@@ -74,18 +73,34 @@ public class CarsController {
             redirectAttributes.addFlashAttribute(
                     "org.springframework.validation.BindingResult.createCarDTO", bindingResult);
 
-            return "redirect:/cars/add/error";
+            return "redirect:/cars";
 
         }
 
         carService.createCar(createCarDTO, creator);
 
+        System.out.println(createCarDTO);
 
 
-//        return "redirect:/car/";
-        return "redirect:/cars/";
+        return "redirect:/";
 
     }
+
+
+    //todo: Under is the test of CarDTO
+//    @PostMapping("/cars/add")
+//    public String add(CreateCarDTO createCarDTO) {
+//
+//
+//
+//        System.out.println(createCarDTO);
+//
+//
+//        return "redirect:/cars";
+//
+//    }
+
+    //todo: Params if I want values to stay after wrong inputs
 
 //    @PostMapping("/create")
 //    public String createCar(@RequestParam("brand") String brand,

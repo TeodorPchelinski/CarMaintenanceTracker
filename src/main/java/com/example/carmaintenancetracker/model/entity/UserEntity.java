@@ -12,6 +12,9 @@ import java.util.Optional;
 @Table(name = "users")
 public class UserEntity extends BaseEntity {
 
+
+    //todo: add username -> not all people want to be with their real names
+
     @Column(nullable = false)
     @NotBlank
     private String firstName;

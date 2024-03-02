@@ -15,11 +15,10 @@ public class CreateCarDTO {
 
     private String brand;
 
-    @PastOrPresent
-    private LocalDate manufactureYear;
+    //todo: Add boughtYear again if needed
+    private int manufactureYear;
 
-    @PastOrPresent
-    private LocalDate bought;
+    private int manufactureMonth;
 
     private int mileage;
 
@@ -28,6 +27,7 @@ public class CreateCarDTO {
     private int engineDisplacement;
 
     private TransmissionEnum transmission;
+
 
     public String getModel() {
         return model;
@@ -42,28 +42,39 @@ public class CreateCarDTO {
         return brand;
     }
 
+    public int getManufactureYear() {
+        return manufactureYear;
+    }
+
+    public CreateCarDTO setManufactureYear(int manufactureYear) {
+        this.manufactureYear = manufactureYear;
+        return this;
+    }
+
+    public int getManufactureMonth() {
+        return manufactureMonth;
+    }
+
+    public CreateCarDTO setManufactureMonth(int manufactureMonth) {
+        this.manufactureMonth = manufactureMonth;
+        return this;
+    }
+
     public CreateCarDTO setBrand(String brand) {
         this.brand = brand;
         return this;
     }
 
-    public LocalDate getManufactureYear() {
-        return manufactureYear;
-    }
 
-    public CreateCarDTO setManufactureYear(LocalDate manufactureYear) {
-        this.manufactureYear = manufactureYear;
-        return this;
-    }
 
-    public LocalDate getBought() {
-        return bought;
-    }
-
-    public CreateCarDTO setBought(LocalDate bought) {
-        this.bought = bought;
-        return this;
-    }
+//    public LocalDate getBought() {
+//        return bought;
+//    }
+//
+//    public CreateCarDTO setBought(LocalDate bought) {
+//        this.bought = bought;
+//        return this;
+//    }
 
     public int getMileage() {
         return mileage;
@@ -100,6 +111,22 @@ public class CreateCarDTO {
         this.transmission = transmission;
         return this;
     }
-//todo: finishing CreateCarDTO
+
+    @Override
+    public String toString() {
+        return "CreateCarDTO{" +
+                "model='" + model + '\'' +
+                ", brand='" + brand + '\'' +
+                ", manufactureYear=" + manufactureYear +
+                ", manufactureMonth=" + manufactureMonth +
+                ", mileage=" + mileage +
+                ", fuelEngineType=" + fuelEngineType +
+                ", engineDisplacement=" + engineDisplacement +
+                ", transmission=" + transmission +
+                '}';
+    }
+
+
+    //todo: finishing CreateCarDTO
 
 }
