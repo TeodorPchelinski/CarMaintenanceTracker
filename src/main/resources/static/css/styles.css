@@ -1,8 +1,6 @@
 body {
     /*Original color*/
     /*background-color: #00AEFF;*/
-
-
     background-color: #45beff;
     padding: 0;
     margin-top: 0;
@@ -195,7 +193,7 @@ input:hover{
     width: 22.8rem;
     height: 15.8rem;
     border: 1px solid #ecebeb;
-    border-radius: 14px;
+    border-radius: 12px;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     background-color: #ffffff;
 }
@@ -283,6 +281,11 @@ input:hover{
     position: relative;
 }
 
+
+#field-search {
+    width: 30rem;
+}
+
 .field input {
     color: #565656;
     background: none;
@@ -321,6 +324,10 @@ input:hover{
 }
 
 .field option {
+}
+
+#field-search {
+    width: 35rem;
 }
 
 
@@ -741,7 +748,8 @@ h6 {
 #window-long-car-card {
     height: 12.9rem;
     width: 48rem;
-    display: flex;
+    display: inline-flex;
+    padding:  8px 12px;
 }
 
 #window-long-car-add-card {
@@ -840,6 +848,51 @@ h6 {
 .top-space {
     height: 198px;
     width: 100%;
+}
+
+.car-window-sub {
+    /*background-color: #5E00FF;*/
+    margin-right: 0;
+    display: flex;
+    gap: 0.5rem;
+
+}
+
+.car-img-big {
+    justify-content: center;
+    padding: 4px;
+    display: contents;
+}
+
+.car-img2 {
+    border-radius: 4px;
+}
+
+.car-stats-card-garage {
+    background-color: #ffffff;
+    width: 28.8rem;
+    color: #030104;
+    border-radius: 4px;
+}
+
+.brand-model-container {
+    margin-top: 20px;
+    margin-left: 4px;
+    gap: 4px;
+}
+
+#brand-name-medium {
+    font-size: 24px;
+}
+
+#name-medium2 {
+    font-size: 20px;
+}
+
+#preview-image {
+    display: none;
+    max-width: 100px;
+    max-height: 100px;
 }
 
 .button {

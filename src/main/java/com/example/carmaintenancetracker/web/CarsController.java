@@ -1,5 +1,6 @@
 package com.example.carmaintenancetracker.web;
 
+import com.example.carmaintenancetracker.model.dto.CarSummaryDTO;
 import com.example.carmaintenancetracker.model.dto.CreateCarDTO;
 import com.example.carmaintenancetracker.model.enums.FuelEnum;
 import com.example.carmaintenancetracker.model.enums.TransmissionEnum;
@@ -7,16 +8,18 @@ import com.example.carmaintenancetracker.model.enums.VignettePeriodEnum;
 import com.example.carmaintenancetracker.repository.UserRepository;
 import com.example.carmaintenancetracker.service.CarService;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.security.Principal;
 
 @Controller
 public class CarsController {
@@ -36,7 +39,15 @@ public class CarsController {
     }
 
     @GetMapping("/cars")
-    public String userCars() {
+    public String userCars(Model model,
+                           @PageableDefault(size = 2,sort = "id") Pageable pageable,
+                           @AuthenticationPrincipal UserDetails creator) {
+
+
+        Page<CarSummaryDTO> userCars = carService.getAllCarsByOwnerId(pageable, creator);
+
+
+       model.addAttribute("userCars", userCars);
         return "my-garage";
     }
 
@@ -53,6 +64,21 @@ public class CarsController {
     public VignettePeriodEnum[] vignettePeriod() {
         return VignettePeriodEnum.values();
     }
+
+
+    //todo: GetMapping for garage values for each car user has access to -> Brand Model FuelType EngineDisplacement...
+
+//    @ModelAttribute("cars")
+//    public Page<CarSummaryDTO> getAllCarsByOwnerId(@RequestParam int page, @RequestParam int size, Principal principal){
+//
+//        // page and size comes from html
+//        Pageable pageable = PageRequest.of(page, size);
+//
+//
+//
+//        return null;
+//    }
+
 
 
     @GetMapping("/cars/add")
@@ -85,20 +111,6 @@ public class CarsController {
         return "redirect:/";
 
     }
-
-
-    //todo: Under is the test of CarDTO
-//    @PostMapping("/cars/add")
-//    public String add(CreateCarDTO createCarDTO) {
-//
-//
-//
-//        System.out.println(createCarDTO);
-//
-//
-//        return "redirect:/cars";
-//
-//    }
 
     //todo: Params if I want values to stay after wrong inputs
 

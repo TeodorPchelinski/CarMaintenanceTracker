@@ -5,17 +5,20 @@ import com.example.carmaintenancetracker.model.enums.FuelEnum;
 import com.example.carmaintenancetracker.model.enums.FuelTypeEnum;
 import com.example.carmaintenancetracker.model.enums.TransmissionEnum;
 import jakarta.validation.constraints.PastOrPresent;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
 import java.util.List;
 
 public class CreateCarDTO {
 
+
+    private MultipartFile image;
     private String model;
 
     private String brand;
 
-    //todo: Add boughtYear again if needed
+    //todo: Add boughtYear again if needed -> in Full information about car in other DTO
     private int manufactureYear;
 
     private int manufactureMonth;
@@ -28,6 +31,15 @@ public class CreateCarDTO {
 
     private TransmissionEnum transmission;
 
+
+    public MultipartFile getImage() {
+        return image;
+    }
+
+    public CreateCarDTO setImage(MultipartFile image) {
+        this.image = image;
+        return this;
+    }
 
     public String getModel() {
         return model;
@@ -115,7 +127,8 @@ public class CreateCarDTO {
     @Override
     public String toString() {
         return "CreateCarDTO{" +
-                "model='" + model + '\'' +
+                "image=" + image +
+                ", model='" + model + '\'' +
                 ", brand='" + brand + '\'' +
                 ", manufactureYear=" + manufactureYear +
                 ", manufactureMonth=" + manufactureMonth +
@@ -125,7 +138,6 @@ public class CreateCarDTO {
                 ", transmission=" + transmission +
                 '}';
     }
-
 
     //todo: finishing CreateCarDTO
 

@@ -3,6 +3,7 @@ package com.example.carmaintenancetracker.model.entity;
 import com.example.carmaintenancetracker.model.enums.FuelEnum;
 import com.example.carmaintenancetracker.model.enums.TransmissionEnum;
 import jakarta.persistence.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -12,6 +13,9 @@ import java.util.List;
 public class CarEntity extends BaseEntity {
 
     //todo: adding image name as String referring for an image searched by name
+    // Have added it as path of the image String
+
+    private String image;
 
     private String model;
 
@@ -32,7 +36,7 @@ public class CarEntity extends BaseEntity {
     // number -> 800, 1000, 2200, 4500 cubic cm -> Shown as cubic 2200 = 2.2L in liters
     private int engineDisplacement;
 
-    // todo: Maybe Adding fuel economy
+    // todo: Maybe Adding fuel economy + economy maybe created from refuelings data -> still will be needed field here in database
 
     @Enumerated(EnumType.STRING)
     private TransmissionEnum transmission;
@@ -45,7 +49,8 @@ public class CarEntity extends BaseEntity {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "car")
     private List<TireEntity> tire;
 
-    // todo: Annual technical inspection Entity -> start date, expire date
+
+    //todo: List<InspectionEntity> -> the newest one is current and all other are the expired ones
     @OneToOne
     private InspectionEntity technicalInspection;
 
@@ -53,6 +58,13 @@ public class CarEntity extends BaseEntity {
     private List<RefuelEntity> charges;
 
 
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getImage() {
+        return image;
+    }
 
     public String getModel() {
         return model;
@@ -170,4 +182,6 @@ public class CarEntity extends BaseEntity {
         this.charges = charges;
         return this;
     }
+
+
 }

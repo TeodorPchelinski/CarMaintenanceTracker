@@ -125,6 +125,8 @@
 
             <label class="window-label">Charging</label>
 
+            <form id="refuel-form" th:action="@{/fuel-tracker}" th:method="post">
+
             <button class="button-second" id="add-trip-name" onclick="toggleTripName()">Add Trip Name</button>
 
             <script>
@@ -178,8 +180,8 @@
                 <label  for="large-text" class="field-label">Description</label>
             </div>
 
-            <button type="button" class="button" id="refuel-button">Submit</button>
-<!--            </form>-->
+            <button  type="submit" class="button" id="refuel-button">Submit</button>
+            </form>
         </div>
 
 

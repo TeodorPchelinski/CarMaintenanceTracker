@@ -119,9 +119,61 @@
 
 
     <div class="window" id="window-long-car-card">
-      <div class="car-img-big">
-        <img th:src="@{/images/audi-a6.jpg}">
+
+      <div class="car-window-sub">
+        <div class="car-img-big">
+          <img class="car-img2" th:src="@{/images/audi-a6.jpg}">
+        </div>
+
+
+
+<!--        STATS MAIN CONTAINER-->
+        <div class="car-stats-card-garage">
+
+          <div class="brand-model-container">
+            <span id="brand-name-medium" class="stat-cars-garage">Audi</span>
+<!--                    th:text="${car.brand} ?: 'Audi'"-->
+            <span id="brand-name-medium" class="stat-cars-garage">A6</span>
+
+            <span id="name-medium2" class="stat-cars-garage">2.0L</span>
+          </div>
+
+          <span>2017</span>
+          <span>Fuel</span>
+        </div>
       </div>
+
+    </div>
+
+
+    <div class="window" id="window-long-car-card"
+         th:each="userCars: ${userCars.getContent()}"
+         th:object="${userCars}">
+
+      <div class="car-window-sub">
+        <div class="car-img-big">
+          <img class="car-img2" th:src="@{/images/audi-a6.jpg}">
+        </div>
+
+
+
+        <!--        STATS MAIN CONTAINER-->
+        <div class="car-stats-card-garage">
+
+          <div class="brand-model-container">
+
+            <span id="brand-name-medium" class="stat-cars-garage" th:text="${userCars.brand} ?: 'Audi'">Audi</span>
+
+            <span id="brand-name-medium" class="stat-cars-garage" th:text="${userCars.Model} ?: 'A6'">A6</span>
+
+            <span id="name-medium2" class="stat-cars-garage">2.0L</span>
+          </div>
+
+          <span>2017</span>
+          <span>Fuel</span>
+        </div>
+      </div>
+
     </div>
 
 <!--          CAR CARD Simple only image-->
