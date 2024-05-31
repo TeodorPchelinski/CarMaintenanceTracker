@@ -10,6 +10,9 @@ public class CarSummaryDTO {
     //todo: add only the fields that will be shown in Car Cards
 
     //todo: Add ImageUrl for cars' images
+    Long id;
+
+
 
     String brand;
 
@@ -26,6 +29,15 @@ public class CarSummaryDTO {
 
     public CarSummaryDTO() {
 
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public CarSummaryDTO setId(Long id) {
+        this.id = id;
+        return this;
     }
 
 

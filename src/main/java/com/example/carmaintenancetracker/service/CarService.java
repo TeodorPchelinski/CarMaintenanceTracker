@@ -15,8 +15,7 @@ public interface CarService {
 
     Long createCar(CreateCarDTO createCarDTO, UserDetails creator);
 
-    //todo: remove getCarsByOwner if pageable did the same work better
-    List<CarEntity> getCarsByOwner(UserEntity owner);
-
     Page<CarSummaryDTO> getAllCarsByOwnerId(Pageable pageable, UserDetails creator);
+
+    CarEntity findCarById(Long id);
 }

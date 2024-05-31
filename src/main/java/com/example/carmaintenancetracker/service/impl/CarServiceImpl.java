@@ -8,6 +8,7 @@ import com.example.carmaintenancetracker.repository.CarRepository;
 import com.example.carmaintenancetracker.repository.UserRepository;
 import com.example.carmaintenancetracker.service.CarService;
 import com.example.carmaintenancetracker.service.UserService;
+import jakarta.ws.rs.NotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -83,10 +84,6 @@ public class CarServiceImpl implements CarService {
         return newCar.getId();
     }
 
-    @Override
-    public List<CarEntity> getCarsByOwner(UserEntity owner) {
-        return null;
-    }
 
 
     //             CARS LIST
@@ -103,16 +100,22 @@ public class CarServiceImpl implements CarService {
         //todo: Here is the problem
     }
 
+    @Override
+    public CarEntity findCarById(Long id) {
+
+        return carRepository.findById(id).orElseThrow(() -> new NotFoundException("Car not found with id: " + id));
+    }
+
     private static CarSummaryDTO mapAsSummary(CarEntity carEntity) {
          //  Brand is String In CarEntity and in CarSummaryDTO
          //  Year is LocalDate in CarEntity and in CarSummaryDTO
 
         CarSummaryDTO carSummaryDTO = new CarSummaryDTO()
+                .setId(carEntity.getId())
                 .setBrand(carEntity.getBrand())
                 .setModel(carEntity.getModel())
                 .setEngineDisplacement(String.format(Locale.US, "%.1f" + "L", carEntity.getEngineDisplacement() * 0.001))
                 .setYear(carEntity.getManufactureYear().getYear())
-                //todo: Getting year as YYYY-MM-DD -> Need to resolve that in html
                 .setFuelEnum(carEntity.getFuelType())
                 .setTransmissionEnum(carEntity.getTransmission());
 

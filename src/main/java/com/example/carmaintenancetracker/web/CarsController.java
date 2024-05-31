@@ -2,6 +2,7 @@ package com.example.carmaintenancetracker.web;
 
 import com.example.carmaintenancetracker.model.dto.CarSummaryDTO;
 import com.example.carmaintenancetracker.model.dto.CreateCarDTO;
+import com.example.carmaintenancetracker.model.entity.CarEntity;
 import com.example.carmaintenancetracker.model.enums.FuelEnum;
 import com.example.carmaintenancetracker.model.enums.TransmissionEnum;
 import com.example.carmaintenancetracker.model.enums.VignettePeriodEnum;
@@ -68,7 +69,6 @@ public class CarsController {
     }
 
 
-    //todo: GetMapping for garage values for each car user has access to -> Brand Model FuelType EngineDisplacement...
 
 //    @ModelAttribute("cars")
 //    public Page<CarSummaryDTO> getAllCarsByOwnerId(@RequestParam int page, @RequestParam int size, Principal principal){
@@ -80,7 +80,6 @@ public class CarsController {
 //
 //        return null;
 //    }
-
 
 
     @GetMapping("/cars/add")
@@ -128,8 +127,14 @@ public class CarsController {
 //    }
 
 
-    @GetMapping("/{id}/details")
-    public String details(@PathVariable("id") Long id) {
+    @GetMapping("cars/details/{id}")
+    public String details(@PathVariable("id") Long id, Model model ) {
+
+        CarEntity carEntity = carService.findCarById(id);
+        model.addAttribute("car", carEntity);
+
+
+
         return "car-details";
     }
     // 1:17:00 Spring Essentials

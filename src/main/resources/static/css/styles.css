@@ -1043,6 +1043,21 @@ h6 {
     box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 1px 1px 0, rgba(0, 0, 0, .1) 0 1px 1px 0, rgba(64, 92, 245, 0.64) 0 0 0 3px;
 }
 
+.transparent-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+
+
+
+
 /*Making the real secondary button*/
 
 .button-secondary {
