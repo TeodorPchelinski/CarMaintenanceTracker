@@ -16,9 +16,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 @Service
@@ -95,20 +98,27 @@ public class CarServiceImpl implements CarService {
             throw new UsernameNotFoundException("User not found");
         }
 
-
-        return carRepository.findAllByOwnerId(owner.get().getId(), pageable).map(CarServiceImpl::mapAsSummary);
+        Long number = owner.get().getId();
+        return carRepository.findAllCarsByOwnerId(number, pageable).map(CarServiceImpl::mapAsSummary);
+        //todo: Here is the problem
     }
 
     private static CarSummaryDTO mapAsSummary(CarEntity carEntity) {
          //  Brand is String In CarEntity and in CarSummaryDTO
          //  Year is LocalDate in CarEntity and in CarSummaryDTO
-        return new CarSummaryDTO(
-                carEntity.getBrand(),
-                carEntity.getModel(),
-                carEntity.getEngineDisplacement(),
-                carEntity.getManufactureYear(),
-                carEntity.getFuelType(),
-                carEntity.getTransmission());
+
+        CarSummaryDTO carSummaryDTO = new CarSummaryDTO()
+                .setBrand(carEntity.getBrand())
+                .setModel(carEntity.getModel())
+                .setEngineDisplacement(String.format(Locale.US, "%.1f" + "L", carEntity.getEngineDisplacement() * 0.001))
+                .setYear(carEntity.getManufactureYear().getYear())
+                //todo: Getting year as YYYY-MM-DD -> Need to resolve that in html
+                .setFuelEnum(carEntity.getFuelType())
+                .setTransmissionEnum(carEntity.getTransmission());
+
+
+        System.out.println(carSummaryDTO);
+        return carSummaryDTO;
     }
 
     private CarEntity map(CreateCarDTO createCarDTO) {
@@ -122,6 +132,7 @@ public class CarServiceImpl implements CarService {
                 .setEngineDisplacement(createCarDTO.getEngineDisplacement())
                 .setTransmission( createCarDTO.getTransmission())
                 .setMileage(createCarDTO.getMileage());
+
 
 
          return newCar;

@@ -232,8 +232,14 @@ input:hover{
     height: 28.1rem;
 }
 
+#group-windows-container {
+    display: inline-flex;
+    height: 12.9rem;
+    width: 50.3rem;
+}
+
 .register-container {
-    display: block;
+    display: inline-block;
     max-height: 28.1rem;
     flex-direction: row;
     align-items: center;
@@ -828,7 +834,8 @@ h6 {
 .profile-img-small {
     margin-right: 3px;
     margin-left: 14px;
-    width: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     position: center;
 }
 
@@ -887,6 +894,7 @@ h6 {
 
 #name-medium2 {
     font-size: 20px;
+    min-width: 40px;
 }
 
 #preview-image {

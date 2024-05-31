@@ -15,7 +15,7 @@
     <div class="label-container">
       <h2 class="label">Welcome back, <br> Teodor Pchelinski</h2>
     </div>
-    <div class="window">
+    <div class="window" id="window-">
       <div>
         <!--            <label class="window-label">Fuel prices</label>-->
       </div>
@@ -117,38 +117,47 @@
       </script>
     </div>
 
+<!--          //Hand Written Car Card-->
+<!--    <div class="window" id="window-long-car-card">-->
 
-    <div class="window" id="window-long-car-card">
-
-      <div class="car-window-sub">
-        <div class="car-img-big">
-          <img class="car-img2" th:src="@{/images/audi-a6.jpg}">
-        </div>
+<!--      <div class="car-window-sub">-->
+<!--        <div class="car-img-big">-->
+<!--          <img class="car-img2" th:src="@{/images/audi-a6.jpg}">-->
+<!--        </div>-->
 
 
 
-<!--        STATS MAIN CONTAINER-->
-        <div class="car-stats-card-garage">
+<!--&lt;!&ndash;        STATS MAIN CONTAINER&ndash;&gt;-->
+<!--        <div class="car-stats-card-garage">-->
 
-          <div class="brand-model-container">
-            <span id="brand-name-medium" class="stat-cars-garage">Audi</span>
-<!--                    th:text="${car.brand} ?: 'Audi'"-->
-            <span id="brand-name-medium" class="stat-cars-garage">A6</span>
+<!--          <div class="brand-model-container">-->
+<!--            <span id="brand-name-medium" class="stat-cars-garage">Audi</span>-->
+<!--&lt;!&ndash;                    th:text="${car.brand} ?: 'Audi'"&ndash;&gt;-->
 
-            <span id="name-medium2" class="stat-cars-garage">2.0L</span>
-          </div>
+<!--              <span id="brand-name-medium" class="stat-cars-garage">A6</span>-->
 
-          <span>2017</span>
-          <span>Fuel</span>
-        </div>
-      </div>
+<!--              <span id="name-medium2" class="stat-cars-garage">2.0L</span>-->
 
-    </div>
+<!--          </div>-->
+
+
+
+
+
+
+
+
+<!--          <span>2017</span>-->
+<!--          <span>Fuel</span>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--    </div>-->
 
 
     <div class="window" id="window-long-car-card"
-         th:each="userCars: ${userCars.getContent()}"
-         th:object="${userCars}">
+         th:each="cars : ${cars.getContent()}"
+         th:object="${cars}">
 
       <div class="car-window-sub">
         <div class="car-img-big">
@@ -162,15 +171,18 @@
 
           <div class="brand-model-container">
 
-            <span id="brand-name-medium" class="stat-cars-garage" th:text="${userCars.brand} ?: 'Audi'">Audi</span>
+              <span id="brand-name-medium" class="stat-cars-garage" th:text="${cars.brand()}">A6</span>
 
-            <span id="brand-name-medium" class="stat-cars-garage" th:text="${userCars.Model} ?: 'A6'">A6</span>
+              <span id="brand-name-medium" class="stat-cars-garage" th:text="${cars.model}">Audi</span>
 
-            <span id="name-medium2" class="stat-cars-garage">2.0L</span>
+              <span id="name-medium2" class="stat-cars-garage" th:text="${cars.engineDisplacement}">2.0L</span>
+
+
           </div>
 
-          <span>2017</span>
-          <span>Fuel</span>
+            <span id="name-medium2" class="stat-cars-garage" th:text="${cars.year}">2.0L</span>
+
+            <span id="name-medium2" class="stat-cars-garage" th:text="${cars.fuelEnum}">2.0L</span>
         </div>
       </div>
 
@@ -194,9 +206,18 @@
     </div>
 
 
+    <div class="group-window-container" id="group-windows-container">
+        <div class="window" id="window-small">
+          <label class="window-label"></label>
+        </div>
 
-    <div class="window" id="window-small">
+      <div class="window" id="window-small">
+        <div>
+          <label class="window-label"></label>
+        </div>
+      </div>
     </div>
+
 
   </div>
 
@@ -206,11 +227,12 @@
       <label id="km-traveled">14025</label>
     </div>
 
-
-    <div class="window" id="after-skipped-window-small">
-      <div>
-      </div>
-    </div>
+<!--         Previous Last Row window -->
+<!--    <div class="window" id="after-skipped-window-small">-->
+<!--      <div>-->
+<!--        <label class="window-label">Kilometers traveled</label>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 
   <div class="section4">
@@ -218,9 +240,48 @@
     </div>
 
     <div class="window">
+        <label class="window-label">Notifications:</label>
+
+        <div class="notifications-container">
+            <div class="warning-notification1">
+                <h5 class="warning-text">Engine Oil</h5>
+            </div>
+            <div class="warning-notification1">
+                <h5 class="warning-text">Brakes System Check</h5>
+            </div>
+            <div class="warning-notification1">
+                <h5 class="warning-text">Piston belt</h5>
+            </div>
+            <div class="warning-notification1">
+                <h5 class="warning-text">Motor belt</h5>
+            </div>
+            <div class="warning-notification1">
+                <h5 class="warning-text">Air Filter after mileage</h5>
+            </div>
+            <div class="warning-notification1">
+                <h5 class="warning-text">Tomorrow will be 0°C. Change wiper fluid</h5>
+            </div>
+        </div>
     </div>
 
     <div class="window" id="window-small">
+        <label class="window-label">Warnings:</label>
+
+
+        <!--      Icons for warning urgency and colors like red, orange, yellow, blue-->
+        <div class="warning-container">
+            <div class="warning-notification">
+                <h5 class="warning-text">No vignette</h5>
+            </div>
+
+            <div class="warning-notification">
+                <h5 class="warning-text">Annual technical inspection expires in 3 days</h5>
+            </div>
+
+            <div class="warning-notification">
+                <h5 class="warning-text">Tires need a change (by DOT or by season)</h5>
+            </div>
+        </div>
     </div>
     <div class="window" id="window-small">
     </div>

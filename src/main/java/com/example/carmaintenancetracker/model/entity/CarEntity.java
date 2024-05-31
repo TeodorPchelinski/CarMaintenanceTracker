@@ -183,5 +183,23 @@ public class CarEntity extends BaseEntity {
         return this;
     }
 
-
+    @Override
+    public String toString() {
+        return "CarEntity{" +
+                "image='" + image + '\'' +
+                ", model='" + model + '\'' +
+                ", brand='" + brand + '\'' +
+                ", manufactureYear=" + manufactureYear +
+                ", bought=" + bought +
+                ", mileage=" + mileage +
+                ", owner=" + owner +
+                ", fuelType=" + fuelType +
+                ", engineDisplacement=" + engineDisplacement +
+                ", transmission=" + transmission +
+                ", vignette=" + vignette +
+                ", tire=" + tire +
+                ", technicalInspection=" + technicalInspection +
+                ", charges=" + charges +
+                '}';
+    }
 }

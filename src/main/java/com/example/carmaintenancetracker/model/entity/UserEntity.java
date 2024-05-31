@@ -80,4 +80,14 @@ public class UserEntity extends BaseEntity {
         this.cars = cars;
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }

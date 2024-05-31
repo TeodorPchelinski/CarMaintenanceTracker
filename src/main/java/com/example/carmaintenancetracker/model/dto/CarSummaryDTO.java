@@ -9,22 +9,24 @@ public class CarSummaryDTO {
 
     //todo: add only the fields that will be shown in Car Cards
 
+    //todo: Add ImageUrl for cars' images
+
     String brand;
 
     String model;
 
-    int engineDisplacement;
+    String engineDisplacement;
 
-    LocalDate year;
+    int year;
 
     FuelEnum fuelEnum;
 
     TransmissionEnum transmissionEnum;
 
-    public CarSummaryDTO(String brand, String model, int engineDisplacement, LocalDate manufactureYear, FuelEnum fuelType, TransmissionEnum transmission) {
+
+    public CarSummaryDTO() {
 
     }
-
 
 
     public String getBrand() {
@@ -45,20 +47,20 @@ public class CarSummaryDTO {
         return this;
     }
 
-    public int getEngineDisplacement() {
+    public String getEngineDisplacement() {
         return engineDisplacement;
     }
 
-    public CarSummaryDTO setEngineDisplacement(int engineDisplacement) {
+    public CarSummaryDTO setEngineDisplacement(String engineDisplacement) {
         this.engineDisplacement = engineDisplacement;
         return this;
     }
 
-    public LocalDate getYear() {
+    public int getYear() {
         return year;
     }
 
-    public CarSummaryDTO setYear(LocalDate year) {
+    public CarSummaryDTO setYear(int year) {
         this.year = year;
         return this;
     }
@@ -79,5 +81,25 @@ public class CarSummaryDTO {
     public CarSummaryDTO setTransmissionEnum(TransmissionEnum transmissionEnum) {
         this.transmissionEnum = transmissionEnum;
         return this;
+    }
+
+    public String summary() {
+        return brand + " " + model + " " + engineDisplacement + " " + year + " " + fuelEnum;
+    }
+
+    public String brand() {
+        return brand;
+    }
+
+    @Override
+    public String toString() {
+        return "CarSummaryDTO{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", engineDisplacement=" + engineDisplacement +
+                ", year=" + year +
+                ", fuelEnum=" + fuelEnum +
+                ", transmissionEnum=" + transmissionEnum +
+                '}';
     }
 }

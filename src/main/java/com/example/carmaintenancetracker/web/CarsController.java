@@ -40,17 +40,19 @@ public class CarsController {
 
     @GetMapping("/cars")
     public String userCars(Model model,
-                           @PageableDefault(size = 2,sort = "id") Pageable pageable,
+                           @PageableDefault(size = 16,sort = "id") Pageable pageable,
                            @AuthenticationPrincipal UserDetails creator) {
 
 
         Page<CarSummaryDTO> userCars = carService.getAllCarsByOwnerId(pageable, creator);
 
 
-       model.addAttribute("userCars", userCars);
+       model.addAttribute("cars", userCars);
         return "my-garage";
     }
 
+
+    // Options when creating a car
     @ModelAttribute("engineFuel")
     public FuelEnum[] engineFuel() {
         return FuelEnum.values();
