@@ -97,7 +97,6 @@ public class CarServiceImpl implements CarService {
 
         Long number = owner.get().getId();
         return carRepository.findAllCarsByOwnerId(number, pageable).map(CarServiceImpl::mapAsSummary);
-        //todo: Here is the problem
     }
 
     @Override

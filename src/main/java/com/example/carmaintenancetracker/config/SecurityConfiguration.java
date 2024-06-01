@@ -23,7 +23,7 @@ import org.thymeleaf.templateresolver.FileTemplateResolver;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 
 @Configuration
-@EnableWebSecurity
+//@EnableWebSecurity
 public class SecurityConfiguration {
 
     private final UserRepository userRepository;
@@ -60,6 +60,8 @@ public class SecurityConfiguration {
                             .invalidateHttpSession(true);
                 }
         );
+
+        //todo: Fix Registration not working
 
         //todo: Remember me tick button to be added
             // Spring Security -> 3:04:26

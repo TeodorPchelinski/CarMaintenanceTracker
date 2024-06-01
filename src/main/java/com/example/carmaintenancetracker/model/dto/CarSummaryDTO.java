@@ -106,6 +106,7 @@ public class CarSummaryDTO {
     @Override
     public String toString() {
         return "CarSummaryDTO{" +
+                "id='" + id + '\'' +
                 "brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", engineDisplacement=" + engineDisplacement +

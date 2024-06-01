@@ -130,6 +130,8 @@ public class CarsController {
     @GetMapping("cars/details/{id}")
     public String details(@PathVariable("id") Long id, Model model ) {
 
+
+        //todo: don't expose CarEntity to Controller side -> make DTO
         CarEntity carEntity = carService.findCarById(id);
         model.addAttribute("car", carEntity);
 
