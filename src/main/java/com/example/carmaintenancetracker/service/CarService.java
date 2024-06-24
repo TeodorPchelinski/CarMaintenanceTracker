@@ -17,5 +17,9 @@ public interface CarService {
 
     Page<CarSummaryDTO> getAllCarsByOwnerId(Pageable pageable, UserDetails creator);
 
+    void deleteCarById(Long id);
+
+    Page<CarSummaryDTO> getAllCars(Pageable pageable);
     CarEntity findCarById(Long id);
+
 }

@@ -8,7 +8,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.Optional;
+import java.util.Scanner;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -26,9 +28,7 @@ public class UserServiceImpl implements UserService {
 
         //todo: Watch the lecture -> Use ResponseEntity or other way to get the String in Controller
 
-
-
-            Optional<UserEntity> currentUser = userRepository.findByEmail(loggedUser.getUsername());
+        Optional<UserEntity> currentUser = userRepository.findByEmail(loggedUser.getUsername());
 
         return currentUser.get().getFirstName() + " " + currentUser.get().getLastName();
     }

@@ -33,23 +33,17 @@
             <div id="container"></div>
             <script>
 
-                // anychart.onDocumentReady(function () {
-                // create data set on our data
+
                 var dataSet = anychart.data.set(getData());
 
-                // map data for the first series, take x from the zero column and value from the first column of data set
                 var firstSeriesData = dataSet.mapAs({ x: 0, value: 1 });
 
-                // map data for the second series, take x from the zero column and value from the second column of data set
                 var secondSeriesData = dataSet.mapAs({ x: 0, value: 2 });
 
-                // create line chart
                 var chart = anychart.line();
 
-                // adding dollar symbols to yAxis labels
                 chart.yAxis().labels().format('${%Value}');
 
-                // turn on chart animation
                 chart.animation(true);
                 chart.xAxis(true);
                 chart.yAxis(false);
@@ -79,7 +73,7 @@
                 firstSeries.hovered().markers().enabled(true).type('circle').size(4);
 
 
-                // create second series with mapped data
+
                 var secondSeries = chart.spline(secondSeriesData);
                 // secondSeries.name('The Competitor\'s Share Price');
                 secondSeries.markers().zIndex(100);
@@ -89,10 +83,10 @@
                 // turn the legend on
                 // chart.legend().enabled(true).fontSize(13).padding([0, 0, 20, 0]);
 
-                // set container id for the chart
+
                 chart.container('container');
 
-                // initiate chart drawing
+
                 chart.draw();
                 // });
 

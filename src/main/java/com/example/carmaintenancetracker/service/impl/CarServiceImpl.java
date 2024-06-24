@@ -17,11 +17,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.Month;
-import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
 
@@ -82,6 +79,22 @@ public class CarServiceImpl implements CarService {
 
         //todo: HTML page for the newly created car
         return newCar.getId();
+    }
+
+
+    @Override
+    public void deleteCarById(Long id){
+            if (carRepository.existsById(id)){
+                carRepository.deleteCarEntityById(id);
+            } else {
+                throw new RuntimeException("Car with id " + id + "doesn't exist");
+            }
+    }
+
+    @Override
+    public Page<CarSummaryDTO> getAllCars(Pageable pageable) {
+
+        return carRepository.findAll(pageable).map(CarServiceImpl::mapAsSummary);
     }
 
 

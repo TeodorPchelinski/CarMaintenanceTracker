@@ -39,6 +39,14 @@ public class CarsController {
         this.userRepository = userRepository;
     }
 
+
+    //todo: add button for deleting each car
+    @PostMapping("/cars/{id}")
+    public String deleteCarById(@PathVariable("id") Long id) {
+        carService.deleteCarById(id);
+        return "redirect:/cars";
+    }
+
     @GetMapping("/cars")
     public String userCars(Model model,
                            @PageableDefault(size = 16,sort = "id") Pageable pageable,

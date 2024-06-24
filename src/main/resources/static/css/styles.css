@@ -773,6 +773,16 @@ h6 {
 
 }
 
+.container-background-community {
+    background-color: #ecebeb;
+    width: 52.6rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    border-radius: 8px;
+
+
+}
+
 #after-skipped-window-small {
     margin-top: 31.6rem;
     height: 10rem;
