@@ -16,8 +16,8 @@ public class PartEntity extends BaseEntity {
 
     private String description;
 
-    //todo: connection to Repair Entity
-    private String repair;
+    @ManyToOne
+    private RepairEntity repair;
 
     @ManyToOne
     private CarEntity car;
@@ -26,6 +26,6 @@ public class PartEntity extends BaseEntity {
 
     private List<LocalDate> latestChanges;
 
-    //todo: part cost and all cost in Repairs
+    //todo: part cost and all cost in Repairs + cost of work
     private BigDecimal partCost;
 }

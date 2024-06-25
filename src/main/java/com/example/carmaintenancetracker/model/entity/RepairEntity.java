@@ -1,7 +1,14 @@
 package com.example.carmaintenancetracker.model.entity;
 
-public class RepairEntity {
+import jakarta.persistence.OneToMany;
 
+import java.util.List;
 
+public class RepairEntity extends BaseEntity {
+
+    private String name;
+
+    @OneToMany()
+    private List<PartEntity> parts;
 
 }
