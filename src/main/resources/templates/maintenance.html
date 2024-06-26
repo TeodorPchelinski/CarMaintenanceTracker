@@ -129,85 +129,47 @@
 
     <div class="window" id="two-sectors">
 
-      <label class="window-label">Add Repair or Change</label>
+      <label class="window-label" id="add-repair-label">Add Repair or Change</label>
 
 
-      <div class="form-container">
+      <div class="form-container" id="parts-container">
+
+        <div class="form-column">
+
+          <div class="field">
+            <input type=text id="part-name" list="parts" placeholder="Repair">
+            <label for="part-name" class="field-label">Repair title</label>
+            <datalist id="parts">
+            </datalist>
+          </div>
+
+          <div class="field" id="small-date-field">
+            <input type=date id="small-date" placeholder="">
+<!--            <label for="part-name" class="field-label" id="small-date-label">Date</label>-->
+          </div>
+
+        </div>
 
 <!--        FIRST COLUMN-->
         <div class="form-column">
 
           <div class="field">
-            <input type=text id="part-name" placeholder="">
-            <label for="part-name" class="field-label">Select part</label>
-          </div>
-
-          <div class="field">
-            <label for="part-name" class="field-label">Select part</label>
-            <input type=text id="part-name" list="parts" placeholder=""/>
+            <input type=text id="part-name" list="parts" placeholder="">
+            <label for="part-name" class="field-label">Part name</label>
             <datalist id="parts">
             </datalist>
           </div>
 
-          <div class="field">
-            <input type=text id="part-name" placeholder="">
-            <label for="part-name" class="field-label">Select part</label>
-          </div>
-
-<!--          BONUS-->
-
-          <div class="field">
-            <input type=text id="part-name" placeholder="">
-            <label for="part-name" class="field-label">Select part</label>
-          </div>
-
-          <div class="field">
-            <input type=text id="part-name" placeholder="">
-            <label for="part-name" class="field-label">Select part</label>
-          </div>
-
-          <div class="field">
-            <input type=text id="part-name" placeholder="">
-            <label for="part-name" class="field-label">Select part</label>
-          </div>
-
-
 <!--          <button class="button-second" id="add-trip-name">Add another part</button>-->
 
-          <button class="button" id="refuel-button">Add</button>
-
-        </div>
-
-<!--        SECOND COLUMN-->
-        <div class="form-column">
-
-          <div class="field-small">
+          <div class="field-small" id="part-price-field">
             <input type=number id="part-name" placeholder="">
             <label for="part-name" class="field-small-label">price</label>
           </div>
 
-          <div class="field-small">
-            <input type=number id="part-name" placeholder="">
-            <label for="part-name" class="field-small-label">price</label>
-          </div>
 
-          <div class="field-small">
-            <input type=number id="part-name" placeholder="">
-            <label for="part-name" class="field-small-label">price</label>
-          </div>
-
-          <div class="field-small">
-            <input type=number id="part-name" placeholder="">
-            <label  for="large-text" class="field-small-label">price</label>
-          </div>
-
-
-        </div>
-
-<!--          Smallest Column for quantity-->
-        <div class="form-column">
 <!--        Quantity-->
-          <div class="field">
+          <div class="field" id="quantity-field">
            <select id="quantity" name="quantity" placeholder="">
             <option>x1</option>
             <option >x2</option>
@@ -220,41 +182,19 @@
            </select>
           </div>
 
-          <div class="field">
-            <select id="quantity" name="quantity" placeholder="">
-              <option>x1</option>
-              <option >x2</option>
-              <option >x3</option>
-              <option >x4</option>
-              <option >x5</option>
-              <option >x6</option>
-              <option >x7</option>
-              <option >x8</option>
-            </select>
-          </div>
+        </div>
 
-          <div class="field">
-            <select id="quantity" name="quantity" placeholder="">
-              <option>x1</option>
-              <option >x2</option>
-              <option >x3</option>
-              <option >x4</option>
-              <option >x5</option>
-              <option >x6</option>
-              <option >x7</option>
-              <option >x8</option>
-            </select>
-          </div>
+        <div class="form-column">
+
+          <button class="add-part-button" onclick="addPart()" >+ Add part</button>
 
         </div>
 
+        <hr class="dashboard-line1">
+
+
 <!--            LAST COLUMN MAYBE REMOVED LATER-->
         <div class="form-column">
-
-          <div class="field">
-            <input type=date id="part-name" placeholder="">
-            <label for="part-name" class="field-label">Date</label>
-          </div>
 
           <div class="field">
             <input type=text id="part-name" placeholder="">
@@ -266,22 +206,54 @@
             <label for="part-name" class="field-label">Location (map)</label>
           </div>
 
-          <div class="field">
+          <div class="field" id="repair-description-field">
             <textarea type=text id="large-text" placeholder=""></textarea>
             <label  for="large-text" class="field-label">Description</label>
           </div>
 
 
         </div>
+
+        <hr class="dashboard-line1">
+
+        <div class="form-column">
+
+          <div class="field">
+            <input type=text id="part-name" placeholder="">
+            <label for="part-name" class="field-label">Shop name</label>
+          </div>
+
+          <div class="field" id="shop-location-field">
+            <input type=text id="part-name" placeholder="">
+            <label for="part-name" class="field-label">Location (map)</label>
+          </div>
+
+
+        </div>
+
+        <div class="form-column">
+
+          <button class="button" id="refuel-button">Add</button>
+
+          <div class="field-small" id="final-price-field">
+            <input type=number id="part-name" placeholder="">
+            <label for="part-name" class="field-small-label">Final price</label>
+          </div>
+
+        </div>
+
+
+
       </div>
 
 
     </div>
 
 
-    <div class="window" id="window-wide">
+<!--    Missing Window Here!-->
+<!--    <div class="window" id="window-wide">-->
 
-    </div>
+<!--    </div>-->
 
   </div>
 

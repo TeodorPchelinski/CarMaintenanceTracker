@@ -204,6 +204,10 @@ input:hover{
     padding: 10px;
 }
 
+#add-repair-label {
+    font-size: 1rem;
+}
+
 #window-small {
     background-color: #FFFFFF;
     /*height: 150px;*/
@@ -287,6 +291,34 @@ input:hover{
     position: relative;
 }
 
+#repair-description-field {
+    margin-right: 4.6rem;
+}
+
+#shop-location-field{
+    margin-right: 19rem;
+}
+
+
+#quantity-field {
+    margin-top: 19px;
+    margin-left: 0.5rem;
+    margin-right: 12.5rem;
+}
+
+#small-date-field {
+    margin-top: 0;
+    margin-left: 26.5rem;
+    width: 7rem;
+    height: 2rem;
+
+}
+
+#small-date-field input{
+    width: 6rem;
+    height: 0.75rem;
+}
+
 
 #field-search {
     width: 30rem;
@@ -303,6 +335,14 @@ input:hover{
     font-size: 1rem;
 }
 
+#small-date {
+    border: none;
+}
+
+.field data {
+
+}
+
 .field select {
     font-size: 1rem;
     font-weight: normal;
@@ -317,6 +357,7 @@ input:hover{
 
 #quantity {
     width: 2.5rem;
+
 }
 
 .field-small select {
@@ -348,6 +389,16 @@ input:hover{
     /*be careful here*/
     width: 6.5rem;
     position: relative;
+}
+
+#part-price-field {
+    margin-left: 0.5rem;
+}
+
+#final-price-field {
+    margin-top: 2rem;
+    margin-left: 25.25rem;
+    margin-right: 0.5rem;
 }
 
 .field-small input {
@@ -445,6 +496,8 @@ label {
     border: 2px solid #ecebeb;
     border-radius: 6px;
 }
+
+
 
 /* Transition and label place */
 .field-label {
@@ -733,13 +786,17 @@ h6 {
 }
 
 .form-container {
-    display: flex;
+    /*display: table-row;*/
+    display: block;
     justify-content: space-between;
 }
 
 .form-column {
-    flex: 1;
-    padding-top: 15px;
+    /*flex: 1;*/
+    display: inline-flex;
+    /*background-color: #a0bad5;*/
+    padding-top: 5px;
+    padding-bottom: 5px;
     padding-right: 0;
     padding-left: 0;
 }
@@ -799,7 +856,7 @@ h6 {
 
 #two-sectors {
     width: 48rem;
-    height: 28.175rem;
+    height: 30.175rem;
 }
 
 #after-skipped-window {
@@ -1143,6 +1200,26 @@ h6 {
     margin: 4px 2px;
     cursor: pointer;
 }
+
+.add-part-button {
+    font-size: 14px;
+    color: deeppink;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin-left: 15px;
+    margin-right: 41.8rem;
+    padding: 4px 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+#parts-container{
+
+    /*background-color: #234465;*/
+
+}
+
 
 /* Style for the content to be hidden/shown */
 .content {
