@@ -204,6 +204,11 @@ input:hover{
     padding: 10px;
 }
 
+#total-price-label {
+    margin-top: 2rem;
+    margin-left: 17rem;
+}
+
 #add-repair-label {
     font-size: 1rem;
 }
@@ -397,7 +402,7 @@ input:hover{
 
 #final-price-field {
     margin-top: 2rem;
-    margin-left: 25.25rem;
+    /*margin-left: 25.25rem;*/
     margin-right: 0.5rem;
 }
 
@@ -455,7 +460,7 @@ input:hover{
     background-color 250ms,
     border-bottom-color 250ms;
     /*font-weight: bold;*/
-    /*font-size: 14px;*/
+    font-size: 15px;
     /*display: block;*/
     /*margin-top: 10px;*/
     /*margin-left: 6.5rem;*/
@@ -515,7 +520,7 @@ label {
                 background-color 250ms,
                 border-bottom-color 250ms;
     /*font-weight: bold;*/
-    /*font-size: 14px;*/
+    font-size: 15px;
     /*display: block;*/
     /*margin-top: 10px;*/
     /*margin-left: 6.5rem;*/
@@ -565,7 +570,7 @@ input::-webkit-inner-spin-button {
 
 #refuel-button {
     margin-top: 24px;
-    margin-left: 7rem;
+    margin-left: 10rem;
     display: block;
     width: 8.75rem;
     height: 1.875rem;
@@ -785,6 +790,10 @@ h6 {
     padding: 0;
 }
 
+#service-form-container {
+    display: none;
+}
+
 .form-container {
     /*display: table-row;*/
     display: block;
@@ -935,10 +944,19 @@ h6 {
 .car-img-big {
     justify-content: center;
     padding: 4px;
-    display: contents;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    /*display: contents;*/
 }
 
 .car-img2 {
+    object-fit: cover;
+    object-position: center;
+    overflow-clip-margin: inherit;
+    overflow: clip;
+    height: 205px;
+    width: 290px;
     border-radius: 4px;
 }
 
@@ -1111,14 +1129,19 @@ h6 {
 }
 
 .transparent-button {
+    /*background-color: blue;*/
     background-color: transparent;
     border: none;
     cursor: pointer;
     top: 0;
     left: 0;
     height: 100%;
-    width: 100%;
+    width: 93%;
     position: absolute;
+}
+
+.delete-button {
+    margin-left: 90%;
 }
 
 
@@ -1212,6 +1235,10 @@ h6 {
     padding: 4px 10px;
     cursor: pointer;
     display: inline-block;
+}
+
+#show-car-service-fields {
+    width: 10rem;
 }
 
 #parts-container{

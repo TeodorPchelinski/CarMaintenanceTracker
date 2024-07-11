@@ -108,20 +108,15 @@
           ["Dec", 190]
         ];
 
-        // create a chart
+
         chart = anychart.column();
         chart.yAxis().labels().format('{%Value}лв');
 
-        // create a column series and set the data
         var series = chart.column(data);
 
         chart.animation(true);
         series.color('#00AEFF');
-
-        // set the container id
         chart.container("container2");
-
-        // initiate drawing the chart
         chart.draw();
       </script>
 
@@ -186,15 +181,29 @@
 
         <div class="form-column">
 
-          <button class="add-part-button" onclick="addPart()" >+ Add part</button>
+          <button class="add-part-button" id="add-partBtn" onclick="addPart()" >+ Add part</button>
+
+          <script>
+
+            const addButton = document.getElementById('add-partBtn')
+
+
+
+          </script>
+
 
         </div>
 
         <hr class="dashboard-line1">
 
-
-<!--            LAST COLUMN MAYBE REMOVED LATER-->
         <div class="form-column">
+
+          <button class="add-part-button" id="show-car-service-fields" onclick="showCarService()" >Add Car Service ▼</button>
+
+        </div>
+
+        <div class="form-column" id="service-form-container" >
+
 
           <div class="field">
             <input type=text id="part-name" placeholder="">
@@ -210,6 +219,38 @@
             <textarea type=text id="large-text" placeholder=""></textarea>
             <label  for="large-text" class="field-label">Description</label>
           </div>
+
+          <script>
+
+            let originalHeight;
+
+            window.onload = function () {
+              const mainContainer = document.getElementById('two-sectors');
+              originalHeight = mainContainer.clientHeight;
+              mainContainer.style.height = originalHeight + 'px';
+            }
+
+            function showCarService() {
+
+              const button = document.getElementById('show-car-service-fields');
+              const container = document.getElementById('service-form-container');
+              const mainContainer = document.getElementById('two-sectors');
+
+              if (container.style.display === 'none' || container.style.display === ''){
+                container.style.display = 'inline-flex';
+                container.style.marginBottom = '5px';
+                button.innerHTML = 'Show less ▲';
+                mainContainer.style.height = (originalHeight + container.scrollHeight) + 'px';
+              } else {
+                container.style.display = 'none';
+                button.innerHTML = 'Show Car Service ▼';
+                mainContainer.style.height = originalHeight + 'px';
+              }
+
+            }
+
+
+          </script>
 
 
         </div>
@@ -235,10 +276,12 @@
 
           <button class="button" id="refuel-button">Add</button>
 
+          <label class="window-label" id="total-price-label">Total:</label>
+
           <div class="field-small" id="final-price-field">
             <input type=number id="part-name" placeholder="">
-            <label for="part-name" class="field-small-label">Final price</label>
           </div>
+
 
         </div>
 

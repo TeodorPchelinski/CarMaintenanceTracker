@@ -14,6 +14,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
@@ -69,7 +70,9 @@ public class CarServiceImpl implements CarService {
                 OutputStream outputStream = new FileOutputStream(file);
                 outputStream.write(imageName.getBytes());
 
-                newCar.setImage(filePath);
+                newCar.setImage("\\images\\users\\" + creator.getUsername() + "\\cars\\" + newCar.getId() + ".jpg");
+
+                carRepository.save(newCar);
 
             } catch (IOException e) {
                 System.out.println(e.getMessage());
@@ -77,18 +80,21 @@ public class CarServiceImpl implements CarService {
         }
 
 
+
+
+
+
         //todo: HTML page for the newly created car
         return newCar.getId();
     }
 
 
+
+    @Transactional
     @Override
     public void deleteCarById(Long id){
-            if (carRepository.existsById(id)){
                 carRepository.deleteCarEntityById(id);
-            } else {
-                throw new RuntimeException("Car with id " + id + "doesn't exist");
-            }
+
     }
 
     @Override
@@ -124,6 +130,7 @@ public class CarServiceImpl implements CarService {
 
         CarSummaryDTO carSummaryDTO = new CarSummaryDTO()
                 .setId(carEntity.getId())
+                .setImage(carEntity.getImage())
                 .setBrand(carEntity.getBrand())
                 .setModel(carEntity.getModel())
                 .setEngineDisplacement(String.format(Locale.US, "%.1f" + "L", carEntity.getEngineDisplacement() * 0.001))

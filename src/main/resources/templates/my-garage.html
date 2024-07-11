@@ -161,7 +161,14 @@
 
       <div class="car-window-sub">
         <div class="car-img-big">
-          <img class="car-img2" th:src="@{/images/audi-a6.jpg}">
+            <div th:if="${cars.image != null}">
+                <img class="car-img2" th:src="@{${cars.image}}">
+            </div>
+
+            <div th:if="${cars.image == null}">
+                <img class="car-img2" th:src="@{/images/audi-a6.jpg}">
+            </div>
+
         </div>
 
 
@@ -177,21 +184,25 @@
 
               <span id="name-medium2" class="stat-cars-garage" th:text="${cars.engineDisplacement}">2.0L</span>
 
+
               <form th:action="@{/cars/details/{id}(id=${cars.id})}" th:method="get">
                   <button type="submit" class="transparent-button" id="overlay-button"></button>
               </form>
 
-              <form th:action="@{/cars/{id}(id=${cars.id})}" method="post" th:object="${cars}">
-                  <input type="hidden" name="delete_method" value="delete">
-                  <button type="submit">Delete</button>
 
-              </form>
 
           </div>
 
             <span id="name-medium2" class="stat-cars-garage" th:text="${cars.year}">2017</span>
 
             <span id="name-medium2" class="stat-cars-garage" th:text="${cars.fuelEnum}">2.0L</span>
+
+            <form th:action="@{/cars/{id}(id=${cars.id})}" method="post" th:object="${cars}">
+                <input type="hidden" name="delete_method" value="delete">
+                <button type="submit" class="delete-button" >Delete</button>
+
+            </form>
+
         </div>
       </div>
 
