@@ -161,14 +161,12 @@
 
       <div class="car-window-sub">
         <div class="car-img-big">
-            <div th:if="${cars.image != null}">
-                <img class="car-img2" th:src="@{${cars.image}}">
-            </div>
+                <img th:if="${cars.image != null}" class="car-img2" th:src="@{${cars.image}}">
 
-            <div th:if="${cars.image == null}">
-                <img class="car-img2" th:src="@{/images/audi-a6.jpg}">
-            </div>
+            <div class="car-img-big">
+                <img th:if="${cars.image == null}"  th:src="@{/images/audi-a6.jpg}">
 
+            </div>
         </div>
 
 

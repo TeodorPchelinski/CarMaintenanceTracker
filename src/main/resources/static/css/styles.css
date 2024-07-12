@@ -944,10 +944,9 @@ h6 {
 .car-img-big {
     justify-content: center;
     padding: 4px;
-    display: flex;
     align-items: center;
     overflow: hidden;
-    /*display: contents;*/
+    display: contents;
 }
 
 .car-img2 {
@@ -958,6 +957,7 @@ h6 {
     height: 205px;
     width: 290px;
     border-radius: 4px;
+    background-color: #f4f4f4;
 }
 
 .car-stats-card-garage {
