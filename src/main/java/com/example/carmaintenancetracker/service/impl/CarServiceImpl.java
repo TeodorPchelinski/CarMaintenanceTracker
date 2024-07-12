@@ -18,6 +18,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.Locale;
@@ -93,8 +96,26 @@ public class CarServiceImpl implements CarService {
     @Transactional
     @Override
     public void deleteCarById(Long id){
-                carRepository.deleteCarEntityById(id);
 
+        CarEntity carEntity = carRepository.findById(id).orElseThrow(() -> new RuntimeException("Car with that id was not found:" + id));
+
+        UserEntity owner = carEntity.getOwner();
+
+
+        String filePath = ".\\src\\main\\resources\\static\\images\\users\\" + owner.getEmail() + "\\cars\\" + id + ".jpg";
+
+        //todo: Delete image can't it is used in other process
+//        Path path = Paths.get(filePath);
+//
+//        try{
+//            if (Files.exists(path)){
+//                Files.delete(path);
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
+        carRepository.deleteCarEntityById(id);
     }
 
     @Override

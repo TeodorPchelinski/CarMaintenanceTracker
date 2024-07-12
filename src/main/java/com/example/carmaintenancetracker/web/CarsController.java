@@ -40,7 +40,6 @@ public class CarsController {
     }
 
 
-    //todo: add button for deleting each car
     @PostMapping("/cars/{id}")
     public String deleteCarById(@PathVariable("id") Long id) {
         carService.deleteCarById(id);
