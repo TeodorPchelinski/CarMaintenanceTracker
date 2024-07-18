@@ -15,9 +15,14 @@ public class RepairEntity extends BaseEntity {
 
     private CarServiceEntity service;
 
+    private GpsCoordinatesEntity serviceLocation;
+
     private ShopEntity shop;
 
+    private ShopEntity shopLocation;
+
     private BigDecimal totalCost;
+
 
     private LocalDate dateCreated;
 
