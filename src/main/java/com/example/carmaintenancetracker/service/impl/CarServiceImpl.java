@@ -28,9 +28,9 @@ import java.util.Optional;
 
 @Service
 public class CarServiceImpl implements CarService {
-    private final UserRepository userRepository;
+    private UserRepository userRepository;
     private UserService userService;
-    private final CarRepository carRepository;
+    private CarRepository carRepository;
 
 
     public CarServiceImpl(UserRepository userRepository, UserService userService,
