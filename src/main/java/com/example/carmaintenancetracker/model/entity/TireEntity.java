@@ -13,9 +13,10 @@ import java.time.LocalDate;
 public class TireEntity extends BaseEntity{
     // todo: Tires Entity -> DOT, dimensions, winter, summer and all seasons, brand, name(model), image, winter and summer change dates,
 
-    //todo: 23RXZ or 2019 or both
+    //todo:  0619 or 2019 or both -> convert week + year to date
     private LocalDate DOT;
 
+    //todo: green, yellow, orange and red  -> for 0-3 years, 4-5 years, 6-7 years, 8-10 years
     private LocalDate expireYear;
 
     // 215

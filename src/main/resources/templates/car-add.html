@@ -27,7 +27,31 @@
 <!--                Problem with creating car when image added.  (name="image")-->
             <div class="field">
                 <input id="image-file" type="file" name="image" accept="image/*">
+                <div class="image-preview" id="image-preview">
+                    <image id="preview-image-little" src="" alt="Image Preview"></image>
+
+                </div>
             </div>
+
+
+                <script>
+                    document.getElementById('image').addEventListener('change', function (event) {
+                        const imageFile = event.target.files[0];
+
+                        if (imageFile){
+                            const reader = new FileReader();
+                            reader.onload = function (e) {
+                                const imagePreview = document.getElementById('image-preview');
+                                imagePreview.src = e.target.result;
+                                imagePreview.style.display = 'block';
+                            }
+
+                            reader.readAsDataURL(imageFile);
+
+                        }
+                    })
+                </script>
+
 
             <div class="field">
                 <input  type=text id="brand" name="brand" placeholder="">

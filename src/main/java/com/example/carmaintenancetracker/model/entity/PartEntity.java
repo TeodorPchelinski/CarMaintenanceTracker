@@ -8,10 +8,11 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
-//@Entity
-//@Table(name = "parts")
+@Entity
+@Table(name = "parts")
 public class PartEntity extends BaseEntity {
 
+    //Name of the part
     private String name;
 
     private String description;
@@ -24,8 +25,7 @@ public class PartEntity extends BaseEntity {
 
     private LocalDate dateCreated;
 
-    private List<LocalDate> latestChanges;
-
     //todo: part cost and all cost in Repairs + cost of work
     private BigDecimal partCost;
+
 }

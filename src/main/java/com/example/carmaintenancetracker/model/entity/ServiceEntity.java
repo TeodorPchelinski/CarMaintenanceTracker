@@ -1,12 +1,15 @@
 package com.example.carmaintenancetracker.model.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
+import java.util.List;
+
 @Entity
-@Table(name = "shops")
-public class ShopEntity extends BaseEntity {
+@Table(name = "services")
+public class ServiceEntity extends BaseEntity {
 
     private String name;
 
@@ -16,6 +19,11 @@ public class ShopEntity extends BaseEntity {
 
     private String description;
 
+    @OneToMany
+    private List<RepairEntity> repair;
+
     @OneToOne
     private GpsCoordinatesEntity location;
+
+
 }

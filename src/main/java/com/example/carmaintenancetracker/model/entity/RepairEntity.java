@@ -1,11 +1,13 @@
 package com.example.carmaintenancetracker.model.entity;
 
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
+@Entity
+@Table(name = "repairs")
 public class RepairEntity extends BaseEntity {
 
     private String name;
@@ -13,13 +15,14 @@ public class RepairEntity extends BaseEntity {
     @OneToMany()
     private List<PartEntity> parts;
 
-    private CarServiceEntity service;
+    @ManyToOne
+    private ServiceEntity service;
 
+    @OneToOne
     private GpsCoordinatesEntity serviceLocation;
 
-    private ShopEntity shop;
-
-    private ShopEntity shopLocation;
+    @ManyToMany
+    private List<ShopEntity> shop;
 
     private BigDecimal totalCost;
 

@@ -995,6 +995,22 @@ h6 {
     max-height: 100px;
 }
 
+.image-preview {
+    margin-top: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#preview-image-little {
+    display: none;
+    max-width: 50px;
+    max-height: 50px;
+}
+
+
 .button {
     align-items: center;
     /*background-color: #3c1b86;*/
@@ -1250,7 +1266,7 @@ h6 {
 
 #parts-container{
 
-    /*background-color: #234465;*/
+    background-color: #234465;
 
 }
 
