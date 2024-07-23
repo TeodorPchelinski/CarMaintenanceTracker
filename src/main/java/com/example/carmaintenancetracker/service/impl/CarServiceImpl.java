@@ -77,6 +77,9 @@ public class CarServiceImpl implements CarService {
 
                 carRepository.save(newCar);
 
+                //todo: How to end the process right of saving new image.
+                //      After creation images are broken but after restart of the whole server they are fine.
+
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }

@@ -28,4 +28,57 @@ public class PartEntity extends BaseEntity {
     //todo: part cost and all cost in Repairs + cost of work
     private BigDecimal partCost;
 
+    public String getName() {
+        return name;
+    }
+
+    public PartEntity setName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public PartEntity setDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    public RepairEntity getRepair() {
+        return repair;
+    }
+
+    public PartEntity setRepair(RepairEntity repair) {
+        this.repair = repair;
+        return this;
+    }
+
+    public CarEntity getCar() {
+        return car;
+    }
+
+    public PartEntity setCar(CarEntity car) {
+        this.car = car;
+        return this;
+    }
+
+    public LocalDate getDateCreated() {
+        return dateCreated;
+    }
+
+    public PartEntity setDateCreated(LocalDate dateCreated) {
+        this.dateCreated = dateCreated;
+        return this;
+    }
+
+    public BigDecimal getPartCost() {
+        return partCost;
+    }
+
+    public PartEntity setPartCost(BigDecimal partCost) {
+        this.partCost = partCost;
+        return this;
+    }
 }

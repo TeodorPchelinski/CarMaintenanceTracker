@@ -21,6 +21,24 @@
       <div>
         <label class="window-label">Current Car</label>
         <img class="current-fuel-car" th:src="@{/images/Audi-A3.jpg}">
+
+
+        <div class="drop-menu" id="car-drop-menu">
+
+<!--          th:each="cars : ${cars.getContent()}"-->
+
+          <div class="drop-menu-option" id="car-drop-menu-option">
+            <select id="car-id" name="id">
+<!--              <img class="car-img2" id="car-img-tiny" th:src="@{${cars.image}}" >-->
+              <option th:each="cars : ${cars.getContent()}"  th:object="${cars}" th:value="${cars.id}"
+                      th:text="${cars.brand} + ' ' + ${cars.model} + ' ' + ${cars.engineDisplacement}"></option>
+
+            </select>
+
+          </div>
+
+        </div>
+
       </div>
     </div>
 
@@ -182,49 +200,6 @@
         <div class="form-column">
 
           <button class="add-part-button" id="add-partBtn" onclick="addPart()" >+ Add part</button>
-
-<!--          <script>-->
-<!--            -->
-<!--            // Save the function for later if needed but will do it different way for now-->
-
-<!--            function addPart() {-->
-
-<!--              const container = document.getElementById('form-column');-->
-
-<!--              const newPartDiv = document.createElement('div');-->
-<!--              newPartDiv.classList.add('form-column');-->
-
-<!--              const partNameField = document.createElement('div');-->
-<!--              partNameField.classList.add('field');-->
-<!--              partNameField.innerHTML = '<input type=text id="part-name" list="parts" name="partName" placeholder="">' +-->
-<!--                                        '<label htmlFor="part-name" className="field-label">Part name</label>';-->
-
-<!--              const partPriceField = document.createElement('div');-->
-<!--              partNameField.classList.add('field-small');-->
-<!--              partNameField.innerHTML = '<input type=number id="part-name" name="partPrice" placeholder="">' +-->
-<!--                                        '<label for="part-name" class="field-small-label">price</label>'-->
-
-<!--              const quantityField = document.createElement('div');-->
-<!--              quantityField.classList.add('field');-->
-<!--              quantityField.innerHTML = '<select id="quantity" name="quantity" placeholder="">\n' +-->
-<!--                      '<option value="1" >x1</option>\n' +-->
-<!--                      '<option value="2" >x2</option>\n' +-->
-<!--                      '<option value="3" >x3</option>\n' +-->
-<!--                      '<option value="4" >x4</option>\n' +-->
-<!--                      '<option value="5" >x5</option>\n' +-->
-<!--                      '<option value="6" >x6</option>\n' +-->
-<!--                      '<option value="7" >x7</option>\n' +-->
-<!--                      '<option value="8">x8</option>\n' +-->
-<!--                      '           </select>'-->
-
-<!--            newPartDiv.appendChild(partNameField);-->
-<!--            newPartDiv.appendChild(partPriceField);-->
-<!--            newPartDiv.appendChild(quantityField);-->
-
-<!--            container.appendChild(newPartDiv)-->
-
-<!--            }-->
-<!--          </script>-->
 
 
         </div>
