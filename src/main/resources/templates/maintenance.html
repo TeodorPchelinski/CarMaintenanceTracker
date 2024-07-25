@@ -161,52 +161,56 @@
 <!--            <label for="part-name" class="field-label" id="small-date-label">Date</label>-->
           </div>
 
-        </div>
+          </div>
+
 
 <!--        FIRST COLUMN-->
-        <div class="form-column">
+        <div class="form-column" th:each="i : ${#numbers.sequence(1, partsCount)}">
 
 
 
 <!--          TABLE OF PARTS LIST-->
-          <table>
-            <thead>
-              <tr>
-                <th>Part name</th>
-                <th>Part cost</th>
-                <th>quantity</th>
-              </tr>
-            </thead>
+<!--          <table>-->
+<!--            <thead>-->
+<!--              <tr>-->
+<!--                <th>Part name</th>-->
+<!--                <th>Part cost</th>-->
+<!--                <th>quantity</th>-->
+<!--              </tr>-->
+<!--            </thead>-->
 
-            <tbody>
-              <tr th:each="parts, itemStat : *{parts}">
-                <td><input th:field="*{parts[__${itemStat.index}__].name}" />
-                    <label for="part-name" class="field-label">Part name</label>
-                </td>
-                <td>
-                  <label for="part-name" class="field-small-label">price</label>
-                  <input th:field="*{parts[__${itemStat.index}__].cost}" /></td>
-                <td><label>
-                  <select th:field="*{parts[__${itemStat.index}__].quantity}" >
-                  <option value="1" >x1</option>
-                  <option value="2" >x2</option>
-                  <option value="3" >x3</option>
-                  <option value="4" >x4</option>
-                  <option value="5" >x5</option>
-                  <option value="6" >x6</option>
-                  <option value="7" >x7</option>
-                  <option value="8" >x8</option>
-                  </select>
-                </label></td>
-              </tr>
-            </tbody>
-          </table>
+<!--            <tbody>-->
+<!--              <tr th:each="parts, itemStat : *{parts}">-->
+<!--                <td><input th:field="*{parts[__${itemStat.index}__].name}" />-->
+<!--                    <label for="part-name" class="field-label">Part name</label>-->
+<!--                </td>-->
+<!--                <td>-->
+<!--                  <label for="part-name" class="field-small-label">price</label>-->
+<!--                  <input th:field="*{parts[__${itemStat.index}__].cost}" /></td>-->
+<!--                <td><label>-->
+<!--                  <select th:field="*{parts[__${itemStat.index}__].quantity}" >-->
+<!--                  <option value="1" >x1</option>-->
+<!--                  <option value="2" >x2</option>-->
+<!--                  <option value="3" >x3</option>-->
+<!--                  <option value="4" >x4</option>-->
+<!--                  <option value="5" >x5</option>-->
+<!--                  <option value="6" >x6</option>-->
+<!--                  <option value="7" >x7</option>-->
+<!--                  <option value="8" >x8</option>-->
+<!--                  </select>-->
+<!--                </label></td>-->
+<!--              </tr>-->
+<!--            </tbody>-->
+<!--          </table>-->
 
 
           <!--          FIRST FIELDS-->
+            <!--            <input th:field="*{parts[__${itemStat.index}__].partName}" type=text id="part-name" list="parts" name="partName" placeholder="">-->
+
+
 
           <div class="field">
-            <input th:field="*{parts[__${itemStat.index}__].partName}" type=text id="part-name" list="parts" name="partName" placeholder="">
+            <input type=text id="part-name" list="parts" name="partName" placeholder="">
             <label for="part-name" class="field-label">Part name</label>
             <datalist id="parts">
             </datalist>
@@ -240,9 +244,38 @@
 
         </div>
 
+
         <div class="form-column">
 
-          <button class="add-part-button" id="add-partBtn" onclick="addPart()" >+ Add part</button>
+          <button class="add-part-button" id="add-partBtn" onclick="incrementPartsCount()" >+ Add part</button>
+
+        <script th:inline="javascript">
+            /*<![CDATA[*/
+
+            let partsCount = /*[[${partsCount}]]*/ 0;
+
+            function addPart() {
+                const partsContainer = document.getElementById('form-container');
+                partsContainer.innerHTML = '';
+
+                for (let i = 1; i <= partsCount; i++) {
+                    const partDiv = document.createElement('form-column');
+                    partDiv.innerHTML = ` <div class="field">
+                                          <input type=text id="part-name" list="parts" name="partName" placeholder="">
+                                          <label for="part-name" class="field-label">Part name</label>
+                                          <datalist id="parts">
+                                          </datalist>`;
+                    partsContainer.appendChild(partDiv);
+                }
+            }
+
+            function incrementPartsCount() {
+                partsCount += 1;
+                addPart();
+            }
+
+            /*]]>*/
+        </script>
 
 
         </div>
@@ -418,6 +451,8 @@
 
     <div class="window" id="window-small">
     </div>
+
+<!--    I NEED THAT ON TOP OF THIS TEXT-->
   </div>
 </div>
 

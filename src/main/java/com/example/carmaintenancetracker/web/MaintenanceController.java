@@ -22,6 +22,8 @@ public class MaintenanceController {
 
     private final CarService carService;
 
+    private CreateRepairDTO createRepairDTO;
+
     public MaintenanceController(CarService carService) {
         this.carService = carService;
     }
@@ -43,9 +45,13 @@ public class MaintenanceController {
             parts.add(new PartEntity());
         }
 
+        int partsCount = 3;
+
         repairForm.setParts(parts);
 
-        model.addAttribute("form", repairForm);
+
+        model.addAttribute("partsCount", partsCount);
+        model.addAttribute("createRepairDTO", createRepairDTO);
         model.addAttribute("cars", userCars);
         return "maintenance";
     }

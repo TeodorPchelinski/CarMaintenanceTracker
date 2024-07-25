@@ -60,8 +60,8 @@ public class RepairServiceImpl implements RepairService {
 
 
         PartEntity newPart = new PartEntity()
-                .setName(createRepairDTO.getPartName())
-                .setPartCost(createRepairDTO.getPartPrice())
+//                .setName(createRepairDTO.getPartName())
+//                .setPartCost(createRepairDTO.getPartPrice())
                 .setRepair(newRepair);
 
 
