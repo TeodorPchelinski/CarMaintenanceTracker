@@ -51,6 +51,8 @@ public class CarsController {
                            @PageableDefault(size = 16,sort = "id") Pageable pageable,
                            @AuthenticationPrincipal UserDetails creator) {
 
+        //todo: Add ("/cars/page/2/") for changing page number
+
 
         Page<CarSummaryDTO> userCars = carService.getAllCarsByOwnerId(pageable, creator);
 
