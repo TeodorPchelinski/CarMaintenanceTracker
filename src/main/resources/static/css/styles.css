@@ -795,7 +795,11 @@ h6 {
 }
 
 #service-form-container {
-    display: none;
+    display: inline-flex;
+}
+
+#shop-form-container {
+    display: inline-flex;
 }
 
 .form-container {
@@ -869,7 +873,8 @@ h6 {
 
 #two-sectors {
     width: 48rem;
-    height: 30.175rem;
+    height: 40.175rem;
+    margin-bottom: 5rem;
 }
 
 #after-skipped-window {
@@ -1261,6 +1266,10 @@ h6 {
 }
 
 #show-car-service-fields {
+    width: 10rem;
+}
+
+#show-repair-shop-fields {
     width: 10rem;
 }
 

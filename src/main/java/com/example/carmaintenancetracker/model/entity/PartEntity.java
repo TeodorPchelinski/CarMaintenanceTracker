@@ -28,6 +28,8 @@ public class PartEntity extends BaseEntity {
     //todo: part cost and all cost in Repairs + cost of work
     private BigDecimal partCost;
 
+    private int quantity;
+
     public String getName() {
         return name;
     }
@@ -79,6 +81,15 @@ public class PartEntity extends BaseEntity {
 
     public PartEntity setPartCost(BigDecimal partCost) {
         this.partCost = partCost;
+        return this;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public PartEntity setQuantity(int quantity) {
+        this.quantity = quantity;
         return this;
     }
 }

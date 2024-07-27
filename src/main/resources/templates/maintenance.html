@@ -9,10 +9,14 @@
   <div th:replace="~{fragments/navbar}"></div>
 
 
-<div class="current-page">
+<div class="current-page" id="current-page">
 
 
-<!--  First Column-->
+
+
+
+
+  <!--  First Column-->
   <div class="section1">
     <div class="label-container">
       <h2 class="label">Maintenance <br> and Repairs</h2>
@@ -23,21 +27,7 @@
         <img class="current-fuel-car" th:src="@{/images/Audi-A3.jpg}">
 
 
-        <div class="drop-menu" id="car-drop-menu">
 
-<!--          th:each="cars : ${cars.getContent()}"-->
-
-          <div class="drop-menu-option" id="car-drop-menu-option">
-            <select id="car-id" name="id">
-<!--              <img class="car-img2" id="car-img-tiny" th:src="@{${cars.image}}" >-->
-              <option th:each="cars : ${cars.getContent()}"  th:object="${cars}" th:value="${cars.id}"
-                      th:text="${cars.brand} + ' ' + ${cars.model} + ' ' + ${cars.engineDisplacement}"></option>
-
-            </select>
-
-          </div>
-
-        </div>
 
       </div>
     </div>
@@ -105,7 +95,7 @@
 
 
 <!--  Second Column-->
-  <div class="section2">
+  <div class="section2" id="section2">
     <div class="window" id="window-small">
       <label class="window-label">Maintenance costs</label>
       <div id="container2"></div>
@@ -140,12 +130,20 @@
 
     </div>
 
+
+
     <div class="window" id="two-sectors">
 
       <label class="window-label" id="add-repair-label">Add Repair or Change</label>
 
+      <form th:action="@{/maintenance}"
+            th:method="post"
+            enctype="multipart/form-data">
+
 
       <div class="form-container" id="parts-container">
+
+
 
         <div class="form-column" id="form-column">
 
@@ -163,74 +161,87 @@
 
           </div>
 
+        <div class="form-column" id="form-column">
 
-<!--        FIRST COLUMN-->
-        <div class="form-column" th:each="i : ${#numbers.sequence(1, partsCount)}">
+          <div class="drop-menu" id="car-drop-menu">
 
+            <!--          th:each="cars : ${cars.getContent()}"-->
 
-
-<!--          TABLE OF PARTS LIST-->
-<!--          <table>-->
-<!--            <thead>-->
-<!--              <tr>-->
-<!--                <th>Part name</th>-->
-<!--                <th>Part cost</th>-->
-<!--                <th>quantity</th>-->
-<!--              </tr>-->
-<!--            </thead>-->
-
-<!--            <tbody>-->
-<!--              <tr th:each="parts, itemStat : *{parts}">-->
-<!--                <td><input th:field="*{parts[__${itemStat.index}__].name}" />-->
-<!--                    <label for="part-name" class="field-label">Part name</label>-->
-<!--                </td>-->
-<!--                <td>-->
-<!--                  <label for="part-name" class="field-small-label">price</label>-->
-<!--                  <input th:field="*{parts[__${itemStat.index}__].cost}" /></td>-->
-<!--                <td><label>-->
-<!--                  <select th:field="*{parts[__${itemStat.index}__].quantity}" >-->
-<!--                  <option value="1" >x1</option>-->
-<!--                  <option value="2" >x2</option>-->
-<!--                  <option value="3" >x3</option>-->
-<!--                  <option value="4" >x4</option>-->
-<!--                  <option value="5" >x5</option>-->
-<!--                  <option value="6" >x6</option>-->
-<!--                  <option value="7" >x7</option>-->
-<!--                  <option value="8" >x8</option>-->
-<!--                  </select>-->
-<!--                </label></td>-->
-<!--              </tr>-->
-<!--            </tbody>-->
-<!--          </table>-->
-
-
-          <!--          FIRST FIELDS-->
-            <!--            <input th:field="*{parts[__${itemStat.index}__].partName}" type=text id="part-name" list="parts" name="partName" placeholder="">-->
+            <div class="drop-menu-option" id="car-drop-menu-option">
 
 
 
-          <div class="field">
-            <input type=text id="part-name" list="parts" name="partName" placeholder="">
-            <label for="part-name" class="field-label">Part name</label>
-            <datalist id="parts">
-            </datalist>
+              <select id="car-id" name="carId">
+                <!--              <img class="car-img2" id="car-img-tiny" th:src="@{${cars.image}}" >-->
+                <option th:each="cars : ${cars.getContent()}"  th:object="${cars}" th:value="${cars.id}"
+                        th:text="${cars.brand} + ' ' + ${cars.model} + ' ' + ${cars.engineDisplacement}"></option>
+
+              </select>
+
+            </div>
+
           </div>
 
-<!--          <button class="button-second" id="add-trip-name">Add another part</button>-->
+        </div>
+
+
+        <!--          TABLE OF PARTS LIST-->
+        <!--          <table>-->
+        <!--            <thead>-->
+        <!--              <tr>-->
+        <!--                <th>Part name</th>-->
+        <!--                <th>Part cost</th>-->
+        <!--                <th>quantity</th>-->
+        <!--              </tr>-->
+        <!--            </thead>-->
+
+        <!--            <tbody>-->
+        <!--              <tr th:each="parts, itemStat : *{parts}">-->
+        <!--                <td><input th:field="*{parts[__${itemStat.index}__].name}" />-->
+        <!--                    <label for="part-name" class="field-label">Part name</label>-->
+        <!--                </td>-->
+        <!--                <td>-->
+        <!--                  <label for="part-name" class="field-small-label">price</label>-->
+        <!--                  <input th:field="*{parts[__${itemStat.index}__].cost}" /></td>-->
+        <!--                <td><label>-->
+        <!--                  <select th:field="*{parts[__${itemStat.index}__].quantity}" >-->
+        <!--                  <option value="1" >x1</option>-->
+        <!--                  <option value="2" >x2</option>-->
+        <!--                  <option value="3" >x3</option>-->
+        <!--                  <option value="4" >x4</option>-->
+        <!--                  <option value="5" >x5</option>-->
+        <!--                  <option value="6" >x6</option>-->
+        <!--                  <option value="7" >x7</option>-->
+        <!--                  <option value="8" >x8</option>-->
+        <!--                  </select>-->
+        <!--                </label></td>-->
+        <!--              </tr>-->
+        <!--            </tbody>-->
+        <!--          </table>-->
+
+
+        <!--          FIRST FIELDS-->
+        <!--            <input th:field="*{parts[__${itemStat.index}__].partName}" type=text id="part-name" list="parts" name="partName" placeholder="">-->
 
 
 
+        <!--        FIRST COLUMN-->
 
+
+        <div class="form-column" >
+          <div class="field">
+            <input type=text  id="part-name"  name="partName1" placeholder="">
+            <label for="part-name" class="field-label">Part name</label>
+          </div>
 
           <div class="field-small" id="part-price-field">
-            <input type=number id="part-name" name="partPrice" placeholder="">
+            <input type=number id="part-name" name="partPrice1" placeholder="">
             <label for="part-name" class="field-small-label">price</label>
           </div>
 
-
 <!--        Quantity-->
           <div class="field" id="quantity-field">
-           <select id="quantity" name="quantity" placeholder="">
+           <select id="quantity" name="partQuantity1" placeholder="">
              <option value="1" >x1</option>
              <option value="2" >x2</option>
              <option value="3" >x3</option>
@@ -244,39 +255,97 @@
 
         </div>
 
+          <div class="form-column" >
+            <div class="field">
+              <input type=text  id="part-name" list="parts" name="partName2" placeholder="">
+              <label for="part-name" class="field-label">Part name</label>
+              <datalist id="parts">
+              </datalist>
+            </div>
+
+            <div class="field-small" id="part-price-field">
+              <input type=number id="part-name" name="partPrice2" placeholder="">
+              <label for="part-name" class="field-small-label">price</label>
+            </div>
+
+            <!--        Quantity-->
+            <div class="field" id="quantity-field">
+              <select id="quantity" name="partQuantity2" placeholder="">
+                <option value="1" >x1</option>
+                <option value="2" >x2</option>
+                <option value="3" >x3</option>
+                <option value="4" >x4</option>
+                <option value="5" >x5</option>
+                <option value="6" >x6</option>
+                <option value="7" >x7</option>
+                <option value="8" >x8</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="form-column" >
+            <div class="field">
+              <input type=text  id="part-name" list="parts" name="partName3" placeholder="">
+              <label for="part-name" class="field-label">Part name</label>
+              <datalist id="parts">
+              </datalist>
+            </div>
+
+            <div class="field-small" id="part-price-field">
+              <input type=number id="part-name" name="partPrice3" placeholder="">
+              <label for="part-name" class="field-small-label">price</label>
+            </div>
+
+            <!--        Quantity-->
+            <div class="field" id="quantity-field">
+              <select id="quantity" name="partQuantity3" placeholder="">
+                <option value="1" >x1</option>
+                <option value="2" >x2</option>
+                <option value="3" >x3</option>
+                <option value="4" >x4</option>
+                <option value="5" >x5</option>
+                <option value="6" >x6</option>
+                <option value="7" >x7</option>
+                <option value="8" >x8</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="form-column" >
+            <div class="field">
+              <input type=text  id="part-name" list="parts" name="partName4" placeholder="">
+              <label for="part-name" class="field-label">Part name</label>
+              <datalist id="parts">
+              </datalist>
+            </div>
+
+            <div class="field-small" id="part-price-field">
+              <input type=number id="part-name" name="partPrice4" placeholder="">
+              <label for="part-name" class="field-small-label">price</label>
+            </div>
+
+            <!--        Quantity-->
+            <div class="field" id="quantity-field">
+              <select id="quantity" name="partQuantity4" placeholder="">
+                <option value="1" >x1</option>
+                <option value="2" >x2</option>
+                <option value="3" >x3</option>
+                <option value="4" >x4</option>
+                <option value="5" >x5</option>
+                <option value="6" >x6</option>
+                <option value="7" >x7</option>
+                <option value="8" >x8</option>
+              </select>
+            </div>
+
+          </div>
+
 
         <div class="form-column">
 
-          <button class="add-part-button" id="add-partBtn" onclick="incrementPartsCount()" >+ Add part</button>
-
-        <script th:inline="javascript">
-            /*<![CDATA[*/
-
-            let partsCount = /*[[${partsCount}]]*/ 0;
-
-            function addPart() {
-                const partsContainer = document.getElementById('form-container');
-                partsContainer.innerHTML = '';
-
-                for (let i = 1; i <= partsCount; i++) {
-                    const partDiv = document.createElement('form-column');
-                    partDiv.innerHTML = ` <div class="field">
-                                          <input type=text id="part-name" list="parts" name="partName" placeholder="">
-                                          <label for="part-name" class="field-label">Part name</label>
-                                          <datalist id="parts">
-                                          </datalist>`;
-                    partsContainer.appendChild(partDiv);
-                }
-            }
-
-            function incrementPartsCount() {
-                partsCount += 1;
-                addPart();
-            }
-
-            /*]]>*/
-        </script>
-
+          <button class="add-part-button" id="add-partBtn" type="button" >+ Add part</button>
 
         </div>
 
@@ -284,7 +353,7 @@
 
         <div class="form-column">
 
-          <button class="add-part-button" id="show-car-service-fields" onclick="showCarService()" >Add Car Service ▼</button>
+<!--          <button class="add-part-button" id="show-car-service-fields" type="button" onclick="showCarService()" >Add Car Service ▼</button>-->
 
         </div>
 
@@ -312,8 +381,15 @@
 
             window.onload = function () {
               const mainContainer = document.getElementById('two-sectors');
+              const currentPage = document.getElementById('current-page');
+              const section2 = document.getElementById('section2');
               originalHeight = mainContainer.clientHeight;
+              originalHeight = currentPage.clientHeight;
+              originalHeight = section2.clientHeight;
+
               mainContainer.style.height = originalHeight + 'px';
+              currentPage.style.height = originalHeight + 'px';
+              section2.style.height = originalHeight + 'px';
             }
 
             function showCarService() {
@@ -321,15 +397,83 @@
               const button = document.getElementById('show-car-service-fields');
               const container = document.getElementById('service-form-container');
               const mainContainer = document.getElementById('two-sectors');
+              const currentPage = document.getElementById('current-page');
+              const section2 = document.getElementById('section2');
+
 
               if (container.style.display === 'none' || container.style.display === ''){
                 container.style.display = 'inline-flex';
                 container.style.marginBottom = '5px';
                 button.innerHTML = 'Show less ▲';
                 mainContainer.style.height = (originalHeight + container.scrollHeight) + 'px';
+                currentPage.style.height = (originalHeight + currentPage.scrollHeight) + 'px';
+                section2.style.height = (originalHeight + section2.scrollHeight) + 'px';
               } else {
                 container.style.display = 'none';
                 button.innerHTML = 'Show Car Service ▼';
+                mainContainer.style.height = originalHeight + 'px';
+                currentPage.style.height = originalHeight + 'px';
+                section2.style.height = originalHeight + 'px';
+              }
+
+            }
+
+
+          </script>
+
+
+        </div>
+
+        <hr class="dashboard-line1">
+
+        <div class="form-column">
+
+          <button class="add-part-button" id="show-repair-shop-fields" type="button" onclick="showRepairShop()" >Show Shop2 ▼</button>
+<!--          ▼-->
+
+        </div>
+
+        <div class="form-column" id="shop-form-container">
+
+          <div class="field">
+            <input type=text id="part-name" name="shopName" placeholder="">
+            <label for="part-name" class="field-label">Shop name</label>
+          </div>
+
+          <div class="field" id="shop-location-field">
+            <input type=text id="part-name" name="shopLocation" placeholder="">
+            <label for="part-name" class="field-label">Location (map)</label>
+          </div>
+
+          <script>
+
+            let originalHeight;
+
+            window.onload = function () {
+              const mainContainer = document.getElementById('two-sectors');
+              const container = document.getElementById('shop-form-container');
+              originalHeight = mainContainer.clientHeight;
+              originalHeight = container.clientHeight;
+              mainContainer.style.height = originalHeight + 'px';
+              container.style.height = originalHeight + 'px';
+
+            }
+
+            function showRepairShop() {
+
+              const button = document.getElementById('show-repair-shop-fields');
+              const container = document.getElementById('shop-form-container');
+              const mainContainer = document.getElementById('two-sectors');
+
+              if (container.style.display === 'none' || container.style.display === ''){
+                container.style.display = 'inline-flex';
+                container.style.marginBottom = '5px';
+                button.innerHTML = 'Show less ▲';
+                mainContainer.style.height = (originalHeight + container.scrollHeight) + 'px';
+                container.style.height = (originalHeight + container.scrollHeight) + 'px';
+              } else {
+                container.style.display = 'none';
+                button.innerHTML = 'Show Shop ▼';
                 mainContainer.style.height = originalHeight + 'px';
               }
 
@@ -345,22 +489,7 @@
 
         <div class="form-column">
 
-          <div class="field">
-            <input type=text id="part-name" name="shopName" placeholder="">
-            <label for="part-name" class="field-label">Shop name</label>
-          </div>
-
-          <div class="field" id="shop-location-field">
-            <input type=text id="part-name" name="shopLocation" placeholder="">
-            <label for="part-name" class="field-label">Location (map)</label>
-          </div>
-
-
-        </div>
-
-        <div class="form-column">
-
-          <button class="button" id="refuel-button">Add</button>
+          <button class="button" id="refuel-button" type="submit">Add</button>
 
           <label class="window-label" id="total-price-label">Total:</label>
 
@@ -374,9 +503,11 @@
 
 
       </div>
-
+        </form>
 
     </div>
+
+
 
 
 <!--    Missing Window Here!-->
@@ -385,6 +516,8 @@
 <!--    </div>-->
 
   </div>
+
+
 
 
 <!--  Third Column-->

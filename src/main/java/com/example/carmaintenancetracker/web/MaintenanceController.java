@@ -1,9 +1,12 @@
 package com.example.carmaintenancetracker.web;
 
 import com.example.carmaintenancetracker.model.dto.CarSummaryDTO;
+import com.example.carmaintenancetracker.model.dto.CreateCarDTO;
 import com.example.carmaintenancetracker.model.dto.CreateRepairDTO;
 import com.example.carmaintenancetracker.model.entity.PartEntity;
 import com.example.carmaintenancetracker.service.CarService;
+import com.example.carmaintenancetracker.service.RepairService;
+import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -11,8 +14,11 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +28,7 @@ public class MaintenanceController {
 
     private final CarService carService;
 
+    private RepairService repairService;
     private CreateRepairDTO createRepairDTO;
 
     public MaintenanceController(CarService carService) {
@@ -37,31 +44,42 @@ public class MaintenanceController {
 
         Page<CarSummaryDTO> userCars = carService.getAllCarsByOwnerId(pageable, creator);
 
-        CreateRepairDTO repairForm = new CreateRepairDTO();
 
-        List<PartEntity> parts = new ArrayList<>();
-
-        for(int i = 1; i < 3; i++){
-            parts.add(new PartEntity());
-        }
-
-        int partsCount = 3;
-
-        repairForm.setParts(parts);
-
-
-        model.addAttribute("partsCount", partsCount);
-        model.addAttribute("createRepairDTO", createRepairDTO);
+//        model.addAttribute("createRepairDTO", createRepairDTO);
         model.addAttribute("cars", userCars);
         return "maintenance";
     }
 
+    @PostMapping("/maintenance")
+    public String repair(@Valid @ModelAttribute("createRepairDTO") CreateRepairDTO createRepairDTO,
+                            BindingResult bindingResult,
+                            RedirectAttributes redirectAttributes) {
+
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("createRepairDTO", createRepairDTO);
+            redirectAttributes.addFlashAttribute(
+                    "org.springframework.validation.BindingResult.createRepairDTO", bindingResult);
+
+
+
+            return "redirect:/maintenance";
+        }
+
+        System.out.println("Hello");
+
+
+        repairService.createRepair(createRepairDTO);
+        System.out.println(createRepairDTO);
+
+        return "/maintenance";
+    }
+
 
     //todo: button to expenses
-    @PostMapping("/maintenance")
-    public String expenses() {
-        return "redirect:/expenses";
-    }
+//    @PostMapping("/maintenance")
+//    public String expenses() {
+//        return "redirect:/expenses";
+//    }
 
 
 
