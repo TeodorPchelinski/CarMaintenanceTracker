@@ -28,11 +28,13 @@ public class MaintenanceController {
 
     private final CarService carService;
 
-    private RepairService repairService;
+    private final RepairService repairService;
     private CreateRepairDTO createRepairDTO;
 
-    public MaintenanceController(CarService carService) {
+    public MaintenanceController(CarService carService, RepairService repairService) {
         this.carService = carService;
+        this.repairService = repairService;
+
     }
 
     @GetMapping("/maintenance")
@@ -40,38 +42,31 @@ public class MaintenanceController {
                               @PageableDefault(size = 30,sort = "id") Pageable pageable,
                               @AuthenticationPrincipal UserDetails creator) {
 
-        //todo: Car id and other fields in the Repair Form
+        Page<CarSummaryDTO> userCars2 = carService.getAllCarsByOwnerId(pageable, creator);
 
-        Page<CarSummaryDTO> userCars = carService.getAllCarsByOwnerId(pageable, creator);
-
-
-//        model.addAttribute("createRepairDTO", createRepairDTO);
-        model.addAttribute("cars", userCars);
+        model.addAttribute("cars", userCars2);
         return "maintenance";
     }
 
     @PostMapping("/maintenance")
-    public String repair(@Valid @ModelAttribute("createRepairDTO") CreateRepairDTO createRepairDTO,
-                            BindingResult bindingResult,
-                            RedirectAttributes redirectAttributes) {
+    public String repair(@Valid @ModelAttribute("createRepairDTO") CreateRepairDTO createRepairDTO) {
+//                            BindingResult bindingResult,
+//                            RedirectAttributes redirectAttributes
 
-        if (bindingResult.hasErrors()) {
-            redirectAttributes.addFlashAttribute("createRepairDTO", createRepairDTO);
-            redirectAttributes.addFlashAttribute(
-                    "org.springframework.validation.BindingResult.createRepairDTO", bindingResult);
-
-
-
-            return "redirect:/maintenance";
-        }
-
-        System.out.println("Hello");
+//        if (bindingResult.hasErrors()) {
+//            redirectAttributes.addFlashAttribute("createRepairDTO", createRepairDTO);
+//            redirectAttributes.addFlashAttribute(
+//                    "org.springframework.validation.BindingResult.createRepairDTO", bindingResult);
+//
+//
+//
+//            return "redirect:/maintenance";
+//        }
 
 
         repairService.createRepair(createRepairDTO);
-        System.out.println(createRepairDTO);
 
-        return "/maintenance";
+        return "redirect:/maintenance";
     }
 
 

@@ -23,14 +23,16 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class CarServiceImpl implements CarService {
     private UserRepository userRepository;
     private UserService userService;
-    private CarRepository carRepository;
+    private final CarRepository carRepository;
 
 
     public CarServiceImpl(UserRepository userRepository, UserService userService,
@@ -141,6 +143,22 @@ public class CarServiceImpl implements CarService {
         Long number = owner.get().getId();
         return carRepository.findAllCarsByOwnerId(number, pageable).map(CarServiceImpl::mapAsSummary);
     }
+
+//    @Override
+//    public List<CarSummaryDTO> getAllCarsByOwnerId(UserDetails creator) {
+//
+//        Optional<UserEntity> owner = userRepository.findByEmail(creator.getUsername());
+//        if (!owner.isPresent()) {
+//            throw new UsernameNotFoundException("User not found");
+//        }
+//
+//        Long ownerId = owner.get().getId();
+//
+//        List<CarEntity> cars = carRepository.findAllCarsByOwnerId(ownerId);
+//
+//        return cars.stream().map(CarServiceImpl::mapAsSummary).collect(Collectors.toList());
+//
+//    }
 
     @Override
     public CarEntity findCarById(Long id) {

@@ -22,4 +22,5 @@ public interface CarService {
     Page<CarSummaryDTO> getAllCars(Pageable pageable);
     CarEntity findCarById(Long id);
 
+//    List<CarSummaryDTO> getAllCarsByOwnerId(UserDetails creator);
 }

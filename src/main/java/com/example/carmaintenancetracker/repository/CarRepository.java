@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface CarRepository extends JpaRepository<CarEntity, Long> {
 
-    List<CarEntity> findAllByOwner(UserEntity owner);
+//    List<CarEntity> findAllByOwner(UserEntity owner);
 
     Page<CarEntity> findAll(Pageable pageable);
     Page<CarEntity> findAllCarsByOwnerId(Long valueOf, Pageable pageable);
@@ -24,6 +24,8 @@ public interface CarRepository extends JpaRepository<CarEntity, Long> {
     //      in parts, documents, refuels connected with this car
 
     void deleteCarEntityById(Long id);
+
+    List<CarEntity> findAllCarsByOwnerId(Long number);
     // delete function will be in page deleted cars
     // before this will be remove function which will transfer the car to a list of deleted cars
 

@@ -164,17 +164,16 @@
         <div class="form-column" id="form-column">
 
           <div class="drop-menu" id="car-drop-menu">
-
-            <!--          th:each="cars : ${cars.getContent()}"-->
-
             <div class="drop-menu-option" id="car-drop-menu-option">
 
 
 
               <select id="car-id" name="carId">
                 <!--              <img class="car-img2" id="car-img-tiny" th:src="@{${cars.image}}" >-->
-                <option th:each="cars : ${cars.getContent()}"  th:object="${cars}" th:value="${cars.id}"
-                        th:text="${cars.brand} + ' ' + ${cars.model} + ' ' + ${cars.engineDisplacement}"></option>
+                <option th:each="cars : ${cars.getContent()}"
+                        th:object="${cars}"
+                        th:text="${cars.id} + ' ' + ${cars.brand} + ' ' + ${cars.model} + ' ' + ${cars.engineDisplacement}"
+                ></option>
 
               </select>
 
@@ -183,47 +182,6 @@
           </div>
 
         </div>
-
-
-        <!--          TABLE OF PARTS LIST-->
-        <!--          <table>-->
-        <!--            <thead>-->
-        <!--              <tr>-->
-        <!--                <th>Part name</th>-->
-        <!--                <th>Part cost</th>-->
-        <!--                <th>quantity</th>-->
-        <!--              </tr>-->
-        <!--            </thead>-->
-
-        <!--            <tbody>-->
-        <!--              <tr th:each="parts, itemStat : *{parts}">-->
-        <!--                <td><input th:field="*{parts[__${itemStat.index}__].name}" />-->
-        <!--                    <label for="part-name" class="field-label">Part name</label>-->
-        <!--                </td>-->
-        <!--                <td>-->
-        <!--                  <label for="part-name" class="field-small-label">price</label>-->
-        <!--                  <input th:field="*{parts[__${itemStat.index}__].cost}" /></td>-->
-        <!--                <td><label>-->
-        <!--                  <select th:field="*{parts[__${itemStat.index}__].quantity}" >-->
-        <!--                  <option value="1" >x1</option>-->
-        <!--                  <option value="2" >x2</option>-->
-        <!--                  <option value="3" >x3</option>-->
-        <!--                  <option value="4" >x4</option>-->
-        <!--                  <option value="5" >x5</option>-->
-        <!--                  <option value="6" >x6</option>-->
-        <!--                  <option value="7" >x7</option>-->
-        <!--                  <option value="8" >x8</option>-->
-        <!--                  </select>-->
-        <!--                </label></td>-->
-        <!--              </tr>-->
-        <!--            </tbody>-->
-        <!--          </table>-->
-
-
-        <!--          FIRST FIELDS-->
-        <!--            <input th:field="*{parts[__${itemStat.index}__].partName}" type=text id="part-name" list="parts" name="partName" placeholder="">-->
-
-
 
         <!--        FIRST COLUMN-->
 
@@ -366,12 +324,12 @@
           </div>
 
           <div class="field">
-            <input type=text id="part-name" name="serviceLocation" placeholder="">
+            <input type=text id="part-name" placeholder="">
             <label for="part-name" class="field-label">Location (map)</label>
           </div>
 
           <div class="field" id="repair-description-field">
-            <textarea type=text id="large-text" name="serviceDescription" placeholder=""></textarea>
+            <textarea type=text id="large-text" name="description" placeholder=""></textarea>
             <label  for="large-text" class="field-label">Description</label>
           </div>
 
@@ -441,7 +399,7 @@
           </div>
 
           <div class="field" id="shop-location-field">
-            <input type=text id="part-name" name="shopLocation" placeholder="">
+            <input type=text id="part-name" placeholder="">
             <label for="part-name" class="field-label">Location (map)</label>
           </div>
 

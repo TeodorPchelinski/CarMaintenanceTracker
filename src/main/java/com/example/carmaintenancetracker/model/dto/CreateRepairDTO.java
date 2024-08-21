@@ -10,7 +10,8 @@ import java.util.List;
 
 public class CreateRepairDTO {
 
-    private Long carId;
+
+    private String carId;
 
     private String repairTitle;
 
@@ -46,29 +47,28 @@ public class CreateRepairDTO {
 
     private String serviceName;
 
-    private GpsCoordinatesEntity serviceLocation;
+//    private GpsCoordinatesEntity serviceLocation;
 
-    private MultipartFile serviceImage;
+//    private MultipartFile serviceImage;
 
     private String description;
 
     // When select existing Shop
-    private Long shopId;
+//    private Long shopId;
 
     private String shopName;
 
-    private GpsCoordinatesEntity shopLocation;
+//    private GpsCoordinatesEntity shopLocation;
 
-    private MultipartFile shopImage;
+//    private MultipartFile shopImage;
 
     private BigDecimal totalCost;
 
-    public CreateRepairDTO(Long carId, String repairTitle, LocalDate dateSelected, String partName1, String partName2,
+    public CreateRepairDTO(String carId, String repairTitle, LocalDate dateSelected, String partName1, String partName2,
                            String partName3, String partName4, BigDecimal partPrice1, BigDecimal partPrice2,
                            BigDecimal partPrice3, BigDecimal partPrice4, int partQuantity1, int partQuantity2,
-                           int partQuantity3, int partQuantity4, String serviceName,
-                           GpsCoordinatesEntity serviceLocation, MultipartFile serviceImage, String description,
-                           Long shopId, String shopName, GpsCoordinatesEntity shopLocation, MultipartFile shopImage,
+                           int partQuantity3, int partQuantity4, String serviceName, String description,
+                           String shopName,
                            BigDecimal totalCost) {
         this.carId = carId;
         this.repairTitle = repairTitle;
@@ -86,13 +86,8 @@ public class CreateRepairDTO {
         this.partQuantity3 = partQuantity3;
         this.partQuantity4 = partQuantity4;
         this.serviceName = serviceName;
-        this.serviceLocation = serviceLocation;
-        this.serviceImage = serviceImage;
         this.description = description;
-        this.shopId = shopId;
         this.shopName = shopName;
-        this.shopLocation = shopLocation;
-        this.shopImage = shopImage;
         this.totalCost = totalCost;
     }
 
@@ -100,11 +95,11 @@ public class CreateRepairDTO {
 
     }
 
-    public Long getCarId() {
+    public String getCarId() {
         return carId;
     }
 
-    public CreateRepairDTO setCarId(Long carId) {
+    public CreateRepairDTO setCarId(String carId) {
         this.carId = carId;
         return this;
     }
@@ -244,23 +239,8 @@ public class CreateRepairDTO {
         return this;
     }
 
-    public GpsCoordinatesEntity getServiceLocation() {
-        return serviceLocation;
-    }
 
-    public CreateRepairDTO setServiceLocation(GpsCoordinatesEntity serviceLocation) {
-        this.serviceLocation = serviceLocation;
-        return this;
-    }
 
-    public MultipartFile getServiceImage() {
-        return serviceImage;
-    }
-
-    public CreateRepairDTO setServiceImage(MultipartFile serviceImage) {
-        this.serviceImage = serviceImage;
-        return this;
-    }
 
     public String getDescription() {
         return description;
@@ -271,14 +251,7 @@ public class CreateRepairDTO {
         return this;
     }
 
-    public Long getShopId() {
-        return shopId;
-    }
 
-    public CreateRepairDTO setShopId(Long shopId) {
-        this.shopId = shopId;
-        return this;
-    }
 
     public String getShopName() {
         return shopName;
@@ -289,23 +262,9 @@ public class CreateRepairDTO {
         return this;
     }
 
-    public GpsCoordinatesEntity getShopLocation() {
-        return shopLocation;
-    }
 
-    public CreateRepairDTO setShopLocation(GpsCoordinatesEntity shopLocation) {
-        this.shopLocation = shopLocation;
-        return this;
-    }
 
-    public MultipartFile getShopImage() {
-        return shopImage;
-    }
 
-    public CreateRepairDTO setShopImage(MultipartFile shopImage) {
-        this.shopImage = shopImage;
-        return this;
-    }
 
     public BigDecimal getTotalCost() {
         return totalCost;
@@ -335,13 +294,8 @@ public class CreateRepairDTO {
                 ", partQuantity3=" + partQuantity3 +
                 ", partQuantity4=" + partQuantity4 +
                 ", serviceName='" + serviceName + '\'' +
-                ", serviceLocation=" + serviceLocation +
-                ", serviceImage=" + serviceImage +
                 ", description='" + description + '\'' +
-                ", shopId=" + shopId +
                 ", shopName='" + shopName + '\'' +
-                ", shopLocation=" + shopLocation +
-                ", shopImage=" + shopImage +
                 ", totalCost=" + totalCost +
                 '}';
     }

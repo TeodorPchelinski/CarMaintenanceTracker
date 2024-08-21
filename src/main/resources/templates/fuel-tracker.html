@@ -14,7 +14,6 @@
     </div>
 
 
-
     <div class="section1">
         <h1 class="label">Track Your Economy</h1>
         <div class="window">
@@ -125,62 +124,75 @@
 
             <label class="window-label">Charging</label>
 
-            <form id="refuel-form" th:action="@{/fuel-tracker}" th:method="post">
+            <form id="refuel-form" th:action="@{/fuel-tracker}" th:method="post" enctype="multipart/form-data">
 
-            <button type="button" class="button-second" id="add-trip-name" onclick="toggleTripName()">Add Trip Name</button>
+                <button type="button" class="button-second" id="add-trip-name" onclick="toggleTripName()">Add Trip
+                    Name
+                </button>
 
-            <script>
-                function toggleTripName() {
-                    const content = document.getElementById("trip-form");
-                    content.classList.toggle("show");
-                }
-            </script>
+                <script>
+                    function toggleTripName() {
+                        const content = document.getElementById("trip-form");
+                        content.classList.toggle("show");
+                    }
+                </script>
 
-            <div id="trip-form" class="content">
 
-<!--            REFUEL Form-->
-<!--            <form id="refuel-form" th:action="@{/car/refuel}"-->
-<!--                  th:method="post">-->
-            <div class="field">
-                <input  type=text id="trip-name" placeholder="">
-                <label  for="trip-name" class="field-label">Trip Name</label>
-            </div>
 
-            </div>
-
-            <div class="field">
-                <input type="number" id="kilometers" placeholder="">
-                <label for="kilometers" class="field-label">Kilometers</label>
-            </div>
-
-            <div class="field">
-                <input type=number id="liters" placeholder="">
-                <label for="liters" class="field-label">Liters</label>
-            </div>
-
-            <div class="field">
-                <input type=number id="price" placeholder="">
-                <label for="price" class="field-label">Price</label>
-            </div>
-
-            <div class="field">
-                <select id="fuel" name="fuel" placeholder="">
-                    <option value="">Fuel</option>
-                    <option th:each="fuel : ${fuels}"
-                            th:text="${fuel}"
-                            th:value="${fuel}">
-                    </option>
+                <select id="car-id" name="carId">
+                    <!--              <img class="car-img2" id="car-img-tiny" th:src="@{${cars.image}}" >-->
+                    <option th:each="cars : ${cars.getContent()}"
+                            th:object="${cars}"
+                            th:text="${cars.id} + ' ' + ${cars.brand} + ' ' + ${cars.model} + ' ' + ${cars.engineDisplacement}"
+                    ></option>
 
                 </select>
 
-            </div>
+                <div id="trip-form" class="content">
 
-            <div class="field">
-                <textarea type=text id="large-text" placeholder=""></textarea>
-                <label  for="large-text" class="field-label">Description</label>
-            </div>
+                    <!--            REFUEL Form-->
+                    <!--            <form id="refuel-form" th:action="@{/car/refuel}"-->
+                    <!--                  th:method="post">-->
+                    <div class="field">
+                        <input type=text id="trip-name" name="tripName" placeholder="">
+                        <label for="trip-name" class="field-label">Trip Name</label>
+                    </div>
 
-            <button  type="submit" class="button" id="refuel-button">Submit</button>
+                </div>
+
+                <div class="field">
+                    <input type="number" id="kilometers" name="kilometers" placeholder="">
+                    <label for="kilometers" class="field-label">Kilometers</label>
+                </div>
+
+                <div class="field">
+                    <input type=number id="liters" name="litres" placeholder="">
+                    <label for="liters" class="field-label">Liters</label>
+                </div>
+
+                <div class="field">
+                    <input type=number id="price" name="price" placeholder="">
+                    <label for="price" class="field-label">Price</label>
+                </div>
+
+                <div class="field">
+                    <select id="fuel" name="fuel" placeholder="">
+                        <option value="">Fuel</option>
+                        <option th:each="fuel : ${fuels}"
+                                th:text="${fuel}"
+                                th:value="${fuel}">
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="field">
+                    <textarea type=text id="large-text" name="description" placeholder=""></textarea>
+                    <label for="large-text" class="field-label">Description</label>
+                </div>
+
+                <button type="submit" class="button" id="refuel-button">Submit</button>
             </form>
         </div>
 
@@ -283,8 +295,6 @@
             <label class="window-label"></label>
 
 
-
-
         </div>
         <div class="window" id="window-small">
         </div>
@@ -293,7 +303,7 @@
         </div>
     </div>
 
-<!--    RIGHTEST SECTION-->
+    <!--    RIGHTEST SECTION-->
     <div class="section4">
 
         <div class="window" id="window-small">

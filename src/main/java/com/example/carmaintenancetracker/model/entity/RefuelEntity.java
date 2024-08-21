@@ -4,6 +4,7 @@ import com.example.carmaintenancetracker.model.enums.FuelTypeEnum;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 
 @Entity
 @Table(name = "refuelings")
@@ -13,7 +14,7 @@ public class RefuelEntity extends BaseEntity{
 
     private int kilometers;
 
-    private double litres;
+    private BigDecimal litres;
 
     private BigDecimal price;
 
@@ -47,11 +48,11 @@ public class RefuelEntity extends BaseEntity{
         return this;
     }
 
-    public double getLitres() {
+    public BigDecimal getLitres() {
         return litres;
     }
 
-    public RefuelEntity setLitres(double litres) {
+    public RefuelEntity setLitres(BigDecimal litres) {
         this.litres = litres;
         return this;
     }
@@ -100,4 +101,6 @@ public class RefuelEntity extends BaseEntity{
         this.user = user;
         return this;
     }
+
+
 }

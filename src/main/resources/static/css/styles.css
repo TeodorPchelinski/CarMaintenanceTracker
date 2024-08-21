@@ -848,7 +848,8 @@ h6 {
 }
 
 .container-background-community {
-    background-color: #ecebeb;
+    /*background-color: #ecebeb;*/
+    background-color: transparent;
     width: 52.6rem;
     display: grid;
     grid-template-columns: auto auto;
@@ -952,6 +953,7 @@ h6 {
 
 }
 
+
 .car-img-big {
     justify-content: center;
     padding: 4px;
@@ -968,6 +970,17 @@ h6 {
     overflow: clip;
     height: 205px;
     width: 290px;
+    border-radius: 4px;
+    background-color: #f4f4f4;
+}
+
+.car-img-public {
+    object-fit: cover;
+    object-position: center;
+    overflow-clip-margin: inherit;
+    overflow: clip;
+    height: 205px;
+    width: 365px;
     border-radius: 4px;
     background-color: #f4f4f4;
 }
