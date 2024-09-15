@@ -6,6 +6,7 @@ body {
     margin-top: 0;
     margin-left: 0;
     margin-bottom: 0;
+    gap: 14px;
 
 
     font-family: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
@@ -15,11 +16,32 @@ body {
     /*justify-content: space-evenly;*/
     flex-direction: row;
     height: 100vh;
+    min-height: 100%;
+    min-width: 100%;
 }
 
 div {
     /*resize: vertical;*/
     /*overflow: auto;*/
+}
+
+.purple-block {
+    background-color: #5E00FF;
+    height: 50px;
+    width: 187px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+#oil-details{
+
+    height: 110px;
+    width: 120px;
+}
+
+.item-label{
+    color: #030104;
+    /*white-space: inherit;*/
 }
 
 ul {
@@ -44,11 +66,11 @@ ul, body {
 
 
 .current-page {
+
+    /*Everything commented here is the original way*/
     margin-top: 10px;
     padding-right: 80rem;
     margin-bottom: 0;
-    /*margin-left: 10px;*/
-    /*background-color: #dda0f1;*/
     color: #f1f9ff;
     display: contents;
     position: fixed;
@@ -58,7 +80,9 @@ ul, body {
     width: 100%;
     height: 100%;
     z-index: 0;
-    /*height: 20rem;*/
+
+    /*Added in searching for better grid*/
+    /*display: grid;*/
 }
 
 
@@ -154,7 +178,7 @@ input:hover{
     /*width: 11.667vw;*/
     /*margin-bottom: 50rem;*/
     background-color: #282828;
-    height: auto;
+    height: 100%;
     /*height: 56.175rem;*/
 
 
@@ -162,19 +186,26 @@ input:hover{
 
 .section1, .section2, .section3, .section4{
     /*here changed*/
-    display: block;
+    display: flex;
+
     margin-top: 0.3125rem;
-    margin-bottom: 1rem;
+    /*margin-bottom: 1rem;*/
+
     /*padding: 0.625rem;*/
     /*background-color: #80D7FF;*/
+    /*background-color: #111827;*/
     /*width: 45vh;*/
     /*width: 300px;*/
     /*max-width: 29.375rem;*/
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 14px;
     height: auto;
     width: 25.3rem;
     align-items: inherit;
 
 }
+
 
 .section1 {
     /*background-color: #6dbbe1;*/
@@ -188,14 +219,14 @@ input:hover{
 .window {
     display: block;
     /*margin-top: 20px;*/
-    margin-top: 1rem;
-    margin-left: 1rem;
+    /*margin-top: 1rem;*/
+    /*margin-left: 1rem;*/
     padding: 0.625rem;
     position: relative;
-
-    /*width: 285px;*/
-    width: 22.8rem;
-    height: 15.8rem;
+    flex: 1 1 400px;
+    max-width: 380px;
+    /*width: 22.8rem;*/
+    /*height: 15.8rem;*/
     border: 1px solid #ecebeb;
     border-radius: 12px;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
@@ -215,6 +246,50 @@ input:hover{
 
 #add-repair-label {
     font-size: 1rem;
+}
+
+.window-small {
+    background-color: #FFFFFF;
+    /*height: 150px;*/
+    height: 9.75rem;
+    /*padding-bottom: 1rem;*/
+    /*width: 285px;*/
+    /*width: 40vh;*/
+    width: 22.8rem;
+
+    display: block;
+    /*margin-top: 20px;*/
+    /*margin-top: 1rem;*/
+    padding: 0.625rem;
+    padding-bottom: 1.25rem;
+    position: relative;
+    flex: 1 1 500px;
+
+    /*width: 285px;*/
+    /*width: 22.8rem;*/
+    /*height: 15.8rem;*/
+    border: 1px solid #ecebeb;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+#consumables {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#tires-window {
+    min-height: 233px;
+}
+
+.tires-container {
+    display: grid;
+    grid-template-columns: 105px 105px;
+    grid-row: auto;
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+
 }
 
 #window-small {
@@ -243,6 +318,7 @@ input:hover{
 
 #refuel-window {
     height: 28.1rem;
+    width: 48rem;
 }
 
 #group-windows-container {
@@ -295,12 +371,26 @@ input:hover{
     /*border: 1px solid #c7c7c7;*/
     /*box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.3);*/
     /*border-radius: 3px;*/
-    height: 2.375rem;
+    height: 1.375rem;
     width: 13.5rem;
     position: relative;
 }
 
+#car-id {
+    margin-top: 18px;
+    margin-left: 1rem;
+    height: 2.375rem;
+    width: 13.5rem;
+    border-radius: 8px;
+    border: 2px solid #ecebeb;
+}
+
+#location-address {
+    margin-top: 1.6rem;
+}
+
 #repair-description-field {
+    margin-top: 1.6rem;
     margin-right: 4.6rem;
 }
 
@@ -317,7 +407,7 @@ input:hover{
 
 #small-date-field {
     margin-top: 0;
-    margin-left: 26.5rem;
+    margin-left: 11.5rem;
     width: 7rem;
     height: 2rem;
 
@@ -333,6 +423,8 @@ input:hover{
     width: 30rem;
 }
 
+
+
 .field input {
     color: #565656;
     background: none;
@@ -340,6 +432,15 @@ input:hover{
     border: 2px solid #ecebeb;
     width: 12rem;
 }
+
+#field-bigger {
+    margin-top: 1.5rem;
+}
+
+#fuel-description {
+    margin-top: 1.5rem;
+}
+
 #part-name {
     font-size: 1rem;
 }
@@ -498,12 +599,15 @@ label {
 }
 
 #large-text {
-    width: 13rem;
-    height: 2rem;
+    width: 40rem;
+    height: 5rem;
     resize: vertical;
     color: #030104;
     border: 2px solid #ecebeb;
     border-radius: 6px;
+    font-weight: normal;
+    font-size: 15px;
+    font-family: "Roboto Light", sans-serif;
 }
 
 
@@ -573,12 +677,22 @@ input::-webkit-inner-spin-button {
 }
 
 #refuel-button {
-    margin-top: 24px;
+    margin-top: 5rem;
     margin-left: 10rem;
     display: block;
     width: 8.75rem;
     height: 1.875rem;
 }
+
+#repair-button {
+    margin-top: 1rem;
+    margin-left: 10rem;
+    display: block;
+    width: 8.75rem;
+    height: 1.875rem;
+}
+
+
 #login-button {
     margin-top: 3rem;
     margin-left: 7rem;
@@ -762,9 +876,7 @@ h6 {
     top: 100%;
 }
 
-.section2 {
-    /*background-color: #81a0d2;*/
-}
+
 
 #container {
     /*width: 270px;*/
@@ -795,7 +907,8 @@ h6 {
 }
 
 #service-form-container {
-    display: inline-flex;
+    display: inline;
+
 }
 
 #shop-form-container {
@@ -812,10 +925,6 @@ h6 {
     /*flex: 1;*/
     display: inline-flex;
     /*background-color: #a0bad5;*/
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 0;
-    padding-left: 0;
 }
 
 .form-column label,
@@ -848,18 +957,19 @@ h6 {
 }
 
 .container-background-community {
-    /*background-color: #ecebeb;*/
-    background-color: transparent;
-    width: 52.6rem;
+    background-color: #ecebeb;
+    /*background-color: transparent;*/
+    width: 76rem;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 25rem 25rem 25rem;
+    /*grid-template-columns: auto auto auto auto; ONE ROW OF CARDS */
     border-radius: 8px;
 
 
 }
 
 #after-skipped-window-small {
-    margin-top: 31.6rem;
+    /*margin-top: 31.6rem;*/
     height: 10rem;
 }
 
@@ -874,8 +984,7 @@ h6 {
 
 #two-sectors {
     width: 48rem;
-    height: 40.175rem;
-    margin-bottom: 5rem;
+    height: 50rem;
 }
 
 #after-skipped-window {
@@ -895,12 +1004,17 @@ h6 {
 
 
 
-.section4 {
-    /*background-color: #111827;*/
-}
 
 .dashboard-line1{
+
     border-color: #f1f9ff;
+    margin-top: 1rem;
+    margin-right: 2rem;
+}
+
+.dashboard-line2 {
+    /*margin-top: 4.6rem;*/
+    margin-top: 1.6rem;
     margin-right: 2rem;
 }
 
@@ -961,6 +1075,9 @@ h6 {
     overflow: hidden;
     display: contents;
     /*display: flex;*/
+
+    max-width: 100%;
+    height: auto;
 }
 
 .car-img2 {
@@ -968,7 +1085,8 @@ h6 {
     object-position: center;
     overflow-clip-margin: inherit;
     overflow: clip;
-    height: 205px;
+    /*height: 205px;*/
+    height: auto;
     width: 290px;
     border-radius: 4px;
     background-color: #f4f4f4;
@@ -983,6 +1101,30 @@ h6 {
     width: 365px;
     border-radius: 4px;
     background-color: #f4f4f4;
+}
+
+.img2 {
+    object-fit: cover;
+    object-position: center;
+    overflow-clip-margin: inherit;
+    overflow: clip;
+    padding: 5px;
+    height: 105px;
+    width: 115px;
+    border-radius: 4px;
+    background-color: #f4f4f4;
+}
+
+.img3 {
+    object-fit: cover;
+    object-position: center;
+    overflow-clip-margin: inherit;
+    /*overflow: clip;*/
+    padding: 5px;
+    height: 95px;
+    width: 105px;
+    border-radius: 4px;
+    background-color: transparent;
 }
 
 .car-stats-card-garage {

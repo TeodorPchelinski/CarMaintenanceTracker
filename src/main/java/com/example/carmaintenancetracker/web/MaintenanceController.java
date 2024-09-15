@@ -3,6 +3,7 @@ package com.example.carmaintenancetracker.web;
 import com.example.carmaintenancetracker.model.dto.CarSummaryDTO;
 import com.example.carmaintenancetracker.model.dto.CreateCarDTO;
 import com.example.carmaintenancetracker.model.dto.CreateRepairDTO;
+import com.example.carmaintenancetracker.model.dto.RecentRepairsDTO;
 import com.example.carmaintenancetracker.model.entity.PartEntity;
 import com.example.carmaintenancetracker.service.CarService;
 import com.example.carmaintenancetracker.service.RepairService;
@@ -39,17 +40,21 @@ public class MaintenanceController {
 
     @GetMapping("/maintenance")
     public String maintenance(Model model,
-                              @PageableDefault(size = 30,sort = "id") Pageable pageable,
+                              @PageableDefault(sort = "id") Pageable pageable,
                               @AuthenticationPrincipal UserDetails creator) {
 
         Page<CarSummaryDTO> userCars2 = carService.getAllCarsByOwnerId(pageable, creator);
 
+        Page<RecentRepairsDTO> recentRepairs = repairService.getAllRepairsByCreatorId(pageable, creator);
+
         model.addAttribute("cars", userCars2);
+        model.addAttribute("repairs", recentRepairs);
         return "maintenance";
     }
 
     @PostMapping("/maintenance")
-    public String repair(@Valid @ModelAttribute("createRepairDTO") CreateRepairDTO createRepairDTO) {
+    public String repair(@Valid @ModelAttribute("createRepairDTO") CreateRepairDTO createRepairDTO,
+                          @AuthenticationPrincipal UserDetails creator) {
 //                            BindingResult bindingResult,
 //                            RedirectAttributes redirectAttributes
 
@@ -64,7 +69,7 @@ public class MaintenanceController {
 //        }
 
 
-        repairService.createRepair(createRepairDTO);
+        repairService.createRepair(createRepairDTO, creator);
 
         return "redirect:/maintenance";
     }

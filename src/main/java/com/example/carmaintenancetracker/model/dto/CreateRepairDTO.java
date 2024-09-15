@@ -15,6 +15,8 @@ public class CreateRepairDTO {
 
     private String repairTitle;
 
+    private MultipartFile image;
+
     private LocalDate dateSelected;
 
     private String partName1;
@@ -64,14 +66,14 @@ public class CreateRepairDTO {
 
     private BigDecimal totalCost;
 
-    public CreateRepairDTO(String carId, String repairTitle, LocalDate dateSelected, String partName1, String partName2,
-                           String partName3, String partName4, BigDecimal partPrice1, BigDecimal partPrice2,
-                           BigDecimal partPrice3, BigDecimal partPrice4, int partQuantity1, int partQuantity2,
-                           int partQuantity3, int partQuantity4, String serviceName, String description,
-                           String shopName,
-                           BigDecimal totalCost) {
+    public CreateRepairDTO(String carId, String repairTitle, MultipartFile image, LocalDate dateSelected,
+                           String partName1, String partName2, String partName3, String partName4,
+                           BigDecimal partPrice1, BigDecimal partPrice2, BigDecimal partPrice3,
+                           BigDecimal partPrice4, int partQuantity1, int partQuantity2, int partQuantity3,
+                           int partQuantity4, String serviceName, String description, String shopName, BigDecimal totalCost) {
         this.carId = carId;
         this.repairTitle = repairTitle;
+        this.image = image;
         this.dateSelected = dateSelected;
         this.partName1 = partName1;
         this.partName2 = partName2;
@@ -91,9 +93,7 @@ public class CreateRepairDTO {
         this.totalCost = totalCost;
     }
 
-    public CreateRepairDTO() {
 
-    }
 
     public String getCarId() {
         return carId;
@@ -110,6 +110,15 @@ public class CreateRepairDTO {
 
     public CreateRepairDTO setRepairTitle(String repairTitle) {
         this.repairTitle = repairTitle;
+        return this;
+    }
+
+    public MultipartFile getImage() {
+        return image;
+    }
+
+    public CreateRepairDTO setImage(MultipartFile image) {
+        this.image = image;
         return this;
     }
 

@@ -160,22 +160,22 @@
 
                 </div>
 
-                <div class="field">
+                <div class="field" id="field-bigger">
                     <input type="number" id="kilometers" name="kilometers" placeholder="">
                     <label for="kilometers" class="field-label">Kilometers</label>
                 </div>
 
-                <div class="field">
+                <div class="field" id="field-bigger">
                     <input type=number id="liters" name="litres" placeholder="">
                     <label for="liters" class="field-label">Liters</label>
                 </div>
 
-                <div class="field">
+                <div class="field" id="field-bigger">
                     <input type=number id="price" name="price" placeholder="">
                     <label for="price" class="field-label">Price</label>
                 </div>
 
-                <div class="field">
+                <div class="field" id="field-bigger">
                     <select id="fuel" name="fuel" placeholder="">
                         <option value="">Fuel</option>
                         <option th:each="fuel : ${fuels}"
@@ -187,7 +187,7 @@
 
                 </div>
 
-                <div class="field">
+                <div class="field" id="fuel-description">
                     <textarea type=text id="large-text" name="description" placeholder=""></textarea>
                     <label for="large-text" class="field-label">Description</label>
                 </div>
@@ -291,16 +291,7 @@
 
             </script>
         </div>
-        <div class="window">
-            <label class="window-label"></label>
 
-
-        </div>
-        <div class="window" id="window-small">
-        </div>
-
-        <div class="window">
-        </div>
     </div>
 
     <!--    RIGHTEST SECTION-->

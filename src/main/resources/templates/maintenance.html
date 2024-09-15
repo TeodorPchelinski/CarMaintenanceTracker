@@ -45,6 +45,7 @@
             <div class="car-img-and-parts-container">
               <div class="part-img-small-container">
                 <img class="part-image-small" th:src="@{/images/fuel-pump.jpg}" >
+<!--                <img class="part-image-small" th:src="@{/images/repairs/51.jpg}" >-->
               </div>
               <div class="parts-list-container">
                 <span class="stat-small">fuel pump</span>
@@ -154,6 +155,32 @@
             </datalist>
           </div>
 
+          <div class="field">
+            <input id="image-file" type="file" name="image" accept="image/*">
+            <div class="image-preview" id="image-preview">
+              <image id="preview-image-little" src="" alt="Image Preview"></image>
+
+            </div>
+          </div>
+
+<!--          <form runat="server">-->
+<!--            <input accept="image/*" type='file' id="imgInp" />-->
+<!--            <img id="blah" src="#" alt="your image" />-->
+<!--          </form>-->
+
+<!--          <script>-->
+
+
+<!--            imgInp.onchange = evt => {-->
+<!--              const [file] = imgInp.files-->
+<!--              if (file) {-->
+<!--                blah.src = URL.createObjectURL(file)-->
+<!--              }-->
+<!--            }-->
+
+<!--          </script>-->
+
+
           <div class="field" id="small-date-field">
             <input type=date id="small-date" name="dateSelected" placeholder="">
 <!--            <label for="part-name" class="field-label" id="small-date-label">Date</label>-->
@@ -193,7 +220,7 @@
           </div>
 
           <div class="field-small" id="part-price-field">
-            <input type=number id="part-name" name="partPrice1" placeholder="">
+            <input type=number id="part-price" name="partPrice1" placeholder="">
             <label for="part-name" class="field-small-label">price</label>
           </div>
 
@@ -301,19 +328,14 @@
           </div>
 
 
-        <div class="form-column">
+<!--        <div class="form-column">-->
 
-          <button class="add-part-button" id="add-partBtn" type="button" >+ Add part</button>
+<!--          <button class="add-part-button" id="add-partBtn" type="button" >+ Add part</button>-->
 
-        </div>
+<!--        </div>-->
 
         <hr class="dashboard-line1">
 
-        <div class="form-column">
-
-<!--          <button class="add-part-button" id="show-car-service-fields" type="button" onclick="showCarService()" >Add Car Service ▼</button>-->
-
-        </div>
 
         <div class="form-column" id="service-form-container" >
 
@@ -323,73 +345,26 @@
             <label for="part-name" class="field-label">Car Service</label>
           </div>
 
-          <div class="field">
+          <div class="field" id="location-address">
             <input type=text id="part-name" placeholder="">
             <label for="part-name" class="field-label">Location (map)</label>
           </div>
 
-          <div class="field" id="repair-description-field">
-            <textarea type=text id="large-text" name="description" placeholder=""></textarea>
-            <label  for="large-text" class="field-label">Description</label>
-          </div>
-
-          <script>
-
-            let originalHeight;
-
-            window.onload = function () {
-              const mainContainer = document.getElementById('two-sectors');
-              const currentPage = document.getElementById('current-page');
-              const section2 = document.getElementById('section2');
-              originalHeight = mainContainer.clientHeight;
-              originalHeight = currentPage.clientHeight;
-              originalHeight = section2.clientHeight;
-
-              mainContainer.style.height = originalHeight + 'px';
-              currentPage.style.height = originalHeight + 'px';
-              section2.style.height = originalHeight + 'px';
-            }
-
-            function showCarService() {
-
-              const button = document.getElementById('show-car-service-fields');
-              const container = document.getElementById('service-form-container');
-              const mainContainer = document.getElementById('two-sectors');
-              const currentPage = document.getElementById('current-page');
-              const section2 = document.getElementById('section2');
 
 
-              if (container.style.display === 'none' || container.style.display === ''){
-                container.style.display = 'inline-flex';
-                container.style.marginBottom = '5px';
-                button.innerHTML = 'Show less ▲';
-                mainContainer.style.height = (originalHeight + container.scrollHeight) + 'px';
-                currentPage.style.height = (originalHeight + currentPage.scrollHeight) + 'px';
-                section2.style.height = (originalHeight + section2.scrollHeight) + 'px';
-              } else {
-                container.style.display = 'none';
-                button.innerHTML = 'Show Car Service ▼';
-                mainContainer.style.height = originalHeight + 'px';
-                currentPage.style.height = originalHeight + 'px';
-                section2.style.height = originalHeight + 'px';
-              }
 
-            }
-
-
-          </script>
 
 
         </div>
 
-        <hr class="dashboard-line1">
+        <hr class="dashboard-line2">
 
-        <div class="form-column">
+<!--        <div class="form-column">-->
 
-          <button class="add-part-button" id="show-repair-shop-fields" type="button" onclick="showRepairShop()" >Show Shop2 ▼</button>
-<!--          ▼-->
+<!--          <button class="add-part-button" id="show-repair-shop-fields" type="button" >Show Shop2 ▼</button>-->
+<!--&lt;!&ndash;          ▼&ndash;&gt;-->
 
-        </div>
+<!--        </div>-->
 
         <div class="form-column" id="shop-form-container">
 
@@ -403,42 +378,7 @@
             <label for="part-name" class="field-label">Location (map)</label>
           </div>
 
-          <script>
 
-            let originalHeight;
-
-            window.onload = function () {
-              const mainContainer = document.getElementById('two-sectors');
-              const container = document.getElementById('shop-form-container');
-              originalHeight = mainContainer.clientHeight;
-              originalHeight = container.clientHeight;
-              mainContainer.style.height = originalHeight + 'px';
-              container.style.height = originalHeight + 'px';
-
-            }
-
-            function showRepairShop() {
-
-              const button = document.getElementById('show-repair-shop-fields');
-              const container = document.getElementById('shop-form-container');
-              const mainContainer = document.getElementById('two-sectors');
-
-              if (container.style.display === 'none' || container.style.display === ''){
-                container.style.display = 'inline-flex';
-                container.style.marginBottom = '5px';
-                button.innerHTML = 'Show less ▲';
-                mainContainer.style.height = (originalHeight + container.scrollHeight) + 'px';
-                container.style.height = (originalHeight + container.scrollHeight) + 'px';
-              } else {
-                container.style.display = 'none';
-                button.innerHTML = 'Show Shop ▼';
-                mainContainer.style.height = originalHeight + 'px';
-              }
-
-            }
-
-
-          </script>
 
 
         </div>
@@ -446,8 +386,19 @@
         <hr class="dashboard-line1">
 
         <div class="form-column">
+          <div class="field" id="repair-description-field">
+            <textarea type=text id="large-text" name="description" placeholder=""></textarea>
+            <label  for="large-text" class="field-label">Service Description</label>
+          </div>
+        </div>
 
-          <button class="button" id="refuel-button" type="submit">Add</button>
+        <hr class="dashboard-line1">
+
+        <div class="form-column">
+
+
+
+          <button class="button" id="repair-button" type="submit">Add</button>
 
           <label class="window-label" id="total-price-label">Total:</label>
 
@@ -457,6 +408,7 @@
 
 
         </div>
+
 
 
 

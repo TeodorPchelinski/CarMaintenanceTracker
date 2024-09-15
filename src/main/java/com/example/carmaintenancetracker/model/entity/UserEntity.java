@@ -90,4 +90,6 @@ public class UserEntity extends BaseEntity {
                 ", password='" + password + '\'' +
                 '}';
     }
+
+
 }

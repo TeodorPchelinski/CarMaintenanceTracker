@@ -1,19 +1,27 @@
 package com.example.carmaintenancetracker.service.impl;
 
 import com.example.carmaintenancetracker.model.dto.CreateRepairDTO;
+import com.example.carmaintenancetracker.model.dto.RecentRepairsDTO;
 import com.example.carmaintenancetracker.model.entity.*;
 import com.example.carmaintenancetracker.repository.*;
 import com.example.carmaintenancetracker.service.RepairService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.Optional;
 
 @Service
 public class RepairServiceImpl implements RepairService {
@@ -25,40 +33,30 @@ public class RepairServiceImpl implements RepairService {
 
     private final PartRepository partRepository;
     private final ShopRepository shopRepository;
+    private final UserRepository userRepository;
 
     public RepairServiceImpl(CarRepository carRepository, RepairRepository repairRepository, ServiceRepository serviceRepository, PartRepository partRepository,
-                             ShopRepository shopRepository) {
+                             ShopRepository shopRepository,
+                             UserRepository userRepository) {
         this.carRepository = carRepository;
         this.repairRepository = repairRepository;
         this.serviceRepository = serviceRepository;
         this.partRepository = partRepository;
         this.shopRepository = shopRepository;
+        this.userRepository = userRepository;
     }
 
+
+
     @Override
-    public Long createRepair(CreateRepairDTO createRepairDTO) {
+    public Long createRepair(CreateRepairDTO createRepairDTO, UserDetails creator) {
 
         int chosenCarId = RefuelServiceImpl.StringToIdOnly(createRepairDTO.getCarId());
 
         CarEntity carEntity = carRepository.findById((long) chosenCarId).orElseThrow(() -> new RuntimeException("Invalid car ID"));
+        UserEntity user = userRepository.findByEmail(creator.getUsername())
+                .orElseThrow(() -> new IllegalArgumentException("User with email " + creator.getUsername() + "not found!"));
 
-            //TODO: SAVE One Entity to can save another to it
-            // 1 Persist Service
-            // 2 Save Service
-            // 3 Persist Repair
-            // 4 Set Service
-            // 5 Save Repair
-            // 6 Set Repair to Service
-            // 7 Update Service (save)
-            // 8 Persist Shop
-            // 9 Save Shop
-            // 10 Set Shop to Repair
-            // 11 Fill List of Parts
-            // 12 Set Part List to Repair
-            // 13 Save Repair (Update)
-
-
-        //TODO: Maybe String of CarId is null or something else
 
         // 1 SERVICE
         ServiceEntity newService = new ServiceEntity()
@@ -68,8 +66,11 @@ public class RepairServiceImpl implements RepairService {
         // 2
         serviceRepository.save(newService);
 
+
+
         // 3 REPAIR
         RepairEntity newRepair = new RepairEntity()
+                //todo: user is null -> not saved any time
                 .setCar(carEntity)
                 .setName(createRepairDTO.getRepairTitle())
                 .setDateRepairDone(createRepairDTO.getDateSelected())
@@ -80,12 +81,14 @@ public class RepairServiceImpl implements RepairService {
         // 4
         newRepair.setService(newService);
 
+
         // 5
         newRepair = repairRepository.save(newRepair);
 
 
         // 6
         newService.setRepair(newRepair.getService().getRepair());
+
 
         // 7
         serviceRepository.save(newService);
@@ -112,16 +115,82 @@ public class RepairServiceImpl implements RepairService {
         // 12
         newRepair.setParts(new ArrayList<>(newParts));
 
-        //todo: Some problem here with the Array
-//        newRepair.getParts().clear();
-//        newRepair.getParts().addAll(newParts);
-
+        newRepair.setCreator(user);
 
         // 13
         repairRepository.save(newRepair);
         System.out.println(newRepair);
 
+
+        if (createRepairDTO.getImage() != null && !createRepairDTO.getImage().isEmpty()) {
+            MultipartFile imageName = createRepairDTO.getImage();
+
+            try {
+                String filePath = ".\\src\\main\\resources\\static\\images\\repairs\\" + newRepair.getId() + ".jpg";
+                File file = new File(filePath);
+
+                file.getParentFile().mkdirs();
+                file.createNewFile();
+
+                OutputStream outputStream = new FileOutputStream(file);
+                outputStream.write(imageName.getBytes());
+
+                newRepair.setImage("\\images\\repairs\\" + newRepair.getId() + ".jpg");
+
+                repairRepository.save(newRepair);
+
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
         return newRepair.getId();
+    }
+
+    @Override
+    public Page<RecentRepairsDTO> getAllRepairsByCreatorId(Pageable pageable, UserDetails creator){
+        Optional<UserEntity> owner = userRepository.findByEmail(creator.getUsername());
+        if (!owner.isPresent()) {
+            throw new UsernameNotFoundException("User not found");
+        }
+
+        Long number = owner.get().getId();
+
+        //todo: Finish All Repairs
+
+        // Can I get ByCreatorIdDesc -> Yes
+
+//        return repairRepository.findAllRepairsByCreatorIdOrderByCreatorDesc(number, pageable).map(RepairServiceImpl::mapRepairsAsSummary);
+
+
+        return null;
+    }
+
+
+    private static RecentRepairsDTO mapRepairsAsSummary(RepairEntity repairEntity) {
+
+        RecentRepairsDTO recentRepairsDTO = new RecentRepairsDTO()
+                .setRepairName(repairEntity.getName())
+                .setRepairParts(repairEntity.getParts())
+                .setDate(String.valueOf(repairEntity.getDateCreated()))
+                .setRepairImageUrl(repairEntity.getImage());
+
+
+
+        return recentRepairsDTO;
+    }
+
+    private RepairEntity map(RecentRepairsDTO recentRepairsDTO) {
+
+        RepairEntity newRepair = new RepairEntity()
+                .setName(recentRepairsDTO.getRepairName())
+                .setImage(recentRepairsDTO.getRepairImageUrl())
+                .setDateCreated(recentRepairsDTO.getDate())
+                .setParts(recentRepairsDTO.getRepairParts());
+
+
+
+        return newRepair;
     }
 
     private void addPartIfPresent(List<PartEntity> newParts, String partName, BigDecimal partPrice, int partQuantity, CarEntity carEntity, RepairEntity newRepair) {

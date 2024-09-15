@@ -23,9 +23,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.Month;
-import java.util.List;
-import java.util.Locale;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -140,25 +138,11 @@ public class CarServiceImpl implements CarService {
             throw new UsernameNotFoundException("User not found");
         }
 
+
         Long number = owner.get().getId();
         return carRepository.findAllCarsByOwnerId(number, pageable).map(CarServiceImpl::mapAsSummary);
     }
 
-//    @Override
-//    public List<CarSummaryDTO> getAllCarsByOwnerId(UserDetails creator) {
-//
-//        Optional<UserEntity> owner = userRepository.findByEmail(creator.getUsername());
-//        if (!owner.isPresent()) {
-//            throw new UsernameNotFoundException("User not found");
-//        }
-//
-//        Long ownerId = owner.get().getId();
-//
-//        List<CarEntity> cars = carRepository.findAllCarsByOwnerId(ownerId);
-//
-//        return cars.stream().map(CarServiceImpl::mapAsSummary).collect(Collectors.toList());
-//
-//    }
 
     @Override
     public CarEntity findCarById(Long id) {
@@ -202,29 +186,10 @@ public class CarServiceImpl implements CarService {
          return newCar;
     }
 
-//    @Override
-//    public Page<CarSummaryDTO> getAllCarsByOwnerId(Pageable pageable, UserDetails creator) {
-//
-//        //todo: like UserRepository make it get current user's id and giving all his cars
-//
-//        //Get UserEntity user_id from  getUserWithEmail(creatorUsername);
-//        //Get CarEntity owner_id with getOwnerId(user_id);
-//
-//        //todo: How to add cars shared to this user
-//
-//
-//        UserEntity ownerEntity = userRepository.findByEmail(creator.getUsername())
-//                .orElseThrow(() -> new IllegalArgumentException("User with email " + creator.getUsername() + "not found!"));
-//
-//
-//        //todo: Make the findBy(ownerId) + pageable, map(CarServiceImpl::mapAsSummary) -> how to convert first line as acceptable type to second line
-//        Page<CarEntity> carsOwnedByUser = carRepository.findAllByOwnerId(ownerEntity.getId(), pageable);
 
-//
-////        Page<CarSummaryDTO> carSummaries = carsOwnedByUser.map(CarServiceImpl::mapAsSummary);
-//
-//        return carSummaries;
-//    }
+
+      //todo: How to add cars shared to this user
+
 
 
 
