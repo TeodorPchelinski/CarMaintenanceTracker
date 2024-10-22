@@ -7,92 +7,157 @@
 
 <div th:replace="~{fragments/navbar}"></div>
 
-<div class="current-page">
+<div class="current-page-maintenance" id="maintenance-page">
 
 
     <div class="section1">
-        <div class="label-container">
-            <h2 class="label">Car Details</h2>
-        </div>
-        <div class="window">
-            <div class="car-img-big">
-                <img class="car-img2" th:src="@{/images/audi-a6.jpg}">
-            </div>
-        </div>
-        <div class="window">
-            <div class="purple-block" id="oil-details">
-                <img class="img2" src="https://images.thdstatic.com/productImages/cf569948-a0c4-4d2c-a361-317d9b685bf3/svn/pennzoil-motor-oil-550045208-64_600.jpg">
-            </div>
-            <text class="item-label">5W-30</text>
-            <p class="item-label">dasdasda sasdasd asdasdasd aasdasdasd wadsd wasdwas dasdwasdwa sdasd</p>
+    </div>
 
+    <div class="window-label-top-corner">
+        <h2 class="label-car-details">Car Details</h2>
+    </div>
+
+    <div class="window-car-image window-default">
+        <div class="car-img-big">
+            <img class="car-img2" th:src="@{/images/audi-a6.jpg}">
         </div>
+    </div>
 
-        <div class="window-small" id="tires-window">
-            <text class="item-label">Current tires</text>
-            <div class="tires-container">
-                <img class="img3" src="https://cdn.discounttire.com/sys-master/images/hc2/hbf/9837017923614/PRODUCT_tire_bfgoodrich_trail_terrain_ta-bsw_1000_side.jpg_dt-product-default-format_t-product-Medium.jpg">
-                <img class="img3" src="https://cdn.discounttire.com/sys-master/images/hc2/hbf/9837017923614/PRODUCT_tire_bfgoodrich_trail_terrain_ta-bsw_1000_side.jpg_dt-product-default-format_t-product-Medium.jpg">
-                <img class="img3" src="https://cdn.discounttire.com/sys-master/images/hc2/hbf/9837017923614/PRODUCT_tire_bfgoodrich_trail_terrain_ta-bsw_1000_side.jpg_dt-product-default-format_t-product-Medium.jpg">
-                <img class="img3" src="https://cdn.discounttire.com/sys-master/images/hc2/hbf/9837017923614/PRODUCT_tire_bfgoodrich_trail_terrain_ta-bsw_1000_side.jpg_dt-product-default-format_t-product-Medium.jpg">
-            </div>
+    <div class="window-oil window-default">
+<!--        <div class="purple-block" id="oil-details">-->
+<!--            -->
+<!--        </div>-->
 
+        <img class="img2"
+             src="https://images.thdstatic.com/productImages/cf569948-a0c4-4d2c-a361-317d9b685bf3/svn/pennzoil-motor-oil-550045208-64_600.jpg">
+        <text class="item-label">5W-30</text>
+
+    </div>
+
+    <div class="window-current-tires window-default" id="tires-window">
+        <text class="item-label">Current tires</text>
+        <div class="tires-container">
+            <img class="img3"
+                 src="https://cdn.discounttire.com/sys-master/images/hc2/hbf/9837017923614/PRODUCT_tire_bfgoodrich_trail_terrain_ta-bsw_1000_side.jpg_dt-product-default-format_t-product-Medium.jpg">
+            <img class="img3"
+                 src="https://cdn.discounttire.com/sys-master/images/hc2/hbf/9837017923614/PRODUCT_tire_bfgoodrich_trail_terrain_ta-bsw_1000_side.jpg_dt-product-default-format_t-product-Medium.jpg">
+            <img class="img3"
+                 src="https://cdn.discounttire.com/sys-master/images/hc2/hbf/9837017923614/PRODUCT_tire_bfgoodrich_trail_terrain_ta-bsw_1000_side.jpg_dt-product-default-format_t-product-Medium.jpg">
+            <img class="img3"
+                 src="https://cdn.discounttire.com/sys-master/images/hc2/hbf/9837017923614/PRODUCT_tire_bfgoodrich_trail_terrain_ta-bsw_1000_side.jpg_dt-product-default-format_t-product-Medium.jpg">
         </div>
 
     </div>
 
-    <div class="section2">
-        <div class="window" id="window-small">
+    <div class="window-second-top window-default">
+        <h4 class="blue-text">Статистика за гориво</h4>
+    </div>
+
+    <div class="window-left-bottom window-default">
+        <h4>Статистика за поддръжка</h4>
+    </div>
+
+    <div class="window-bottom-1 window-default">
+    </div>
+
+    <div class="window-bottom-2 window-default">
+    </div>
+
+    <div class="window-center-big window-default">
+         <h4>За добавяне:</h4>
+        <p>чистачки размери и тип</p>
+        <p>Антифриз</p>
+        <p>Спирачки и време за смяна</p>
+        <p>Типът на крушките</p>
+        <p>Свещите типът им когато ги сменя човека</p>
+    </div>
+
+    <div class="window-right-1 window-default notifications-container">
+        <h4>Предупреждения за винетка, ремък, масло</h4>
+        <span>15 ноември до 1 март - зимни гуми</span>
+        <br>
+        <span>1 март до 15 ноември - летни гуми</span>
+        <br>
+        <span>Масло се сменя на 20 000км</span>
+        <div class="warning-notification1">
+            <h5 class="warning-text">Engine Oil</h5>
+        </div>
+        <div class="warning-notification2">
+            <h5 class="warning-text">Brakes System Check</h5>
+        </div>
+        <div class="warning-notification1">
+            <h5 class="warning-text">Piston belt</h5>
+        </div>
+        <div class="warning-notification1">
+            <h5 class="warning-text">Motor belt</h5>
+        </div>
+        <div class="warning-notification3">
+            <h5 class="warning-text ">Air Filter after mileage</h5>
+        </div>
+        <div class="warning-notification1">
+            <h5 class="warning-text">Tomorrow will be 0°C. Change wiper fluid</h5>
         </div>
 
-
-        <div class="window" id="window-long-car-card">
-
-        </div>
-        <div class="window" id="window-long-car-card">
-
-        </div>
-
-
-        <div class="window-small" id="consumables">
-            <div class="purple-block">Brakes</div>
-            <div class="purple-block">Wiper Fluid</div>
-            <div class="purple-block">Oil Filter</div>
-            <div class="purple-block">Tires</div>
-            <div class="purple-block">Wipers</div>
-
-        </div>
 
     </div>
 
-    <div class="section3">
-        <div class="window" id="window-small">
-            <!--            <label class="window-label">Kilometers traveled</label>-->
-            <!--            <label id="km-traveled">14025</label>-->
-        </div>
-
-
-        <div class="window" id="after-skipped-window-small">
-
-            <div class="purple-block">Battery</div>
-            <div class="purple-block">Antifreeze</div>
-
-        </div>
-
+    <div class="window-right-2 window-default">
+        <h4>Лични напомняния</h4>
+        които могат да се добавят както за части и за друго свързано с колата като ходене при майстор в сряда.
     </div>
 
-    <div class="section4">
-        <div class="window" id="window-small">
-        </div>
 
-        <div class="window">
-        </div>
 
-        <div class="window" id="window-small">
-        </div>
-        <div class="window" id="window-small">
-        </div>
+    <div class="window-bottom-3 window-default">
     </div>
+
+    <!--    <div class="section2">-->
+
+
+    <!--        <div class="window" id="window-long-car-card">-->
+
+    <!--        </div>-->
+
+
+    <!--        <div class="window-small" id="consumables">-->
+    <!--            <div class="purple-block">Brakes</div>-->
+    <!--            <div class="purple-block">Wiper Fluid</div>-->
+    <!--            <div class="purple-block">Oil Filter</div>-->
+    <!--            <div class="purple-block">Tires</div>-->
+    <!--            <div class="purple-block">Wipers</div>-->
+
+    <!--        </div>-->
+
+    <!--    </div>-->
+
+    <!--    <div class="section3">-->
+    <!--        <div class="window" id="window-small">-->
+    <!--            &lt;!&ndash;            <label class="window-label">Kilometers traveled</label>&ndash;&gt;-->
+    <!--            &lt;!&ndash;            <label id="km-traveled">14025</label>&ndash;&gt;-->
+    <!--        </div>-->
+
+
+    <!--        <div class="window" id="after-skipped-window-small">-->
+
+    <!--            <div class="purple-block">Battery</div>-->
+    <!--            <div class="purple-block">Antifreeze</div>-->
+
+    <!--        </div>-->
+
+    <!--    </div>-->
+
+    <!--    <div class="section4">-->
+    <!--        <div class="window" id="window-small">-->
+    <!--        </div>-->
+
+    <!--        <div class="window">-->
+    <!--        </div>-->
+
+    <!--        <div class="window" id="window-small">-->
+    <!--        </div>-->
+    <!--        <div class="window" id="window-small">-->
+    <!--        </div>-->
+    <!--    </div>-->
 </div>
 
 

@@ -1,12 +1,20 @@
 body {
     /*Original color*/
     /*background-color: #00AEFF;*/
-    background-color: #45beff;
+    /*background-color: #45beff;*/
+    /*background-color: #16a4d9;*/
+    /*background-color: #5499e5;*/
+    /*background-color: #fafafa;*/
+    /*background-color: #00A6FF;*/
+    background-color: #386ee0;
+    /*background-color: #364d65;*/
+    /*background-color: #4B4B4B;*/
+
     padding: 0;
     margin-top: 0;
     margin-left: 0;
     margin-bottom: 0;
-    gap: 14px;
+    /*gap: 14px;*/
 
 
     font-family: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
@@ -14,10 +22,10 @@ body {
     display: flex;
     /*align-items: inherit;*/
     /*justify-content: space-evenly;*/
-    flex-direction: row;
     height: 100vh;
     min-height: 100%;
     min-width: 100%;
+
 }
 
 div {
@@ -27,16 +35,16 @@ div {
 
 .purple-block {
     background-color: #5E00FF;
-    height: 50px;
-    width: 187px;
+    height: 60px;
+    width: 178px;
     border-radius: 6px;
     text-align: center;
 }
 
 #oil-details{
 
-    height: 110px;
-    width: 120px;
+    height: 105px;
+    width: 110px;
 }
 
 .item-label{
@@ -51,7 +59,7 @@ ul {
     padding: 0;
     width: 15rem;
     /*width: 11.719vw;*/
-    height: 100vh;
+    /*height: 100vh;*/
     /*height: 30rem;*/
     /*height: 15rem;*/
     /*background-color: #282828;*/
@@ -65,26 +73,41 @@ ul, body {
 }
 
 
+
 .current-page {
 
+    /*gap: 14px;*/
+    /*display: grid;*/
+    /*grid-template-columns:403px 600px 1fr 660px 1fr 1fr 1fr 1fr;*/
+    /*grid-template-rows:0 175px 178px 196px 1fr;*/
+
+    display: flex;
+
     /*Everything commented here is the original way*/
-    margin-top: 10px;
-    padding-right: 80rem;
-    margin-bottom: 0;
-    color: #f1f9ff;
-    display: contents;
-    position: fixed;
-    align-items: normal;
-    flex-direction: row;
-    border-radius: 19px;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+    /*margin-top: 10px;*/
+    /*padding-right: 80rem;*/
+    /*margin-left: 16rem;*/
+    /*margin-bottom: 0;*/
+    /*color: #f1f9ff;*/
+    /*display: contents;*/
+    /*position: fixed;*/
+    /*align-items: normal;*/
+    /*flex-direction: row;*/
+    /*border-radius: 19px;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*z-index: 0;*/
 
     /*Added in searching for better grid*/
     /*display: grid;*/
 }
 
+#maintenance-page {
+    /*gap: 14px;*/
+    /*display: grid;*/
+    /*grid-template-columns:403px 600px 1fr 660px 1fr 1fr 1fr 1fr;*/
+    /*grid-template-rows:0 175px 178px 196px 1fr;*/
+}
 
 .site-name {
     color: #FFFFFF;
@@ -170,15 +193,17 @@ input:hover{
     /*padding-left: 20px;*/
     /*padding-right: 20px;*/
     /*width: 25vh;*/
-    position: fixed;
-    z-index: 1;
+    /*position: fixed;*/
+    /*z-index: 1;*/
     margin-right: 1.25rem;
     padding: 0.75rem 1.25rem 7rem 0;
-    width: 14rem;
+    width: 13rem;
+    /*width: 10%;*/
     /*width: 11.667vw;*/
     /*margin-bottom: 50rem;*/
     background-color: #282828;
-    height: 100%;
+    /*height: 86.4%;*/
+    height: auto;
     /*height: 56.175rem;*/
 
 
@@ -209,11 +234,27 @@ input:hover{
 
 .section1 {
     /*background-color: #6dbbe1;*/
-    margin-left: 16rem;
 }
 
 .label-container {
     max-width: 40rem;
+}
+
+
+
+.window-label {
+    color: #333333;
+    font-size: 1.25rem;
+    padding: 10px;
+}
+
+#total-price-label {
+    margin-top: 2rem;
+    margin-left: 17rem;
+}
+
+#add-repair-label {
+    font-size: 1rem;
 }
 
 .window {
@@ -231,21 +272,6 @@ input:hover{
     border-radius: 12px;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     background-color: #ffffff;
-}
-
-.window-label {
-    color: #333333;
-    font-size: 1.25rem;
-    padding: 10px;
-}
-
-#total-price-label {
-    margin-top: 2rem;
-    margin-left: 17rem;
-}
-
-#add-repair-label {
-    font-size: 1rem;
 }
 
 .window-small {
@@ -285,12 +311,173 @@ input:hover{
 
 .tires-container {
     display: grid;
-    grid-template-columns: 105px 105px;
+    grid-template-columns: 80px 80px;
     grid-row: auto;
     grid-column-gap: 8px;
     grid-row-gap: 8px;
 
 }
+
+.violet-text {
+    color: #7F00FF;
+}
+
+.green-text {
+    color: #00FF19;
+}
+
+.blue-text {
+    color: #4053FF;
+}
+
+.current-page-maintenance {
+    padding-top: 26px;
+    padding-left: 13px;
+    padding-bottom: 13px;
+    gap: 17px;
+    display: grid;
+    grid-template-columns: 370px 370px 400px 400px ;
+    grid-template-rows:  86px 41px 15px 170px 140px 140px 86px 60px;
+    /*margin-left: 16rem;*/
+}
+
+.window-label-top-corner {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    height: auto;
+    width: auto;
+}
+
+.label-maintenance {
+    padding-top: 2rem;
+    padding-left: 5rem;
+    color: #FFFFFF;
+}
+
+.label-car-details {
+
+}
+
+.window-car-image {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    height: auto;
+    width: auto;
+}
+
+.window-oil {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    height: auto;
+    width: auto;
+}
+
+.window-current-tires {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 6;
+    grid-row-end: 9;
+    height: auto;
+    width: auto;
+}
+
+.window-left-bottom {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    height: auto;
+    width: auto;
+}
+
+.window-second-top {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    height: auto;
+    width: auto;
+}
+
+.window-center-big {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 7;
+    height: auto;
+    width: auto;
+}
+
+.window-bottom-1 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 7;
+    grid-row-end: 9;
+    height: auto;
+    width: auto;
+}
+
+.window-bottom-2 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 7;
+    grid-row-end: 9;
+    height: auto;
+    width: auto;
+}
+
+.window-bottom-3 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 7;
+    grid-row-end: 9;
+    height: auto;
+    width: auto;
+}
+
+.window-right-1 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    height: auto;
+    width: auto;
+}
+
+.window-right-2 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 5;
+    grid-row-end: 7;
+    height: auto;
+    width: auto;
+}
+
+.window-right-3 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    height: auto;
+    width: auto;
+}
+
+.window-default {
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+    border-radius: 13px;
+    /*box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);*/
+    /*box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;*/
+    /*box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;*/
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
 
 #window-small {
     background-color: #FFFFFF;
@@ -831,24 +1018,51 @@ h6 {
 }
 
 .notifications-container {
-    height: 14.3rem;
+    /*height: 14.3rem;*/
     overflow-y: scroll;
     scrollbar-gutter: both-edges;
-    border-radius: 12px;
+    /*border-radius: 12px;*/
 }
 
 .warning-notification1 {
-    height: 2.5rem;
+    /*height: 2.5rem;*/
+    height: 2rem;
     margin-bottom: 0.3rem;
     padding-left: 10px;
     border: 2px solid #ecebeb;
     border-radius: 12px;
-    background-color: rgba(70, 70, 70, 0.11);
+    /*background-color: rgba(70, 70, 70, 0.11);*/
+    background-color: #00FF19;
 
+}
+
+.warning-notification2 {
+    height: 2rem;
+    margin-bottom: 0.3rem;
+    padding-left: 10px;
+    border: 2px solid #ecebeb;
+    border-radius: 12px;
+    background-color: rgb(255, 251, 0);
+
+}
+
+.warning-notification3 {
+    height: 2rem;
+    margin-bottom: 0.3rem;
+    padding-left: 10px;
+    /*border: 2px solid #ecebeb;*/
+    border: 2px solid #ecebeb;
+    border-radius: 12px;
+    /*background-color: rgb(246, 161, 34);*/
+    background-color: #ff6600;
 }
 
 .warning-text {
     display: contents;
+}
+
+.white-text {
+    color: #FFFFFF;
 }
 
 .current-fuel-car {
@@ -1075,7 +1289,6 @@ h6 {
     overflow: hidden;
     display: contents;
     /*display: flex;*/
-
     max-width: 100%;
     height: auto;
 }
@@ -1085,11 +1298,13 @@ h6 {
     object-position: center;
     overflow-clip-margin: inherit;
     overflow: clip;
+    margin: 5px;
+    padding: 5px;
     /*height: 205px;*/
-    height: auto;
-    width: 290px;
-    border-radius: 4px;
-    background-color: #f4f4f4;
+    height: 170px;
+    width: 275px;
+    border-radius: 3px;
+    background-color: #ffffff;
 }
 
 .car-img-public {
@@ -1108,11 +1323,11 @@ h6 {
     object-position: center;
     overflow-clip-margin: inherit;
     overflow: clip;
-    padding: 5px;
-    height: 105px;
-    width: 115px;
+    margin-top: 10px;
+    height: 90px;
+    width: 85px;
     border-radius: 4px;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
 }
 
 .img3 {
@@ -1121,8 +1336,8 @@ h6 {
     overflow-clip-margin: inherit;
     /*overflow: clip;*/
     padding: 5px;
-    height: 95px;
-    width: 105px;
+    height: 70px;
+    width: 80px;
     border-radius: 4px;
     background-color: transparent;
 }

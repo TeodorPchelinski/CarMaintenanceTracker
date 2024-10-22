@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head th:include="~{fragments/head}">
-  <title>Page title</title>
+    <title>Page title</title>
 </head>
 <body>
 
@@ -11,76 +11,74 @@
 <div class="current-page">
 
 
-  <div class="section1">
-    <div class="label-container">
-      <h1 class="label">Share and Compare</h1>
-    </div>
-<!--    <div class="window">-->
-<!--      <div>-->
-<!--        <label class="window-label">Recommend Shops and Services <br> &nbsp that have satisfied you</label>-->
-
-<!--        <h5>Community coming soon...</h5>-->
-<!--&lt;!&ndash;        <canvas id="my-chart" ></canvas>&ndash;&gt;-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="window" >-->
-<!--    </div>-->
-
-<!--    <div class="window" id="window-small">-->
-<!--    </div>-->
-
-  </div>
-  <div class="section2">
-
-    <div class="label-container">
-<!--      <h5 class="label">Search</h5>-->
-      <div class="field" id="field-search">
-        <input id="file" type="search" placeholder="Search" >
-      </div>
-      <button>Search</button>
-    </div>
-
-
-    <div class="container-background-community">
-<!--      Have to put all cards in one div this above in grid-->
-
-      <div class="window" th:each="cars : ${allCars.getContent()}"
-        th:object="${cars}">
-
-        <div class="car-img-big">
-          <img th:if="${cars.image != null}" class="car-img-public" th:src="@{${cars.image}}">
-
-          <div class="car-img-big">
-            <img th:if="${cars.image == null}" class="car-img-public" th:src="@{/images/defaultcar.jpg}">
-
-          </div>
-
-        <div>
-          <label th:text="${cars.brand} + ' '  + ${cars.model}" class="window-label" >Car Card Here</label>
-
-<!--          <h5 >Brand</h5>-->
-<!--          <h5 >Model</h5>-->
-
-
-          <!--        <canvas id="my-chart" ></canvas>-->
+    <div class="section1">
+        <div class="label-container">
+            <h1 class="label">Share and Compare</h1>
         </div>
-      </div>
+        <!--    <div class="window">-->
+        <!--      <div>-->
+        <!--        <label class="window-label">Recommend Shops and Services <br> &nbsp that have satisfied you</label>-->
 
-      </div>
-<!--      END OF SECOND COLUMN-->
+        <!--        <h5>Community coming soon...</h5>-->
+        <!--&lt;!&ndash;        <canvas id="my-chart" ></canvas>&ndash;&gt;-->
+        <!--      </div>-->
+        <!--    </div>-->
+        <!--    <div class="window" >-->
+        <!--    </div>-->
+
+        <!--    <div class="window" id="window-small">-->
+        <!--    </div>-->
+
+    </div>
+    <div class="section2">
+
+        <div class="label-container">
+            <!--      <h5 class="label">Search</h5>-->
+            <div class="field" id="field-search">
+                <input id="file" type="search" placeholder="Search">
+            </div>
+            <button>Search</button>
+        </div>
+
+
+        <div class="container-background-community">
+            <!--      Have to put all cards in one div this above in grid-->
+
+            <div class="window" th:each="cars : ${allCars.getContent()}"
+                 th:object="${cars}">
+
+                <div class="car-img-big">
+                    <img th:if="${cars.image != null}" class="car-img-public" th:src="@{${cars.image}}">
+
+
+                    <div class="car-img-big">
+                        <img th:if="${cars.image == null}" class="car-img-public" th:src="@{/images/defaultcar.jpg}">
+                    </div>
+
+
+                    <div>
+                        <label th:text="${cars.brand} + ' '  + ${cars.model}" class="window-label">Car Card Here</label>
+
+                        <!--          <h5 >Brand</h5>-->
+                        <!--          <h5 >Model</h5>-->
+
+
+                        <!--        <canvas id="my-chart" ></canvas>-->
+                    </div>
+                </div>
+
+            </div>
+            <!--      END OF SECOND COLUMN-->
+
+        </div>
+
 
     </div>
 
+    <div class="section3">
 
 
-
-  </div>
-
-  <div class="section3">
-
-
-
-  </div>
+    </div>
 
 </body>
 </html>
