@@ -40,7 +40,9 @@
 
 
         <div class="profile-small">
-            <img class="profile-img-small" th:src="@{/images/profile.png}">
+            <div class="profile-image-corner">
+                <img class="profile-img-small" th:src="@{/images/TeodorPchelinski.jpg}">
+            </div>
 
             <div sec:authorize="!isAuthenticated()">
                 <a class="profile-name"  th:href="@{/account}" >
