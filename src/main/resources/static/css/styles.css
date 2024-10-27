@@ -1,259 +1,1821 @@
-body {
-    /*Original color*/
-    /*background-color: #00AEFF;*/
-    /*background-color: #45beff;*/
-    /*background-color: #16a4d9;*/
-    /*background-color: #5499e5;*/
-    /*background-color: #fafafa;*/
-    /*background-color: #00A6FF;*/
-    /*background-color: #386ee0;*/
-    /*background-color: #364d65;*/
-    /*background-color: #4B4B4B;*/
-    /*background-color: #79b630;*/
-    /*background-color: #646464;*/
-    /*background-color: #eeeeee;*/
 
 
-    background: rgb(229,251,255);
 
-    padding: 0;
-    margin-top: 0;
-    margin-left: 0;
-    margin-bottom: 0;
-    /*gap: 14px;*/
-
-
-    font-family: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 18px;
-    display: flex;
-    /*align-items: inherit;*/
-    /*justify-content: space-evenly;*/
-    height: 100vh;
-    min-height: 100%;
-    min-width: 100%;
+@media screen and (max-width: 1366px) {
 
 }
 
-div {
-    /*resize: vertical;*/
-    /*overflow: auto;*/
-}
 
-.purple-block {
-    background-color: #5E00FF;
-    height: 60px;
-    width: 178px;
-    border-radius: 6px;
-    text-align: center;
-}
+@media screen and (min-width: 1368px) {
 
-#oil-details{
-
-    height: 105px;
-    width: 110px;
-}
-
-.item-label{
-    color: #030104;
-    /*white-space: inherit;*/
-}
-
-ul {
-    display: block;
-    list-style-type: none;
-    margin: 0 0 0 1rem;
-    padding: 0;
-    width: 15rem;
-    /*width: 11.719vw;*/
-    /*height: 100vh;*/
-    /*height: 30rem;*/
-    /*height: 15rem;*/
-    /*background-color: #282828;*/
-    /*background-color: #00AEFF;*/
-}
-
-ul, body {
-    /*      #80D7FF   accent color*/
-    /* Dashboard and frame color */
-    /*background-color: #282828;*/
-}
+    body {
+        /*Original color*/
+        /*background-color: #00AEFF;*/
+        /*background-color: #45beff;*/
+        /*background-color: #16a4d9;*/
+        /*background-color: #5499e5;*/
+        /*background-color: #fafafa;*/
+        /*background-color: #00A6FF;*/
+        /*background-color: #386ee0;*/
+        /*background-color: #364d65;*/
+        /*background-color: #4B4B4B;*/
+        /*background-color: #79b630;*/
+        /*background-color: #646464;*/
+        /*background-color: #eeeeee;*/
 
 
+        background: rgb(229, 251, 255);
 
-.current-page {
-
-    margin-left: 228px;
-
-    /*gap: 14px;*/
-    /*display: grid;*/
-    /*grid-template-columns:403px 600px 1fr 660px 1fr 1fr 1fr 1fr;*/
-    /*grid-template-rows:0 175px 178px 196px 1fr;*/
-
-    display: flex;
-
-    /*Everything commented here is the original way*/
-    /*margin-top: 10px;*/
-    /*padding-right: 80rem;*/
-    /*margin-left: 16rem;*/
-    /*margin-bottom: 0;*/
-    /*color: #f1f9ff;*/
-    /*display: contents;*/
-    /*position: fixed;*/
-    /*align-items: normal;*/
-    /*flex-direction: row;*/
-    /*border-radius: 19px;*/
-    /*width: 100%;*/
-    /*height: 100%;*/
-    /*z-index: 0;*/
-
-    /*Added in searching for better grid*/
-    /*display: grid;*/
-}
-
-#maintenance-page {
-    gap: unset;
-    margin-left: 228px;
-    /*display: grid;*/
-    /*grid-template-columns:403px 600px 1fr 660px 1fr 1fr 1fr 1fr;*/
-    /*grid-template-rows:0 175px 178px 196px 1fr;*/
-}
-
-.site-name {
-    color: #FFFFFF;
-    padding-top: 1rem;
-    padding-left: 1.5rem;
-    /*margin-left: 16px;*/
-    margin-right: 0;
-    margin-top: 0;
-    height: 3.125rem;
-    /*height: 4.63vh;*/
-    position: center;
-}
+        padding: 0;
+        margin-top: 0;
+        margin-left: 0;
+        margin-bottom: 0;
+        /*gap: 14px;*/
 
 
-li a {
-    display: block;
-    color: #f1f9ff;
-    padding: 0.5rem 1rem;
-    margin-top: 0.2rem;
-    margin-right: 0.5rem;
-    text-decoration: none;
-    width: 11rem;
-    /*width: 9.167vw;*/
-}
+        font-family: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 18px;
+        display: flex;
+        /*align-items: inherit;*/
+        /*justify-content: space-evenly;*/
+        height: 100vh;
+        min-height: 100%;
+        min-width: 100%;
+
+    }
+
+    div {
+        /*resize: vertical;*/
+        /*overflow: auto;*/
+    }
+
+    .purple-block {
+        background-color: #5E00FF;
+        height: 60px;
+        width: 178px;
+        border-radius: 6px;
+        text-align: center;
+    }
+
+    #oil-details {
+
+        height: 105px;
+        width: 110px;
+    }
+
+    .item-label {
+        color: #030104;
+        /*white-space: inherit;*/
+    }
+
+    ul {
+        display: block;
+        list-style-type: none;
+        margin: 0 0 0 1rem;
+        padding: 0;
+        width: 15rem;
+        /*width: 11.719vw;*/
+        /*height: 100vh;*/
+        /*height: 30rem;*/
+        /*height: 15rem;*/
+        /*background-color: #282828;*/
+        /*background-color: #00AEFF;*/
+    }
+
+    ul, body {
+        /*      #80D7FF   accent color*/
+        /* Dashboard and frame color */
+        /*background-color: #282828;*/
+    }
 
 
-li a:hover {
-    border-radius: 0.5rem;
-    background-color: #555;
-    color: #FFFFFF;
-}
+    .current-page {
+
+        margin-left: 228px;
+
+        /*gap: 14px;*/
+        /*display: grid;*/
+        /*grid-template-columns:403px 600px 1fr 660px 1fr 1fr 1fr 1fr;*/
+        /*grid-template-rows:0 175px 178px 196px 1fr;*/
+
+        display: flex;
+
+        /*Everything commented here is the original way*/
+        /*margin-top: 10px;*/
+        /*padding-right: 80rem;*/
+        /*margin-left: 16rem;*/
+        /*margin-bottom: 0;*/
+        /*color: #f1f9ff;*/
+        /*display: contents;*/
+        /*position: fixed;*/
+        /*align-items: normal;*/
+        /*flex-direction: row;*/
+        /*border-radius: 19px;*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+        /*z-index: 0;*/
+
+        /*Added in searching for better grid*/
+        /*display: grid;*/
+    }
+
+    #maintenance-page {
+        gap: unset;
+        margin-left: 228px;
+        /*display: grid;*/
+        /*grid-template-columns:403px 600px 1fr 660px 1fr 1fr 1fr 1fr;*/
+        /*grid-template-rows:0 175px 178px 196px 1fr;*/
+    }
+
+    .site-name {
+        color: #FFFFFF;
+        padding-top: 1rem;
+        padding-left: 1.5rem;
+        /*margin-left: 16px;*/
+        margin-right: 0;
+        margin-top: 0;
+        height: 3.125rem;
+        /*height: 4.63vh;*/
+        position: center;
+    }
 
 
-.ul li:active a{
-    color: #007bff; /* Change to your active color */
-    background-color: #234465;
-}
+    li a {
+        display: block;
+        color: #f1f9ff;
+        padding: 0.5rem 1rem;
+        margin-top: 0.2rem;
+        margin-right: 0.5rem;
+        text-decoration: none;
+        width: 11rem;
+        /*width: 9.167vw;*/
+    }
 
 
-input {
-    display: block;
-    color: #f1f9ff;
-    background-color: #282828;
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
-    margin-top: 0.2rem;
-    margin-right: 0.5rem;
-    text-decoration: none;
-    width: 11rem;
-}
-
-input:hover{
-    border-radius: 0.5rem;
-    background-color: #555;
-    color: #FFFFFF;
-}
-
-.active {
-    background-color: #a0bad5;
-    color: #FFFFFF;
-}
-
-.current {
-    border-radius: 0.5rem;
-    background-color: #555;
-    color: #FFFFFF;
-
-}
-
-#little-dashboard{
-    display: block;
-    color: #f1f9ff;
-    padding: 0.5rem 1rem;
-    margin-top: 0.2rem;
-    margin-right: 0.5rem;
-    text-decoration: none;
-    width: 5rem;
-}
+    li a:hover {
+        border-radius: 0.5rem;
+        background-color: #555;
+        color: #FFFFFF;
+    }
 
 
-.navigation {
-    /*padding-top: 12px;*/
-    /*padding-left: 20px;*/
-    /*padding-right: 20px;*/
-    /*width: 25vh;*/
-    /*position: fixed;*/
-    /*z-index: 1;*/
-
-    position: fixed;
+    .ul li:active a {
+        color: #007bff; /* Change to your active color */
+        background-color: #234465;
+    }
 
 
-    /*margin-right: 1.25rem;*/
-    padding: 0.75rem 1.25rem 7rem 0;
-    width: 13rem;
-    /*width: 10%;*/
-    /*width: 11.667vw;*/
-    /*margin-bottom: 50rem;*/
-    background-color: #282828;
-    /*height: 86.4%;*/
-    /*height: auto;*/
-    height: 100vh;
-    /*height: 56.175rem;*/
+    input {
+        display: block;
+        color: #f1f9ff;
+        background-color: #282828;
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
+        margin-top: 0.2rem;
+        margin-right: 0.5rem;
+        text-decoration: none;
+        width: 11rem;
+    }
+
+    input:hover {
+        border-radius: 0.5rem;
+        background-color: #555;
+        color: #FFFFFF;
+    }
+
+    .active {
+        background-color: #a0bad5;
+        color: #FFFFFF;
+    }
+
+    .current {
+        border-radius: 0.5rem;
+        background-color: #555;
+        color: #FFFFFF;
+
+    }
+
+    #little-dashboard {
+        display: block;
+        color: #f1f9ff;
+        padding: 0.5rem 1rem;
+        margin-top: 0.2rem;
+        margin-right: 0.5rem;
+        text-decoration: none;
+        width: 5rem;
+    }
 
 
+    .navigation {
+        /*padding-top: 12px;*/
+        /*padding-left: 20px;*/
+        /*padding-right: 20px;*/
+        /*width: 25vh;*/
+        /*position: fixed;*/
+        /*z-index: 1;*/
+
+        position: fixed;
+
+
+        /*margin-right: 1.25rem;*/
+        padding: 0.75rem 1.25rem 7rem 0;
+        width: 13rem;
+        /*width: 10%;*/
+        /*width: 11.667vw;*/
+        /*margin-bottom: 50rem;*/
+        background-color: #282828;
+        /*height: 86.4%;*/
+        /*height: auto;*/
+        height: 100vh;
+        /*height: 56.175rem;*/
+
+
+    }
+
+
+
+
+    .section1, .section2, .section3, .section4 {
+        /*here changed*/
+        display: flex;
+
+        margin-top: 0.3125rem;
+        /*margin-bottom: 1rem;*/
+
+        /*padding: 0.625rem;*/
+        /*background-color: #80D7FF;*/
+        /*background-color: #111827;*/
+        /*width: 45vh;*/
+        /*width: 300px;*/
+        /*max-width: 29.375rem;*/
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 14px;
+        height: auto;
+        width: 25.3rem;
+        align-items: inherit;
+
+    }
+
+
+    .section1 {
+        /*background-color: #6dbbe1;*/
+    }
+
+    .label-container {
+        max-width: 40rem;
+    }
+
+
+    .window-label {
+        color: #333333;
+        font-size: 1.25rem;
+        padding: 10px;
+    }
+
+    #total-price-label {
+        margin-top: 2rem;
+        margin-left: 17rem;
+    }
+
+    #add-repair-label {
+        font-size: 1rem;
+    }
+
+    .window {
+        display: block;
+        /*margin-top: 20px;*/
+        /*margin-top: 1rem;*/
+        /*margin-left: 1rem;*/
+        padding: 0.625rem;
+        position: relative;
+        flex: 1 1 400px;
+        max-width: 380px;
+        /*width: 22.8rem;*/
+        /*height: 15.8rem;*/
+        border: 1px solid #ecebeb;
+        border-radius: 12px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+        background-color: #ffffff;
+    }
+
+    .window-small {
+        background-color: #FFFFFF;
+        /*height: 150px;*/
+        height: 9.75rem;
+        /*padding-bottom: 1rem;*/
+        /*width: 285px;*/
+        /*width: 40vh;*/
+        width: 22.8rem;
+
+        display: block;
+        /*margin-top: 20px;*/
+        /*margin-top: 1rem;*/
+        padding: 0.625rem;
+        padding-bottom: 1.25rem;
+        position: relative;
+        flex: 1 1 500px;
+
+        /*width: 285px;*/
+        /*width: 22.8rem;*/
+        /*height: 15.8rem;*/
+        border: 1px solid #ecebeb;
+        border-radius: 12px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    #consumables {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    #tires-window {
+        min-height: 233px;
+    }
+
+    .tires-container {
+        display: grid;
+        grid-template-columns: 80px 80px;
+        grid-row: auto;
+        grid-column-gap: 8px;
+        grid-row-gap: 8px;
+
+    }
+
+    .violet-text {
+        color: #7F00FF;
+    }
+
+    .green-text {
+        color: #00FF19;
+    }
+
+    .blue-text {
+        color: #4053FF;
+    }
+
+    .current-page-maintenance {
+        /*padding-top: 26px;*/
+        /*padding-left: 13px;*/
+        padding-bottom: 13px;
+        margin-left: 228px;
+        gap: 17px;
+        display: flex;
+        flex-direction: column;
+        width: 1600px;
+        /*margin-left: 16rem;*/
+    }
+
+    .top-part-container {
+        /*background-color: #FFFFFF;*/
+        background: rgb(229, 251, 255);
+        background: linear-gradient(90deg, rgba(229, 251, 255, 1) 0%, rgba(0, 155, 255, 1) 17%, rgba(24, 57, 78, 1) 97%);
+        display: flex;
+        flex-direction: row;
+        width: 1675px;
+        min-height: 300px;
+        padding-bottom: 20px;
+    }
+
+    .mid-part-container {
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: row;
+        width: 1675px;
+        min-height: 400px;
+        border-top: 1px solid #cccccc;
+    }
+
+    .car-img-details {
+        object-fit: cover;
+        object-position: center;
+        overflow-clip-margin: inherit;
+        overflow: clip;
+        margin: 5px;
+        padding: 5px;
+        /*height: 205px;*/
+        height: 300px;
+        /*width: 275px;*/
+        border-radius: 3px;
+        /*background-color: #ffffff;*/
+
+    }
+
+    .vertical-line {
+        margin-top: 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .vertical-line-full {
+        margin: 0;
+        color: #cccccc;
+    }
+
+    .car-stats {
+        width: 300px;
+        padding: 15px;
+    }
+
+    .model-specs {
+        padding-top: 25px;
+    }
+
+
+    .normal-h3 {
+        font-size: 20px;
+        font-weight: normal;
+        margin-block-start: unset;
+        margin-block-end: 10px;
+        color: #FFFFFF;
+    }
+
+    .stat-text-container {
+        margin-bottom: 10px;
+    }
+
+    .stat-title {
+        font-size: 18px;
+        font-weight: normal;
+        margin-block-start: unset;
+        margin-block-end: unset;
+        color: #FFFFFF;
+    }
+
+    .stat-text {
+        font-size: 17px;
+        font-weight: bold;
+        margin-block-start: 2px;
+        margin-block-end: unset;
+        color: #ffffff;
+    }
+
+    .first-tire-box {
+        padding: 10px;
+    }
+
+    .second-box {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .sparks-box {
+        width: 140px;
+    }
+
+    .window-label-top-corner {
+        height: auto;
+        width: 1675px;
+        background-color: #FFFFFF;
+    }
+
+    .label-maintenance {
+        padding-top: 2rem;
+        padding-left: 5rem;
+        color: #FFFFFF;
+    }
+
+    .label-car-details {
+        margin: 0;
+    }
+
+    .window-car-image {
+        /*background-color: #ea7171;*/
+        height: auto;
+        width: auto;
+    }
+
+    .window-oil {
+        height: auto;
+        width: auto;
+    }
+
+    .window-current-tires {
+
+        height: auto;
+        width: auto;
+    }
+
+    .window-left-bottom {
+        height: auto;
+        width: auto;
+    }
+
+    .window-second-top {
+        height: auto;
+        width: auto;
+    }
+
+    .window-center-big {
+        height: auto;
+        width: auto;
+    }
+
+    .window-bottom-1 {
+        height: auto;
+        width: auto;
+    }
+
+    .window-bottom-2 {
+        height: auto;
+        width: auto;
+    }
+
+    .window-bottom-3 {
+        height: auto;
+        width: auto;
+    }
+
+    .window-right-1 {
+        height: auto;
+        width: auto;
+    }
+
+    .window-right-2 {
+        height: auto;
+        width: auto;
+    }
+
+    .window-right-3 {
+        height: auto;
+        width: auto;
+    }
+
+    .window-default {
+        background-color: #FFFFFF;
+        border: 1px solid #ccc;
+        border-radius: 13px;
+        /*box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);*/
+        /*box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;*/
+        /*box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;*/
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+
+
+    #window-small {
+        background-color: #FFFFFF;
+        /*height: 150px;*/
+        height: 9.75rem;
+        padding-bottom: 1rem;
+        /*width: 285px;*/
+        /*width: 40vh;*/
+        width: 22.8rem;
+    }
+
+    #window-smaller {
+        background-color: #FFFFFF;
+        height: 6.7rem;
+        width: 22.8rem;
+    }
+
+    #window-mid {
+        height: 16.5125rem;
+    }
+
+    #big-window {
+        height: 22.8rem;
+    }
+
+    #refuel-window {
+        height: 28.1rem;
+        width: 48rem;
+    }
+
+    #group-windows-container {
+        display: inline-flex;
+        height: 12.9rem;
+        width: 50.3rem;
+    }
+
+    .register-container {
+        display: inline-block;
+        max-height: 28.1rem;
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+    #register-window {
+        display: block;
+        margin-top: 10rem;
+        margin-left: 35rem;
+        height: 28.1rem;
+        border-radius: 14px 0 0 14px;
+    }
+
+    #login-form {
+        margin-top: 7rem;
+    }
+
+    #register-image-container {
+        margin-top: 10rem;
+        height: 29.5rem;
+        width: 29.5rem;
+        display: inline-block;
+        line-height: 29.5rem;
+    }
+
+    .register-image {
+        border-radius: 0 14px 14px 0;
+        height: 100%;
+        width: 100%;
+        display: inline-block;
+        margin: 0 auto;
+        vertical-align: middle;
+    }
+
+
+    .field {
+        margin-top: 15px;
+        margin-left: 1rem;
+        /*border: 1px solid #c7c7c7;*/
+        /*box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.3);*/
+        /*border-radius: 3px;*/
+        height: 1.375rem;
+        width: 13.5rem;
+        position: relative;
+    }
+
+    #car-id {
+        margin-top: 18px;
+        margin-left: 1rem;
+        height: 2.375rem;
+        width: 13.5rem;
+        border-radius: 8px;
+        border: 2px solid #ecebeb;
+    }
+
+    #location-address {
+        margin-top: 1.6rem;
+    }
+
+    #repair-description-field {
+        margin-top: 1.6rem;
+        margin-right: 4.6rem;
+    }
+
+    #shop-location-field {
+        margin-right: 19rem;
+    }
+
+
+    #quantity-field {
+        margin-top: 19px;
+        margin-left: 0.5rem;
+        margin-right: 12.5rem;
+    }
+
+    #small-date-field {
+        margin-top: 0;
+        margin-left: 11.5rem;
+        width: 7rem;
+        height: 2rem;
+
+    }
+
+    #small-date-field input {
+        width: 6rem;
+        height: 0.75rem;
+    }
+
+
+    #field-search {
+        width: 30rem;
+    }
+
+
+    .field input {
+        color: #565656;
+        background: none;
+        padding: 0.625rem;
+        border: 2px solid #ecebeb;
+        width: 12rem;
+    }
+
+    #field-bigger {
+        margin-top: 1.5rem;
+    }
+
+    #fuel-description {
+        margin-top: 1.5rem;
+    }
+
+    #part-name {
+        font-size: 1rem;
+    }
+
+    #small-date {
+        border: none;
+    }
+
+    .field data {
+
+    }
+
+    .field select {
+        font-size: 1rem;
+        font-weight: normal;
+        color: #424242;
+        background: none;
+        padding: 0.625rem;
+        border: 2px solid #ecebeb;
+        border-radius: 6px;
+        width: 13.5rem;
+        -webkit-appearance: none;
+    }
+
+    #quantity {
+        width: 2.5rem;
+
+    }
+
+    .field-small select {
+        font-size: 1rem;
+        font-weight: normal;
+        color: #424242;
+        background: none;
+        padding: 0.625rem;
+        border: 2px solid #ecebeb;
+        width: 1.1rem;
+    }
+
+    .field option {
+    }
+
+    #field-search {
+        width: 35rem;
+    }
+
+
+    /*Cost small input*/
+    .field-small {
+        margin-top: 15px;
+        margin-left: 0;
+        /*border: 1px solid #c7c7c7;*/
+        /*box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.3);*/
+        /*border-radius: 3px;*/
+        height: 2.375rem;
+        /*be careful here*/
+        width: 6.5rem;
+        position: relative;
+    }
+
+    #part-price-field {
+        margin-left: 0.5rem;
+    }
+
+    #final-price-field {
+        margin-top: 2rem;
+        /*margin-left: 25.25rem;*/
+        margin-right: 0.5rem;
+    }
+
+    .field-small input {
+        color: #565656;
+        background: none;
+        padding: 0.625rem;
+        border: 2px solid #ecebeb;
+        width: 5rem;
+        margin-right: 0;
+    }
+
+
+    .field-small select {
+        font-size: 1rem;
+        font-weight: normal;
+        color: #424242;
+        background: none;
+        padding: 0.625rem;
+        border: 2px solid #ecebeb;
+        width: 12.1rem;
+    }
+
+    .field-smallest {
+        width: 5rem;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .field-smallest select {
+        margin-top: 15px;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #424242;
+        background: none;
+        padding: 0.625rem;
+        border: 2px solid #ecebeb;
+        /*border-radius: 3px;*/
+        height: 2.375rem;
+        width: 12rem;
+    }
+
+    .field-small-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        translate: 0.625rem 0.625rem;
+        /* FuelType */
+        color: #252525;
+        background-color: #ffffff;
+        padding-inline: 0.25rem;
+        border: 2px solid transparent;
+        pointer-events: none;
+        transition: translate 250ms,
+        background-color 250ms,
+        border-bottom-color 250ms;
+        /*font-weight: bold;*/
+        font-size: 15px;
+        /*display: block;*/
+        /*margin-top: 10px;*/
+        /*margin-left: 6.5rem;*/
+    }
+
+    .field-small:focus-within label,
+    .field-small:not(:has(:placeholder-shown))
+    label {
+        translate: 0.625rem -1rem;
+        font-size: 16px;
+        font-weight: normal;
+        user-focus-pointer: true;
+        border-radius: 2px;
+        /*background-color: #234465;*/
+        /*color: #282828;*/
+        color: #030104;
+    }
+
+    .field-small input:focus,
+    .field-small input:active {
+        user-focus-pointer: true;
+        border: 2px solid #3aa2b0;
+        /*border-radius: 2px;*/
+        /*background-color: #234465;*/
+        /*color: #282828;*/
+
+    }
+
+    .field-small::placeholder {
+        color: #FFFFFF;
+    }
+
+    #large-text {
+        width: 40rem;
+        height: 5rem;
+        resize: vertical;
+        color: #030104;
+        border: 2px solid #ecebeb;
+        border-radius: 6px;
+        font-weight: normal;
+        font-size: 15px;
+        font-family: "Roboto Light", sans-serif;
+    }
+
+
+    /* Transition and label place */
+    .field-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        translate: 0.625rem 0.625rem;
+        /* FuelType */
+        color: #464646;
+        background-color: #ffffff;
+        padding-inline: 0.25rem;
+        border: 2px solid transparent;
+        pointer-events: none;
+        transition: translate 250ms,
+        background-color 250ms,
+        border-bottom-color 250ms;
+        /*font-weight: bold;*/
+        font-size: 15px;
+        /*display: block;*/
+        /*margin-top: 10px;*/
+        /*margin-left: 6.5rem;*/
+    }
+
+    .field:focus-within label,
+    .field:not(:has(:placeholder-shown))
+    label {
+        translate: 0.625rem -1rem;
+        font-size: 16px;
+        font-weight: normal;
+        user-focus-pointer: true;
+        border-radius: 2px;
+        /*background-color: #234465;*/
+        /*color: #282828;*/
+        color: #030104;
+    }
+
+    .field input:focus,
+    .field input:active {
+        user-focus-pointer: true;
+        border: 2px solid #3aa2b0;
+        /*border-radius: 2px;*/
+        /*background-color: #234465;*/
+        /*color: #282828;*/
+
+    }
+
+    .field::placeholder {
+        color: #FFFFFF;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        margin: 0;
+    }
+
+
+    .button {
+
+    }
+
+    #refuel-button {
+        margin-top: 5rem;
+        margin-left: 10rem;
+        display: block;
+        width: 8.75rem;
+        height: 1.875rem;
+    }
+
+    #repair-button {
+        margin-top: 1rem;
+        margin-left: 10rem;
+        display: block;
+        width: 8.75rem;
+        height: 1.875rem;
+    }
+
+
+    #login-button {
+        margin-top: 3rem;
+        margin-left: 7rem;
+        display: block;
+        width: 8.75rem;
+        height: 1.875rem;
+    }
+
+    #add-car-button {
+        /*margin-top: 3rem;*/
+        /*margin-left: 7rem;*/
+
+        display: block;
+        width: 8.75rem;
+        height: 1.875rem;
+    }
+
+    .label-and-button-container {
+
+    }
+
+    .stats-repairs-container {
+        display: flex;
+        background-color: #ecebeb;
+        margin-top: 4px;
+        padding: 2px;
+        border-radius: 4px;
+    }
+
+    .repairs-card {
+        display: table-column;
+        height: 4.5rem;
+        background-color: rgba(70, 70, 70, 0.11);
+        /*background-color: #5E00FF;*/
+        border-radius: 2px;
+
+    }
+
+    .parts-repairs {
+        font-size: 12px;
+        height: 1rem;
+        width: 16.8rem;
+        border-radius: 3px;
+        background-color: #234465;
+    }
+
+    .repair-cost-small {
+        float: right;
+    }
+
+    .car-img-and-parts-container {
+        display: flex;
+        /*background-color: rgba(27, 215, 150, 0.85);*/
+        width: 22.5rem;
+        height: 3.5rem;
+    }
+
+    .part-img-small-container {
+        width: 4.5rem;
+        height: 3.5rem;
+        /*background-color: #5E00FF;*/
+    }
+
+    .part-image-small {
+        width: 4.3rem;
+        height: 4.3rem;
+        /*border-radius: 4px;*/
+        border-radius: 50%;
+        overflow: hidden;
+        padding: 2px;
+    }
+
+    .parts-list-container {
+        /*background-color: #10e8ad;*/
+        width: 12.2rem;
+        height: 3.3rem;
+        padding: 2px;
+    }
+
+
+    .stat-small {
+
+        font-size: 12px;
+        background-color: #d97f3b;
+        border-radius: 8px;
+        border: 2px solid #d97f3b;
+        padding-left: 1px;
+        padding-right: 1px;
+    }
+
+    .location-image-container {
+        padding-left: 2px;
+        height: 4.5rem;
+        width: 5.6rem;
+    }
+
+    .location-image {
+        border-radius: 2px;
+        height: 4.375rem;
+        width: 5.475rem;
+        margin: 1px 2px 2px 2px;
+    }
+
+    h1 {
+        margin-left: 1rem;
+    }
+
+    h2 {
+        margin-left: 1rem;
+    }
+
+    h4 {
+        color: #282828;
+    }
+
+    h5 {
+        color: #282828;
+    }
+
+    h6 {
+        color: #282828;
+    }
+
+    .warning-container {
+        padding-top: 0.3rem;
+    }
+
+    .warning-notification {
+        height: 1.5rem;
+        margin-bottom: 0.3rem;
+        padding-left: 10px;
+        border: 2px solid #ecebeb;
+        border-radius: 12px;
+        background-color: rgba(70, 70, 70, 0.11);
+
+    }
+
+    .notifications-container {
+        /*height: 14.3rem;*/
+        overflow-y: scroll;
+        scrollbar-gutter: both-edges;
+        /*border-radius: 12px;*/
+    }
+
+    .warning-notification1 {
+        /*height: 2.5rem;*/
+        height: 2rem;
+        margin-bottom: 0.3rem;
+        padding-left: 10px;
+        border: 2px solid #ecebeb;
+        border-radius: 12px;
+        /*background-color: rgba(70, 70, 70, 0.11);*/
+        background-color: #00FF19;
+
+    }
+
+    .warning-notification2 {
+        height: 2rem;
+        margin-bottom: 0.3rem;
+        padding-left: 10px;
+        border: 2px solid #ecebeb;
+        border-radius: 12px;
+        background-color: rgb(255, 251, 0);
+
+    }
+
+    .warning-notification3 {
+        height: 2rem;
+        margin-bottom: 0.3rem;
+        padding-left: 10px;
+        /*border: 2px solid #ecebeb;*/
+        border: 2px solid #ecebeb;
+        border-radius: 12px;
+        /*background-color: rgb(246, 161, 34);*/
+        background-color: #ff6600;
+    }
+
+    .warning-text {
+        display: contents;
+    }
+
+    .white-text {
+        color: #FFFFFF;
+    }
+
+    .current-fuel-car {
+        width: 21rem;
+        /*max-width: 37vh;*/
+        max-width: 50rem;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 14px;
+    }
+
+    #my-chart {
+        margin-top: 15px;
+        /*margin-left: 5px;*/
+        /*margin-right: 5px;*/
+        max-width: 270px;
+        max-height: 150px;
+        position: center;
+        background-color: #ff0000;
+    }
+
+    #my-chart .canvas {
+        left: 0;
+        right: 0;
+        top: 100%;
+    }
+
+
+    #container {
+        /*width: 270px;*/
+        width: 22.8rem;
+        height: 9rem;
+        padding: 0;
+    }
+
+    #container2 {
+        /*width: 270px;*/
+        width: 22.8rem;
+        height: 9rem;
+        padding: 0;
+    }
+
+    #container-fuel2 {
+        /*width: 270px;*/
+        width: 22.8rem;
+        /*height: 8.4375rem;*/
+        height: 9rem;
+        padding: 0;
+    }
+
+    #container-fuel3 {
+        /*width: 270px;*/
+        width: 22.8rem;
+        height: 9rem;
+        padding: 0;
+    }
+
+    #service-form-container {
+        display: inline;
+
+    }
+
+    #shop-form-container {
+        display: inline-flex;
+    }
+
+    .form-container {
+        /*display: table-row;*/
+        display: block;
+        justify-content: space-between;
+    }
+
+    .form-column {
+        /*flex: 1;*/
+        display: inline-flex;
+        /*background-color: #a0bad5;*/
+    }
+
+    .form-column label,
+    .form-column input {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+
+    .window-long-car-card {
+        height: 12.9rem;
+        width: 48rem;
+        display: inline-flex;
+        padding: 8px 12px;
+    }
+
+    #window-long-car-add-card {
+        height: 12.9rem;
+        width: 48rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #window-full-height {
+        height: 100%;
+        width: 48rem;
+        display: grid;
+
+    }
+
+    .container-background-community {
+        background-color: #ecebeb;
+        /*background-color: transparent;*/
+        width: 76rem;
+        display: grid;
+        grid-template-columns: 25rem 25rem 25rem;
+        /*grid-template-columns: auto auto auto auto; ONE ROW OF CARDS */
+        border-radius: 8px;
+
+
+    }
+
+    #after-skipped-window-small {
+        /*margin-top: 31.6rem;*/
+        height: 10rem;
+    }
+
+    #window-wide {
+        height: 10rem;
+        width: 48rem;
+    }
+
+    #window-small-fuel2 {
+
+    }
+
+    #two-sectors {
+        width: 48rem;
+        height: 50rem;
+    }
+
+    #after-skipped-window {
+        margin-top: 31.6rem;
+    }
+
+    .section3 {
+        /*background-color: #3b4350;*/
+    }
+
+    #km-traveled {
+        color: #333333;
+        display: block;
+        font-size: 28px;
+        margin-top: 25px;
+        margin-left: 120px;
+    }
+
+
+    .dashboard-line1 {
+
+        border-color: #f1f9ff;
+        margin-top: 1rem;
+        margin-right: 2rem;
+    }
+
+    .dashboard-line2 {
+        /*margin-top: 4.6rem;*/
+        margin-top: 1.6rem;
+        margin-right: 2rem;
+    }
+
+    .space-dashboard {
+        /*height: 6.25rem;*/
+        height: 38.426vh;
+
+    }
+
+    .space-dashboard {
+        height: 26rem;
+    }
+
+    .profile-small {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .profile-image-corner {
+        background-color: #234465;
+        margin-right: 7px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+
+    }
+
+    .profile-img-small {
+        /*margin-right: 3px;*/
+        /*margin-left: 14px;*/
+        width: 50px;
+        height: 50px;
+        position: center;
+    }
+
+    .profile-name {
+        color: #ffffff;
+        text-decoration: none;
+        position: center;
+        margin-top: 4px;
+        margin-right: 4rem;
+        max-width: 20px;
+    }
+
+    .logout-dash {
+        margin-left: 5.875rem;
+    }
+
+    .top-space {
+        height: 198px;
+        width: 100%;
+    }
+
+    .car-window-sub {
+        /*background-color: #5E00FF;*/
+        margin-right: 0;
+        display: flex;
+        gap: 0.5rem;
+
+    }
+
+
+    .car-img-big {
+        justify-content: center;
+        padding: 4px;
+        align-items: center;
+        overflow: hidden;
+        display: contents;
+        /*display: flex;*/
+        max-width: 100%;
+        height: auto;
+    }
+
+    .car-img2 {
+        object-fit: cover;
+        object-position: center;
+        overflow-clip-margin: inherit;
+        overflow: clip;
+        margin: 5px;
+        padding: 5px;
+        /*height: 205px;*/
+        height: 170px;
+        width: 275px;
+        border-radius: 3px;
+        background-color: #ffffff;
+    }
+
+    .car-img-public {
+        object-fit: cover;
+        object-position: center;
+        overflow-clip-margin: inherit;
+        overflow: clip;
+        height: 205px;
+        width: 365px;
+        border-radius: 4px;
+        background-color: #f4f4f4;
+    }
+
+    .img2 {
+        object-fit: cover;
+        object-position: center;
+        overflow-clip-margin: inherit;
+        overflow: clip;
+        margin-top: 10px;
+        height: 90px;
+        width: 85px;
+        border-radius: 4px;
+        background-color: #ffffff;
+    }
+
+    .img3 {
+        object-fit: cover;
+        object-position: center;
+        overflow-clip-margin: inherit;
+        /*overflow: clip;*/
+        padding: 5px;
+        height: 70px;
+        width: 80px;
+        border-radius: 4px;
+        background-color: transparent;
+    }
+
+    .car-stats-card-garage {
+        background-color: #ffffff;
+        width: 28.8rem;
+        color: #030104;
+        border-radius: 4px;
+    }
+
+    .brand-model-container {
+        margin-top: 20px;
+        margin-left: 4px;
+        gap: 4px;
+    }
+
+    #brand-name-medium {
+        font-size: 24px;
+    }
+
+    #name-medium2 {
+        font-size: 20px;
+        min-width: 40px;
+    }
+
+    #preview-image {
+        display: none;
+        max-width: 100px;
+        max-height: 100px;
+    }
+
+    .image-preview {
+        margin-top: 20px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #preview-image-little {
+        display: none;
+        max-width: 50px;
+        max-height: 50px;
+    }
+
+
+    .button {
+        align-items: center;
+        /*background-color: #3c1b86;*/
+        background-color: #5E00FF;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+        box-sizing: border-box;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        display: inline-flex;
+        font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        justify-content: center;
+        line-height: 1.25;
+        margin: 0;
+        min-height: 3rem;
+        padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+        position: relative;
+        text-decoration: none;
+        transition: all 250ms;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: baseline;
+        width: auto;
+    }
+
+    .button:hover,
+    .button:focus {
+        /*border-color: rgb(94, 0, 255);*/
+        background-color: #8053ee;
+        border-color: #792eff;
+        box-shadow: rgba(107, 74, 255, 0.13) 0 4px 12px;
+        color: rgb(255, 255, 255);
+    }
+
+    .button:hover {
+        transform: translateY(-1px);
+    }
+
+    /*.button:hover {*/
+    /*    background-color: rgb(249, 250, 251);*/
+    /*    color: #111827;*/
+    /*}*/
+    .button:focus-visible {
+        box-shadow: none;
+    }
+
+    .button:active {
+        /*background-color: rgb(161, 72, 234);*/
+        background-color: rgb(94, 0, 255);
+        border-color: rgba(255, 255, 255, 0.34);
+        box-shadow: rgb(255, 255, 255) 0 0 2px 3px inset;
+        color: rgba(0, 0, 0, 0.62);
+        transform: translateY(0);
+    }
+
+    .button-second {
+        appearance: button;
+        backface-visibility: hidden;
+        /*background-color: #405cf5;*/
+        background-color: #1d2033;
+        border-radius: 6px;
+        border-width: 0;
+        box-shadow: #405cf5 0 0 0 3px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+        box-sizing: border-box;
+        color: #ffffff;
+        cursor: pointer;
+        font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+        font-size: 12px;
+        height: 1.7rem;
+        line-height: 1;
+        margin: 12px 0 0;
+        float: right;
+        outline: none;
+        overflow: hidden;
+        padding: 0 10px;
+        position: relative;
+        text-align: center;
+        text-transform: none;
+        transform: translateZ(0);
+        transition: all .2s, box-shadow .08s ease-in;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 7rem;
+    }
+
+    .button-second:disabled {
+        cursor: default;
+    }
+
+    .button-second:active {
+        background-color: #1d2033;
+        box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 1px 1px 0, rgba(0, 0, 0, .1) 0 1px 1px 0, rgba(64, 92, 245, 0.64) 0 0 0 3px;
+    }
+
+    .button-third {
+        appearance: button;
+        backface-visibility: hidden;
+        /*background-color: #405cf5;*/
+        background-color: #1d2033;
+        border-radius: 6px;
+        border-width: 0;
+        box-shadow: #405cf5 0 0 0 3px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+        box-sizing: border-box;
+        color: #ffffff;
+        cursor: pointer;
+        font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+        font-size: 12px;
+        height: 1.4rem;
+        line-height: 1;
+        margin: 1px 0 0;
+        float: right;
+        outline: none;
+        overflow: hidden;
+        padding: 0 10px;
+        position: relative;
+        text-align: center;
+        text-transform: none;
+        transform: translateZ(0);
+        transition: all .2s, box-shadow .08s ease-in;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 5.5rem;
+    }
+
+    .button-third:disabled {
+        cursor: default;
+    }
+
+    .button-third:active {
+        background-color: #1d2033;
+        box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 1px 1px 0, rgba(0, 0, 0, .1) 0 1px 1px 0, rgba(64, 92, 245, 0.64) 0 0 0 3px;
+    }
+
+    .transparent-button {
+        /*background-color: blue;*/
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 93%;
+        position: absolute;
+    }
+
+    .delete-button {
+        margin-left: 90%;
+    }
+
+
+    /*Making the real secondary button*/
+    .button-secondary {
+        align-items: center;
+        /*background-color: #3c1b86;*/
+        background-color: rgba(94, 0, 255, 0);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+        box-sizing: border-box;
+        color: rgb(58, 58, 58);
+        cursor: pointer;
+        display: inline-flex;
+        font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        justify-content: center;
+        line-height: 1.25;
+        margin: 0;
+        min-height: 3rem;
+        padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+        position: relative;
+        text-decoration: none;
+        transition: all 250ms;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: baseline;
+        width: auto;
+    }
+
+    .button-secondary:hover,
+    .button-secondary:focus {
+        /*border-color: rgb(94, 0, 255);*/
+        border-color: #5E00FF;
+        box-shadow: rgba(47, 0, 255, 0.13) 0 4px 12px;
+        color: rgb(58, 58, 58);
+    }
+
+    .button-secondary:hover {
+        transform: translateY(-1px);
+    }
+
+    /*.button:hover {*/
+    /*    background-color: rgb(249, 250, 251);*/
+    /*    color: #111827;*/
+    /*}*/
+    .button-secondary:focus-visible {
+        box-shadow: none;
+    }
+
+    .button-secondary:active {
+        /*background-color: rgb(161, 72, 234);*/
+        background-color: rgba(94, 0, 255, 0.4);
+        border-color: rgba(255, 255, 255, 0.34);
+        box-shadow: rgb(255, 255, 255) 0 0 2px 3px inset;
+        color: rgba(0, 0, 0, 0.62);
+        transform: translateY(0);
+    }
+
+    /*TOGGLE BUTTON*/
+    .toggle-button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .add-part-button {
+        font-size: 14px;
+        color: deeppink;
+        background-color: transparent;
+        border: none;
+        border-radius: 5px;
+        margin-left: 15px;
+        margin-right: 41.8rem;
+        padding: 4px 10px;
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    #show-car-service-fields {
+        width: 10rem;
+    }
+
+    #show-repair-shop-fields {
+        width: 10rem;
+    }
+
+    #parts-container {
+
+        /*background-color: #234465;*/
+
+    }
+
+
+    /* Style for the content to be hidden/shown */
+    .content {
+        display: none;
+    }
+
+    /* Style to show content when toggled */
+    .content.show {
+        display: block;
+    }
 }
 
 @media screen and (max-width: 610px){
 
-    body {
-        display: block;
-        background-color: #1d2033;
-        flex-direction: column;
-        max-width: 100vh;
-        /*max-width: 610px;*/
-        /*height: 100vh;*/
-        max-height: 100vh;
+    * {
+        padding: 0;
+        margin: 0;
+        margin-block-start: unset;
+        margin-block-end: unset;
+        margin-inline-start: unset;
+        margin-inline-end: unset;
+        padding-inline-start: unset;
+        unicode-bidi: unset;
     }
 
-    .navigation {
+    body {
         display: flex;
-        flex-direction: row;
-        position: sticky;
+        /*background-color: #1d2033;*/
+        background-color: #f1f1f1;
+        flex-direction: column;
         width: 100%;
-        /*max-width: 412px;*/
-        height: 2rem;
-        top: 0;
-        /*margin-top: 20px;*/
-        z-index: 1;
-        justify-content: center;
-        align-items: center;
-        /*margin-top: 98%;*/
-        padding: 10px 10px;
+        height: 728px;
+        margin: unset;
     }
 
     .current-page {
-        display: none;
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        width: 30px;
+        height: 20px;
     }
+
+    .section2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .window-long-car-card {
+        display: flex;
+        background-color: #bb4646;
+        width: 15px;
+    }
+
+    .window-small {
+        width: 20px;
+        max-width: 20px;
+        height: 30px;
+        padding: 0;
+
+    }
+
+    .window {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+
+
+    .navigation {
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100vw;
+        /*max-width: 412px;*/
+        /*height: 2rem;*/
+        /*margin-top: 20px;*/
+        z-index: 1;
+        /*align-items: center;*/
+        margin-top: 705px;
+        height: 52px;
+        /*border: 1px solid #FFFFFF;*/
+        order: 99;
+
+
+        padding: 0;
+    }
+
 
     .site-name {
         display: none;
@@ -270,21 +1832,12 @@ input:hover{
     .navigation > ul {
         display: flex;
         flex-direction: row;
-        gap: 25px;
-
-        justify-content: space-around;
+        gap: 6%;
+        justify-content: space-evenly;
         align-items: center;
-
-        padding: 2px;
-        background-color: #007bff;
-        margin: 1px 1px;
-
-        margin-block-start: unset;
-        margin-block-end: unset;
-        margin-inline-start: unset;
-        margin-inline-end: unset;
-        padding-inline-start: unset;
-        unicode-bidi: unset;
+        width: 100vw;
+        list-style-type: none;
+        /*margin-left: 15px;*/
     }
 
 
@@ -293,16 +1846,31 @@ input:hover{
     }
 
     li {
-        background-color: #3aa2b0;
+        /*background-color: #3aa2b0;*/
+        background-color: #ffffff;
+        border-radius: 7px;
     }
 
     li a {
+        display: flex;
+        flex-direction: column;
         padding: 3px 4px;
         margin: 0;
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
         font-size: 8px;
-        /*background-color: #00FF19;*/
+        color: #1d2033;
+
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    a > svg {
+        display: flex;
+        height: 25px;
+        fill: #0e2ba6;
     }
 
     .garage {
@@ -313,6 +1881,9 @@ input:hover{
         order: 1;
 
     }
+
+
+
     .profile-small {
         display: none;
     }
@@ -341,1532 +1912,9 @@ input:hover{
         display: none;
     }
 
-    .window-small {
-        width: 20px;
-        max-width: 20px;
-        height: 30px;
-        padding: 0;
-    }
+
 
     .section1, .section2, .section3, .section4 {
         display: none;
     }
-}
-
-@media screen and (max-width: 1366px){
-
-}
-
-.section1, .section2, .section3, .section4{
-    /*here changed*/
-    display: flex;
-
-    margin-top: 0.3125rem;
-    /*margin-bottom: 1rem;*/
-
-    /*padding: 0.625rem;*/
-    /*background-color: #80D7FF;*/
-    /*background-color: #111827;*/
-    /*width: 45vh;*/
-    /*width: 300px;*/
-    /*max-width: 29.375rem;*/
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 14px;
-    height: auto;
-    width: 25.3rem;
-    align-items: inherit;
-
-}
-
-
-.section1 {
-    /*background-color: #6dbbe1;*/
-}
-
-.label-container {
-    max-width: 40rem;
-}
-
-
-
-.window-label {
-    color: #333333;
-    font-size: 1.25rem;
-    padding: 10px;
-}
-
-#total-price-label {
-    margin-top: 2rem;
-    margin-left: 17rem;
-}
-
-#add-repair-label {
-    font-size: 1rem;
-}
-
-.window {
-    display: block;
-    /*margin-top: 20px;*/
-    /*margin-top: 1rem;*/
-    /*margin-left: 1rem;*/
-    padding: 0.625rem;
-    position: relative;
-    flex: 1 1 400px;
-    max-width: 380px;
-    /*width: 22.8rem;*/
-    /*height: 15.8rem;*/
-    border: 1px solid #ecebeb;
-    border-radius: 12px;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    background-color: #ffffff;
-}
-
-.window-small {
-    background-color: #FFFFFF;
-    /*height: 150px;*/
-    height: 9.75rem;
-    /*padding-bottom: 1rem;*/
-    /*width: 285px;*/
-    /*width: 40vh;*/
-    width: 22.8rem;
-
-    display: block;
-    /*margin-top: 20px;*/
-    /*margin-top: 1rem;*/
-    padding: 0.625rem;
-    padding-bottom: 1.25rem;
-    position: relative;
-    flex: 1 1 500px;
-
-    /*width: 285px;*/
-    /*width: 22.8rem;*/
-    /*height: 15.8rem;*/
-    border: 1px solid #ecebeb;
-    border-radius: 12px;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-}
-
-#consumables {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-#tires-window {
-    min-height: 233px;
-}
-
-.tires-container {
-    display: grid;
-    grid-template-columns: 80px 80px;
-    grid-row: auto;
-    grid-column-gap: 8px;
-    grid-row-gap: 8px;
-
-}
-
-.violet-text {
-    color: #7F00FF;
-}
-
-.green-text {
-    color: #00FF19;
-}
-
-.blue-text {
-    color: #4053FF;
-}
-
-.current-page-maintenance {
-    /*padding-top: 26px;*/
-    /*padding-left: 13px;*/
-    padding-bottom: 13px;
-    margin-left: 228px;
-    gap: 17px;
-    display: flex;
-    flex-direction: column;
-    width: 1600px;
-    /*margin-left: 16rem;*/
-}
-
-.top-part-container {
-    /*background-color: #FFFFFF;*/
-    background: rgb(229,251,255);
-    background: linear-gradient(90deg, rgba(229,251,255,1) 0%, rgba(0,155,255,1) 17%, rgba(24,57,78,1) 97%);
-    display: flex;
-    flex-direction: row;
-    width: 1675px;
-    min-height: 300px;
-    padding-bottom: 20px;
-}
-
-.mid-part-container {
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction: row;
-    width: 1675px;
-    min-height: 400px;
-    border-top: 1px solid #cccccc;
-}
-
-.car-img-details {
-    object-fit: cover;
-    object-position: center;
-    overflow-clip-margin: inherit;
-    overflow: clip;
-    margin: 5px;
-    padding: 5px;
-    /*height: 205px;*/
-    height: 300px;
-    /*width: 275px;*/
-    border-radius: 3px;
-    /*background-color: #ffffff;*/
-
-}
-
-.vertical-line {
-    margin-top: 20px;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.vertical-line-full {
-    margin: 0;
-    color: #cccccc;
-}
-
-.car-stats {
-    width: 300px;
-    padding: 15px;
-}
-
-.model-specs {
-    padding-top: 25px;
-}
-
-
-.normal-h3 {
-    font-size: 20px;
-    font-weight: normal;
-    margin-block-start: unset;
-    margin-block-end: 10px;
-    color: #FFFFFF;
-}
-
-.stat-text-container {
-    margin-bottom: 10px;
-}
-
-.stat-title {
-    font-size: 18px;
-    font-weight: normal;
-    margin-block-start: unset;
-    margin-block-end: unset;
-    color: #FFFFFF;
-}
-
-.stat-text {
-    font-size: 17px;
-    font-weight: bold;
-    margin-block-start: 2px;
-    margin-block-end: unset;
-    color: #ffffff;
-}
-
-.first-tire-box {
-    padding: 10px;
-}
-
-.second-box {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.sparks-box {
-    width: 140px;
-}
-
-.window-label-top-corner {
-    height: auto;
-    width: 1675px;
-    background-color: #FFFFFF;
-}
-
-.label-maintenance {
-    padding-top: 2rem;
-    padding-left: 5rem;
-    color: #FFFFFF;
-}
-
-.label-car-details {
-    margin: 0;
-}
-
-.window-car-image {
-    /*background-color: #ea7171;*/
-    height: auto;
-    width: auto;
-}
-
-.window-oil {
-    height: auto;
-    width: auto;
-}
-
-.window-current-tires {
-
-    height: auto;
-    width: auto;
-}
-
-.window-left-bottom {
-    height: auto;
-    width: auto;
-}
-
-.window-second-top {
-    height: auto;
-    width: auto;
-}
-
-.window-center-big {
-    height: auto;
-    width: auto;
-}
-
-.window-bottom-1 {
-    height: auto;
-    width: auto;
-}
-
-.window-bottom-2 {
-    height: auto;
-    width: auto;
-}
-
-.window-bottom-3 {
-    height: auto;
-    width: auto;
-}
-
-.window-right-1 {
-    height: auto;
-    width: auto;
-}
-
-.window-right-2 {
-    height: auto;
-    width: auto;
-}
-
-.window-right-3 {
-    height: auto;
-    width: auto;
-}
-
-.window-default {
-    background-color: #FFFFFF;
-    border: 1px solid #ccc;
-    border-radius: 13px;
-    /*box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);*/
-    /*box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;*/
-    /*box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;*/
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-}
-
-
-#window-small {
-    background-color: #FFFFFF;
-    /*height: 150px;*/
-    height: 9.75rem;
-    padding-bottom: 1rem;
-    /*width: 285px;*/
-    /*width: 40vh;*/
-    width: 22.8rem;
-}
-
-#window-smaller {
-    background-color: #FFFFFF;
-    height: 6.7rem;
-    width: 22.8rem;
-}
-
-#window-mid {
-    height: 16.5125rem;
-}
-
-#big-window {
-    height: 22.8rem;
-}
-
-#refuel-window {
-    height: 28.1rem;
-    width: 48rem;
-}
-
-#group-windows-container {
-    display: inline-flex;
-    height: 12.9rem;
-    width: 50.3rem;
-}
-
-.register-container {
-    display: inline-block;
-    max-height: 28.1rem;
-    flex-direction: row;
-    align-items: center;
-
-}
-
-#register-window {
-    display: block;
-    margin-top: 10rem;
-    margin-left: 35rem;
-    height: 28.1rem;
-    border-radius: 14px 0 0 14px;
-}
-
-#login-form {
-    margin-top: 7rem;
-}
-
-#register-image-container {
-    margin-top: 10rem;
-    height: 29.5rem;
-    width: 29.5rem;
-    display: inline-block;
-    line-height: 29.5rem;
-}
-
-.register-image {
-    border-radius: 0 14px 14px 0;
-    height: 100%;
-    width: 100%;
-    display: inline-block;
-    margin: 0 auto;
-    vertical-align: middle;
-}
-
-
-.field {
-    margin-top: 15px;
-    margin-left: 1rem;
-    /*border: 1px solid #c7c7c7;*/
-    /*box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.3);*/
-    /*border-radius: 3px;*/
-    height: 1.375rem;
-    width: 13.5rem;
-    position: relative;
-}
-
-#car-id {
-    margin-top: 18px;
-    margin-left: 1rem;
-    height: 2.375rem;
-    width: 13.5rem;
-    border-radius: 8px;
-    border: 2px solid #ecebeb;
-}
-
-#location-address {
-    margin-top: 1.6rem;
-}
-
-#repair-description-field {
-    margin-top: 1.6rem;
-    margin-right: 4.6rem;
-}
-
-#shop-location-field{
-    margin-right: 19rem;
-}
-
-
-#quantity-field {
-    margin-top: 19px;
-    margin-left: 0.5rem;
-    margin-right: 12.5rem;
-}
-
-#small-date-field {
-    margin-top: 0;
-    margin-left: 11.5rem;
-    width: 7rem;
-    height: 2rem;
-
-}
-
-#small-date-field input{
-    width: 6rem;
-    height: 0.75rem;
-}
-
-
-#field-search {
-    width: 30rem;
-}
-
-
-
-.field input {
-    color: #565656;
-    background: none;
-    padding: 0.625rem;
-    border: 2px solid #ecebeb;
-    width: 12rem;
-}
-
-#field-bigger {
-    margin-top: 1.5rem;
-}
-
-#fuel-description {
-    margin-top: 1.5rem;
-}
-
-#part-name {
-    font-size: 1rem;
-}
-
-#small-date {
-    border: none;
-}
-
-.field data {
-
-}
-
-.field select {
-    font-size: 1rem;
-    font-weight: normal;
-    color: #424242;
-    background: none;
-    padding: 0.625rem;
-    border: 2px solid #ecebeb;
-    border-radius: 6px;
-    width: 13.5rem;
-    -webkit-appearance: none;
-}
-
-#quantity {
-    width: 2.5rem;
-
-}
-
-.field-small select {
-    font-size: 1rem;
-    font-weight: normal;
-    color: #424242;
-    background: none;
-    padding: 0.625rem;
-    border: 2px solid #ecebeb;
-    width: 1.1rem;
-}
-
-.field option {
-}
-
-#field-search {
-    width: 35rem;
-}
-
-
- /*Cost small input*/
-.field-small {
-    margin-top: 15px;
-    margin-left: 0;
-    /*border: 1px solid #c7c7c7;*/
-    /*box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.3);*/
-    /*border-radius: 3px;*/
-    height: 2.375rem;
-    /*be careful here*/
-    width: 6.5rem;
-    position: relative;
-}
-
-#part-price-field {
-    margin-left: 0.5rem;
-}
-
-#final-price-field {
-    margin-top: 2rem;
-    /*margin-left: 25.25rem;*/
-    margin-right: 0.5rem;
-}
-
-.field-small input {
-    color: #565656;
-    background: none;
-    padding: 0.625rem;
-    border: 2px solid #ecebeb;
-    width: 5rem;
-    margin-right: 0;
-}
-
-
-.field-small select {
-    font-size: 1rem;
-    font-weight: normal;
-    color: #424242;
-    background: none;
-    padding: 0.625rem;
-    border: 2px solid #ecebeb;
-    width: 12.1rem;
-}
-
-.field-smallest {
-    width: 5rem;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.field-smallest select {
-    margin-top: 15px;
-    font-size: 1rem;
-    font-weight: normal;
-    color: #424242;
-    background: none;
-    padding: 0.625rem;
-    border: 2px solid #ecebeb;
-    /*border-radius: 3px;*/
-    height: 2.375rem;
-    width: 12rem;
-}
-
-.field-small-label {
-    position: absolute;
-    top:0;
-    left: 0;
-    translate: 0.625rem 0.625rem;
-    /* FuelType */
-    color: #252525;
-    background-color: #ffffff;
-    padding-inline: 0.25rem;
-    border: 2px solid transparent;
-    pointer-events: none;
-    transition: translate 250ms,
-    background-color 250ms,
-    border-bottom-color 250ms;
-    /*font-weight: bold;*/
-    font-size: 15px;
-    /*display: block;*/
-    /*margin-top: 10px;*/
-    /*margin-left: 6.5rem;*/
-}
-
-.field-small:focus-within label,
-.field-small:not(:has(:placeholder-shown))
-label {
-    translate: 0.625rem -1rem;
-    font-size: 16px;
-    font-weight: normal;
-    user-focus-pointer: true;
-    border-radius: 2px;
-    /*background-color: #234465;*/
-    /*color: #282828;*/
-    color: #030104;
-}
-
-.field-small input:focus,
-.field-small input:active {
-    user-focus-pointer: true;
-    border: 2px solid #3aa2b0;
-    /*border-radius: 2px;*/
-    /*background-color: #234465;*/
-    /*color: #282828;*/
-
-}
-
-.field-small::placeholder {
-    color: #FFFFFF;
-}
-
-#large-text {
-    width: 40rem;
-    height: 5rem;
-    resize: vertical;
-    color: #030104;
-    border: 2px solid #ecebeb;
-    border-radius: 6px;
-    font-weight: normal;
-    font-size: 15px;
-    font-family: "Roboto Light", sans-serif;
-}
-
-
-
-/* Transition and label place */
-.field-label {
-    position: absolute;
-    top:0;
-    left: 0;
-    translate: 0.625rem 0.625rem;
-    /* FuelType */
-    color: #464646;
-    background-color: #ffffff;
-    padding-inline: 0.25rem;
-    border: 2px solid transparent;
-    pointer-events: none;
-    transition: translate 250ms,
-                background-color 250ms,
-                border-bottom-color 250ms;
-    /*font-weight: bold;*/
-    font-size: 15px;
-    /*display: block;*/
-    /*margin-top: 10px;*/
-    /*margin-left: 6.5rem;*/
-}
-
-.field:focus-within label,
-.field:not(:has(:placeholder-shown))
-label {
-    translate: 0.625rem -1rem;
-    font-size: 16px;
-    font-weight: normal;
-    user-focus-pointer: true;
-    border-radius: 2px;
-    /*background-color: #234465;*/
-    /*color: #282828;*/
-    color: #030104;
-}
-
-.field input:focus,
-.field input:active {
-    user-focus-pointer: true;
-    border: 2px solid #3aa2b0;
-    /*border-radius: 2px;*/
-    /*background-color: #234465;*/
-    /*color: #282828;*/
-
-}
-
-.field::placeholder {
-    color: #FFFFFF;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    margin: 0;
-}
-
-
-
-
-.button {
-
-}
-
-#refuel-button {
-    margin-top: 5rem;
-    margin-left: 10rem;
-    display: block;
-    width: 8.75rem;
-    height: 1.875rem;
-}
-
-#repair-button {
-    margin-top: 1rem;
-    margin-left: 10rem;
-    display: block;
-    width: 8.75rem;
-    height: 1.875rem;
-}
-
-
-#login-button {
-    margin-top: 3rem;
-    margin-left: 7rem;
-    display: block;
-    width: 8.75rem;
-    height: 1.875rem;
-}
-
-#add-car-button {
-    /*margin-top: 3rem;*/
-    /*margin-left: 7rem;*/
-
-    display: block;
-    width: 8.75rem;
-    height: 1.875rem;
-}
-
-.label-and-button-container {
-
-}
-
-.stats-repairs-container {
-    display: flex;
-    background-color: #ecebeb;
-    margin-top: 4px;
-    padding: 2px;
-    border-radius: 4px;
-}
-
-.repairs-card {
-    display: table-column;
-    height: 4.5rem;
-    background-color: rgba(70, 70, 70, 0.11);
-    /*background-color: #5E00FF;*/
-    border-radius: 2px;
-
-}
-
-.parts-repairs {
-    font-size: 12px;
-    height: 1rem;
-    width: 16.8rem;
-    border-radius: 3px;
-    background-color: #234465;
-}
-
-.repair-cost-small {
-    float: right;
-}
-
-.car-img-and-parts-container {
-    display: flex;
-    /*background-color: rgba(27, 215, 150, 0.85);*/
-    width: 22.5rem;
-    height: 3.5rem;
-}
-
-.part-img-small-container {
-    width: 4.5rem;
-    height: 3.5rem;
-    /*background-color: #5E00FF;*/
-}
-
-.part-image-small {
-    width: 4.3rem;
-    height: 4.3rem;
-    /*border-radius: 4px;*/
-    border-radius: 50%;
-    overflow: hidden;
-    padding: 2px;
-}
-
-.parts-list-container {
-    /*background-color: #10e8ad;*/
-    width: 12.2rem;
-    height: 3.3rem;
-    padding: 2px;
-}
-
-
-.stat-small {
-
-    font-size: 12px;
-    background-color: #d97f3b;
-    border-radius: 8px;
-    border: 2px solid #d97f3b;
-    padding-left: 1px ;
-    padding-right: 1px;
-}
-
-.location-image-container {
-    padding-left: 2px;
-    height: 4.5rem;
-    width: 5.6rem;
-}
-
-.location-image {
-    border-radius: 2px;
-    height: 4.375rem;
-    width: 5.475rem;
-    margin: 1px 2px 2px 2px;
-}
-
-h1 {
-    margin-left: 1rem;
-}
-
-h2 {
-    margin-left: 1rem;
-}
-
-h4 {
-    color: #282828;
-}
-
-h5 {
-    color: #282828;
-}
-
-h6 {
-    color: #282828;
-}
-
-.warning-container {
-    padding-top: 0.3rem;
-}
-
-.warning-notification {
-    height: 1.5rem;
-    margin-bottom: 0.3rem;
-    padding-left: 10px;
-    border: 2px solid #ecebeb;
-    border-radius: 12px;
-    background-color: rgba(70, 70, 70, 0.11);
-
-}
-
-.notifications-container {
-    /*height: 14.3rem;*/
-    overflow-y: scroll;
-    scrollbar-gutter: both-edges;
-    /*border-radius: 12px;*/
-}
-
-.warning-notification1 {
-    /*height: 2.5rem;*/
-    height: 2rem;
-    margin-bottom: 0.3rem;
-    padding-left: 10px;
-    border: 2px solid #ecebeb;
-    border-radius: 12px;
-    /*background-color: rgba(70, 70, 70, 0.11);*/
-    background-color: #00FF19;
-
-}
-
-.warning-notification2 {
-    height: 2rem;
-    margin-bottom: 0.3rem;
-    padding-left: 10px;
-    border: 2px solid #ecebeb;
-    border-radius: 12px;
-    background-color: rgb(255, 251, 0);
-
-}
-
-.warning-notification3 {
-    height: 2rem;
-    margin-bottom: 0.3rem;
-    padding-left: 10px;
-    /*border: 2px solid #ecebeb;*/
-    border: 2px solid #ecebeb;
-    border-radius: 12px;
-    /*background-color: rgb(246, 161, 34);*/
-    background-color: #ff6600;
-}
-
-.warning-text {
-    display: contents;
-}
-
-.white-text {
-    color: #FFFFFF;
-}
-
-.current-fuel-car {
-    width: 21rem;
-    /*max-width: 37vh;*/
-    max-width: 50rem;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 14px;
-}
-
-#my-chart {
-    margin-top: 15px;
-    /*margin-left: 5px;*/
-    /*margin-right: 5px;*/
-    max-width: 270px;
-    max-height: 150px;
-    position: center;
-    background-color: #ff0000;
-}
-
-#my-chart .canvas {
-    left: 0;
-    right: 0;
-    top: 100%;
-}
-
-
-
-#container {
-    /*width: 270px;*/
-    width: 22.8rem;
-    height: 9rem;
-    padding: 0;
-}
-#container2 {
-    /*width: 270px;*/
-    width: 22.8rem;
-    height: 9rem;
-    padding: 0;
-}
-
-#container-fuel2 {
-    /*width: 270px;*/
-    width: 22.8rem;
-    /*height: 8.4375rem;*/
-    height: 9rem;
-    padding: 0;
-}
-
-#container-fuel3 {
-    /*width: 270px;*/
-    width: 22.8rem;
-    height: 9rem;
-    padding: 0;
-}
-
-#service-form-container {
-    display: inline;
-
-}
-
-#shop-form-container {
-    display: inline-flex;
-}
-
-.form-container {
-    /*display: table-row;*/
-    display: block;
-    justify-content: space-between;
-}
-
-.form-column {
-    /*flex: 1;*/
-    display: inline-flex;
-    /*background-color: #a0bad5;*/
-}
-
-.form-column label,
-.form-column input {
-    display: block;
-    margin-bottom: 10px;
-}
-
-
-#window-long-car-card {
-    height: 12.9rem;
-    width: 48rem;
-    display: inline-flex;
-    padding:  8px 12px;
-}
-
-#window-long-car-add-card {
-    height: 12.9rem;
-    width: 48rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#window-full-height {
-    height: 100%;
-    width: 48rem;
-    display: grid;
-
-}
-
-.container-background-community {
-    background-color: #ecebeb;
-    /*background-color: transparent;*/
-    width: 76rem;
-    display: grid;
-    grid-template-columns: 25rem 25rem 25rem;
-    /*grid-template-columns: auto auto auto auto; ONE ROW OF CARDS */
-    border-radius: 8px;
-
-
-}
-
-#after-skipped-window-small {
-    /*margin-top: 31.6rem;*/
-    height: 10rem;
-}
-
-#window-wide {
-    height: 10rem;
-    width: 48rem;
-}
-
-#window-small-fuel2 {
-
-}
-
-#two-sectors {
-    width: 48rem;
-    height: 50rem;
-}
-
-#after-skipped-window {
-    margin-top: 31.6rem;
-}
-.section3 {
-    /*background-color: #3b4350;*/
-}
-
-#km-traveled {
-    color: #333333;
-    display: block;
-    font-size: 28px;
-    margin-top: 25px;
-    margin-left: 120px;
-}
-
-
-
-
-.dashboard-line1{
-
-    border-color: #f1f9ff;
-    margin-top: 1rem;
-    margin-right: 2rem;
-}
-
-.dashboard-line2 {
-    /*margin-top: 4.6rem;*/
-    margin-top: 1.6rem;
-    margin-right: 2rem;
-}
-
-.space-dashboard {
-    /*height: 6.25rem;*/
-    height: 38.426vh;
-
-}
-
-.space-dashboard {
-    height: 26rem;
-}
-
-.profile-small {
-    display: flex;
-    flex-direction: row;
-}
-
-.profile-image-corner {
-    background-color: #234465;
-    margin-right: 7px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-
-
-}
-
-.profile-img-small {
-    /*margin-right: 3px;*/
-    /*margin-left: 14px;*/
-    width: 50px;
-    height: 50px;
-    position: center;
-}
-
-.profile-name {
-    color: #ffffff;
-    text-decoration: none;
-    position: center;
-    margin-top: 4px;
-    margin-right: 4rem;
-    max-width: 20px;
-}
-
-.logout-dash {
-    margin-left: 5.875rem;
-}
-
-.top-space {
-    height: 198px;
-    width: 100%;
-}
-
-.car-window-sub {
-    /*background-color: #5E00FF;*/
-    margin-right: 0;
-    display: flex;
-    gap: 0.5rem;
-
-}
-
-
-.car-img-big {
-    justify-content: center;
-    padding: 4px;
-    align-items: center;
-    overflow: hidden;
-    display: contents;
-    /*display: flex;*/
-    max-width: 100%;
-    height: auto;
-}
-
-.car-img2 {
-    object-fit: cover;
-    object-position: center;
-    overflow-clip-margin: inherit;
-    overflow: clip;
-    margin: 5px;
-    padding: 5px;
-    /*height: 205px;*/
-    height: 170px;
-    width: 275px;
-    border-radius: 3px;
-    background-color: #ffffff;
-}
-
-.car-img-public {
-    object-fit: cover;
-    object-position: center;
-    overflow-clip-margin: inherit;
-    overflow: clip;
-    height: 205px;
-    width: 365px;
-    border-radius: 4px;
-    background-color: #f4f4f4;
-}
-
-.img2 {
-    object-fit: cover;
-    object-position: center;
-    overflow-clip-margin: inherit;
-    overflow: clip;
-    margin-top: 10px;
-    height: 90px;
-    width: 85px;
-    border-radius: 4px;
-    background-color: #ffffff;
-}
-
-.img3 {
-    object-fit: cover;
-    object-position: center;
-    overflow-clip-margin: inherit;
-    /*overflow: clip;*/
-    padding: 5px;
-    height: 70px;
-    width: 80px;
-    border-radius: 4px;
-    background-color: transparent;
-}
-
-.car-stats-card-garage {
-    background-color: #ffffff;
-    width: 28.8rem;
-    color: #030104;
-    border-radius: 4px;
-}
-
-.brand-model-container {
-    margin-top: 20px;
-    margin-left: 4px;
-    gap: 4px;
-}
-
-#brand-name-medium {
-    font-size: 24px;
-}
-
-#name-medium2 {
-    font-size: 20px;
-    min-width: 40px;
-}
-
-#preview-image {
-    display: none;
-    max-width: 100px;
-    max-height: 100px;
-}
-
-.image-preview {
-    margin-top: 20px;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#preview-image-little {
-    display: none;
-    max-width: 50px;
-    max-height: 50px;
-}
-
-
-.button {
-    align-items: center;
-    /*background-color: #3c1b86;*/
-    background-color: #5E00FF;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-    box-sizing: border-box;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    display: inline-flex;
-    font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    justify-content: center;
-    line-height: 1.25;
-    margin: 0;
-    min-height: 3rem;
-    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-    position: relative;
-    text-decoration: none;
-    transition: all 250ms;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: baseline;
-    width: auto;
-}
-
-.button:hover,
-.button:focus {
-    /*border-color: rgb(94, 0, 255);*/
-    background-color: #8053ee;
-    border-color: #792eff;
-    box-shadow: rgba(107, 74, 255, 0.13) 0 4px 12px;
-    color: rgb(255, 255, 255);
-}
-.button:hover {
-    transform: translateY(-1px);
-}
-
-/*.button:hover {*/
-/*    background-color: rgb(249, 250, 251);*/
-/*    color: #111827;*/
-/*}*/
-
-
-.button:focus-visible {
-    box-shadow: none;
-}
-
-.button:active {
-    /*background-color: rgb(161, 72, 234);*/
-    background-color: rgb(94, 0, 255);
-    border-color: rgba(255, 255, 255, 0.34);
-    box-shadow: rgb(255, 255, 255) 0 0 2px 3px inset;
-    color: rgba(0, 0, 0, 0.62);
-    transform: translateY(0);
-}
-
-.button-second {
-    appearance: button;
-    backface-visibility: hidden;
-    /*background-color: #405cf5;*/
-    background-color: #1d2033;
-    border-radius: 6px;
-    border-width: 0;
-    box-shadow: #405cf5 0 0 0 3px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
-    box-sizing: border-box;
-    color: #ffffff;
-    cursor: pointer;
-    font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
-    font-size: 12px;
-    height: 1.7rem;
-    line-height: 1;
-    margin: 12px 0 0;
-    float: right;
-    outline: none;
-    overflow: hidden;
-    padding: 0 10px;
-    position: relative;
-    text-align: center;
-    text-transform: none;
-    transform: translateZ(0);
-    transition: all .2s, box-shadow .08s ease-in;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    width: 7rem;
-}
-
-.button-second:disabled {
-    cursor: default;
-}
-
-.button-second:active {
-    background-color: #1d2033;
-    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 1px 1px 0, rgba(0, 0, 0, .1) 0 1px 1px 0, rgba(64, 92, 245, 0.64) 0 0 0 3px;
-}
-
-.button-third {
-    appearance: button;
-    backface-visibility: hidden;
-    /*background-color: #405cf5;*/
-    background-color: #1d2033;
-    border-radius: 6px;
-    border-width: 0;
-    box-shadow: #405cf5 0 0 0 3px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
-    box-sizing: border-box;
-    color: #ffffff;
-    cursor: pointer;
-    font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
-    font-size: 12px;
-    height: 1.4rem;
-    line-height: 1;
-    margin: 1px 0 0;
-    float: right;
-    outline: none;
-    overflow: hidden;
-    padding: 0 10px;
-    position: relative;
-    text-align: center;
-    text-transform: none;
-    transform: translateZ(0);
-    transition: all .2s, box-shadow .08s ease-in;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    width: 5.5rem;
-}
-
-.button-third:disabled {
-    cursor: default;
-}
-
-.button-third:active {
-    background-color: #1d2033;
-    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 1px 1px 0, rgba(0, 0, 0, .1) 0 1px 1px 0, rgba(64, 92, 245, 0.64) 0 0 0 3px;
-}
-
-.transparent-button {
-    /*background-color: blue;*/
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 93%;
-    position: absolute;
-}
-
-.delete-button {
-    margin-left: 90%;
-}
-
-
-
-
-
-/*Making the real secondary button*/
-
-.button-secondary {
-    align-items: center;
-    /*background-color: #3c1b86;*/
-    background-color: rgba(94, 0, 255, 0);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-    box-sizing: border-box;
-    color: rgb(58, 58, 58);
-    cursor: pointer;
-    display: inline-flex;
-    font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    justify-content: center;
-    line-height: 1.25;
-    margin: 0;
-    min-height: 3rem;
-    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-    position: relative;
-    text-decoration: none;
-    transition: all 250ms;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: baseline;
-    width: auto;
-}
-
-.button-secondary:hover,
-.button-secondary:focus {
-    /*border-color: rgb(94, 0, 255);*/
-    border-color: #5E00FF;
-    box-shadow: rgba(47, 0, 255, 0.13) 0 4px 12px;
-    color: rgb(58, 58, 58);
-}
-.button-secondary:hover {
-    transform: translateY(-1px);
-}
-
-/*.button:hover {*/
-/*    background-color: rgb(249, 250, 251);*/
-/*    color: #111827;*/
-/*}*/
-
-
-.button-secondary:focus-visible {
-    box-shadow: none;
-}
-
-.button-secondary:active {
-    /*background-color: rgb(161, 72, 234);*/
-    background-color: rgba(94, 0, 255, 0.4);
-    border-color: rgba(255, 255, 255, 0.34);
-    box-shadow: rgb(255, 255, 255) 0 0 2px 3px inset;
-    color: rgba(0, 0, 0, 0.62);
-    transform: translateY(0);
-}
-
-/*TOGGLE BUTTON*/
-
-.toggle-button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-.add-part-button {
-    font-size: 14px;
-    color: deeppink;
-    background-color: transparent;
-    border: none;
-    border-radius: 5px;
-    margin-left: 15px;
-    margin-right: 41.8rem;
-    padding: 4px 10px;
-    cursor: pointer;
-    display: inline-block;
-}
-
-#show-car-service-fields {
-    width: 10rem;
-}
-
-#show-repair-shop-fields {
-    width: 10rem;
-}
-
-#parts-container{
-
-    /*background-color: #234465;*/
-
-}
-
-
-/* Style for the content to be hidden/shown */
-.content {
-    display: none;
-}
-
-/* Style to show content when toggled */
-.content.show {
-    display: block;
 }
