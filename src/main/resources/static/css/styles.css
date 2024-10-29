@@ -1767,29 +1767,152 @@
         margin-top: 0;
         width: 30px;
         height: 20px;
+        gap: 20px;
+
     }
 
-    .section2 {
+    #window-small {
+        margin-left: 18px;
+        width: 376px;
+        height: 200px;
+        border-radius: 10px;
+        background-color: #ffffff;
+    }
+
+    .section1, .section2, .section3, .section4 {
+        display: none;
+    }
+
+    .label-container {
+        display: flex;
+        position: fixed;
+        background-color: #f1f1f1;
+        /*width: 400px;*/
+        width: 100vw;
+        padding: 6px 12px;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1;
+    }
+
+    .label-container h2 {
+        display: flex;
+        font-size: 18px;
+        font-family: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
+    }
+
+    .label-container > svg {
+        display: flex;
+        height: 30px;
+        margin-right: 32px;
+        fill: #007bff;
+    }
+
+    .top-corner-icons-container {
+        /*display: flex;*/
+        display: none;
+        flex-direction: row;
+        justify-content: space-evenly;
+        background-color: #ff6ce8;
+        width: 30px;
+        height: 40px;
+        margin-right: 30px;
+    }
+
+    .section1 {
+        margin-top: 35px;
+    }
+
+    .section1, .section2, .section3 {
         display: flex;
         flex-direction: column;
+        gap: 20px;
+    }
+
+    .group-window-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .window-long-car-card {
         display: flex;
-        background-color: #bb4646;
-        width: 15px;
+        position: relative;
+        /*background-color: #bb4646;*/
+        background-color: #ffffff;
+        width: 376px;
+        height: 200px;
+        margin-left: 18px;
+        border-radius: 10px;
+    }
+
+    .car-window-sub {
+        /*background-color: #5E00FF;*/
+        /*background-color: #ffffff;*/
+        margin-right: 0;
+        display: flex;
+        gap: 0.5rem;
+        width: 376px;
+        padding: 10px;
+
+    }
+
+    .car-img-big {
+        justify-content: center;
+        padding: 4px;
+        align-items: center;
+        overflow: hidden;
+        display: contents;
+        /*display: flex;*/
+        max-width: 60px;
+        height: auto;
+    }
+
+    .car-img2, .car-img-public {
+        object-fit: cover;
+        object-position: center;
+        overflow-clip-margin: inherit;
+        overflow: clip;
+        margin: 0;
+        padding: 0;
+        /*height: 205px;*/
+        height: 180px;
+        width: 160px;
+        border-radius: 6px;
+        background-color: #ffffff;
+    }
+
+
+    .car-stats-card-garage {
+        /*background-color: #ff6ce8;*/
+        background-color: #ffffff;
+        width: 190px;
+    }
+
+    .transparent-button {
+        /*background-color: rgba(0, 102, 255, 0.53);*/
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+
+        /*height: 100%;*/
+        /*width: 100%;*/
+        position: absolute;
     }
 
     .window-small {
         width: 20px;
         max-width: 20px;
-        height: 30px;
+        height: 200px;
         padding: 0;
 
     }
 
     .window {
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        /*box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;*/
     }
 
 
@@ -1859,7 +1982,7 @@
         width: 45px;
         height: 45px;
         font-size: 8px;
-        color: #1d2033;
+        /*color: #1d2033;*/
 
         align-items: center;
         justify-content: center;
@@ -1870,7 +1993,8 @@
     a > svg {
         display: flex;
         height: 25px;
-        fill: #0e2ba6;
+        /*fill: #0e2ba6;*/
+        fill: #007bff;
     }
 
     .garage {
@@ -1882,7 +2006,9 @@
 
     }
 
-
+    .empty-window {
+        display: none;
+    }
 
     .profile-small {
         display: none;
@@ -1912,9 +2038,10 @@
         display: none;
     }
 
-
-
-    .section1, .section2, .section3, .section4 {
+    .fuel-price {
         display: none;
     }
+
+
+
 }
