@@ -26,7 +26,7 @@ public class RefuelEntity extends BaseEntity{
     @ManyToOne
     private CarEntity car;
 
-    @ManyToOne
+    @ManyToOne(cascade = {})
     @JoinColumn(name = "user_id")
     private UserEntity user;
 

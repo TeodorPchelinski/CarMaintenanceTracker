@@ -1,327 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head th:replace="~{fragments/head}">
-  <title>My Garage</title>
+    <title>My Garage</title>
 </head>
 <body>
 
 
-  <div th:replace="~{fragments/navbar}"></div>
+<div th:replace="~{fragments/navbar}"></div>
+
+<div class="dropdown-create">
+    <a th:href="@{/cars/add}">Add car</a>
+    <a th:href="@{/maintenance}">Add repair</a>
+    <a th:href="@{/fuel-tracker}">Add refuel</a>
+</div>
+
 
 <div class="current-page">
 
     <div class="label-container">
-        <h2 class="label">Welcome back, <br>  <th:block th:text="${username}">Teodor Pchelinski</th:block> </h2>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
+        <h2 class="label">Welcome back, <br>
+            <th:block th:text="${username}">Teodor Pchelinski</th:block>
+        </h2>
+        <button class="icon-button" onclick="myFunction()" data-toggle="dropdown-create">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/>
+            </svg>
+        </button>
 
-        <div class="top-corner-icons-container">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
+        <script>
+            document.querySelector(".icon-button").addEventListener("click", function () {
+                let dropdownContent = document.querySelector(".dropdown-create");
+                dropdownContent.display = dropdownContent.style.display === "flex" ? "none" : "flex";
+            })
+        </script>
 
-        </div>
     </div>
 
 
-<!--    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!&ndash;!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.&ndash;&gt;<path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM288 96a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM256 416c35.3 0 64-28.7 64-64c0-17.4-6.9-33.1-18.1-44.6L366 161.7c5.3-12.1-.2-26.3-12.3-31.6s-26.3 .2-31.6 12.3L257.9 288c-.6 0-1.3 0-1.9 0c-35.3 0-64 28.7-64 64s28.7 64 64 64zM176 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM96 288a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm352-32a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>-->
-
-
+    <!--    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!&ndash;!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.&ndash;&gt;<path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM288 96a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM256 416c35.3 0 64-28.7 64-64c0-17.4-6.9-33.1-18.1-44.6L366 161.7c5.3-12.1-.2-26.3-12.3-31.6s-26.3 .2-31.6 12.3L257.9 288c-.6 0-1.3 0-1.9 0c-35.3 0-64 28.7-64 64s28.7 64 64 64zM176 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM96 288a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm352-32a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>-->
     <!--    Transmission:-->
-<!--    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!&ndash;!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.&ndash;&gt;<path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24l0 112c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-112c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>-->
+    <!--    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!&ndash;!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.&ndash;&gt;<path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24l0 112c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-112c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>-->
 
-  <div class="section1">
+    <div class="section1">
 
-    <div class="empty-window window" id="window-small">
-      <div>
-        <!--            <label class="window-label">Fuel prices</label>-->
-      </div>
+
     </div>
 
-    <div class="empty-window window" id="window-small">
-    </div>
-
-  </div>
-
-  <div class="section2">
-    <div class="fuel-price window" id="window-small">
-      <label class="window-label">Fuel Price</label>
-      <div id="container"></div>
-      <script>
-
-        // anychart.onDocumentReady(function () {
-        // create data set on our data
-        var dataSet = anychart.data.set(getData());
-
-        // map data for the first series, take x from the zero column and value from the first column of data set
-        var firstSeriesData = dataSet.mapAs({ x: 0, value: 1 });
-
-        // map data for the second series, take x from the zero column and value from the second column of data set
-        var secondSeriesData = dataSet.mapAs({ x: 0, value: 2 });
-
-        // create line chart
-        var chart = anychart.line();
-
-        // adding dollar symbols to yAxis labels
-        chart.yAxis().labels().format('${%Value}');
-
-        // turn on chart animation
-        chart.animation(true);
-        chart.xAxis(true);
-        chart.yAxis(false);
-
-        // turn on the crosshair
-        // chart
-        //     .crosshair()
-        //     .enabled(true)
-        //     .yLabel({ enabled: false })
-        //     .yStroke(null)
-        //     .xStroke('#cecece')
-        //     .zIndex(99);
-
-        // chart
-        //     .yAxis()
-        //     .title('The Share Price')
-        //     .labels({ padding: [5, 5, 0, 5] });
-
-        // chart.xAxis().title('Month/Day');
-
-        // set chart title text settings
-
-        // create first series with mapped data
-        var firstSeries = chart.spline(firstSeriesData);
-        // firstSeries.name('ACME Share Price');
-        firstSeries.markers().zIndex(100);
-        firstSeries.hovered().markers().enabled(true).type('circle').size(4);
-
-
-        // create second series with mapped data
-        var secondSeries = chart.spline(secondSeriesData);
-        // secondSeries.name('The Competitor\'s Share Price');
-        secondSeries.markers().zIndex(100);
-        secondSeries.color('#3c1b85')
-        secondSeries.hovered().markers().enabled(true).type('circle').size(4);
-
-        // turn the legend on
-        // chart.legend().enabled(true).fontSize(13).padding([0, 0, 20, 0]);
-
-        // set container id for the chart
-        chart.container('container');
-
-        // initiate chart drawing
-        chart.draw();
-        // });
-
-        function getData() {
-          return [
-            ['Jan', , 2.65],
-            ['Feb', , 2.62],
-            ['Mar', , 2.59],
-            ['Apr', , 2.56],
-            ['May', , 2.57],
-            ['Jun', , 2.55],
-            ['Jul', , 2.56],
-            ['Aug', , 2.66],
-            ['Sep', , 2.79],
-            ['Oct', , 2.87],
-            ['Nov', , 2.81],
-            ['Dec', , 2.75]
-          ];
-        }
-
-      </script>
-    </div>
-
-<!--          //Hand Written Car Card-->
-<!--    <div class="window" id="window-long-car-card">-->
-
-<!--      <div class="car-window-sub">-->
-<!--        <div class="car-img-big">-->
-<!--          <img class="car-img2" th:src="@{/images/audi-a6.jpg}">-->
-<!--        </div>-->
-
-
-
-<!--&lt;!&ndash;        STATS MAIN CONTAINER&ndash;&gt;-->
-<!--        <div class="car-stats-card-garage">-->
-
-<!--          <div class="brand-model-container">-->
-<!--            <span id="brand-name-medium" class="stat-cars-garage">Audi</span>-->
-<!--&lt;!&ndash;                    th:text="${car.brand} ?: 'Audi'"&ndash;&gt;-->
-
-<!--              <span id="brand-name-medium" class="stat-cars-garage">A6</span>-->
-
-<!--              <span id="name-medium2" class="stat-cars-garage">2.0L</span>-->
-
-<!--          </div>-->
-
-
-
-
-
-
-
-
-<!--          <span>2017</span>-->
-<!--          <span>Fuel</span>-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--    </div>-->
-
-
-    <div class="window-long-car-card window"
-         th:each="cars : ${cars.getContent()}"
-         th:object="${cars}">
-
-        <form th:action="@{/cars/details/{id}(id=${cars.id})}" th:method="get">
-            <button type="submit" class="transparent-button" id="overlay-button"></button>
-        </form>
-
-
-      <div class="car-window-sub">
-
-        <div class="car-img-big">
-                <img th:if="${cars.image != null}" class="car-img2" th:src="@{${cars.image}}">
-
-            <div class="car-img-big">
-                <img th:if="${cars.image == null}"  th:src="@{/images/defaultcar.jpg}">
-
-            </div>
+    <div class="section2">
+        <div class="fuel-price window" id="window-small">
+            <label class="window-label">Fuel Price</label>
+            <div id="container"></div>
+            <script src="../static/chart.js"></script>
         </div>
 
+        <div class="window-long-car-card window"
+             th:each="cars : ${cars.getContent()}"
+             th:object="${cars}">
 
-
-        <!--        STATS MAIN CONTAINER-->
-        <div class="car-stats-card-garage">
-
-          <div class="brand-model-container">
-
-              <span id="brand-name-medium" class="stat-cars-garage" th:text="${cars.brand()}">A6</span>
-
-              <span id="brand-name-medium" class="stat-cars-garage" th:text="${cars.model}">Audi</span>
-
-              <span id="name-medium2" class="stat-cars-garage" th:text="${cars.engineDisplacement}">2.0L</span>
-
-<!--              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!&ndash;!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.&ndash;&gt;<path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM288 96a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM256 416c35.3 0 64-28.7 64-64c0-17.4-6.9-33.1-18.1-44.6L366 161.7c5.3-12.1-.2-26.3-12.3-31.6s-26.3 .2-31.6 12.3L257.9 288c-.6 0-1.3 0-1.9 0c-35.3 0-64 28.7-64 64s28.7 64 64 64zM176 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM96 288a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm352-32a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>-->
-
-
-
-
-
-
-          </div>
-
-            <span id="name-medium2" class="stat-cars-garage" th:text="${cars.year}">2017</span>
-
-            <span id="name-medium2" class="stat-cars-garage" th:text="${cars.fuelEnum}">2.0L</span>
-
-            <form th:action="@{/cars/{id}(id=${cars.id})}" method="post" th:object="${cars}">
-                <input type="hidden" name="delete_method" value="delete">
-                <button type="submit" class="delete-button" >Delete</button>
-
+            <form th:action="@{/cars/details/{id}(id=${cars.id})}" th:method="get">
+                <button type="submit" class="transparent-button" id="overlay-button"></button>
             </form>
 
+
+            <div class="car-window-sub">
+                <div class="car-img-big">
+                    <img th:if="${cars.image != null}" class="car-img2" th:src="@{${cars.image}}">
+                    <div class="car-img-big">
+                        <img th:if="${cars.image == null}" th:src="@{/images/defaultcar.jpg}">
+                    </div>
+                </div>
+                <!--        STATS MAIN CONTAINER-->
+                <div class="car-stats-card-garage">
+                    <div class="brand-model-container">
+                        <span id="brand-name-medium" class="stat-cars-garage" th:text="${cars.brand()}">A6</span>
+                        <span id="brand-name-medium" class="stat-cars-garage" th:text="${cars.model}">Audi</span>
+                        <!--              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!&ndash;!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.&ndash;&gt;<path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM288 96a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM256 416c35.3 0 64-28.7 64-64c0-17.4-6.9-33.1-18.1-44.6L366 161.7c5.3-12.1-.2-26.3-12.3-31.6s-26.3 .2-31.6 12.3L257.9 288c-.6 0-1.3 0-1.9 0c-35.3 0-64 28.7-64 64s28.7 64 64 64zM176 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM96 288a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm352-32a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>-->
+                    </div>
+                    <div class="engine-stat-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M128 0c17.7 0 32 14.3 32 32l0 32 128 0 0-32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 32 48 0c26.5 0 48 21.5 48 48l0 48L0 160l0-48C0 85.5 21.5 64 48 64l48 0 0-32c0-17.7 14.3-32 32-32zM0 192l448 0 0 272c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 192zm64 80l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm128 0l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM64 400l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zm112 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16z"/></svg>
+                        <span id="name-medium2" class="stat-cars-garage" th:text="${cars.year}">2017</span>
+                    </div>
+                    <div class="engine-stat-container">
+<!--                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!&ndash;!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.&ndash;&gt;<path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM288 96a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM256 416c35.3 0 64-28.7 64-64c0-17.4-6.9-33.1-18.1-44.6L366 161.7c5.3-12.1-.2-26.3-12.3-31.6s-26.3 .2-31.6 12.3L257.9 288c-.6 0-1.3 0-1.9 0c-35.3 0-64 28.7-64 64s28.7 64 64 64zM176 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM96 288a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm352-32a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>-->
+                        <?xml version="1.0" encoding="iso-8859-1"?>
+                        <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                        <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                             width="12px" height="12px" viewBox="0 0 89.938 89.938"
+                             xml:space="preserve">
+<g>
+	<g>
+		<path d="M88.461,37.406h-1.969c-0.814,0-1.479,0.663-1.479,1.477v25.655c0,0.814,0.662,1.479,1.479,1.479h1.969
+			c0.813,0,1.477-0.664,1.477-1.479V38.882C89.938,38.069,89.275,37.406,88.461,37.406z"/>
+        <path d="M1.477,36.157C0.664,36.157,0,36.819,0,37.634v28.164c0,0.813,0.663,1.478,1.477,1.478h4.015
+			c0.814,0,1.477-0.663,1.477-1.478V37.642c0-0.813-0.662-1.477-1.477-1.477H1.477V36.157z"/>
+        <path d="M57.617,71.781c3.294-1.278,6.568-2.595,9.855-3.872c0.293-0.113,0.634-0.152,0.947-0.16
+			c2.432-0.01,4.864-0.01,7.288-0.01c2.519,0,4.138-1.62,4.138-4.166v-8.331c0-0.597,0.481-1.069,1.069-1.069l1.05-0.027
+			c0.834,0,0.883-0.323,0.909-0.9l0.021-4.837c0-0.481-0.389-0.871-0.872-0.871h-1.126c-0.598,0-1.079-0.483-1.079-1.08
+			l0.036-10.101c0.029-1.496-0.576-2.527-1.723-3.352c-1.969-1.42-7.771-5.538-8.719-6.144c-0.652-0.427-1.363-0.597-2.158-0.587
+			l-10.007-0.01c-0.853,0-1.543-0.691-1.543-1.543v-0.312c0-0.861,0.7-1.562,1.562-1.562h9.07c0.86,0,1.562-0.7,1.562-1.562v-1.809
+			c0-0.861-0.701-1.562-1.562-1.562H36.222c-0.862,0-1.562,0.7-1.562,1.562v1.809c0,0.861,0.7,1.562,1.562,1.562h9.816
+			c0.862,0,1.563,0.701,1.563,1.562v0.36c0,0.852-0.691,1.552-1.555,1.542l-9.911-0.037c-1.895-0.057-3.446,0.587-4.886,1.628
+			c-2.102,1.524-4.165,3.096-6.229,4.668c-0.521,0.397-1.174,0.615-1.827,0.605c-1.987-0.02-3.976-0.02-5.964,0
+			c-2.471,0.019-4.07,1.609-4.09,4.09l0.028,6.901c0,0.586-0.474,1.069-1.07,1.069h-0.927c-1.127,0-2.036,0.909-2.036,2.036v10.935
+			c0,1.126,0.909,2.034,2.036,2.034h0.899c0.587,0,1.069,0.475,1.069,1.07c0,1.57-0.01,4.496,0,6.189
+			c0,1.573-0.028,4.526,2.85,4.526h40.37C56.784,72.027,57.229,71.942,57.617,71.781z"/>
+	</g>
+</g>
+</svg>
+                        <span id="name-medium2" class="stat-cars-garage"
+                              th:text="${cars.engineDisplacement}">2.0L</span>
+                    </div>
+                    <div class="engine-stat-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M32 64C32 28.7 60.7 0 96 0L256 0c35.3 0 64 28.7 64 64l0 192 8 0c48.6 0 88 39.4 88 88l0 32c0 13.3 10.7 24 24 24s24-10.7 24-24l0-154c-27.6-7.1-48-32.2-48-62l0-64L384 64c-8.8-8.8-8.8-23.2 0-32s23.2-8.8 32 0l77.3 77.3c12 12 18.7 28.3 18.7 45.3l0 13.5 0 24 0 32 0 152c0 39.8-32.2 72-72 72s-72-32.2-72-72l0-32c0-22.1-17.9-40-40-40l-8 0 0 144c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 512c-17.7 0-32-14.3-32-32s14.3-32 32-32L32 64zM96 80l0 96c0 8.8 7.2 16 16 16l128 0c8.8 0 16-7.2 16-16l0-96c0-8.8-7.2-16-16-16L112 64c-8.8 0-16 7.2-16 16z"/></svg>
+                        <span id="name-medium2" class="stat-cars-garage" th:text="${cars.fuelEnum}"></span>
+                    </div>
+                    <form th:action="@{/cars/{id}(id=${cars.id})}" method="post" th:object="${cars}">
+                        <input type="hidden" name="delete_method" value="delete">
+                        <button type="submit" class="delete-button">Delete</button>
+
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div class="window-long-car-add-card">
+            <form th:action="@{/cars/add}" th:method="get">
+                <button type="submit" class="button-secondary" id="add-car-button">Add Car</button>
+            </form>
+            <!--      Only shown when there is no cars in garage-->
+            <!--      One time adding a car this container will vanish and a new small button will appear-->
+
+        </div>
+
+
+
 
     </div>
 
-<!--          CAR CARD Simple only image-->
-<!--    <div class="window" id="window-long-car-card">-->
-<!--      <div class="car-img-big">-->
-<!--        <img th:src="@{/images/audi-a6.jpg}">-->
-<!--      </div>-->
-<!--    </div>-->
-
-
-    <div class="window" id="window-long-car-add-card">
-      <form th:action="@{/cars/add}" th:method="get">
-        <button type="submit" class="button-secondary" id="add-car-button">Add Car</button>
-      </form>
-<!--      Only shown when there is no cars in garage-->
-<!--      One time adding a car this container will vanish and a new small button will appear-->
-
-    </div>
-
-
-    <div class="group-window-container" id="group-windows-container">
+    <div class="section3">
         <div class="window" id="window-small">
-          <label class="window-label"></label>
+            <label class="window-label">Kilometers traveled</label>
+            <label id="km-traveled">14025</label>
         </div>
 
-      <div class="window" id="window-small">
-        <div>
-          <label class="window-label"></label>
+        <!--         Previous Last Row window -->
+        <!--    <div class="window" id="after-skipped-window-small">-->
+        <!--      <div>-->
+        <!--        <label class="window-label">Kilometers traveled</label>-->
+        <!--      </div>-->
+        <!--    </div>-->
+    </div>
+
+    <div class="section4">
+        <div class="window" id="window-small">
         </div>
-      </div>
-    </div>
 
+        <div class="window">
+            <label class="window-label">Notifications:</label>
 
-  </div>
-
-  <div class="section3">
-    <div class="window" id="window-small">
-      <label class="window-label">Kilometers traveled</label>
-      <label id="km-traveled">14025</label>
-    </div>
-
-<!--         Previous Last Row window -->
-<!--    <div class="window" id="after-skipped-window-small">-->
-<!--      <div>-->
-<!--        <label class="window-label">Kilometers traveled</label>-->
-<!--      </div>-->
-<!--    </div>-->
-  </div>
-
-  <div class="section4">
-    <div class="window" id="window-small">
-    </div>
-
-    <div class="window">
-        <label class="window-label">Notifications:</label>
-
-        <div class="notifications-container">
-            <div class="warning-notification1">
-                <h5 class="warning-text">Engine Oil</h5>
-            </div>
-            <div class="warning-notification1">
-                <h5 class="warning-text">Brakes System Check</h5>
-            </div>
-            <div class="warning-notification1">
-                <h5 class="warning-text">Piston belt</h5>
-            </div>
-            <div class="warning-notification1">
-                <h5 class="warning-text">Motor belt</h5>
-            </div>
-            <div class="warning-notification1">
-                <h5 class="warning-text">Air Filter after mileage</h5>
-            </div>
-            <div class="warning-notification1">
-                <h5 class="warning-text">Tomorrow will be 0°C. Change wiper fluid</h5>
+            <div class="notifications-container">
+                <div class="warning-notification1">
+                    <h5 class="warning-text">Engine Oil</h5>
+                </div>
+                <div class="warning-notification1">
+                    <h5 class="warning-text">Brakes System Check</h5>
+                </div>
+                <div class="warning-notification1">
+                    <h5 class="warning-text">Piston belt</h5>
+                </div>
+                <div class="warning-notification1">
+                    <h5 class="warning-text">Motor belt</h5>
+                </div>
+                <div class="warning-notification1">
+                    <h5 class="warning-text">Air Filter after mileage</h5>
+                </div>
+                <div class="warning-notification1">
+                    <h5 class="warning-text">Tomorrow will be 0°C. Change wiper fluid</h5>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="window" id="window-small">
-        <label class="window-label">Warnings:</label>
+        <div class="window" id="window-small">
+            <label class="window-label">Warnings:</label>
 
 
-        <!--      Icons for warning urgency and colors like red, orange, yellow, blue-->
-        <div class="warning-container">
-            <div class="warning-notification">
-                <h5 class="warning-text">No vignette</h5>
-            </div>
+            <!--      Icons for warning urgency and colors like red, orange, yellow, blue-->
+            <div class="warning-container">
+                <div class="warning-notification">
+                    <h5 class="warning-text">No vignette</h5>
+                </div>
 
-            <div class="warning-notification">
-                <h5 class="warning-text">Annual technical inspection expires in 3 days</h5>
-            </div>
+                <div class="warning-notification">
+                    <h5 class="warning-text">Annual technical inspection expires in 3 days</h5>
+                </div>
 
-            <div class="warning-notification">
-                <h5 class="warning-text">Tires need a change (by DOT or by season)</h5>
+                <div class="warning-notification">
+                    <h5 class="warning-text">Tires need a change (by DOT or by season)</h5>
+                </div>
             </div>
         </div>
+        <div class="window" id="window-small">
+        </div>
     </div>
-    <div class="window" id="window-small">
-    </div>
-  </div>
 </div>
 
 

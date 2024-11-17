@@ -13,14 +13,14 @@
 
 
 
-
+<!--  <div class="label-container">-->
+<!--    <h2 class="label blue-text">Maintenance <br> and Repairs</h2>-->
+<!--  </div>-->
 
 
   <!--  First Column-->
   <div class="section1">
-    <div class="label-container">
-      <h2 class="label blue-text">Maintenance <br> and Repairs</h2>
-    </div>
+
     <div class="window">
       <div>
         <label class="window-label">Current Car</label>
@@ -220,7 +220,7 @@
           </div>
 
           <div class="field-small" id="part-price-field">
-            <input type=number id="part-price" name="partPrice1" placeholder="">
+            <input type=number step="0.01" id="part-price" name="partPrice1" placeholder="">
             <label for="part-name" class="field-small-label">price</label>
           </div>
 
@@ -249,7 +249,7 @@
             </div>
 
             <div class="field-small" id="part-price-field">
-              <input type=number id="part-name" name="partPrice2" placeholder="">
+              <input type=number step="0.01" id="part-name" name="partPrice2" placeholder="">
               <label for="part-name" class="field-small-label">price</label>
             </div>
 
@@ -278,7 +278,7 @@
             </div>
 
             <div class="field-small" id="part-price-field">
-              <input type=number id="part-name" name="partPrice3" placeholder="">
+              <input type=number step="0.01" id="part-name" name="partPrice3" placeholder="">
               <label for="part-name" class="field-small-label">price</label>
             </div>
 
@@ -307,7 +307,7 @@
             </div>
 
             <div class="field-small" id="part-price-field">
-              <input type=number id="part-name" name="partPrice4" placeholder="">
+              <input type=number step="0.01" id="part-name" name="partPrice4" placeholder="">
               <label for="part-name" class="field-small-label">price</label>
             </div>
 
@@ -350,7 +350,41 @@
             <label for="part-name" class="field-label">Location (map)</label>
           </div>
 
+          <div id="map"></div>
 
+          <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+          <script>
+
+            var map = L.map('map').setView([42.7000, 23.3199], 11); // Set initial position and zoom level
+
+            // Add OpenStreetMap tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+
+            // Add a marker
+            // L.marker([42.7164, 23.3462 ]).addTo(map)
+            //         .bindPopup('CarMaintenance <br> office')
+            //         .openPopup();
+
+            var singleMarker;
+
+            map.on('click', function(e) {
+              var latitude = e.latlng.lat;
+              var longitude = e.latlng.lng;
+
+              if (singleMarker) {
+                map.removeLayer(singleMarker);
+              }
+
+              singleMarker = L.marker([latitude, longitude]).addTo(map)
+                      .bindPopup('Marker added at: ' + latitude.toFixed(5) + ', ' + longitude.toFixed(5))
+                      .openPopup();
+
+              singleMarker.color('green');
+            });
+          </script>
 
 
 
@@ -432,10 +466,10 @@
 
 <!--  Third Column-->
   <div class="section3">
-    <div class="window" id="window-small">
-        <label class="window-label">Mileage Since Last Repair</label>
-        <label id="km-traveled">4025km</label>
-    </div>
+<!--    <div class="window" id="window-small">-->
+<!--        <label class="window-label">Mileage Since Last Repair</label>-->
+<!--        <label id="km-traveled">4025km</label>-->
+<!--    </div>-->
   </div>
 
 

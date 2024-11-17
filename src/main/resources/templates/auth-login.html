@@ -7,25 +7,29 @@
 </head>
 <body>
 
-<div class="container" id="register-container">
-    <div class="window" id="register-window">
+<div class="register-container container" id="register-container">
+    <div class="register-window window" id="register-window">
 
-            <label class="window-label">Login</label>
+            <label class="login-label ">Car Maintenance</label>
 
-            <form id="login-form" th:action="@{/users/login}"
+            <form class="login-form" th:action="@{/users/login}"
                       th:method="post">
             <div class="field">
-                <input  type=email id="login-email" name="email" value="teodor.p4elinski@gmail.com" placeholder="">
                 <label  for="login-email" class="field-label">Email</label>
+                <input  type=email id="login-email" name="email" value="teodor.p4elinski@gmail.com" placeholder="">
+
             </div>
             <div class="field" id="field-bigger">
-                <input  type=password id="login-password" name="password" value="12345" placeholder="">
                 <label  for="login-password" class="field-label">Password</label>
+                <input  type=password id="login-password" name="password" value="12345" placeholder="">
             </div>
 
             <button class="button" name="login" id="login-button">Login</button>
 
+
+
             </form>
+        <p>Don't have an account? &nbsp; <a th:href="@{/users/register}"  > Sign in</a></p>
 
     </div>
 </div>

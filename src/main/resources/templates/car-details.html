@@ -18,6 +18,7 @@
         <div class="window-car-image">
             <div class="car-img-big">
                 <img class="car-img-details" th:src="@{/images/ssangyong-korando-grand-white.png}">
+<!--                <img th:if="${cars.image != null}" class="car-img-details" th:src="@{${cars.image}}">-->
             </div>
         </div>
 
@@ -50,7 +51,7 @@
         <hr class="vertical-line">
 
         <div class="car-stats">
-
+            <a th:href="@{/expenses}">Repairs</a>
         </div>
 
         <hr class="vertical-line">

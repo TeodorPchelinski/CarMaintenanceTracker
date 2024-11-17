@@ -9,7 +9,6 @@ import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
-import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -47,10 +46,11 @@ public class FuelChargesController {
     }
 
     @PostMapping("/fuel-tracker")
-    public String addFuel(@Valid @ModelAttribute("createRefuelDTO") CreateRefuelDTO createRefuelDTO) {
+    public String addFuel(@Valid @ModelAttribute("createRefuelDTO") CreateRefuelDTO createRefuelDTO,
+                          @AuthenticationPrincipal UserDetails creator) {
 
         System.out.println(createRefuelDTO);
-        refuelService.createRefuel(createRefuelDTO);
+        refuelService.createRefuel(createRefuelDTO, creator);
 
         return "redirect:/fuel-tracker";
     }

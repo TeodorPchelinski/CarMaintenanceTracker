@@ -139,7 +139,7 @@
 
 
 
-                <select id="car-id" name="carId">
+                <select class="car-id" name="carId">
                     <!--              <img class="car-img2" id="car-img-tiny" th:src="@{${cars.image}}" >-->
                     <option th:each="cars : ${cars.getContent()}"
                             th:object="${cars}"
@@ -166,12 +166,12 @@
                 </div>
 
                 <div class="field" id="field-bigger">
-                    <input type=number id="liters" name="litres" placeholder="">
+                    <input type=number step="0.01" id="liters" name="litres" placeholder="">
                     <label for="liters" class="field-label">Liters</label>
                 </div>
 
                 <div class="field" id="field-bigger">
-                    <input type=number id="price" name="price" placeholder="">
+                    <input type=number step="0.01" id="price" name="price" placeholder="">
                     <label for="price" class="field-label">Price</label>
                 </div>
 

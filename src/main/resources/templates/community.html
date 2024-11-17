@@ -9,9 +9,6 @@
 
 
 <div class="current-page">
-
-
-    <div class="section1">
         <div class="label-container">
             <h1 class="label">Share and Compare</h1>
         </div>
@@ -29,8 +26,8 @@
         <!--    <div class="window" id="window-small">-->
         <!--    </div>-->
 
-    </div>
-    <div class="section2">
+
+    <div class="center-section-community">
 
         <div class="label-container">
             <!--      <h5 class="label">Search</h5>-->
@@ -41,10 +38,12 @@
         </div>
 
 
-        <div class="container-background-community">
-            <!--      Have to put all cards in one div this above in grid-->
 
-            <div class="window" th:each="cars : ${allCars.getContent()}"
+<!--            COMMUNITY-->
+
+
+
+            <div class="window-long-car-card" th:each="cars : ${allCars.getContent()}"
                  th:object="${cars}">
 
                 <div class="car-img-big">
@@ -68,17 +67,13 @@
                 </div>
 
             </div>
-            <!--      END OF SECOND COLUMN-->
 
         </div>
 
 
     </div>
 
-    <div class="section3">
 
-
-    </div>
 
 </body>
 </html>
