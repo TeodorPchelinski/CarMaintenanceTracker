@@ -17,6 +17,8 @@
             <h2 >Track Your Car's <br> Maintenance Easily. </h2>
         </div>
 
+
+
         <div  sec:authorize="isAuthenticated()">
             <a class="profile-name" th:href="@{account}">
                 <!--                <h2 th:text="${user.name}"></h2>-->
@@ -136,6 +138,40 @@
             }
 
         </script>
+    </div>
+
+    <div class="window" id="window-small">
+        <label class="window-label">Maintenance costs</label>
+        <div id="container2"></div>
+        <script>
+            // create data
+            var data = [
+                ["Jan", 200],
+                ["Feb", 300],
+                ["Mar", 130],
+                ["Apr", 100],
+                ["May", 170],
+                ["Jun", 90],
+                ["Jul", 190],
+                ["Aug", 190],
+                ["Sep", 190],
+                ["Oct", 190],
+                ["Nov", 190],
+                ["Dec", 190]
+            ];
+
+
+            chart = anychart.column();
+            chart.yAxis().labels().format('{%Value}лв');
+
+            var series = chart.column(data);
+
+            chart.animation(true);
+            series.color('#00AEFF');
+            chart.container("container2");
+            chart.draw();
+        </script>
+
     </div>
 
     <div class="window">

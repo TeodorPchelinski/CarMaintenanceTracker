@@ -2,6 +2,8 @@
 <html lang="en">
 <head th:insert="~{fragments/head}">
     <title>Car Details</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/GLTFLoader.js"></script>
 </head>
 <body>
 
@@ -9,16 +11,24 @@
 
 <div class="current-page-maintenance" id="maintenance-page">
 
+    <div class="background-color-element"></div>
+
 
     <div class="window-label-top-corner">
         <h2 class="label-car-details">Car Details</h2>
+        <h2 class="label-car-details-mobile">Toyota Aygo</h2>
+
     </div>
 
     <div class="top-part-container">
         <div class="window-car-image">
             <div class="car-img-big">
-                <img class="car-img-details" th:src="@{/images/ssangyong-korando-grand-white.png}">
-<!--                <img th:if="${cars.image != null}" class="car-img-details" th:src="@{${cars.image}}">-->
+                <!--                <img class="car-img-details" th:src="@{/images/ssangyong-korando-grand-white.png}">-->
+<!--                <img class="car-img-details" th:src="@{/images/ToyotaAygo.png}">-->
+                <img class="car-img-details" th:src="@{/images/users/teodor.p4elinski@gmail.com/cars/3.jpg}">
+                <!--                <img th:if="${cars.image == null}" class="car-img-details" th:src="@{/images/ssangyong-korando-grand-white.png}">-->
+                <!--                <img th:if="${cars.image != null}" class="car-img2" th:src="@{${cars.image}}">-->
+                <!--                <img th:if="${cars.image != null}" class="car-img-details" th:src="@{${cars.image}}">-->
             </div>
         </div>
 
@@ -26,24 +36,105 @@
 
         <div class="model-specs car-stats">
             <h3 class="normal-h3">Спецификации</h3>
-            <div class="stat-text-container">
-                <h4 class="stat-title">Марка:</h4>
-                <p class="stat-text">KGM</p>
-            </div>
 
-            <div class="stat-text-container">
-                <h4 class="stat-title">Модел:</h4>
-                <p class="stat-text">Korando</p>
-            </div>
+            <div class="mobile-stats-container">
 
-            <div class="stat-text-container">
-                <h4 class="stat-title">Moщност:</h4>
-                <p class="stat-text">163 к.с.</p>
-            </div>
+                <div class="stat-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM288 96a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM256 416c35.3 0 64-28.7 64-64c0-17.4-6.9-33.1-18.1-44.6L366 161.7c5.3-12.1-.2-26.3-12.3-31.6s-26.3 .2-31.6 12.3L257.9 288c-.6 0-1.3 0-1.9 0c-35.3 0-64 28.7-64 64s28.7 64 64 64zM176 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM96 288a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm352-32a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/>
+                    </svg>
+                    <p class="mobile-stat">68 к.с.</p>
+                </div>
 
-            <div class="stat-text-container">
-                <h4 class="stat-title">Гориво:</h4>
-                <p class="stat-text">Бензин</p>
+                <div class="stat-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path d="M32 64C32 28.7 60.7 0 96 0L256 0c35.3 0 64 28.7 64 64l0 192 8 0c48.6 0 88 39.4 88 88l0 32c0 13.3 10.7 24 24 24s24-10.7 24-24l0-154c-27.6-7.1-48-32.2-48-62l0-64L384 64c-8.8-8.8-8.8-23.2 0-32s23.2-8.8 32 0l77.3 77.3c12 12 18.7 28.3 18.7 45.3l0 13.5 0 24 0 32 0 152c0 39.8-32.2 72-72 72s-72-32.2-72-72l0-32c0-22.1-17.9-40-40-40l-8 0 0 144c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 512c-17.7 0-32-14.3-32-32s14.3-32 32-32L32 64zM96 80l0 96c0 8.8 7.2 16 16 16l128 0c8.8 0 16-7.2 16-16l0-96c0-8.8-7.2-16-16-16L112 64c-8.8 0-16 7.2-16 16z"/>
+                    </svg>
+                    <p class="mobile-stat">Бензин</p>
+                </div>
+
+                <div class="stat-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path d="M256 32l-74.8 0c-27.1 0-51.3 17.1-60.3 42.6L3.1 407.2C1.1 413 0 419.2 0 425.4C0 455.5 24.5 480 54.6 480L256 480l0-64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 64 201.4 0c30.2 0 54.6-24.5 54.6-54.6c0-6.2-1.1-12.4-3.1-18.2L455.1 74.6C446 49.1 421.9 32 394.8 32L320 32l0 64c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-64zm64 192l0 64c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32s32 14.3 32 32z"/>
+                    </svg>
+                    <p class="mobile-stat">273 450km</p>
+                </div>
+
+                <div class="stat-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path d="M272 96c-78.6 0-145.1 51.5-167.7 122.5c33.6-17 71.5-26.5 111.7-26.5l88 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-16 0-72 0s0 0 0 0c-16.6 0-32.7 1.9-48.3 5.4c-25.9 5.9-49.9 16.4-71.4 30.7c0 0 0 0 0 0C38.3 298.8 0 364.9 0 440l0 16c0 13.3 10.7 24 24 24s24-10.7 24-24l0-16c0-48.7 20.7-92.5 53.8-123.2C121.6 392.3 190.3 448 272 448l1 0c132.1-.7 239-130.9 239-291.4c0-42.6-7.5-83.1-21.1-119.6c-2.6-6.9-12.7-6.6-16.2-.1C455.9 72.1 418.7 96 376 96L272 96z"/>
+                    </svg>
+                    <p class="mobile-stat">5 L /100km</p>
+                </div>
+
+                <div class="stat-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path d="M128 0c17.7 0 32 14.3 32 32l0 32 128 0 0-32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 32 48 0c26.5 0 48 21.5 48 48l0 48L0 160l0-48C0 85.5 21.5 64 48 64l48 0 0-32c0-17.7 14.3-32 32-32zM0 192l448 0 0 272c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 192zm64 80l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm128 0l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM64 400l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zm112 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16z"/>
+                    </svg>
+                    <p class="mobile-stat">Apr 2012</p>
+                </div>
+
+                <div class="stat-block">
+                    <svg fill="#000000" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 89.938 89.938" xml:space="preserve"><g>
+	<g><path d="M88.461,37.406h-1.969c-0.814,0-1.479,0.663-1.479,1.477v25.655c0,0.814,0.662,1.479,1.479,1.479h1.969c0.813,0,1.477-0.664,1.477-1.479V38.882C89.938,38.069,89.275,37.406,88.461,37.406z"/>
+        <path d="M1.477,36.157C0.664,36.157,0,36.819,0,37.634v28.164c0,0.813,0.663,1.478,1.477,1.478h4.015
+			c0.814,0,1.477-0.663,1.477-1.478V37.642c0-0.813-0.662-1.477-1.477-1.477H1.477V36.157z"/>
+        <path d="M57.617,71.781c3.294-1.278,6.568-2.595,9.855-3.872c0.293-0.113,0.634-0.152,0.947-0.16
+			c2.432-0.01,4.864-0.01,7.288-0.01c2.519,0,4.138-1.62,4.138-4.166v-8.331c0-0.597,0.481-1.069,1.069-1.069l1.05-0.027
+			c0.834,0,0.883-0.323,0.909-0.9l0.021-4.837c0-0.481-0.389-0.871-0.872-0.871h-1.126c-0.598,0-1.079-0.483-1.079-1.08
+			l0.036-10.101c0.029-1.496-0.576-2.527-1.723-3.352c-1.969-1.42-7.771-5.538-8.719-6.144c-0.652-0.427-1.363-0.597-2.158-0.587
+			l-10.007-0.01c-0.853,0-1.543-0.691-1.543-1.543v-0.312c0-0.861,0.7-1.562,1.562-1.562h9.07c0.86,0,1.562-0.7,1.562-1.562v-1.809
+			c0-0.861-0.701-1.562-1.562-1.562H36.222c-0.862,0-1.562,0.7-1.562,1.562v1.809c0,0.861,0.7,1.562,1.562,1.562h9.816
+			c0.862,0,1.563,0.701,1.563,1.562v0.36c0,0.852-0.691,1.552-1.555,1.542l-9.911-0.037c-1.895-0.057-3.446,0.587-4.886,1.628
+			c-2.102,1.524-4.165,3.096-6.229,4.668c-0.521,0.397-1.174,0.615-1.827,0.605c-1.987-0.02-3.976-0.02-5.964,0
+			c-2.471,0.019-4.07,1.609-4.09,4.09l0.028,6.901c0,0.586-0.474,1.069-1.07,1.069h-0.927c-1.127,0-2.036,0.909-2.036,2.036v10.935
+			c0,1.126,0.909,2.034,2.036,2.034h0.899c0.587,0,1.069,0.475,1.069,1.07c0,1.57-0.01,4.496,0,6.189
+			c0,1.573-0.028,4.526,2.85,4.526h40.37C56.784,72.027,57.229,71.942,57.617,71.781z"/>
+	</g>
+</g></svg>
+                    <p class="mobile-stat">1000cm&#179;</p>
+                </div>
+
+                <div class="stat-block">
+                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.000000 24.000000"
+                         preserveAspectRatio="xMidYMid meet">
+                        <g transform="translate(0.000000,24.000000) scale(0.100000,-0.100000)"
+                           fill="#000000" stroke="none">
+                            <path d="M9 204 c-10 -12 -10 -20 -1 -35 16 -24 15 -74 0 -99 -10 -16 -10 -23
+5 -37 16 -16 18 -16 34 0 15 14 15 21 5 37 -19 31 -14 40 23 40 37 0 42 -9 23
+-40 -10 -16 -10 -23 5 -37 16 -16 18 -16 34 0 15 14 15 21 5 37 -19 31 -15 39
+24 42 29 2 39 10 57 41 20 35 20 38 4 54 -16 16 -18 16 -34 0 -15 -14 -15 -20
+-3 -42 12 -23 12 -28 0 -35 -8 -6 -25 -10 -37 -10 -26 0 -30 19 -11 50 10 16
+10 23 -5 37 -16 16 -18 16 -34 0 -15 -14 -15 -21 -5 -37 22 -35 15 -50 -23
+-50 -38 0 -45 15 -23 49 9 15 9 23 -1 35 -8 9 -17 16 -21 16 -4 0 -13 -7 -21
+-16z"/>
+                        </g>
+                    </svg>
+                    <p class="mobile-stat">Manual</p>
+                </div>
+
+                <div class="stat-block">
+                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.000000 16.000000"
+                         preserveAspectRatio="xMidYMid meet">
+                        <g transform="translate(0.000000,16.000000) scale(0.100000,-0.100000)"
+                           fill="#000000" stroke="none">
+                            <path d="M47 153 c-4 -3 -2 -12 3 -18 8 -9 6 -14 -5 -19 -9 -3 -15 -18 -15
+-41 l0 -35 50 0 50 0 0 35 c0 23 -6 38 -15 41 -11 5 -13 10 -5 19 5 6 7 15 3
+18 -8 9 -58 9 -66 0z m62 -65 c-1 -17 -2 -19 -6 -5 -5 20 -39 23 -46 5 -3 -8
+-6 -6 -6 5 -1 12 7 17 29 17 25 0 30 -4 29 -22z"/>
+                            <path d="M20 15 c0 -12 13 -15 60 -15 47 0 60 3 60 15 0 12 -13 15 -60 15 -47
+0 -60 -3 -60 -15z"/>
+                        </g>
+                    </svg>
+                    <p class="mobile-stat">4 seats</p>
+                </div>
+
             </div>
 
         </div>
@@ -62,21 +153,21 @@
     <div class="mid-part-container">
         <div class="first-box car-stats">
 
-        <div class="first-tire-box window-default">
+            <div class="first-tire-box window-default">
 
-            <text class="item-label">Current tires</text>
-            <div class="tires-container">
-                <img class="img3"
-                     src="https://cdn.discounttire.com/sys-master/images/hc2/hbf/9837017923614/PRODUCT_tire_bfgoodrich_trail_terrain_ta-bsw_1000_side.jpg_dt-product-default-format_t-product-Medium.jpg">
-                <img class="img3"
-                     src="https://cdn.discounttire.com/sys-master/images/hc2/hbf/9837017923614/PRODUCT_tire_bfgoodrich_trail_terrain_ta-bsw_1000_side.jpg_dt-product-default-format_t-product-Medium.jpg">
-                <img class="img3"
-                     src="https://cdn.discounttire.com/sys-master/images/hc2/hbf/9837017923614/PRODUCT_tire_bfgoodrich_trail_terrain_ta-bsw_1000_side.jpg_dt-product-default-format_t-product-Medium.jpg">
-                <img class="img3"
-                     src="https://cdn.discounttire.com/sys-master/images/hc2/hbf/9837017923614/PRODUCT_tire_bfgoodrich_trail_terrain_ta-bsw_1000_side.jpg_dt-product-default-format_t-product-Medium.jpg">
+                <text class="item-label">Current tires</text>
+                <div class="tires-container">
+                    <img class="img3"
+                         src="https://cdn.discounttire.com/sys-master/images/hc2/hbf/9837017923614/PRODUCT_tire_bfgoodrich_trail_terrain_ta-bsw_1000_side.jpg_dt-product-default-format_t-product-Medium.jpg">
+                    <img class="img3"
+                         src="https://cdn.discounttire.com/sys-master/images/hc2/hbf/9837017923614/PRODUCT_tire_bfgoodrich_trail_terrain_ta-bsw_1000_side.jpg_dt-product-default-format_t-product-Medium.jpg">
+                    <img class="img3"
+                         src="https://cdn.discounttire.com/sys-master/images/hc2/hbf/9837017923614/PRODUCT_tire_bfgoodrich_trail_terrain_ta-bsw_1000_side.jpg_dt-product-default-format_t-product-Medium.jpg">
+                    <img class="img3"
+                         src="https://cdn.discounttire.com/sys-master/images/hc2/hbf/9837017923614/PRODUCT_tire_bfgoodrich_trail_terrain_ta-bsw_1000_side.jpg_dt-product-default-format_t-product-Medium.jpg">
+                </div>
+
             </div>
-
-        </div>
         </div>
 
         <hr class="vertical-line-full">
@@ -97,6 +188,76 @@
         <hr class="vertical-line-full">
 
         <div class="car-stats"></div>
+
+        <div class="view-container" style="width: 800px; height: 600px;">
+
+        </div>
+
+        <script>
+            // Wait for the DOM to load
+            document.addEventListener("DOMContentLoaded", () => {
+                // Select the container div
+                const container = document.querySelector('.view-container');
+
+                // Scene, Camera, and Renderer
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(
+                    75, // Field of View
+                    container.clientWidth / container.clientHeight, // Aspect Ratio
+                    0.1, // Near Clipping Plane
+                    1000 // Far Clipping Plane
+                );
+
+                const renderer = new THREE.WebGLRenderer();
+                renderer.setSize(container.clientWidth, container.clientHeight);
+                container.appendChild(renderer.domElement);
+
+                // Add some light
+                const ambientLight = new THREE.AmbientLight(0xcecece, 0.5);
+                scene.add(ambientLight);
+
+                const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+                directionalLight.position.set(10, 10, 10);
+                scene.add(directionalLight);
+
+                // Load the .glb file using GLTFLoader
+                const loader = new THREE.GLTFLoader();
+                loader.load(
+                    'Audi_rs6.glb', // Replace with your model's path
+                    (gltf) => {
+                        const model = gltf.scene;
+                        scene.add(model);
+
+                        // Adjust model position if needed
+                        model.position.set(0, 0, 0);
+
+                        // Optional: Fit the camera to the model
+                        const box = new THREE.Box3().setFromObject(model);
+                        const size = box.getSize(new THREE.Vector3()).length();
+                        const center = box.getCenter(new THREE.Vector3());
+                        camera.near = size / 100;
+                        camera.far = size * 10;
+                        camera.position.copy(center);
+                        camera.position.z = size * 2;
+                        camera.lookAt(center);
+                        camera.updateProjectionMatrix();
+                    },
+                    undefined,
+                    (error) => {
+                        console.error('An error occurred while loading the GLTF model:', error);
+                    }
+                );
+
+                // Animation loop
+                const animate = function () {
+                    requestAnimationFrame(animate);
+                    renderer.render(scene, camera);
+                };
+
+                animate();
+            });
+        </script>
+
         <hr class="vertical-line-full">
 
         <div class="car-stats"></div>
@@ -105,9 +266,9 @@
 
 
     <div class="window-oil window-default">
-<!--        <div class="purple-block" id="oil-details">-->
-<!--            -->
-<!--        </div>-->
+        <!--        <div class="purple-block" id="oil-details">-->
+        <!--            -->
+        <!--        </div>-->
 
         <img class="img2"
              src="https://images.thdstatic.com/productImages/cf569948-a0c4-4d2c-a361-317d9b685bf3/svn/pennzoil-motor-oil-550045208-64_600.jpg">
@@ -145,7 +306,7 @@
     </div>
 
     <div class="window-center-big window-default">
-         <h4>За добавяне:</h4>
+        <h4>За добавяне:</h4>
         <p>чистачки размери и тип</p>
         <p>Антифриз</p>
         <p>Спирачки и време за смяна</p>
@@ -186,7 +347,6 @@
         <h4>Лични напомняния</h4>
         които могат да се добавят както за части и за друго свързано с колата като ходене при майстор в сряда.
     </div>
-
 
 
     <div class="window-bottom-3 window-default">

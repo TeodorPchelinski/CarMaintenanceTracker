@@ -97,39 +97,7 @@
 
 <!--  Second Column-->
   <div class="section2" id="section2">
-    <div class="window" id="window-small">
-      <label class="window-label">Maintenance costs</label>
-      <div id="container2"></div>
-      <script>
-        // create data
-        var data = [
-          ["Jan", 200],
-          ["Feb", 300],
-          ["Mar", 130],
-          ["Apr", 100],
-          ["May", 170],
-          ["Jun", 90],
-          ["Jul", 190],
-          ["Aug", 190],
-          ["Sep", 190],
-          ["Oct", 190],
-          ["Nov", 190],
-          ["Dec", 190]
-        ];
 
-
-        chart = anychart.column();
-        chart.yAxis().labels().format('{%Value}лв');
-
-        var series = chart.column(data);
-
-        chart.animation(true);
-        series.color('#00AEFF');
-        chart.container("container2");
-        chart.draw();
-      </script>
-
-    </div>
 
 
 
@@ -158,8 +126,7 @@
           <div class="field">
             <input id="image-file" type="file" name="image" accept="image/*">
             <div class="image-preview" id="image-preview">
-              <image id="preview-image-little" src="" alt="Image Preview"></image>
-
+<!--              <image id="preview-image-little" src="" alt="Image Preview"></image>-->
             </div>
           </div>
 
@@ -214,19 +181,34 @@
 
 
         <div class="form-column" >
+
+          <div class="field image-little-input">
+            <input id="image-file-small" type="file" name="image" accept="image/*">
+            <div class="image-preview" id="image-preview">
+              <image id="preview-image-little" th:src="@{/images/imageDefault.png}" alt="Image Preview"></image>
+            </div>
+          </div>
+
           <div class="field">
             <input type=text  id="part-name"  name="partName1" placeholder="">
-            <label for="part-name" class="field-label">Part name</label>
+            <label for="part-name" class="field-label">Part</label>
+          </div>
+
+          <div class="field">
+            <input type=text  id="part-description" list="parts-description" name="partDescription1" placeholder="brand, size...">
+            <label for="part-description" class="field-label">Description</label>
+            <datalist id="parts-description">
+            </datalist>
           </div>
 
           <div class="field-small" id="part-price-field">
-            <input type=number step="0.01" id="part-price" name="partPrice1" placeholder="">
+            <input type=number step="0.01" id="part-price1" name="partPrice1" placeholder="">
             <label for="part-name" class="field-small-label">price</label>
           </div>
 
 <!--        Quantity-->
           <div class="field" id="quantity-field">
-           <select id="quantity" name="partQuantity1" placeholder="">
+           <select id="quantity1" name="partQuantity1" placeholder="">
              <option value="1" >x1</option>
              <option value="2" >x2</option>
              <option value="3" >x3</option>
@@ -241,21 +223,36 @@
         </div>
 
           <div class="form-column" >
+
+            <div class="field image-little-input">
+              <input id="image-file-small" type="file" name="image" accept="image/*">
+              <div class="image-preview" id="image-preview">
+                <image id="preview-image-little" th:src="@{/images/imageDefault.png}" alt="Image Preview"></image>
+              </div>
+            </div>
+
             <div class="field">
               <input type=text  id="part-name" list="parts" name="partName2" placeholder="">
-              <label for="part-name" class="field-label">Part name</label>
+              <label for="part-name" class="field-label">Part</label>
               <datalist id="parts">
               </datalist>
             </div>
 
+            <div class="field">
+              <input type=text  id="part-description" list="parts-description" name="partDescription2" placeholder="brand, size...">
+              <label for="part-description" class="field-label">Description</label>
+              <datalist id="parts-description">
+              </datalist>
+            </div>
+
             <div class="field-small" id="part-price-field">
-              <input type=number step="0.01" id="part-name" name="partPrice2" placeholder="">
+              <input type=number step="0.01" id="part-price2" name="partPrice2" placeholder="">
               <label for="part-name" class="field-small-label">price</label>
             </div>
 
             <!--        Quantity-->
             <div class="field" id="quantity-field">
-              <select id="quantity" name="partQuantity2" placeholder="">
+              <select id="quantity2" name="partQuantity2" placeholder="">
                 <option value="1" >x1</option>
                 <option value="2" >x2</option>
                 <option value="3" >x3</option>
@@ -270,21 +267,36 @@
           </div>
 
           <div class="form-column" >
+
+            <div class="field image-little-input">
+              <input id="image-file-small" type="file" name="image" accept="image/*">
+              <div class="image-preview" id="image-preview">
+                <image id="preview-image-little" th:src="@{/images/imageDefault.png}" alt="Image Preview"></image>
+              </div>
+            </div>
+
             <div class="field">
               <input type=text  id="part-name" list="parts" name="partName3" placeholder="">
-              <label for="part-name" class="field-label">Part name</label>
+              <label for="part-name" class="field-label">Part</label>
               <datalist id="parts">
               </datalist>
             </div>
 
+            <div class="field">
+              <input type=text  id="part-description" list="parts-description" name="partDescription3" placeholder="brand, size...">
+              <label for="part-description" class="field-label">Description</label>
+              <datalist id="parts-description">
+              </datalist>
+            </div>
+
             <div class="field-small" id="part-price-field">
-              <input type=number step="0.01" id="part-name" name="partPrice3" placeholder="">
+              <input type=number step="0.01" id="part-price3" name="partPrice3" placeholder="">
               <label for="part-name" class="field-small-label">price</label>
             </div>
 
             <!--        Quantity-->
             <div class="field" id="quantity-field">
-              <select id="quantity" name="partQuantity3" placeholder="">
+              <select id="quantity3" name="partQuantity3" placeholder="">
                 <option value="1" >x1</option>
                 <option value="2" >x2</option>
                 <option value="3" >x3</option>
@@ -299,21 +311,36 @@
           </div>
 
           <div class="form-column" >
+
+            <div class="field image-little-input">
+              <input id="image-file-small" type="file" name="image" accept="image/*">
+              <div class="image-preview" id="image-preview">
+                <image id="preview-image-little" th:src="@{/images/imageDefault.png}" alt="Image Preview"></image>
+              </div>
+            </div>
+
             <div class="field">
               <input type=text  id="part-name" list="parts" name="partName4" placeholder="">
-              <label for="part-name" class="field-label">Part name</label>
+              <label for="part-name" class="field-label">Part</label>
               <datalist id="parts">
               </datalist>
             </div>
 
+            <div class="field">
+              <input type=text  id="part-description" list="parts-description" name="partDescription4" placeholder="brand, size...">
+              <label for="part-description" class="field-label">Description</label>
+              <datalist id="parts-description">
+              </datalist>
+            </div>
+
             <div class="field-small" id="part-price-field">
-              <input type=number step="0.01" id="part-name" name="partPrice4" placeholder="">
+              <input type=number step="0.01" id="part-price4" name="partPrice4" placeholder="">
               <label for="part-name" class="field-small-label">price</label>
             </div>
 
             <!--        Quantity-->
             <div class="field" id="quantity-field">
-              <select id="quantity" name="partQuantity4" placeholder="">
+              <select id="quantity4" name="partQuantity4" placeholder="">
                 <option value="1" >x1</option>
                 <option value="2" >x2</option>
                 <option value="3" >x3</option>
@@ -328,10 +355,54 @@
           </div>
 
 
+        <script>
+
+          document.addEventListener('DOMContentLoaded', function () {
+
+            const num1 = document.getElementById('part-price1');
+            const num2 = document.getElementById('part-price2');
+            const num3 = document.getElementById('part-price3');
+            const num4 = document.getElementById('part-price4');
+
+            const quantity1 = document.getElementById('quantity1');
+            const quantity2 = document.getElementById('quantity2');
+            const quantity3 = document.getElementById('quantity3');
+            const quantity4 = document.getElementById('quantity4');
+
+            const sum = document.getElementById('totalCost');
+
+          function total() {
+
+            const value1 = parseFloat(num1.value) || 0;
+            const value2 = parseFloat(num2.value) || 0;
+            const value3 = parseFloat(num3.value) || 0;
+            const value4 = parseFloat(num4.value) || 0;
+
+            const qty1 = parseInt(quantity1.value) || 1;
+            const qty2 = parseInt(quantity2.value) || 1;
+            const qty3 = parseInt(quantity3.value) || 1;
+            const qty4 = parseInt(quantity4.value) || 1;
+
+            const total = (value1 * qty1) + (value2 * qty2) + (value3 * qty3) + (value4 * qty4);
+            sum.value = total.toFixed(2);
+
+          }
+            num1.addEventListener('input', total);
+            num2.addEventListener('input', total);
+            num3.addEventListener('input', total);
+            num4.addEventListener('input', total);
+
+            quantity1.addEventListener('change', total);
+            quantity2.addEventListener('change', total);
+            quantity3.addEventListener('change', total);
+            quantity4.addEventListener('change', total);
+
+          total();
+          })
+
+        </script>
 <!--        <div class="form-column">-->
-
 <!--          <button class="add-part-button" id="add-partBtn" type="button" >+ Add part</button>-->
-
 <!--        </div>-->
 
         <hr class="dashboard-line1">
@@ -340,14 +411,33 @@
         <div class="form-column" id="service-form-container" >
 
 
-          <div class="field">
-            <input type=text id="part-name" name="serviceName" placeholder="">
-            <label for="part-name" class="field-label">Car Service</label>
-          </div>
+          <div class="service-left-section">
 
-          <div class="field" id="location-address">
-            <input type=text id="part-name" placeholder="">
-            <label for="part-name" class="field-label">Location (map)</label>
+            <div class="service-top-left">
+
+              <div class="field">
+                <input type=text id="part-name" name="serviceName" placeholder="">
+                <label for="part-name" class="field-label">Car Service</label>
+              </div>
+
+              <div class="address-location-container">
+
+                <div class="field" id="location-address">
+                  <input type=text id="part-name" placeholder="">
+                  <label for="part-name" class="field-label">Location (map)</label>
+
+                </div>
+
+<!--                <button type="button"></button>-->
+              </div>
+
+            </div>
+
+              <div class="field" id="repair-description-field">
+                <textarea class="service-description-text" type=text id="service-description-text" name="description" placeholder=""></textarea>
+                <label  for="service-description-text" class="field-label">Service Description</label>
+              </div>
+
           </div>
 
           <div id="map"></div>
@@ -368,7 +458,9 @@
             //         .bindPopup('CarMaintenance <br> office')
             //         .openPopup();
 
+
             var singleMarker;
+
 
             map.on('click', function(e) {
               var latitude = e.latlng.lat;
@@ -379,10 +471,14 @@
               }
 
               singleMarker = L.marker([latitude, longitude]).addTo(map)
-                      .bindPopup('Marker added at: ' + latitude.toFixed(5) + ', ' + longitude.toFixed(5))
+                      // .bindPopup('' + latitude.toFixed(5) + ', ' + longitude.toFixed(5))
                       .openPopup();
 
-              singleMarker.color('green');
+
+              document.getElementById('latitude').value = latitude.toFixed(5).toString();
+              document.getElementById('longitude').value = longitude.toFixed(5).toString();
+
+
             });
           </script>
 
@@ -407,37 +503,21 @@
             <label for="part-name" class="field-label">Shop name</label>
           </div>
 
-          <div class="field" id="shop-location-field">
-            <input type=text id="part-name" placeholder="">
-            <label for="part-name" class="field-label">Location (map)</label>
-          </div>
-
-
-
-
-        </div>
-
-        <hr class="dashboard-line1">
-
-        <div class="form-column">
-          <div class="field" id="repair-description-field">
-            <textarea type=text id="large-text" name="description" placeholder=""></textarea>
-            <label  for="large-text" class="field-label">Service Description</label>
-          </div>
         </div>
 
         <hr class="dashboard-line1">
 
         <div class="form-column">
 
-
+          <input type="hidden" typeof="string" id="latitude" name="latitude">
+          <input type="hidden" id="longitude" name="longitude">
 
           <button class="button" id="repair-button" type="submit">Add</button>
 
           <label class="window-label" id="total-price-label">Total:</label>
 
           <div class="field-small" id="final-price-field">
-            <input type=number id="part-name" name="totalCost" placeholder="">
+            <input type=number step="0.01" id="totalCost" name="totalCost" placeholder="">
           </div>
 
 

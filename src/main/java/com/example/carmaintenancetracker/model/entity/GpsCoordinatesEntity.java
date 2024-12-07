@@ -14,5 +14,21 @@ public class GpsCoordinatesEntity extends BaseEntity {
 
     private double longitude;
 
+    public double getLatitude() {
+        return latitude;
+    }
 
+    public GpsCoordinatesEntity setLatitude(double latitude) {
+        this.latitude = latitude;
+        return this;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public GpsCoordinatesEntity setLongitude(double longitude) {
+        this.longitude = longitude;
+        return this;
+    }
 }

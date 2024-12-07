@@ -27,6 +27,14 @@ public class CreateRepairDTO {
 
     private String partName4;
 
+    private String partDescription1;
+
+    private String partDescription2;
+
+    private String partDescription3;
+
+    private String partDescription4;
+
     private BigDecimal partPrice1;
 
     private BigDecimal partPrice2;
@@ -43,11 +51,11 @@ public class CreateRepairDTO {
 
     private int partQuantity4;
 
-
-    // When select existing Service
-    //todo: If new Service is created set serviceId to null
-
     private String serviceName;
+
+    private String latitude;
+
+    private String longitude;
 
 //    private GpsCoordinatesEntity serviceLocation;
 
@@ -68,9 +76,11 @@ public class CreateRepairDTO {
 
     public CreateRepairDTO(String carId, String repairTitle, MultipartFile image, LocalDate dateSelected,
                            String partName1, String partName2, String partName3, String partName4,
+                           String partDescription1, String partDescription2, String partDescription3, String partDescription4,
                            BigDecimal partPrice1, BigDecimal partPrice2, BigDecimal partPrice3,
                            BigDecimal partPrice4, int partQuantity1, int partQuantity2, int partQuantity3,
-                           int partQuantity4, String serviceName, String description, String shopName, BigDecimal totalCost) {
+                           int partQuantity4, String serviceName, String description, String shopName, BigDecimal totalCost,
+                            String latitude, String longitude) {
         this.carId = carId;
         this.repairTitle = repairTitle;
         this.image = image;
@@ -79,6 +89,10 @@ public class CreateRepairDTO {
         this.partName2 = partName2;
         this.partName3 = partName3;
         this.partName4 = partName4;
+        this.partDescription1 = partDescription1;
+        this.partDescription2 = partDescription2;
+        this.partDescription3 = partDescription3;
+        this.partDescription4 = partDescription4;
         this.partPrice1 = partPrice1;
         this.partPrice2 = partPrice2;
         this.partPrice3 = partPrice3;
@@ -91,6 +105,8 @@ public class CreateRepairDTO {
         this.description = description;
         this.shopName = shopName;
         this.totalCost = totalCost;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
 
@@ -164,6 +180,42 @@ public class CreateRepairDTO {
 
     public CreateRepairDTO setPartName4(String partName4) {
         this.partName4 = partName4;
+        return this;
+    }
+
+    public String getPartDescription1() {
+        return partDescription1;
+    }
+
+    public CreateRepairDTO setPartDescription1(String partDescription1) {
+        this.partDescription1 = partDescription1;
+        return this;
+    }
+
+    public String getPartDescription2() {
+        return partDescription2;
+    }
+
+    public CreateRepairDTO setPartDescription2(String partDescription2) {
+        this.partDescription2 = partDescription2;
+        return this;
+    }
+
+    public String getPartDescription3() {
+        return partDescription3;
+    }
+
+    public CreateRepairDTO setPartDescription3(String partDescription3) {
+        this.partDescription3 = partDescription3;
+        return this;
+    }
+
+    public String getPartDescription4() {
+        return partDescription4;
+    }
+
+    public CreateRepairDTO setPartDescription4(String partDescription4) {
+        this.partDescription4 = partDescription4;
         return this;
     }
 
@@ -272,8 +324,23 @@ public class CreateRepairDTO {
     }
 
 
+    public String getLatitude() {
+        return latitude;
+    }
 
+    public CreateRepairDTO setLatitude(String latitude) {
+        this.latitude = latitude;
+        return this;
+    }
 
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public CreateRepairDTO setLongitude(String longitude) {
+        this.longitude = longitude;
+        return this;
+    }
 
     public BigDecimal getTotalCost() {
         return totalCost;
@@ -298,6 +365,10 @@ public class CreateRepairDTO {
                 ", partPrice2=" + partPrice2 +
                 ", partPrice3=" + partPrice3 +
                 ", partPrice4=" + partPrice4 +
+                ", partDescription1=" + partDescription1 +
+                ", partDescription2=" + partDescription2 +
+                ", partDescription3=" + partDescription3 +
+                ", partDescription4=" + partDescription4 +
                 ", partQuantity1=" + partQuantity1 +
                 ", partQuantity2=" + partQuantity2 +
                 ", partQuantity3=" + partQuantity3 +
@@ -305,6 +376,8 @@ public class CreateRepairDTO {
                 ", serviceName='" + serviceName + '\'' +
                 ", description='" + description + '\'' +
                 ", shopName='" + shopName + '\'' +
+                ", latitude='" + latitude + '\'' +
+                ", longitude='" + longitude + '\'' +
                 ", totalCost=" + totalCost +
                 '}';
     }

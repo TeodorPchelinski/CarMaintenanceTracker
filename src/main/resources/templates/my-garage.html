@@ -42,17 +42,10 @@
     <!--    Transmission:-->
     <!--    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;!&ndash;!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.&ndash;&gt;<path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24l0 112c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-112c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>-->
 
-    <div class="section1">
 
 
-    </div>
+    <div class="section2 garage">
 
-    <div class="section2">
-        <div class="fuel-price window" id="window-small">
-            <label class="window-label">Fuel Price</label>
-            <div id="container"></div>
-            <script src="../static/chart.js"></script>
-        </div>
 
         <div class="window-long-car-card window"
              th:each="cars : ${cars.getContent()}"
@@ -86,10 +79,7 @@
                         <?xml version="1.0" encoding="iso-8859-1"?>
                         <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
                         <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-                        <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                             width="12px" height="12px" viewBox="0 0 89.938 89.938"
-                             xml:space="preserve">
-<g>
+                        <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 89.938 89.938" xml:space="preserve"><g>
 	<g>
 		<path d="M88.461,37.406h-1.969c-0.814,0-1.479,0.663-1.479,1.477v25.655c0,0.814,0.662,1.479,1.479,1.479h1.969
 			c0.813,0,1.477-0.664,1.477-1.479V38.882C89.938,38.069,89.275,37.406,88.461,37.406z"/>
@@ -107,8 +97,7 @@
 			c0,1.126,0.909,2.034,2.036,2.034h0.899c0.587,0,1.069,0.475,1.069,1.07c0,1.57-0.01,4.496,0,6.189
 			c0,1.573-0.028,4.526,2.85,4.526h40.37C56.784,72.027,57.229,71.942,57.617,71.781z"/>
 	</g>
-</g>
-</svg>
+</g></svg>
                         <span id="name-medium2" class="stat-cars-garage"
                               th:text="${cars.engineDisplacement}">2.0L</span>
                     </div>
@@ -140,10 +129,10 @@
     </div>
 
     <div class="section3">
-        <div class="window" id="window-small">
-            <label class="window-label">Kilometers traveled</label>
-            <label id="km-traveled">14025</label>
-        </div>
+<!--        <div class="window" id="window-small">-->
+<!--            <label class="window-label">Kilometers traveled</label>-->
+<!--            <label id="km-traveled">14025</label>-->
+<!--        </div>-->
 
         <!--         Previous Last Row window -->
         <!--    <div class="window" id="after-skipped-window-small">-->

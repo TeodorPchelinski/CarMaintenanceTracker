@@ -77,13 +77,15 @@ public class CarServiceImpl implements CarService {
 
                 carRepository.save(newCar);
 
-                //todo: How to end the process right of saving new image.
+                //todo: How to end the process right after saving new image.
                 //      After creation images are broken but after restart of the whole server they are fine.
 
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
         }
+
+        //todo: Adding "rembg" or "U-2-Net" for server side background removal
 
 
 
@@ -168,6 +170,8 @@ public class CarServiceImpl implements CarService {
         System.out.println(carSummaryDTO);
         return carSummaryDTO;
     }
+
+    //private static CarDetailsDTO
 
     private CarEntity map(CreateCarDTO createCarDTO) {
 

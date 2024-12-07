@@ -31,16 +31,18 @@ public class RepairServiceImpl implements RepairService {
 
     private final ServiceRepository serviceRepository;
 
+    private final GPSCoordinatesRepository gpsCoordinatesRepository;
     private final PartRepository partRepository;
     private final ShopRepository shopRepository;
     private final UserRepository userRepository;
 
-    public RepairServiceImpl(CarRepository carRepository, RepairRepository repairRepository, ServiceRepository serviceRepository, PartRepository partRepository,
+    public RepairServiceImpl(CarRepository carRepository, RepairRepository repairRepository, ServiceRepository serviceRepository, GPSCoordinatesRepository gpsCoordinatesRepository, PartRepository partRepository,
                              ShopRepository shopRepository,
                              UserRepository userRepository) {
         this.carRepository = carRepository;
         this.repairRepository = repairRepository;
         this.serviceRepository = serviceRepository;
+        this.gpsCoordinatesRepository = gpsCoordinatesRepository;
         this.partRepository = partRepository;
         this.shopRepository = shopRepository;
         this.userRepository = userRepository;
@@ -58,11 +60,19 @@ public class RepairServiceImpl implements RepairService {
                 .orElseThrow(() -> new IllegalArgumentException("User with email " + creator.getUsername() + "not found!"));
 
 
+        GpsCoordinatesEntity newGPSCoordinates = new GpsCoordinatesEntity()
+                .setLatitude(Double.parseDouble(createRepairDTO.getLatitude()))
+                .setLongitude(Double.parseDouble(createRepairDTO.getLongitude()));
+
+        gpsCoordinatesRepository.save(newGPSCoordinates);
+
+        System.out.println(createRepairDTO);
         // 1 SERVICE
         ServiceEntity newService = new ServiceEntity()
                 .setName(createRepairDTO.getServiceName())
                 .setDescription(createRepairDTO.getDescription())
-                .setLocation(null);// needs Map
+                .setLocation(newGPSCoordinates);// needs Map
+//                .setLocation(null);// needs Map
         // 2
         serviceRepository.save(newService);
 
@@ -107,10 +117,10 @@ public class RepairServiceImpl implements RepairService {
 
         // 11
         List<PartEntity> newParts = new ArrayList<>();
-        addPartIfPresent(newParts, createRepairDTO.getPartName1(), createRepairDTO.getPartPrice1(), createRepairDTO.getPartQuantity1(), carEntity, newRepair);
-        addPartIfPresent(newParts, createRepairDTO.getPartName2(), createRepairDTO.getPartPrice2(), createRepairDTO.getPartQuantity2(), carEntity, newRepair);
-        addPartIfPresent(newParts, createRepairDTO.getPartName3(), createRepairDTO.getPartPrice3(), createRepairDTO.getPartQuantity3(), carEntity, newRepair);
-        addPartIfPresent(newParts, createRepairDTO.getPartName4(), createRepairDTO.getPartPrice4(), createRepairDTO.getPartQuantity4(), carEntity, newRepair);
+        addPartIfPresent(newParts, createRepairDTO.getPartName1(), createRepairDTO.getPartDescription1(), createRepairDTO.getPartPrice1(), createRepairDTO.getPartQuantity1(), carEntity, newRepair);
+        addPartIfPresent(newParts, createRepairDTO.getPartName2(), createRepairDTO.getPartDescription2(), createRepairDTO.getPartPrice2(), createRepairDTO.getPartQuantity2(), carEntity, newRepair);
+        addPartIfPresent(newParts, createRepairDTO.getPartName3(), createRepairDTO.getPartDescription3(), createRepairDTO.getPartPrice3(), createRepairDTO.getPartQuantity3(), carEntity, newRepair);
+        addPartIfPresent(newParts, createRepairDTO.getPartName4(), createRepairDTO.getPartDescription4(), createRepairDTO.getPartPrice4(), createRepairDTO.getPartQuantity4(), carEntity, newRepair);
 
         // 12
         newRepair.setParts(new ArrayList<>(newParts));
@@ -193,10 +203,11 @@ public class RepairServiceImpl implements RepairService {
         return newRepair;
     }
 
-    private void addPartIfPresent(List<PartEntity> newParts, String partName, BigDecimal partPrice, int partQuantity, CarEntity carEntity, RepairEntity newRepair) {
+    private void addPartIfPresent(List<PartEntity> newParts, String partName, String partDescription, BigDecimal partPrice, int partQuantity, CarEntity carEntity, RepairEntity newRepair) {
         if (partName != null && !partName.isEmpty()) {
             PartEntity part = new PartEntity()
                     .setName(partName)
+                    .setDescription(partDescription)
                     .setPartCost(partPrice)
                     .setQuantity(partQuantity)
                     .setCar(carEntity)

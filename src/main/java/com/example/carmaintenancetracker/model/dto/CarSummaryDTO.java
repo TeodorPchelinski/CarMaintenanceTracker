@@ -9,23 +9,23 @@ public class CarSummaryDTO {
 
     //todo: add only the fields that will be shown in Car Cards
 
-    Long id;
+    private Long id;
 
     //todo: Add ImageUrl for cars' images
 
-    String image;
+    private String image;
 
-    String brand;
+    private String brand;
 
-    String model;
+    private String model;
 
-    String engineDisplacement;
+    private String engineDisplacement;
 
-    int year;
+    private int year;
 
-    FuelEnum fuelEnum;
+    private FuelEnum fuelEnum;
 
-    TransmissionEnum transmissionEnum;
+    private TransmissionEnum transmissionEnum;
 
 
     public CarSummaryDTO() {

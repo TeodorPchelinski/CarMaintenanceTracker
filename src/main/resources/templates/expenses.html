@@ -7,9 +7,11 @@
 <body>
 
 <div th:replace="~{fragments/navbar}"></div>
+
+<div class="current-page">
 <div class="section1">
     <div class="label-container">
-        <h1 class="label">Expenses</h1>
+        <h1 class="label">All User Expenses</h1>
     </div>
     <div class="window">
         <div>
@@ -26,6 +28,16 @@
     <div class="window" id="window-small">
     </div>
 </div>
+
+    <div class="expenses-center-container">
+
+        <div class="expenses-table-container window" ></div>
+
+    </div>
+</div>
+
+<div class="repairs-view-container"></div>
+
 
 </body>
 </html>
